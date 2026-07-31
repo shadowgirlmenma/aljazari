@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* ═══ الجزري — متغيرات التصميم ═══ */
+@theme {
+  --color-brand-50:  #f5f2ff;
+  --color-brand-100: #ede7fe;
+  --color-brand-200: #d8ceff;
+  --color-brand-300: #bba4fc;
+  --color-brand-400: #9a72f0;
+  --color-brand-500: #7c47e0;
+  --color-brand-600: #6827c4;
+  --color-brand-700: #4c1d80;
+  --color-brand-800: #3a1260;
+  --color-brand-900: #260b42;
+  --color-brand-950: #120621;
+
+  --color-ink: #0d0818;
+
+  --font-sans: 'Readex Pro', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+/* ═══ قاعدة ═══ */
+html {
+  font-family: var(--font-sans);
+  background: #120621;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+/* ═══ الأقسام الداكنة ═══ */
+.bg-brand-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-950) 0%,
+    var(--color-brand-800) 50%,
+    var(--color-brand-700) 100%
+  );
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(124,71,224,0.4) 0%, transparent 60%),
+    linear-gradient(135deg, #120621 0%, #260b42 45%, #3a1260 100%);
+}
+
+/* ═══ Leader line (كتالوغ) ═══ */
+.leader-line {
+  background: linear-gradient(90deg, transparent, var(--color-brand-400), transparent);
+  height: 1px;
+  flex: 1;
+}
+
+/* ═══ Reduced motion ═══ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ═══ Focus ═══ */
+:focus-visible {
+  outline: 2px solid var(--color-brand-400);
+  outline-offset: 2px;
+}

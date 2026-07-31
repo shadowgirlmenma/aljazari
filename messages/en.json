@@ -1,0 +1,405 @@
+{
+  "meta": {
+    "siteName": "ALJAZARI",
+    "title": "ALJAZARI — Iraq's first robotics and AI company",
+    "description": "ALJAZARI supplies, rents, and services robots, and builds AI solutions for organisations across Iraq. Humanoid, service, and educational robots with a 12-month warranty and technical support."
+  },
+  "nav": {
+    "home": "Home",
+    "robots": "Our robots",
+    "robotSolutions": "Robot solutions",
+    "aiSolutions": "AI solutions",
+    "training": "Training programmes",
+    "news": "News",
+    "about": "About us",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "cta": {
+    "bookRobot": "Book a robot",
+    "requestQuote": "Request a quote",
+    "browseRobots": "Browse robots",
+    "viewDetails": "View details",
+    "enroll": "Enrol in this course",
+    "applyTrainer": "Apply as a trainer",
+    "contactUs": "Contact us",
+    "back": "Back"
+  },
+  "robots": {
+    "title": "Our robots",
+    "subtitle": "Robots ready to work in your organisation — to buy or rent, with servicing and programming included.",
+    "allCategories": "All",
+    "specs": "Technical specifications",
+    "features": "Features",
+    "hardware": "Components",
+    "sectors": "Where it fits",
+    "madeBy": "Manufacturer",
+    "comingSoon": "Details for this robot are being updated — get in touch and we'll walk you through it.",
+    "empty": "No robots in this category yet."
+  },
+  "warranty": {
+    "monthsLabel": "months of full warranty"
+  },
+  "common": {
+    "clients": "Our clients",
+    "partners": "Our partners",
+    "mission": "Our mission",
+    "vision": "Our vision",
+    "services": "What we do",
+    "loading": "Loading…",
+    "errorTitle": "Something went wrong",
+    "errorBody": "We couldn't load this section. Try refreshing the page.",
+    "notFoundTitle": "This page is under construction",
+"notFoundBody": "We're working on it and it'll be ready soon — head back home or browse our robots in the meantime ^^.",
+    "backHome": "Back to homepage"
+  },
+  "home": {
+    "hero": {
+      "line1": "Where the innovations of the past",
+      "line2": "meet today's technology",
+      "line3": "to serve the future",
+      "sub": "Make a difference with Aljazari — the first robotics company in Iraq",
+      "cta": "Book your robot now",
+      "ctaSecondary": "Browse robots"
+    },
+    "about": {
+      "eyebrow": "About Aljazari",
+      "body": "Aljazari is the first robotics company in Iraq, specialized in the trade and maintenance of robots, artificial intelligence, automation, and software solutions. Founded by a group of engineers and academics with a visionary outlook.",
+      "body2": "We are committed to providing the latest technologies and innovative services that meet market needs and contribute to driving technological progress in the country."
+    },
+    "services": {
+      "eyebrow": "Our services",
+      "title": "What we offer",
+      "robots": {
+        "title": "Robot Trade",
+        "desc": "Humanoid, service, and educational robots from the world's leading manufacturers"
+      },
+      "maintenance": {
+        "title": "Maintenance & Support",
+        "desc": "12-month warranty and specialized technical support for all our robots"
+      },
+      "ai": {
+        "title": "AI Solutions",
+        "desc": "Smart systems, automation, and custom software solutions"
+      },
+      "training": {
+        "title": "Training Programs",
+        "desc": "Specialized robotics and programming courses for individuals and organizations"
+      }
+    },
+    "vision": {
+      "title": "Our Vision",
+      "body": "We aspire to be the trusted partner for individuals, companies, and government institutions in adopting modern technology and achieving excellence through innovation and quality in service delivery."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "body": "To deliver comprehensive and advanced services in the fields of robotics, artificial intelligence, automation, and software solutions, adhering to the highest standards of quality and innovation to enhance our clients' competitiveness and achieve sustainable development in Iraq."
+    },
+    "readMore": "Read more",
+    "nameOrigin": {
+      "title": "Why the name Aljazari?",
+      "body": "We chose the name \"Aljazari\" in honor of the great scholar Ismail Aljazari, famously known as \"Badi' alZaman.\" Aljazari was an exceptional scientist and engineer who lived in the 12th century, renowned for his remarkable contributions to engineering and robotics — introducing innovations ahead of their time, including mechanical devices and primitive robots that laid the foundation for modern technology.",
+      "body2": "At Aljazari, we draw inspiration from the genius and creativity of this great scholar, striving to embody his vision by offering modern technologies and innovative solutions for our contemporary era."
+    },
+    "founders": {
+      "title": "Founders' Message",
+      "p1": "At Aljazari, we take pride in being pioneers in robot trade and maintenance, as well as artificial intelligence in Iraq. Our company was founded out of a deep passion for technology and a strong belief that continuous innovation and development are the keys to building a bright and sustainable future for our country.",
+      "p2": "We are a group of engineers and academics united by a common vision and a genuine desire to develop the field of robotics and AI in Iraq. We believe Iraq has immense potential to become a hub for technological advancement in the region.",
+      "p3": "Our message to you is our commitment to providing the best technical solutions and enhancing knowledge and skills in this field, to ensure a bright and sustainable future for our beloved Iraq. Together, we can make a difference and build a better future.",
+      "signature": "With best regards,",
+      "signature2": "The Founders of Aljazari"
+    },
+    "join": {
+      "title": "Join Us",
+      "subtitle": "Be part of the future of robotics in Iraq",
+      "student": {
+        "title": "Register as a Trainee",
+        "desc": "Learn robotics, programming, and AI under the guidance of specialized experts",
+        "cta": "Apply now"
+      },
+      "trainer": {
+        "title": "Apply as a Trainer",
+        "desc": "Share your expertise and train the new generation of Iraqi engineers",
+        "cta": "Join our team"
+      }
+    },
+    "numbers": {
+      "title": "Aljazari in Numbers",
+      "employees": "Employees",
+      "teams": "Core Teams",
+      "partners": "Partners Worldwide",
+      "capital": "Capital",
+      "robots": "Robots",
+      "clients": "Clients"
+    },
+    "partners": {
+      "title": "Our Partners"
+    },
+    "clients": {
+      "title": "Our Clients"
+    },
+    "visit": {
+      "title": "Visit Us",
+      "subtitle": "Our office is in the heart of Baghdad — you're welcome anytime",
+      "address": "Fifth Floor, Viola Commercial Center, AlRubaie Street, Baghdad",
+      "loginTitle": "Have an account?",
+      "loginDesc": "Log in to track your requests and courses",
+      "login": "Log In",
+      "directions": "Get directions"
+    }
+  },
+  "robotSolutions": {
+  "title": "Robot Solutions",
+  "subtitle": "Specialized robots for every sector — maintenance, programming, and full technical support",
+  "bannerLabel": "Our Services",
+  "sectors": {
+    "educational": "Educational Robots",
+    "hospitality": "Hospitality & Hotels",
+    "cafe": "Cafes & Restaurants",
+    "banking": "Banking",
+    "showroom": "Showrooms",
+    "malls": "Malls & Shops"
+  },
+  "services": {
+    "maintenance": "Maintenance & Repair",
+    "software": "Software Solutions",
+    "training": "Training & Development",
+    "support": "Technical Support"
+  },
+  "cta": "Book a Free Consultation"
+},
+"aiSolutions": {
+  "title": "AI Solutions",
+  "subtitle": "Smart systems that turn your data into decisions — built on the latest AI technologies",
+  "bannerLabel": "Artificial Intelligence",
+  "intro": "Aljazari delivers comprehensive AI solutions designed specifically for the Iraqi market, from machine vision and data analytics to full automation of your organization's operations.",
+  "services": {
+    "vision": { "title": "Machine Vision", "desc": "Visual recognition systems for faces, products, and industrial defects with over 99% accuracy" },
+    "nlp": { "title": "Natural Language Processing", "desc": "Chatbots and Arabic language understanding systems to serve your customers" },
+    "automation": { "title": "Intelligent Automation", "desc": "Automate repetitive processes using AI and save hours of work daily" },
+    "analytics": { "title": "Data Analytics", "desc": "Smart dashboards and real-time reports to help you make data-driven decisions" }
+  },
+  "cta": "Start your project with us"
+},
+"training": {
+  "title": "Training Programs",
+  "subtitle": "Iraq's first university-level robotics educational platform",
+  "bannerLabel": "Robotics / AI / IoT",
+  "liveLabel": "Now Live",
+  "filterType": "Type",
+  "filterDeliver": "Delivery",
+  "types": {
+    "all": "All",
+    "paths": "Learning Paths",
+    "courses": "Courses",
+    "workshops": "Workshops"
+  },
+  "delivers": {
+    "all": "All",
+    "online": "Online",
+    "onsite": "Onsite"
+  },
+  "courses": {
+    "robotics": { "title": "Robotics Fundamentals" },
+    "ai":       { "title": "AI for Beginners" },
+    "path":     { "title": "Robotics Engineering Path" },
+    "ws":       { "title": "ROS 2 Workshop" },
+    "iot":      { "title": "IoT & Robotics" },
+    "path2":    { "title": "Applied AI Learning Path" }
+  },
+  "apply": "Apply Now"
+},
+"about": {
+  "title": "About Us",
+  "subtitle": "Iraq's first officially registered robotics company — founded with passion and built on vision",
+  "story": {
+    "title": "Our Story",
+    "body1": "Aljazari is the leading and first of its kind company in Iraq, specializing in the trade and maintenance of robots, artificial intelligence, automation, and software solutions.",
+    "body2": "Founded by a group of engineers and academics with a visionary outlook, we are committed to providing the latest technologies and innovative services that meet market needs and contribute to driving technological progress in the country."
+  },
+  "name": {
+    "title": "Why the name Aljazari?",
+    "body": "We chose the name Aljazari in honor of the great scholar Ismail Aljazari, famously known as Badi alZaman, the exceptional scientist and engineer who lived in the 12th century and was renowned for his remarkable contributions to engineering and robotics. At Aljazari, we draw inspiration from his genius and creativity, striving to embody his vision through modern technologies and innovative solutions."
+  },
+  "founders": {
+    "title": "Founders' Message",
+    "body1": "At Aljazari, we take pride in being pioneers in robot trade and maintenance, as well as artificial intelligence in Iraq. Our company was founded out of a deep passion for technology and a strong belief that continuous innovation and development are the keys to building a bright and sustainable future for our country.",
+    "body2": "We are a group of engineers and academics united by a common vision and a genuine desire to develop the field of robotics and AI in Iraq. We believe Iraq has immense potential to become a hub for technological advancement in the region.",
+    "body3": "Our message to you is our commitment to providing the best technical solutions and enhancing knowledge and skills in this field, to ensure a bright and sustainable future for our beloved Iraq. Together, we can make a difference and build a better future.",
+    "signature": "With best regards,",
+    "signature2": "The Founders of Aljazari"
+  },
+  "values": {
+    "title": "Our Values",
+    "innovation": { "title": "Innovation", "desc": "We believe continuous development is the only path to excellence in the technology world" },
+    "quality": { "title": "Quality", "desc": "We are committed to the highest quality standards in every product and service we offer" },
+    "trust": { "title": "Trust", "desc": "We build long-term relationships with our clients based on transparency and integrity" },
+    "iraq": { "title": "Iraq First", "desc": "Every decision we make serves Iraq's technological and developmental advancement" }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": "Fifth Floor, Viola Commercial Center, AlRubaie Street, Baghdad, Iraq"
+  },
+  "jobs": {
+    "title": "Join Our Team",
+    "body": "We are always looking for engineers, academics, and technology enthusiasts who want to make a real difference in Iraq. Are you one of them?",
+    "cta": "Send your application"
+  }
+},
+"contact": {
+  "title": "Contact Us",
+  "subtitle": "Our team is ready to answer your inquiries and provide the best solutions for your organization",
+  "form": {
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Send Message",
+    "success": "Your message was sent successfully — we will get back to you soon"
+  },
+  "subjects": {
+    "robot": "Book or Buy a Robot",
+    "maintenance": "Maintenance & Support",
+    "ai": "AI Solutions",
+    "training": "Training Programs",
+    "partnership": "Partnership or Collaboration",
+    "other": "Other"
+  },
+  "info": {
+    "title": "Contact Information",
+    "address": "Fifth Floor, Viola Commercial Center, AlRubaie Street, Baghdad, Iraq",
+    "hours": "Working Hours",
+    "hoursValue": "Sunday — Thursday, 9AM — 5PM"
+  }
+},
+"login": {
+  "title": "Login",
+  "subtitle": "Sign in to track your requests and training courses",
+  "email": "Email Address",
+  "password": "Password",
+  "submit": "Log In",
+  "forgot": "Forgot password?",
+  "noAccount": "Don't have an account?",
+  "signup": "Contact us"
+},
+"terms": {
+  "title": "Terms & Conditions",
+  "lastUpdated": "Last updated: January 2026",
+  "sections": {
+    "acceptance": { "heading": "Acceptance of Terms", "body": "By using the Aljazari website, you agree to be bound by these terms and conditions in full. If you do not agree to any part of them, please do not use the site." },
+    "services": { "heading": "Our Services", "body": "Aljazari provides robot sales, rental, and maintenance services, AI solutions, and training programs. All descriptions and prices are subject to change without prior notice." },
+    "orders": { "heading": "Orders & Bookings", "body": "Every order or booking is subject to confirmation by our team. We reserve the right to refuse or cancel any order for reasons including product unavailability or pricing errors." },
+    "warranty": { "heading": "Warranty", "body": "Aljazari provides a 12-month warranty on all robots sold, covering manufacturing defects only. The warranty does not cover misuse or damage resulting from unauthorized intervention." },
+    "liability": { "heading": "Limitation of Liability", "body": "Aljazari shall not be liable for any indirect or incidental damages resulting from the use of our products or services, to the extent permitted by law." },
+    "changes": { "heading": "Changes to Terms", "body": "We reserve the right to modify these terms at any time. Any changes will be posted on this page along with the update date." },
+    "contact": { "heading": "Contact Us", "body": "For any questions about these terms, please contact us at info@aljazari.iq" }
+  }
+},
+"privacy": {
+  "title": "Privacy Policy",
+  "lastUpdated": "Last updated: January 2026",
+  "sections": {
+    "collect": { "heading": "Information We Collect", "body": "We collect information such as name, email, and phone number when you register or contact us, along with basic usage data to improve your experience." },
+    "use": { "heading": "How We Use Your Information", "body": "We use your information to respond to your inquiries, process your orders and bookings, and improve our services. We do not use your data for marketing purposes without your explicit consent." },
+    "share": { "heading": "Sharing Information", "body": "We do not sell or rent your personal data to any third party. We may share limited information with service partners necessary to fulfill your order, such as shipping companies." },
+    "cookies": { "heading": "Cookies", "body": "Our website uses essential cookies to function properly, and optional analytical cookies to understand how visitors use the site." },
+    "security": { "heading": "Data Security", "body": "We take reasonable technical and organizational measures to protect your data from unauthorized access, loss, or misuse." },
+    "rights": { "heading": "Your Rights", "body": "You have the right to request access to, correction of, or deletion of your personal data at any time by contacting us directly." },
+    "contact": { "heading": "Contact Us", "body": "For any questions about this privacy policy, please contact us at info@aljazari.iq" }
+  }
+},
+"news": {
+  "title": "Aljazari Latest News",
+  "subtitle": "Al-Jazari Company latest news and updates on robotics, AI, and innovative technologies",
+  "bannerLabel": "News & Updates",
+    "categories": {
+      "events": "Events",
+      "partnerships": "Partnerships",
+      "success": "Success Stories",
+      "announcements": "Announcements"
+    },
+     "readMore": "Read more",
+     "back": "Back to news",
+    "articles": {
+      "tedxErbil": {
+        "title": "Al-Jazari at TEDx Erbil: The Next Wave",
+        "excerpt": "Al-Jazari took part in TEDxNishtiman in Erbil under the theme \"The Next Wave.\" Founder and CEO Eng. Sinan Majeed spoke about Iraq's technological future and the role young people play in leading it."
+      },
+      "itex2025": {
+        "title": "Al-Jazari Supports Smart Education at ITEX Iraq 2025",
+        "excerpt": "Al-Jazari joined ITEX Iraq 2025 alongside the Ministry of Education, bringing humanoid and educational robots that demonstrated the latest tools in smart classrooms."
+      },
+      "visionIraq2050": {
+        "title": "Al-Jazari Robots at the Iraq Vision 2050 Conference",
+        "excerpt": "At the Iraq Vision 2050 conference in Baghdad, Al-Jazari's robots ran live demonstrations showing how robotics can support education, hospitality, and smart public services."
+      },
+      "mtuCollege": {
+        "title": "Al-Jazari Attends the Opening of the AI Engineering College at MTU",
+        "excerpt": "Al-Jazari joined the launch of the Technical Engineering College of AI at the Middle Technical University, reinforcing its support for academic partnerships in technology."
+      },
+      "newSchoolYear": {
+        "title": "Joy and Innovation at the Start of the New School Year",
+        "excerpt": "Al-Jazari spent a day with students from Cadmus School, JEEL Kindergarten, and Guardian Angel Kindergarten, where the children's excitement around the robots was a reminder that the future starts with small, curious steps."
+      },
+      "youthSummit": {
+        "title": "Al-Jazari Supports the First Iraqi Youth Summit for Digital Empowerment",
+        "excerpt": "Al-Jazari took part in IYS-25 in Baghdad to back AI and digital skills training, underlining that public-private partnership is key to building the generation shaping Iraq's future."
+      },
+      "smartCitiesForum": {
+        "title": "Al-Jazari, Technical Sponsor of the Iraqi Smart Cities Forum 2025",
+        "excerpt": "Al-Jazari served as technical sponsor of the Iraqi Smart Cities Forum 2025 at Dijla Village, Baghdad, taking a new step with its partners toward smarter, more innovative cities."
+      },
+      "engineersDay": {
+        "title": "Al-Jazari at the Iraqi Engineer's Day Celebration",
+        "excerpt": "As part of Iraqi Engineer's Day at the Baghdad International Fair, Al-Jazari presented a showcase of robotics and AI technology that drew strong engagement from attending engineers."
+      },
+      "albadoor": {
+        "title": "Al-Jazari Robots Feature at Al-Badoor Complex Sales Center Opening",
+        "excerpt": "Al-Jazari brought its interactive robots to the opening of the Al-Badoor Residential Complex Sales Center with Al-Ghadeer Real Estate, giving visitors a smart, engaging welcome."
+      },
+      "aiSummitAnbar": {
+        "title": "Al-Jazari Joins the AI Summit in Anbar",
+        "excerpt": "Al-Jazari took part in the Artificial Intelligence Summit at Al-Maarif University in Anbar, attended by senior officials and academics, reaffirming its support for Iraq's digital transformation."
+      },
+      "beautyConnection": {
+        "title": "Al-Jazari Blends Beauty and Technology at Baghdad Beauty Connection",
+        "excerpt": "At Baghdad Beauty Connection, Al-Jazari's humanoid robots joined the \"Tale of Beauty\" pavilion with Nakheel Baghdad, offering a creative example of technology meeting the beauty industry."
+      },
+      "digitizationForum": {
+        "title": "Iraq Enters the Era of Digital Transformation",
+        "excerpt": "Al-Jazari supported Iraq's First Digitization Forum in Baghdad, which brought together experts and decision-makers to explore new technologies and strengthen cross-sector collaboration."
+      },
+      "energyExpo": {
+        "title": "Al-Jazari Sponsors the 10th Iraq International Energy Expo",
+        "excerpt": "Al-Jazari proudly sponsored the 10th Iraq International Energy Expo & Conference, supporting the energy sector with robotics and smart solutions for greater efficiency and sustainability."
+      },
+      "leapRiyadh": {
+        "title": "Al-Jazari Visits LEAP 2025, the Region's Largest AI and Robotics Event",
+        "excerpt": "Al-Jazari joined LEAP2025 in Riyadh, a global tech platform where leading companies explored how robotics is transforming industries and showcased the latest research and innovation."
+      },
+      "vexCompetition": {
+        "title": "Al-Jazari Joins Iraq's First VEX Robotics Competition",
+        "excerpt": "Al-Jazari took part in Iraq and Kurdistan's first national VEX Robotics competition, a qualifier for the World Championship in the US, supporting innovation among young people."
+      },
+      "medico2025": {
+        "title": "Al-Jazari Takes Part in Medico 2025",
+        "excerpt": "Al-Jazari participated in Medico 2025, Iraq's largest international health exhibition in Erbil, showcasing robots built for the latest innovations in medical technology and AI."
+      },
+      "roboticsClubs": {
+        "title": "Al-Jazari Joins the Launch of Robotics and AI Clubs in Iraq",
+        "excerpt": "Al-Jazari took part in the launch of Iraq's Robotics and AI Clubs, held under the patronage of the Prime Minister and hosted by Al-Farabi University, alongside leading tech figures and institutions."
+      },
+      "cuttingEdgeLaunch": {
+        "title": "Al-Jazari Introduces Cutting-Edge Robotics to Iraq",
+        "excerpt": "As Iraq's first officially registered robotics company, Al-Jazari brought humanoid, educational, and delivery robots to the market, shaping a future of efficiency and technological progress."
+      },
+      "firstCompany": {
+        "title": "Iraq's First Officially Registered Robotics Company Launches",
+        "excerpt": "Al-Jazari launched as Iraq's first registered robotics and AI company, offering smart solutions for delivery, reception, cleaning, industry, and education to bridge the country's technology gap."
+      }
+    }
+  }
+
+}
