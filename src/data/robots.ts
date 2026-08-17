@@ -929,6 +929,15 @@ export const ROBOTS: Robot[] = [
     categories: ['educational'],
     order: 2,
     image: '/robots/jetauto-nobg.webp',
+    gallery: [
+      '/robots/jetauto-real-1.webp',
+      '/robots/jetauto-real-2.webp',
+      '/robots/jetauto-real-3.webp',
+      '/robots/jetauto-real-4.webp',
+      '/robots/jetauto-real-5.webp',
+      '/robots/jetauto-real-6.webp',
+      '/robots/jetauto-real-7.webp',
+    ],
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'منصة روبوتية ذكية لتعلم وتطوير ROS، مزودة بمعالج Jetson NVIDIA وليدار وكاميرا عمق ثلاثية الأبعاد. تدعم رسم الخرائط SLAM وتخطيط المسار.',
