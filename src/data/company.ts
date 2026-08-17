@@ -155,7 +155,7 @@ export const CLIENTS: Client[] = [
   { name: { ar: 'PTC', en: 'PTC Progress Group' }, logo: '/clients/ptc-progress-group.png' },
   { name: { ar: 'B.G', en: 'B.G' }, logo: '/clients/bg.png' },
   { name: { ar: 'الغدير', en: 'Al-Ghadeer' }, logo: '/clients/al-ghadeer.png' },
-  { name: { ar: 'الجامعة الإسلامية', en: 'The Islamic University' }, logo: '/clients/islamic-university.png' },
+  { name: { ar: 'الجامعة الإسلامية', en: 'The Islamic University' }, logo: '/clients/islamic-university.webp' },
   { name: { ar: 'نقابة المهندسين العراقية', en: 'Iraqi Engineers Union' }, logo: '/clients/iraqi-engineers-union.png' },
   { name: { ar: 'مسارات العراق لتكنولوجيا المعلومات', en: 'Masarat Al-Iraq IT' }, logo: '/clients/masarat-aliraq-it.png' },
   { name: { ar: 'منتدى المدن الذكية العراقي', en: 'Iraqi Smart Cities Forum' }, logo: '/clients/iraqi-smart-cities-forum.png' },
