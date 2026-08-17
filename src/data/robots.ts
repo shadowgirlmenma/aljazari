@@ -171,6 +171,16 @@ export const ROBOTS: Robot[] = [
     order: 2,
     featured: true,
     image: '/robots/cruzr-nobg.webp',
+    gallery: [
+      '/robots/cruzr-real-1.webp',
+      '/robots/cruzr-real-2.webp',
+      '/robots/cruzr-real-3.webp',
+      '/robots/cruzr-real-4.webp',
+      '/robots/cruzr-real-5.webp',
+      '/robots/cruzr-real-6.webp',
+      '/robots/cruzr-real-7.webp',
+      '/robots/cruzr-real-8.webp',
+    ],
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت بتصميم بشري بأذرع مرنة، يستقبل الزوار ويوجههم داخل المؤسسة، ويربط الفروع بمكالمات فيديو عالية الدقة عبر نظام U-Meeting.',
