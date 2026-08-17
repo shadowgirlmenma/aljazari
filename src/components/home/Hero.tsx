@@ -91,7 +91,7 @@ export default function Hero({
             transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
           >
             <Image
-              src="/kebbi.png"
+              src="/robots/kebbi-nobg.webp"
               alt="Kebbi robot"
               width={640}
               height={640}

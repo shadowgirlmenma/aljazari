@@ -86,7 +86,7 @@ export default function LoginClient({
                 className="absolute inset-0 -z-10 scale-90 rounded-full bg-purple-600/30 blur-3xl"
               />
               <Image
-                src="/kebbi.png"
+                src="/robots/kebbi-nobg.webp"
                 alt="Kebbi"
                 width={420}
                 height={420}
