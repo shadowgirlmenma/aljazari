@@ -18,6 +18,8 @@ export default function RobotsPageBanner({
         loop
         muted
         playsInline
+        preload="metadata"
+        poster="/robots-banner-poster.jpg"
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/robots-banner.mp4" type="video/mp4" />

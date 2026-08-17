@@ -14,6 +14,8 @@ export default function NotFound() {
         loop
         muted
         playsInline
+        preload="metadata"
+        poster="/robots-hero-poster.jpg"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25"
         style={{ mixBlendMode: 'screen' }}
       >

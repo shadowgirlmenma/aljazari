@@ -85,6 +85,8 @@ export default function NewsClient({
           loop
           muted
           playsInline
+          preload="metadata"
+          poster="/news-banner-poster.jpg"
           className="absolute inset-0 h-full w-full object-cover"
         >
           <source src="/news-banner.mp4" type="video/mp4" />

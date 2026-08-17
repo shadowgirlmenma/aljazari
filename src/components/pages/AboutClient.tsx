@@ -76,6 +76,8 @@ export default function AboutClient({
           loop
           muted
           playsInline
+          preload="metadata"
+          poster="/about-banner-poster.jpg"
           className="absolute inset-0 h-full w-full object-cover"
         >
           <source src="/about-banner.mp4" type="video/mp4" />
