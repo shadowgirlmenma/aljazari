@@ -144,6 +144,16 @@ export default function ColorBends({
   const pointerSmoothRef = useRef<number>(8);
 
   useEffect(() => {
+    // بعض الأجهزة ما تدعم WebGL أو ترفض إنشاء الـ context — نلف كل التهيئة
+    // بـ try/catch حتى لو صار خطأ هنا ما ينهار كامل الصفحة.
+    try {
+      return initColorBends();
+    } catch (err) {
+      console.error('ColorBends: WebGL init failed, skipping decorative background', err);
+      return;
+    }
+
+    function initColorBends() {
     const container = containerRef.current!;
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
@@ -230,6 +240,7 @@ export default function ColorBends({
       renderer.forceContextLoss();
       if (renderer.domElement.parentElement === container) container.removeChild(renderer.domElement);
     };
+    }
   }, []);
 
   useEffect(() => {

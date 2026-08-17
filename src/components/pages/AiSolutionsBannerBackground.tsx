@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import DecorBoundary from '@/components/DecorBoundary';
 
 const WebThreads = dynamic(
   // مسار نسبي لتفادي مشاكل alias مع dynamic import
@@ -12,6 +13,7 @@ const WebThreads = dynamic(
 export default function AiSolutionsBannerBackground() {
   return (
     <div className="absolute inset-0">
+      <DecorBoundary>
       <WebThreads
         color1="#a78bfa"
         color2="#5227FF"
@@ -35,6 +37,7 @@ export default function AiSolutionsBannerBackground() {
         mouseInteraction={true}
         mouseStrength={0.3}
       />
+      </DecorBoundary>
     </div>
   );
 }

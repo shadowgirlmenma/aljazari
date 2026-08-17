@@ -227,59 +227,80 @@ const Lightfall: React.FC<LightfallProps> = ({
     const container = containerRef.current;
     if (!container) return;
 
-    const renderer = new Renderer({
-      dpr: dpr ?? (typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1),
-      alpha: true,
-      antialias: true
-    });
-    rendererRef.current = renderer;
-    const gl = renderer.gl;
-    const canvas = gl.canvas as HTMLCanvasElement;
+    // بعض الأجهزة (موبايلات قديمة، متصفحات جوة تطبيقات، أو GPU محظور) ما تدعم
+    // WebGL أو ترفض إنشاء الـ context. نلف التهيئة بـ try/catch حتى لو صار
+    // خطأ هنا ما ينهار كامل الصفحة — بس هذا التأثير الزخرفي يختفي بهدوء.
+    let renderer: Renderer;
+    let gl: Renderer['gl'];
+    let canvas: HTMLCanvasElement;
+    let program: Program;
+    let geometry: Triangle;
+    let mesh: Mesh;
+    try {
+      renderer = new Renderer({
+        dpr: dpr ?? (typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1),
+        alpha: true,
+        antialias: true
+      });
+      rendererRef.current = renderer;
+      gl = renderer.gl;
+      if (!gl) throw new Error('WebGL context unavailable');
+      canvas = gl.canvas as HTMLCanvasElement;
 
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.style.display = 'block';
-    container.appendChild(canvas);
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      canvas.style.display = 'block';
+      container.appendChild(canvas);
 
-    const { arr, count, avg } = prepColors(colors);
+      const { arr, count, avg } = prepColors(colors);
 
-    const uniforms = {
-      iResolution: { value: [gl.drawingBufferWidth, gl.drawingBufferHeight, 1] },
-      iMouse: { value: [0, 0] },
-      iTime: { value: 0 },
-      uColor0: { value: arr[0] },
-      uColor1: { value: arr[1] },
-      uColor2: { value: arr[2] },
-      uColor3: { value: arr[3] },
-      uColor4: { value: arr[4] },
-      uColor5: { value: arr[5] },
-      uColor6: { value: arr[6] },
-      uColor7: { value: arr[7] },
-      uColorCount: { value: count },
-      uBgColor: { value: hexToRGB(backgroundColor) },
-      uMouseColor: { value: avg },
-      uSpeed: { value: speed },
-      uStreakCount: { value: Math.max(1, Math.min(16, Math.round(streakCount))) },
-      uStreakWidth: { value: streakWidth },
-      uStreakLength: { value: streakLength },
-      uGlow: { value: glow },
-      uDensity: { value: density },
-      uTwinkle: { value: twinkle },
-      uZoom: { value: zoom },
-      uBgGlow: { value: backgroundGlow },
-      uOpacity: { value: opacity },
-      uMouseEnabled: { value: mouseInteraction ? 1 : 0 },
-      uMouseStrength: { value: mouseStrength },
-      uMouseRadius: { value: mouseRadius }
+      const uniforms = {
+        iResolution: { value: [gl.drawingBufferWidth, gl.drawingBufferHeight, 1] },
+        iMouse: { value: [0, 0] },
+        iTime: { value: 0 },
+        uColor0: { value: arr[0] },
+        uColor1: { value: arr[1] },
+        uColor2: { value: arr[2] },
+        uColor3: { value: arr[3] },
+        uColor4: { value: arr[4] },
+        uColor5: { value: arr[5] },
+        uColor6: { value: arr[6] },
+        uColor7: { value: arr[7] },
+        uColorCount: { value: count },
+        uBgColor: { value: hexToRGB(backgroundColor) },
+        uMouseColor: { value: avg },
+        uSpeed: { value: speed },
+        uStreakCount: { value: Math.max(1, Math.min(16, Math.round(streakCount))) },
+        uStreakWidth: { value: streakWidth },
+        uStreakLength: { value: streakLength },
+        uGlow: { value: glow },
+        uDensity: { value: density },
+        uTwinkle: { value: twinkle },
+        uZoom: { value: zoom },
+        uBgGlow: { value: backgroundGlow },
+        uOpacity: { value: opacity },
+        uMouseEnabled: { value: mouseInteraction ? 1 : 0 },
+        uMouseStrength: { value: mouseStrength },
+        uMouseRadius: { value: mouseRadius }
+      };
+
+      program = new Program(gl, { vertex, fragment, uniforms });
+      programRef.current = program;
+
+      geometry = new Triangle(gl);
+      geometryRef.current = geometry;
+      mesh = new Mesh(gl, { geometry, program });
+      meshRef.current = mesh;
+    } catch (err) {
+      console.error('Lightfall: WebGL init failed, skipping decorative background', err);
+      return;
+    }
+
+    const uniforms = program.uniforms as {
+      iResolution: { value: number[] };
+      iMouse: { value: number[] };
+      iTime: { value: number };
     };
-
-    const program = new Program(gl, { vertex, fragment, uniforms });
-    programRef.current = program;
-
-    const geometry = new Triangle(gl);
-    geometryRef.current = geometry;
-    const mesh = new Mesh(gl, { geometry, program });
-    meshRef.current = mesh;
 
     const resize = () => {
       const rect = container.getBoundingClientRect();
