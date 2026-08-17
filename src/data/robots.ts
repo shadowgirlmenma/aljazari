@@ -20,6 +20,14 @@ export const ROBOTS: Robot[] = [
     order: 3,
     featured: true,
     image: '/robots/pepper-nobg.webp',
+    gallery: [
+      '/robots/pepper-real-1.webp',
+      '/robots/pepper-real-2.webp',
+      '/robots/pepper-real-3.webp',
+      '/robots/pepper-real-4.webp',
+      '/robots/pepper-real-5.webp',
+      '/robots/pepper-real-6.webp',
+    ],
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت بشري يقرأ تعبير الوجه ويتفاعل وياه، يستقبل الزائر ويجاوب على أسئلته ويعرض المعلومات على شاشة صدره. مستخدم بالمستشفيات والمدارس وصالات الاستقبال.',
