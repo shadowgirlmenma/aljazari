@@ -7,7 +7,6 @@ import { Link } from '@/i18n/navigation';
 import Container from '@/components/ui/Container';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import StarBorder from '@/components/reactbits/StarBorder';
-import RobotSolutionsBannerBackground from './RobotSolutionsBannerBackground';
 import {
   ROBOT_SOLUTIONS_ORDER,
   ROBOT_SOLUTIONS,
@@ -36,26 +35,33 @@ export default function RobotSolutionsClient({
 
   return (
     <>
-      {/* ── البانر: توهّج Lightfall بنفسجي متحرك بالخلفية ── */}
-      <div className="relative overflow-hidden bg-[#120621] py-24 text-center">
-        <RobotSolutionsBannerBackground />
+      {/* ── بانر بصورة حقيقية — فل سكرين، بنفس أسلوب بانرات باقي صفحات الموقع ── */}
+      <div className="relative w-full overflow-hidden bg-[#120621]" style={{ height: '100svh' }}>
+        <Image
+          src="/robot-solutions/main-banner.webp"
+          alt={title}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(18,6,33,0.15) 0%, rgba(18,6,33,0.55) 70%, rgba(10,4,20,0.85) 100%)',
+              'linear-gradient(to bottom, rgba(18,6,33,0.25) 0%, rgba(18,6,33,0.55) 65%, rgba(10,4,20,0.9) 100%)',
           }}
         />
-        <div className="relative z-10 mx-auto max-w-3xl px-5 sm:px-8 lg:px-10">
+        <div className="relative z-10 flex h-full flex-col items-center justify-end px-5 pb-24 text-center sm:pb-28">
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl font-semibold text-white sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-semibold text-white sm:text-5xl"
           >
             {title}
           </motion.h1>
-          <p className="mt-4 text-purple-200/80 sm:text-lg">{subtitle}</p>
+          <p className="mt-4 max-w-2xl text-purple-200/80 sm:text-lg">{subtitle}</p>
         </div>
       </div>
 

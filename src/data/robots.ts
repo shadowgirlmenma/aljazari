@@ -17,7 +17,7 @@ export const ROBOTS: Robot[] = [
     name: 'Pepper',
     brand: 'SoftBank Robotics',
     categories: ['humanoid'],
-    order: 1,
+    order: 3,
     featured: true,
     image: '/robots/pepper.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
@@ -79,14 +79,14 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'Laser sensor', en: 'Laser sensor' }, side: 'end' },
       { label: { ar: 'سونار بالأشعة', en: 'Infrared sonar' }, side: 'end' },
     ],
-    sectors: ['healthcare', 'education', 'retail', 'malls', 'events', 'banking'],
+    sectors: ['healthcare', 'education', 'retail', 'malls', 'events', 'banking', 'hospitality'],
   },
   {
     slug: 'timo',
     name: 'Timo',
     brand: 'Alpha',
     categories: ['humanoid'],
-    order: 2,
+    order: 8,
     featured: true,
     image: '/robots/timo.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
@@ -168,7 +168,7 @@ export const ROBOTS: Robot[] = [
     name: 'CRUZR',
     brand: 'UBTECH',
     categories: ['humanoid'],
-    order: 3,
+    order: 2,
     featured: true,
     image: '/robots/cruzr.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
@@ -250,7 +250,7 @@ export const ROBOTS: Robot[] = [
     name: 'Wnno',
     brand: '',
     categories: ['humanoid'],
-    order: 4,
+    order: 1,
     image: '/robots/wnno.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
@@ -388,11 +388,11 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'شاشة إعلانية لعرض الصور والفيديوهات', en: 'Advertising display' }, side: 'start' },
       { label: { ar: 'خاصية التعرف على نوع الأطباق', en: 'Dish-type detection' }, side: 'end' },
     ],
-    sectors: ['restaurants', 'hospitality', 'healthcare', 'malls', 'gaming', 'showroom'],
+    sectors: ['restaurants', 'hospitality', 'healthcare', 'malls', 'gaming', 'showroom', 'events'],
   },
   {
     slug: 'kittybot-pro',
-    name: 'Kittybot Pro',
+    name: 'KettyBot Pro',
     brand: 'Pudu Robotics',
     categories: ['service'],
     order: 2,
@@ -466,7 +466,7 @@ export const ROBOTS: Robot[] = [
   },
   {
     slug: 'pudubot',
-    name: 'Pudubot',
+    name: 'PuduBot 2',
     brand: 'Pudu Robotics',
     categories: ['service'],
     order: 3,
@@ -544,7 +544,88 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'عجلات مساعدة', en: 'Auxiliary wheels' }, side: 'end' },
       { label: { ar: 'عجلات الحركة', en: 'Drive wheels' }, side: 'end' },
     ],
-    sectors: ['restaurants', 'hospitality', 'healthcare', 'offices', 'warehousing'],
+    sectors: ['restaurants', 'hospitality', 'healthcare', 'offices', 'warehousing', 'malls', 'showroom'],
+  },
+  {
+    slug: 'cc1-pro',
+    name: 'CC1 Pro',
+    brand: 'Pudu Robotics',
+    categories: ['service'],
+    order: 0,
+    image: '/robots/cc1-pro.webp',
+    gallery: [
+      '/robots/cc1-pro-2.webp',
+      '/robots/cc1-pro-3.webp',
+      '/robots/cc1-pro-4.webp',
+      '/robots/cc1-pro-5.webp',
+      '/robots/cc1-pro-6.webp',
+    ],
+    tagline: { ar: 'روبوت تنظيف ذكي', en: 'Smart cleaning robot' },
+    summary: {
+      ar: 'روبوت PUDU CC1 Pro هو روبوت تنظيف مدعوم بالذكاء الاصطناعي يعمل بشكل مستقل في المساحات الكبيرة، يكتشف البقع والأوساخ تلقائياً ويضبط طرق التنظيف تلقائياً (كنس، شطف، كنس جاف، وشفط) باستخدام ذكاء اصطناعي وتنقل دقيق، ليوفّر نظافة عالية الجودة بأقل تدخل بشري.',
+      en: 'The PUDU CC1 Pro is an advanced autonomous cleaning robot for large indoor spaces that intelligently detects stains and dirt, automatically adjusts cleaning actions (sweeping, scrubbing, vacuuming, and mopping), and navigates precisely using AI to deliver high-quality floor care with minimal human oversight.',
+    },
+    features: [
+      {
+        title: { ar: 'تنظيف موضعي بالذكاء الاصطناعي', en: 'AI spot scrubbing' },
+        description: {
+          ar: 'يتعرف على البقع بالأرضية ويزيلها باستخدام الرؤية الذكية (AI Vision).',
+          en: 'Recognises stains on the floor and removes them using AI vision.',
+        },
+      },
+      {
+        title: { ar: 'التحكم بقوة التنظيف', en: 'AI cleaning intensity control' },
+        description: {
+          ar: 'يضبط قوة التنظيف تلقائياً حسب نوع الأرضية أو صعوبة البقعة، ويحدد الأماكن النظيفة للتحكم باستهلاك الطاقة والمياه.',
+          en: 'Automatically adjusts cleaning intensity by floor type or stain difficulty, and identifies already-clean areas to save power and water.',
+        },
+      },
+      {
+        title: { ar: 'تنظيف لحظي بالذكاء الاصطناعي', en: 'Real-time AI cleaning performance detection' },
+        description: {
+          ar: 'كاميرا خلفية تراقب دقة التنظيف وتبني خرائط حرارية للحصول على أفضل نتيجة.',
+          en: 'A rear camera monitors cleaning accuracy and builds heat maps for the best result.',
+        },
+      },
+      {
+        title: { ar: '4 في 1 للتنظيف الشامل', en: '4-in-1 versatile cleaning' },
+        description: {
+          ar: 'كنس، تنظيف رطب، تنظيف جاف، وشفط — كلها بروبوت واحد.',
+          en: 'Sweeping, scrubbing, dust-mopping, and vacuuming — all in one robot.',
+        },
+      },
+      {
+        title: { ar: 'ملاحة VSLAM وليدار دقيقة', en: 'VSLAM + LiDAR precise navigation' },
+        description: {
+          ar: 'نظام ملاحة يدمج تقنية VSLAM مع الليدار للتنقل بدقة عالية بالمساحات المفتوحة والمزدحمة، ويغطي 5000–8000 م² بمعدل 1500–3000 م²/ساعة.',
+          en: 'A navigation system combining VSLAM and LiDAR moves with high accuracy through open and crowded spaces, covering 5,000–8,000 m² at a rate of 1,500–3,000 m²/h.',
+        },
+      },
+    ],
+    specs: [
+      { label: { ar: 'الحجم', en: 'Dimensions' }, value: '629 × 552 × 695 mm' },
+      { label: { ar: 'مسار التنظيف', en: 'Cleaning path' }, value: '500 mm' },
+      { label: { ar: 'مدة الشحن (0–100%)', en: 'Charging time (0–100%)' }, value: '3 h' },
+      { label: { ar: 'زمن التشغيل — تنظيف رطب', en: 'Runtime — scrubbing' }, value: '5 h' },
+      { label: { ar: 'زمن التشغيل — كنس', en: 'Runtime — sweeping' }, value: '5 h' },
+      { label: { ar: 'زمن التشغيل — شفط', en: 'Runtime — vacuuming' }, value: '4 h' },
+      { label: { ar: 'زمن التشغيل — تنظيف جاف', en: 'Runtime — dust-mopping' }, value: '9 h' },
+      { label: { ar: 'حجم سلة التنظيف', en: 'Debris bin' }, value: '2.5 L / 6 L' },
+      { label: { ar: 'خزان الماء النظيف', en: 'Clean-water tank' }, value: '15 L' },
+      { label: { ar: 'خزان الماء المتسخ', en: 'Waste-water tank' }, value: '15 L' },
+      { label: { ar: 'التغطية', en: 'Coverage' }, value: '5,000 – 8,000 m² (1,500 – 3,000 m²/h)' },
+      { label: { ar: 'الملاحة', en: 'Navigation' }, value: 'VSLAM + LiDAR' },
+      { label: { ar: 'الشحن التلقائي', en: 'Auto-charging' }, value: 'اختياري (محطة شحن عند الطلب)' },
+    ],
+    hardware: [
+      { label: { ar: 'كاميرا خلفية لمراقبة الأداء', en: 'Rear performance-monitoring camera' }, side: 'start' },
+      { label: { ar: 'حساس ليدار', en: 'LiDAR sensor' }, side: 'start' },
+      { label: { ar: 'فرشاة كنس وشفط', en: 'Sweeping & vacuuming brush' }, side: 'start' },
+      { label: { ar: 'خزانا الماء النظيف والمتسخ', en: 'Clean & waste-water tanks' }, side: 'end' },
+      { label: { ar: 'وحدة تنظيف رطب', en: 'Scrubbing unit' }, side: 'end' },
+      { label: { ar: 'سلة تجميع الأوساخ', en: 'Debris bin' }, side: 'end' },
+    ],
+    sectors: ['healthcare', 'banking', 'showroom', 'restaurants', 'enterprises', 'malls'],
   },
 
   // ══════════════════════ منزلية ══════════════════════
@@ -626,8 +707,8 @@ export const ROBOTS: Robot[] = [
     slug: 'nao',
     name: 'NAO',
     brand: 'SoftBank Robotics',
-    categories: ['educational'],
-    order: 1,
+    categories: ['humanoid', 'educational'],
+    order: 4,
     featured: true,
     image: '/robots/nao.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
@@ -708,10 +789,10 @@ export const ROBOTS: Robot[] = [
   },
   {
     slug: 'kebbi',
-    name: 'Kebbi',
+    name: 'Kebbi Air S',
     brand: 'NUWA Robotics',
-    categories: ['educational'],
-    order: 2,
+    categories: ['humanoid'],
+    order: 7,
     image: '/robots/kebbi.webp',
     gallery: [
       '/robots/kebbi-1.avif',
@@ -790,14 +871,14 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'منفذ الشحن', en: 'Charging port' }, side: 'end' },
       { label: { ar: 'مكبرات الصوت', en: 'Speakers' }, side: 'end' },
     ],
-    sectors: ['education', 'gaming', 'schools', 'showroom'],
+    sectors: ['showroom', 'gaming'],
   },
   {
     slug: 'jetauto',
     name: 'JetAuto',
     brand: 'Hiwonder',
     categories: ['educational'],
-    order: 3,
+    order: 2,
     image: '/robots/jetauto.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
@@ -874,7 +955,7 @@ export const ROBOTS: Robot[] = [
     name: 'JetArm',
     brand: 'Hiwonder',
     categories: ['educational'],
-    order: 4,
+    order: 1,
     image: '/robots/jetarm.webp',
     tagline: { ar: 'ذراع روبوتية تعليمية', en: 'Educational robotic arm' },
     summary: {
@@ -948,7 +1029,7 @@ export const ROBOTS: Robot[] = [
     name: 'Ugot',
     brand: 'UBTECH',
     categories: ['educational'],
-    order: 5,
+    order: 4,
     image: '/robots/ugot.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
@@ -994,7 +1075,7 @@ export const ROBOTS: Robot[] = [
     name: 'Ukit',
     brand: 'UBTECH',
     categories: ['educational'],
-    order: 6,
+    order: 5,
     image: '/robots/ukit.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
@@ -1022,22 +1103,242 @@ export const ROBOTS: Robot[] = [
 
   // ══════════════════════ رباعية ══════════════════════
   {
-    slug: 'unitree',
-    name: 'Unitree',
+    slug: 'unitree-go2',
+    name: 'Unitree Go2 EDU',
     brand: 'Unitree',
-    categories: ['quadruped'],
+    categories: ['quadruped', 'educational'],
     order: 1,
-    draft: true, // ← ينتظر مواصفات من الشركة (ظهر بغلاف الكتالوغ بدون صفحة تفاصيل)
-    image: '/robots/unitree.avif',
-    tagline: { ar: 'روبوت رباعي', en: 'Quadruped robot' },
+    image: '/robots/unitree-go2.webp',
+    tagline: { ar: 'روبوت رباعي تعليمي', en: 'Educational quadruped robot' },
     summary: {
-      ar: 'روبوت رباعي الأرجل يمشي على أرض غير مستوية، يُستخدم بالتفتيش والمسح والعروض الميدانية.',
-      en: 'A four-legged robot that walks over uneven ground, used for inspection, mapping, and field demonstrations.',
+      ar: 'روبوت رباعي الأرجل متقدم مخصص للجامعات ومختبرات الروبوتات، لتعليم الاستقلالية الواقعية والإدراك بالذكاء الاصطناعي والتنقل الذكي — منصة عملية للطلبة لبناء واختبار خوارزميات الروبوتات على جهاز حقيقي سريع وثابت.',
+      en: 'An advanced quadruped robot built for universities and robotics labs to teach real-world autonomy, AI perception, and intelligent locomotion — a hands-on platform for students to build and test robotics algorithms on a fast, stable robot.',
     },
-    features: [],
+    features: [
+      {
+        title: { ar: 'نظام ليدار رباعي الأبعاد فائق الاتساع', en: 'Ultra-wide 4D LiDAR system' },
+        description: {
+          ar: 'استشعار دقيق للبيئة ووعي بكل التضاريس — مثالي لمشاريع رسم الخرائط والملاحة وكشف العوائق.',
+          en: 'Accurate environmental sensing and all-terrain awareness — ideal for mapping, navigation, and obstacle-detection projects.',
+        },
+      },
+      {
+        title: { ar: 'دعم كامل لتطوير الجامعات', en: 'Developer-friendly for university projects' },
+        description: {
+          ar: 'SDK رسمي وتوثيق كامل من Unitree، مع دعم مفتوح المصدر لأدوات ROS لبناء سلوكيات وأنظمة تحكم مخصصة.',
+          en: "Backed by Unitree's official SDK and documentation, with open-source ROS support for building custom robotics behaviours and control systems.",
+        },
+      },
+      {
+        title: { ar: 'رسم خرائط بتقنية ليدار ثلاثي الأبعاد', en: '3D LiDAR mapping' },
+        description: {
+          ar: 'يبني خريطة نقطية للمكان عبر ليدار L1 وتطبيق مخصص، ويحدد مساراً يتحرك خلاله الروبوت ذاتياً.',
+          en: 'Builds a point-cloud map of an area using the L1 LiDAR and a dedicated app, then follows a specified path autonomously.',
+        },
+      },
+      {
+        title: { ar: 'برمجة رسومية بسيطة وذكية', en: 'Graphical programming, simple yet smarter' },
+        description: {
+          ar: 'تصميم البرنامج بالسحب والإفلات والربط — يسهّل على المبتدئين البدء والابتكار.',
+          en: 'Design programs by simple drag, drop, and connection — easy for programming beginners to start and innovate.',
+        },
+      },
+      {
+        title: { ar: 'صورة عالية الدقة بالوقت الحقيقي', en: 'HD picture quality, real-time and stable' },
+        description: {
+          ar: 'تطبيق جديد لنقل الصورة عالية الدقة والمراقبة عن بُعد، مع دعم 4G وeSIM لاتصال أكثر ثباتاً.',
+          en: 'A new app enables HD image transmission and real-time remote monitoring, with built-in 4G and eSIM for a more stable connection.',
+        },
+      },
+      {
+        title: { ar: 'تجنّب عوائق ذكي ودقيق', en: 'Intelligent, precise obstacle avoidance' },
+        description: {
+          ar: 'كشف حساس بليدار 4D من طراز L1 يرسم العالم ثلاثي الأبعاد بدقة ويتجنب العوائق تلقائياً أثناء التقدم.',
+          en: 'Keen detection with the 4D LiDAR L1 accurately captures and draws the 3D world for intelligent, precise obstacle avoidance.',
+        },
+      },
+    ],
+    specs: [
+      { label: { ar: 'الاستشعار', en: 'Sensing' }, value: 'Ultra-wide 4D LiDAR (L1)' },
+      { label: { ar: 'الاتصال', en: 'Connectivity' }, value: 'Built-in 4G + eSIM' },
+      { label: { ar: 'البرمجة', en: 'Programming' }, value: 'برمجة رسومية (Drag & Drop) + SDK رسمي + دعم ROS' },
+      { label: { ar: 'التخصيص', en: 'Customisation' }, value: 'عتاد قابل للتخصيص حسب الاحتياج والميزانية' },
+    ],
+    hardware: [
+      { label: { ar: 'ليدار L1 رباعي الأبعاد', en: '4D LiDAR (L1)' }, side: 'start' },
+      { label: { ar: 'كاميرا نقل صورة HD', en: 'HD imaging camera' }, side: 'start' },
+      { label: { ar: 'وحدة اتصال 4G / eSIM', en: '4G / eSIM module' }, side: 'end' },
+      { label: { ar: 'أرجل رباعية عالية الثبات', en: 'High-stability quadruped legs' }, side: 'end' },
+    ],
+    sectors: ['research', 'security', 'events', 'education', 'universities'],
+  },
+  {
+    slug: 'unitree-g1',
+    name: 'Unitree G1 EDU',
+    brand: 'Unitree',
+    categories: ['humanoid', 'educational'],
+    order: 5,
+    productType: ['preorder'],
+    image: '/robots/unitree-g1.webp',
+    gallery: ['/robots/unitree-g1.webp', '/robots/unitree-g1-2.webp'],
+    tagline: { ar: 'روبوت بشري تعليمي — حجز مسبق', en: 'Educational humanoid — pre-order' },
+    summary: {
+      ar: 'يُعد Unitree G1 روبوتًا بشريًا يعمل بالذكاء الاصطناعي، مصممًا لأغراض البحث والتطوير، ويشتهر بخفة حركته ومهارته وتحكمه المتقدم. يتميز بالتحكم الهجين في القوة والموضع للتعامل الدقيق مع الأشياء والحركات المعقدة مثل الشقلبات الخلفية، ويعمل بمعالج ثماني النواة ونماذج كبيرة موحدة (UnifoLM) لتطوير الذكاء، مع نماذج توفر ما يصل إلى 43 درجة من الحرية (DoF) وأيدٍ ماهرة اختيارية.',
+      en: 'The Unitree G1 is a compact, AI-driven humanoid robot designed for research and development, known for its agility, dexterity, and advanced control — featuring force-position hybrid control for precise object handling and complex movements like backflips, powered by an 8-core CPU and unified large models (UnifoLM), with models offering up to 43 degrees of freedom (DoF) and optional dexterous hands.',
+    },
+    features: [
+      {
+        title: { ar: 'تحكم هجين بالقوة والموضع', en: 'Force-position hybrid control' },
+        description: {
+          ar: 'تعامل دقيق مع الأشياء وتنفيذ حركات معقدة مثل الشقلبات الخلفية.',
+          en: 'Enables precise object handling and complex movements like backflips.',
+        },
+      },
+      {
+        title: { ar: 'حتى 43 درجة حرية', en: 'Up to 43 degrees of freedom' },
+        description: {
+          ar: 'نماذج متاحة توفر مرونة حركية عالية وأيدٍ ماهرة اختيارية.',
+          en: 'Available models offer high mobility flexibility with optional dexterous hands.',
+        },
+      },
+      {
+        title: { ar: 'نماذج ذكاء موحدة (UnifoLM)', en: 'Unified large models (UnifoLM)' },
+        description: {
+          ar: 'معالج ثماني النواة يشغّل نماذج ذكاء متطورة لتنمية قدراته باستمرار.',
+          en: 'An 8-core CPU runs advanced AI models for continuously evolving intelligence.',
+        },
+      },
+    ],
+    specs: [
+      { label: { ar: 'الأبعاد (واقف)', en: 'Dimensions (stand)' }, value: '1320 × 450 × 200 mm' },
+      { label: { ar: 'الأبعاد (مطوي)', en: 'Dimensions (fold)' }, value: '690 × 450 × 300 mm' },
+      { label: { ar: 'الوزن (مع البطارية)', en: 'Weight (with battery)' }, value: '~35 kg+' },
+      { label: { ar: 'درجات الحرية الكلية', en: 'Total degrees of freedom' }, value: '23 – 43' },
+      { label: { ar: 'درجات حرية الساق الواحدة', en: 'Single leg DoF' }, value: '6' },
+      { label: { ar: 'درجات حرية الذراع الواحدة', en: 'Single arm DoF' }, value: '5' },
+      { label: { ar: 'اليد (اختياري)', en: 'Single hand DoF (optional)' }, value: '7 + 2 (معصم إضافي)' },
+      { label: { ar: 'وحدة حوسبة إضافية', en: 'High compute module' }, value: 'NVIDIA Jetson Orin' },
+      { label: { ar: 'الاستشعار', en: 'Sensing' }, value: 'Depth camera + 3D LiDAR' },
+      { label: { ar: 'مصفوفة الميكروفونات', en: 'Microphone array' }, value: '4 ×' },
+      { label: { ar: 'مكبر الصوت', en: 'Speaker' }, value: '5W' },
+      { label: { ar: 'الاتصال اللاسلكي', en: 'Wireless' }, value: 'Wi-Fi 6 + Bluetooth 5.2' },
+      { label: { ar: 'البطارية الذكية', en: 'Smart battery' }, value: '9000 mAh (قابلة للفك السريع)' },
+      { label: { ar: 'زمن التشغيل', en: 'Battery life' }, value: '~2 h' },
+      { label: { ar: 'الشاحن', en: 'Charger' }, value: '54V 5A' },
+    ],
+    hardware: [
+      { label: { ar: 'كاميرا عمق + ليدار ثلاثي الأبعاد', en: 'Depth camera + 3D LiDAR' }, side: 'start' },
+      { label: { ar: 'مصفوفة ميكروفونات', en: 'Microphone array' }, side: 'start' },
+      { label: { ar: 'يد ماهرة اختيارية', en: 'Optional dexterous hand' }, side: 'start' },
+      { label: { ar: 'بطارية قابلة للفك السريع', en: 'Quick-release battery' }, side: 'end' },
+      { label: { ar: 'وحدة NVIDIA Jetson Orin', en: 'NVIDIA Jetson Orin module' }, side: 'end' },
+      { label: { ar: 'مكبر صوت 5W', en: '5W speaker' }, side: 'end' },
+    ],
+    sectors: ['universities', 'enterprises', 'security'],
+  },
+  {
+    slug: 'booster-t1',
+    name: 'Booster T1',
+    brand: 'Booster Robotics',
+    categories: ['humanoid'],
+    order: 6,
+    image: '/robots/booster-t1.webp',
+    gallery: ['/robots/booster-t1.webp', '/robots/booster-t1-2.webp'],
+    tagline: { ar: 'روبوت بشري مفتوح المصدر', en: 'Open-source humanoid robot' },
+    summary: {
+      ar: 'يُعدّ الروبوت Booster T1، الذي طورته شركة Booster Robotics، روبوتًا بشريًا مفتوح المصدر مصممًا خصيصًا للمطورين وباحثي الروبوتات. يتيح تصميمه خفيف الوزن والمرن والمتين أداءً موثوقًا به في المهام المعقدة.',
+      en: 'The Booster T1, developed by Booster Robotics, is an open-source humanoid robot built for developers and robotics researchers. Its lightweight, flexible, and durable design enables reliable performance across complex tasks.',
+    },
+    features: [
+      {
+        title: { ar: 'مصفوفة صوت دائرية', en: 'Voice module' },
+        description: {
+          ar: 'مصفوفة 6 ميكروفونات دائرية مع مكبر صوت.',
+          en: 'Circular 6-microphone array with speaker.',
+        },
+      },
+      {
+        title: { ar: 'وحدة رؤية بكاميرا عمق', en: 'Vision module' },
+        description: {
+          ar: 'كاميرا عمق لإدراك البيئة المحيطة بدقة.',
+          en: 'Depth camera for precise environmental perception.',
+        },
+      },
+      {
+        title: { ar: 'قوة حوسبة عالية', en: 'High computing power' },
+        description: {
+          ar: 'أداء ذكاء اصطناعي يصل إلى 200 TOPS.',
+          en: 'Provides 200 TOPS of AI performance.',
+        },
+      },
+      {
+        title: { ar: 'مفاصل عالية العزم', en: 'High-torque joints' },
+        description: {
+          ar: 'عزم ذروة يصل إلى 130 نيوتن·متر مع تشفير مزدوج.',
+          en: 'Peak torque of 130 N·m with dual encoders.',
+        },
+      },
+    ],
+    specs: [
+      { label: { ar: 'الأبعاد (طول×عرض×ارتفاع)', en: 'Dimensions (L×W×H)' }, value: '118 × 47 × 23 cm' },
+      { label: { ar: 'طول الساق', en: 'Leg length' }, value: '57 cm' },
+      { label: { ar: 'طول الذراع', en: 'Arm length' }, value: '45 cm' },
+      { label: { ar: 'الوزن', en: 'Weight' }, value: '~30 kg' },
+      { label: { ar: 'درجات الحرية الكلية', en: 'Total degrees of freedom' }, value: '23 (قابلة للتوسعة حتى 41 مع اليد الماهرة)' },
+      { label: { ar: 'أقصى عزم للمفصل', en: 'Max joint torque' }, value: '130 N·m' },
+      { label: { ar: 'المعالج / وحدة الذكاء الاصطناعي', en: 'CPU / AI compute' }, value: 'Intel i7-1370P + NVIDIA AGX Orin (200 TOPS)' },
+      { label: { ar: 'الاستشعار', en: 'Sensing' }, value: 'Depth camera + IMU تساعي المحاور' },
+      { label: { ar: 'الصوت', en: 'Audio' }, value: 'مصفوفة 6 ميكروفونات دائرية + مكبر صوت' },
+      { label: { ar: 'البطارية', en: 'Battery' }, value: '10.5 Ah — ساعتان مشي / 4 ساعات وقوف' },
+      { label: { ar: 'الاتصال اللاسلكي', en: 'Wireless' }, value: 'Wi-Fi 6 + Bluetooth 5.2' },
+      { label: { ar: 'منافذ التوسعة', en: 'Expansion ports' }, value: 'USB + Ethernet' },
+      { label: { ar: 'الضمان', en: 'Warranty' }, value: 'سنة واحدة' },
+    ],
+    hardware: [
+      { label: { ar: 'كاميرا عمق', en: 'Depth camera' }, side: 'start' },
+      { label: { ar: 'مصفوفة ميكروفونات دائرية', en: 'Circular microphone array' }, side: 'start' },
+      { label: { ar: 'وحدة NVIDIA AGX Orin', en: 'NVIDIA AGX Orin module' }, side: 'start' },
+      { label: { ar: 'مفاصل عالية العزم بتشفير مزدوج', en: 'High-torque dual-encoder joints' }, side: 'end' },
+      { label: { ar: 'بطارية 10.5 Ah', en: '10.5 Ah battery' }, side: 'end' },
+      { label: { ar: 'منافذ USB وEthernet', en: 'USB & Ethernet ports' }, side: 'end' },
+    ],
+    sectors: ['universities', 'enterprises', 'security'],
+  },
+  {
+    slug: 'sanbot-nano',
+    name: 'Sanbot Nano',
+    brand: 'Qihan Technology',
+    categories: ['humanoid'],
+    order: 9,
+    image: '/robots/sanbot-nano.webp',
+    tagline: { ar: 'روبوت بشري تفاعلي', en: 'Interactive humanoid robot' },
+    summary: {
+      ar: 'روبوت ذكي تفاعلي مصمم لمساعدة الأشخاص بأماكن مثل المدارس ورياض الأطفال والبيئات التعليمية المشابهة. يتكلم ويستمع ويتحرك ويعرض المعلومات على شاشته ويتفاعل باللمس والحساسات. بقدرات قابلة للترقية، يوفّر Sanbot Nano خدمات مثل المحادثة بالذكاء الاصطناعي وألعاب تعليمية ومكالمات الفيديو وغيرها.',
+      en: 'Sanbot Nano is a smart interactive robot designed to assist people in places like schools, kindergartens, and similar education environments. It can speak, listen, move, display information on its screen, and interact through touch and sensors — with upgradeable capabilities including AI conversations, learning games, video calls, and more.',
+    },
+    features: [
+      {
+        title: { ar: 'التوافق مع Alexa', en: 'Compatible with Alexa' },
+      },
+      {
+        title: { ar: 'مراقبة وتحكم عن بُعد', en: 'Remote monitoring and control' },
+      },
+      {
+        title: { ar: 'مكالمات فيديو', en: 'Video call' },
+      },
+      {
+        title: { ar: 'أنشطة ترفيهية', en: 'Entertainment activities' },
+      },
+      {
+        title: { ar: 'بطارية طويلة الأمد', en: 'Long battery life' },
+      },
+      {
+        title: { ar: 'شحن ذاتي تلقائي', en: 'Auto charge' },
+      },
+    ],
     specs: [],
     hardware: [],
-    sectors: ['research', 'security', 'events', 'education', 'universities'],
+    sectors: ['schools'],
   },
 ];
 

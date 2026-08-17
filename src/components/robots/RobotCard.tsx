@@ -63,12 +63,22 @@ export default function RobotCard({ robot }: { robot: Robot }) {
             {robot.name}
           </h3>
           <p className="mt-1 text-sm text-purple-200/65">{robot.tagline[locale]}</p>
-          <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-purple-200/55">
+          {/* نص تعريفي قصير يختفي بتدرّج عند نهايته — يشجّع الزائر يضغط "اقرأ المزيد" */}
+          <p
+            className="relative mt-3 line-clamp-3 text-sm leading-relaxed text-purple-200/55"
+            style={{
+              WebkitMaskImage: 'linear-gradient(to bottom, #000 55%, transparent 100%)',
+              maskImage: 'linear-gradient(to bottom, #000 55%, transparent 100%)',
+            }}
+          >
             {robot.summary[locale]}
           </p>
 
-          <span className="text-brand-300 group-hover:text-brand-200 mt-5 text-sm font-medium transition-colors">
-            {locale === 'ar' ? 'التفاصيل ←' : 'View details →'}
+          <span className="text-brand-300 group-hover:text-brand-200 mt-5 inline-flex items-center gap-1 text-sm font-medium transition-colors">
+            {locale === 'ar' ? 'اقرأ المزيد' : 'Learn more'}
+            <span aria-hidden className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+              {locale === 'ar' ? '←' : '→'}
+            </span>
           </span>
         </div>
       </Link>
