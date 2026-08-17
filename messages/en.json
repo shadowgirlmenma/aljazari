@@ -184,7 +184,17 @@
     "support": "Technical Support",
     "supportDesc": "A technical support team ready to answer your questions and resolve any issue with your robots as fast as possible."
   },
-  "cta": "Book a Free Consultation"
+  "cta": "Book a Free Consultation",
+  "exploreHeading": "Choose Your Sector",
+  "backToSolutions": "Robot Solutions",
+  "meetRobots": "Meet Our Robots",
+  "whoIs": "Who is it?",
+  "whatCanDo": "What can it do?",
+  "providedTo": "This robotic solution is available for:",
+  "whyChoose": "Why choose Aljazari's robotic solutions?",
+  "learnMore": "Learn More About the Robot",
+  "viewRobot": "View Robot",
+  "availableForRent": "Available for Rent"
 },
 "aiSolutions": {
   "title": "Intelligent Solutions Across Industries",

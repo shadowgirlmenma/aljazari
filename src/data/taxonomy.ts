@@ -46,7 +46,7 @@ export const SECTORS: Record<SectorKey, LocalizedText> = {
   restaurants: { ar: 'المطاعم والمقاهي', en: 'Restaurants & cafés' },
   banking: { ar: 'البنوك', en: 'Banking' },
   retail: { ar: 'البيع بالتجزئة', en: 'Retail' },
-  malls: { ar: 'المولات والمعارض', en: 'Malls & showrooms' },
+  malls: { ar: 'المولات والأسواق', en: 'Malls & markets' },
   museums: { ar: 'المتاحف', en: 'Museums' },
   airports: { ar: 'المطارات', en: 'Airports' },
   offices: { ar: 'المكاتب والشركات', en: 'Offices & corporates' },
@@ -54,6 +54,12 @@ export const SECTORS: Record<SectorKey, LocalizedText> = {
   home: { ar: 'المنازل', en: 'Homes' },
   research: { ar: 'البحث العلمي', en: 'Research' },
   security: { ar: 'الأمن والحراسة', en: 'Security' },
+  warehousing: { ar: 'المستودعات', en: 'Warehousing' },
+  universities: { ar: 'الجامعات', en: 'Universities' },
+  schools: { ar: 'المدارس', en: 'Schools' },
+  gaming: { ar: 'مراكز الألعاب', en: 'Gaming centers' },
+  enterprises: { ar: 'الشركات والمؤسسات', en: 'Enterprises & companies' },
+  showroom: { ar: 'صالات العرض', en: 'Showrooms' },
 };
 
 /** ترتيب عرض التصنيفات في صفحة "روبوتاتنا" */

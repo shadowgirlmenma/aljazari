@@ -1,22 +1,18 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
+import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import {
-  GraduationCap, Hotel, Coffee, Landmark, Store, ShoppingBag,
-  Wrench, Code2, Users, LifeBuoy, type LucideIcon,
-} from 'lucide-react';
+import Container from '@/components/ui/Container';
+import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import StarBorder from '@/components/reactbits/StarBorder';
-
-const SECTOR_ICONS: Record<string, LucideIcon> = {
-  educational: GraduationCap,
-  hospitality: Hotel,
-  cafe: Coffee,
-  banking: Landmark,
-  showroom: Store,
-  malls: ShoppingBag,
-};
+import { Wrench, Code2, Users, LifeBuoy, type LucideIcon } from 'lucide-react';
+import {
+  ROBOT_SOLUTIONS_ORDER,
+  ROBOT_SOLUTIONS,
+  ROBOT_SOLUTION_ICONS,
+} from '@/data/robotSolutions';
+import type { Locale } from '@/lib/types';
 
 const SERVICE_ICONS: Record<string, LucideIcon> = {
   maintenance: Wrench,
@@ -26,17 +22,20 @@ const SERVICE_ICONS: Record<string, LucideIcon> = {
 };
 
 export default function RobotSolutionsClient({
-  title, subtitle, bannerLabel, sectors, services, ctaLabel,
+  title,
+  subtitle,
+  exploreHeading,
+  services,
+  ctaLabel,
 }: {
   title: string;
   subtitle: string;
   bannerLabel: string;
-  sectors: { key: string; label: string }[];
+  exploreHeading: string;
   services: { key: string; label: string; desc: string }[];
   ctaLabel: string;
 }) {
-  const [active, setActive] = useState(0);
-  const ActiveSectorIcon = SECTOR_ICONS[sectors[active]?.key] ?? GraduationCap;
+  const locale = useLocale() as Locale;
 
   return (
     <>
@@ -50,7 +49,7 @@ export default function RobotSolutionsClient({
               'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(124,71,224,0.35) 0%, transparent 70%)',
           }}
         />
-        <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+        <div className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-10">
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -58,61 +57,50 @@ export default function RobotSolutionsClient({
           >
             {title}
           </motion.h1>
+          <p className="mt-4 text-purple-200/80 sm:text-lg">{subtitle}</p>
         </div>
       </div>
 
-      {/* ── القطاعات ── */}
-      <div className="bg-[#0a0414] glass-backdrop">
-        <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
-
-          {/* تابز القطاعات */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {sectors.map((s, i) => {
-              const Icon = SECTOR_ICONS[s.key] ?? GraduationCap;
+      {/* ── شبكة القطاعات: 12 بطاقة، 3 أعمدة ── */}
+      <div className="relative overflow-hidden bg-[#0a0414]">
+        <DotGridBackdrop opacity={0.35} />
+        <Container className="relative z-10 py-16 sm:py-20">
+          <h2 className="text-center text-2xl font-semibold text-white sm:text-3xl">
+            {exploreHeading}
+          </h2>
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3">
+            {ROBOT_SOLUTIONS_ORDER.map((slug, i) => {
+              const cat = ROBOT_SOLUTIONS[slug];
+              const Icon = ROBOT_SOLUTION_ICONS[slug];
               return (
-                <button
-                  key={s.key}
-                  type="button"
-                  onClick={() => setActive(i)}
-                  className={`glass flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all ${
-                    active === i
-                      ? 'border-purple-400/50 bg-purple-600/80 text-white shadow-lg shadow-purple-900/40'
-                      : 'text-purple-200/70 hover:border-purple-400 hover:text-white'
-                  }`}
+                <motion.div
+                  key={slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ delay: (i % 6) * 0.06 }}
                 >
-                  <Icon size={16} />
-                  {s.label}
-                </button>
+                  <Link
+                    href={`/robot-solutions/${slug}`}
+                    className="glass-card group flex h-full flex-col items-center justify-center gap-3 rounded-2xl px-4 py-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-700/25 sm:py-10"
+                  >
+                    <span className="glass flex h-14 w-14 items-center justify-center rounded-2xl text-purple-200 transition-colors group-hover:text-white">
+                      <Icon size={26} strokeWidth={1.5} />
+                    </span>
+                    <p className="text-sm font-medium text-white sm:text-base">
+                      {cat.title[locale]}
+                    </p>
+                  </Link>
+                </motion.div>
               );
             })}
           </div>
-
-          {/* بطاقة القطاع — أيقونة زجاجية بستايل modern glass */}
-          <div className="glass-card relative mx-auto mt-12 h-72 max-w-3xl overflow-hidden rounded-3xl sm:h-96">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, scale: 1.04 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.45 }}
-                className="absolute inset-0 flex flex-col items-center justify-center gap-5"
-              >
-                <span className="glass flex h-24 w-24 items-center justify-center rounded-full text-purple-200 sm:h-28 sm:w-28">
-                  <ActiveSectorIcon size={44} strokeWidth={1.5} />
-                </span>
-                <p className="text-2xl font-semibold text-white sm:text-3xl">
-                  {sectors[active]?.label}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
+        </Container>
       </div>
 
       {/* ── خدمات الصيانة والبرمجة ── */}
       <div className="bg-[#120621]">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
+        <Container className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
           <div className="grid gap-6 sm:grid-cols-2">
             {services.map((service, i) => {
               const Icon = SERVICE_ICONS[service.key] ?? Wrench;
@@ -137,19 +125,11 @@ export default function RobotSolutionsClient({
 
           {/* CTA */}
           <div className="mt-16 text-center">
-            <StarBorder
-              as={Link}
-              href="/contact"
-              color="#a78bfa"
-              speed="5s"
-              thickness={2}
-            >
-              <span className="px-4 text-sm font-medium sm:text-base">
-                {ctaLabel}
-              </span>
+            <StarBorder as={Link} href="/contact" color="#a78bfa" speed="5s" thickness={2}>
+              <span className="px-4 text-sm font-medium sm:text-base">{ctaLabel}</span>
             </StarBorder>
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );

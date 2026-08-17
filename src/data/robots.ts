@@ -79,7 +79,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'Laser sensor', en: 'Laser sensor' }, side: 'end' },
       { label: { ar: 'سونار بالأشعة', en: 'Infrared sonar' }, side: 'end' },
     ],
-    sectors: ['healthcare', 'education', 'retail', 'malls', 'events'],
+    sectors: ['healthcare', 'education', 'retail', 'malls', 'events', 'banking'],
   },
   {
     slug: 'timo',
@@ -161,7 +161,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'ذراع مرن', en: 'Flexible arm' }, side: 'end' },
       { label: { ar: 'ملاحة ليدار', en: 'LiDAR navigation' }, side: 'end' },
     ],
-    sectors: ['hospitality', 'malls', 'museums', 'security', 'banking', 'events'],
+    sectors: ['hospitality', 'malls', 'museums', 'security', 'banking', 'events', 'enterprises', 'gaming', 'restaurants', 'showroom'],
   },
   {
     slug: 'cruzr',
@@ -243,7 +243,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'نظام الملاحة بالليدار والرادار', en: 'LiDAR + radar navigation' }, side: 'end' },
       { label: { ar: 'عجلتين القيادة', en: 'Drive wheels' }, side: 'end' },
     ],
-    sectors: ['banking', 'hospitality', 'airports', 'museums', 'healthcare', 'education'],
+    sectors: ['banking', 'hospitality', 'airports', 'museums', 'healthcare', 'education', 'enterprises', 'malls', 'restaurants', 'showroom'],
   },
   {
     slug: 'wnno',
@@ -317,7 +317,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'مستشعرات العوائق', en: 'Obstacle sensors' }, side: 'end' },
       { label: { ar: 'عجلات القيادة', en: 'Drive wheels' }, side: 'end' },
     ],
-    sectors: ['banking', 'malls', 'airports', 'hospitality', 'retail'],
+    sectors: ['banking', 'malls', 'airports', 'hospitality', 'retail', 'enterprises', 'healthcare', 'showroom'],
   },
 
   // ══════════════════════ خدمية ══════════════════════
@@ -388,7 +388,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'شاشة إعلانية لعرض الصور والفيديوهات', en: 'Advertising display' }, side: 'start' },
       { label: { ar: 'خاصية التعرف على نوع الأطباق', en: 'Dish-type detection' }, side: 'end' },
     ],
-    sectors: ['restaurants', 'hospitality', 'healthcare', 'malls'],
+    sectors: ['restaurants', 'hospitality', 'healthcare', 'malls', 'gaming', 'showroom'],
   },
   {
     slug: 'kittybot-pro',
@@ -462,7 +462,7 @@ export const ROBOTS: Robot[] = [
     hardware: [
       { label: { ar: 'خاصية التعرف على وجود أطباق', en: 'Tray-load detection' }, side: 'end' },
     ],
-    sectors: ['restaurants', 'hospitality', 'healthcare', 'offices', 'events'],
+    sectors: ['restaurants', 'hospitality', 'healthcare', 'offices', 'events', 'malls', 'showroom'],
   },
   {
     slug: 'pudubot',
@@ -544,7 +544,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'عجلات مساعدة', en: 'Auxiliary wheels' }, side: 'end' },
       { label: { ar: 'عجلات الحركة', en: 'Drive wheels' }, side: 'end' },
     ],
-    sectors: ['restaurants', 'hospitality', 'healthcare', 'offices'],
+    sectors: ['restaurants', 'hospitality', 'healthcare', 'offices', 'warehousing'],
   },
 
   // ══════════════════════ منزلية ══════════════════════
@@ -618,7 +618,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'حساس PIR', en: 'PIR sensor' }, side: 'end' },
       { label: { ar: 'حساس تخطي العوائق', en: 'Obstacle-crossing sensor' }, side: 'end' },
     ],
-    sectors: ['home', 'education', 'healthcare'],
+    sectors: ['home', 'education', 'healthcare', 'schools'],
   },
 
   // ══════════════════════ تعليمية ══════════════════════
@@ -704,7 +704,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'مفصل المعصم', en: 'Wrist joint' }, side: 'end' },
       { label: { ar: 'مفصل الركبة', en: 'Knee joint' }, side: 'end' },
     ],
-    sectors: ['education', 'healthcare', 'research'],
+    sectors: ['education', 'healthcare', 'research', 'universities'],
   },
   {
     slug: 'kebbi',
@@ -790,7 +790,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'منفذ الشحن', en: 'Charging port' }, side: 'end' },
       { label: { ar: 'مكبرات الصوت', en: 'Speakers' }, side: 'end' },
     ],
-    sectors: ['education'],
+    sectors: ['education', 'gaming', 'schools', 'showroom'],
   },
   {
     slug: 'jetauto',
@@ -867,7 +867,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'بطارية ليثيوم 11.1V 6000 mAh', en: 'Li-ion 11.1 V 6000 mAh' }, side: 'end' },
       { label: { ar: 'متحكم mini STM32', en: 'mini STM32 controller' }, side: 'end' },
     ],
-    sectors: ['education', 'research'],
+    sectors: ['education', 'research', 'universities'],
   },
   {
     slug: 'jetarm',
@@ -941,7 +941,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'متحكم mini STM32', en: 'mini STM32 controller' }, side: 'end' },
       { label: { ar: 'قاعدة معدنية', en: 'Metal base plate' }, side: 'end' },
     ],
-    sectors: ['education', 'research'],
+    sectors: ['education', 'research', 'universities'],
   },
   {
     slug: 'ugot',
@@ -987,7 +987,7 @@ export const ROBOTS: Robot[] = [
     ],
     specs: [],
     hardware: [],
-    sectors: ['education', 'research'],
+    sectors: ['education', 'research', 'universities'],
   },
   {
     slug: 'ukit',
@@ -1017,7 +1017,7 @@ export const ROBOTS: Robot[] = [
     ],
     specs: [],
     hardware: [],
-    sectors: ['education'],
+    sectors: ['education', 'schools'],
   },
 
   // ══════════════════════ رباعية ══════════════════════
@@ -1037,7 +1037,7 @@ export const ROBOTS: Robot[] = [
     features: [],
     specs: [],
     hardware: [],
-    sectors: ['research', 'security', 'events', 'education'],
+    sectors: ['research', 'security', 'events', 'education', 'universities'],
   },
 ];
 

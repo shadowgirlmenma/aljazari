@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import Container from '@/components/ui/Container';
 import { Link } from '@/i18n/navigation';
 import { SECTORS } from '@/data/taxonomy';
+import { SOLUTION_SECTOR_KEYS } from '@/data/robotSolutions';
 import type { Locale, Robot } from '@/lib/types';
 
 export default function RobotDetailClient({
@@ -92,22 +93,31 @@ export default function RobotDetailClient({
               {t_sectors}
             </h2>
             <div className="flex flex-wrap gap-3">
-              {robot.sectors.map((sector, i) => (
-                <motion.div
-                  key={sector}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                >
-                  <Link
-                    href="/robot-solutions"
-                    className="block rounded-full border border-purple-500/40 bg-purple-900/30 px-5 py-2 text-sm text-purple-200 transition hover:border-purple-400 hover:bg-purple-900/50 hover:text-white"
+              {robot.sectors.map((sector, i) => {
+                const hasPage = SOLUTION_SECTOR_KEYS.has(sector);
+                return (
+                  <motion.div
+                    key={sector}
+                    initial={{ opacity: 0, scale: 0.85 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.06 }}
                   >
-                    {SECTORS[sector][locale]}
-                  </Link>
-                </motion.div>
-              ))}
+                    {hasPage ? (
+                      <Link
+                        href={`/robot-solutions/${sector}`}
+                        className="block rounded-full border border-purple-500/40 bg-purple-900/30 px-5 py-2 text-sm text-purple-200 transition hover:border-purple-400 hover:bg-purple-900/50 hover:text-white"
+                      >
+                        {SECTORS[sector][locale]}
+                      </Link>
+                    ) : (
+                      <span className="block rounded-full border border-purple-500/20 bg-purple-900/15 px-5 py-2 text-sm text-purple-300/70">
+                        {SECTORS[sector][locale]}
+                      </span>
+                    )}
+                  </motion.div>
+                );
+              })}
             </div>
           </Container>
         </div>

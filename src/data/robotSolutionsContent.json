@@ -1,0 +1,4762 @@
+{
+  "healthcare": {
+    "sectorKey": "healthcare",
+    "title": {
+      "ar": "حلول روبوتات الرعاية الصحية",
+      "en": "Healthcare Robotics Solutions"
+    },
+    "hook": {
+      "ar": "ارتقِ بخدماتك الصحية.",
+      "en": "Elevate your Healthcare Service."
+    },
+    "intro": {
+      "ar": "الجزري، الشركة الرائدة في مجال الروبوتات في العراق، تقدم حلولاً روبوتية متقدمة لمؤسساتكم الصحية، تشمل روبوتات لاستقبال المرضى والتفاعل معهم، وتقديم الدعم النفسي، وإجراء الفحوصات الأولية وإصدار تقارير طبية شاملة، وحجز المواعيد، وإرشاد المرضى إلى الأقسام المختلفة. بالإضافة إلى روبوتات تنظيف عالية الفعالية.",
+      "en": "AlJaziri, a leading robotics company in Iraq, offers advanced robotic solutions for your healthcare institutions, including robots for patient reception and interaction, providing psychological support, conducting initial examinations and issuing comprehensive medical reports, booking appointments, and guiding patients to different departments. In addition to high effective cleaning robots."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "المراقبة اللحظية",
+          "en": "Real-Time Monitoring"
+        },
+        "description": {
+          "ar": "مراقبة المرضى ومتابعة حالاتهم، وتقديم التنبيهات في حالات الطوارئ.",
+          "en": "Monitoring patients and following up on their cases, and providing alerts in emergency situations."
+        }
+      },
+      {
+        "title": {
+          "ar": "التنظيف والتعقيم المنتظم",
+          "en": "Regular cleaning and disinfection"
+        },
+        "description": {
+          "ar": "تنظيف وتعقيم الأرضيات بشكل منتظم ومستقل خلال ساعات العمل الطويلة",
+          "en": "Regular and independent floor cleaning and sanitizing during long working hours"
+        }
+      },
+      {
+        "title": {
+          "ar": "دعم الفريق الطبي",
+          "en": "Medical team support"
+        },
+        "description": {
+          "ar": "تقليل العبء على الفريق الطبي ليتمكن من التركيز على الحالات الطارئة.",
+          "en": "Reducing the workload on the medical team to focus on emergency cases."
+        }
+      },
+      {
+        "title": {
+          "ar": "تقليل وقت الانتظار",
+          "en": "Reduce Waiting Time"
+        },
+        "description": {
+          "ar": "يمكن للروبوتات تنظيم الطوابير الطويلة، وحجز المواعيد، وتقديم الأسئلة الشائعة للمرضى",
+          "en": "Robots can organize long Queue, Booking appointments, and provide FAQs for patients"
+        }
+      },
+      {
+        "title": {
+          "ar": "رعاية كبار السن وأطفال التوحد",
+          "en": "Elderly care & Autism children"
+        },
+        "description": {
+          "ar": "تقديم الدعم، وأنشطة الترفيه، والتذكيرات، ومتابعة العلاج في دور الرعاية",
+          "en": "Provide support, Entertainment activities, Reminders and follow-up treatment in Nursing Houses"
+        }
+      },
+      {
+        "title": {
+          "ar": "التفاعل والإرشاد",
+          "en": "Interaction and Guiding"
+        },
+        "description": {
+          "ar": "تتفاعل الروبوتات مع المرضى، وتجري مكالمات فيديو مع الأطباء، أو ترشدهم عبر الأقسام",
+          "en": "Robots interact with patients, make a video call with doctors, or Guiding them through the departments"
+        }
+      },
+      {
+        "title": {
+          "ar": "إجراء الفحوصات الطبية",
+          "en": "Conducting medical examinations"
+        },
+        "description": {
+          "ar": "إجراء فحوصات طبية متكررة (ضغط الدم، سكر الدم، إلخ) وتقديم تقارير طبية أولية لتقليل العبء على الموظفين",
+          "en": "Conducting frequent medical examinations (blood pressure, blood sugar, etc.) and providing initial medical reports to reduce Staff Load"
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": "wnno",
+        "docName": "Wnno Medical Assistant",
+        "blurb": {
+          "ar": "يعمل Wnno (Promobot) كمساعد طبي في الخط الأمامي، حيث يقوم بأتمتة المهام الروتينية مع دعم الكوادر الصحية.",
+          "en": "Wnno (Promobot) acts as a frontline medical assistant, automating routine tasks while supporting healthcare professionals."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي ذكي مدعوم بالذكاء الاصطناعي",
+            "en": "Intelligent AI-Powered Interactive Robot"
+          },
+          {
+            "ar": "مزوّد داخليًا بأجهزة طبية (قياس الضغط، السكر، الأكسجين، ودرجة الحرارة)",
+            "en": "Equipped with Medical Devices (Pressure, Sugar, Oxygen, Temperature measurements) Internally"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة إضافية",
+            "en": "Completable with additional devices"
+          },
+          {
+            "ar": "شحن وتنقل تلقائي (عند الطلب)",
+            "en": "Auto-charge&Navigation (on request)"
+          },
+          {
+            "ar": "عمر بطارية طويل",
+            "en": "Long battery life"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "نشاط أسئلة وأجوبة تفاعلي مدعوم بالذكاء الاصطناعي",
+            "en": "Interactive AI-Powered Q&A Activity"
+          },
+          {
+            "ar": "إجراء الفحوصات الدورية",
+            "en": "Measure frequent checkups"
+          },
+          {
+            "ar": "تقديم توصيات طبية",
+            "en": "Provide Medical recommendations"
+          },
+          {
+            "ar": "جمع بيانات المرضى وملاحظاتهم",
+            "en": "Collect patients data&feedback"
+          },
+          {
+            "ar": "إصدار التقارير الطبية",
+            "en": "Issuing medical reports"
+          },
+          {
+            "ar": "إرشاد المرضى إلى جميع الأقسام",
+            "en": "Guide patients to all departments"
+          },
+          {
+            "ar": "تطبيق تفاعلي على الشاشة لمزيد من التفاعل",
+            "en": "Interactive app on screen for more engagement"
+          },
+          {
+            "ar": "التعرف على الوجوه وتذكرها",
+            "en": "Recognize and remember faces"
+          }
+        ]
+      },
+      {
+        "slug": "cruzr",
+        "docName": "Cruzr",
+        "blurb": {
+          "ar": "يعمل Cruzr كروبوت استقبال وإرشاد ذكي للمستشفى، حيث يرحّب بالزوار بشكل مستقل، ويجيب على الأسئلة، ويرشد المرضى في جميع أنحاء المنشأة الطبية. وبفضل الشاشة التفاعلية والتواصل المدعوم بالذكاء الاصطناعي، يحسّن Cruzr الانطباعات الأولى مع ضمان تدفق سلس للمرضى.",
+          "en": "Cruzr acts as a smart hospital reception and guidance robot, autonomously welcoming visitors, answering questions, and guiding patients throughout the medical facility. With an interactive screen and AI-powered communication, Cruzr improves first impressions while ensuring smooth patient flow."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل ذاتي سلس ومستقل",
+            "en": "Autonomous smooth Navigation"
+          },
+          {
+            "ar": "شحن ذاتي عبر محطة شحن",
+            "en": "Self-Charging with charging station"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          },
+          {
+            "ar": "يتوفر اختياريًا بكاميرا حرارية",
+            "en": "Optionally come with Thermal camera"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "جمع بيانات المرضى وملاحظاتهم",
+            "en": "Collect patients data&feedback"
+          },
+          {
+            "ar": "إجراء مكالمات فيديو بين المرضى والأطباء",
+            "en": "Make video call Between patients and doctors"
+          },
+          {
+            "ar": "قياس درجة حرارة المرضى بفعالية",
+            "en": "Measure patients temperature effectively"
+          },
+          {
+            "ar": "تقديم تقييمات طبية",
+            "en": "Provide medical assessments"
+          }
+        ]
+      },
+      {
+        "slug": "pepper",
+        "docName": "Pepper",
+        "blurb": {
+          "ar": "Pepper روبوت شبيه بالإنسان يتمتع بذكاء اجتماعي، مصمم لدعم كبار السن من خلال المحادثة والتفاعل والمساعدة اليومية. وبدلاً من أن يحل محل مقدمي الرعاية، يعزز Pepper قدرة الفريق، ويقدم الرفقة والدعم الروتيني بطريقة ودية وغير مخيفة.",
+          "en": "Pepper is a socially intelligent humanoid robot designed to support elderly residents through conversation, engagement, and daily assistance. Rather than replacing caregivers, Pepper extends staff capacity, providing companionship and routine support in a friendly, non-intimidating way."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي بوجه ودود يشبه الإنسان",
+            "en": "Interactive robot with human-friend face"
+          },
+          {
+            "ar": "شاشة لمس واسعة ونظيفة على الصدر",
+            "en": "Clean and wide touch screen on chest"
+          },
+          {
+            "ar": "مزوّد بالعديد من المستشعرات",
+            "en": "Equipped with many sensors"
+          },
+          {
+            "ar": "يأتي مع استوديو للرسوم المتحركة",
+            "en": "Comes with Animation Studio"
+          },
+          {
+            "ar": "تتبّع الوجوه واكتشاف المشاعر",
+            "en": "Track faces & detect emotions"
+          },
+          {
+            "ar": "تنقل بسيط ضمن مساحات صغيرة",
+            "en": "Simple & small area navigation"
+          },
+          {
+            "ar": "أداء بطارية ممتد",
+            "en": "Extended Battery Performance"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "تقديم نشاط أسئلة وأجوبة",
+            "en": "Provide Q&A Activity"
+          },
+          {
+            "ar": "مدرب تمارين صباحية لكبار السن",
+            "en": "Morning exercise coach for Elderly"
+          },
+          {
+            "ar": "تقليل الشعور بالوحدة والعزلة",
+            "en": "Reduces feelings of loneliness and isolation"
+          },
+          {
+            "ar": "تذكير بالروتين اليومي",
+            "en": "Daily Routine Remindering"
+          },
+          {
+            "ar": "المساعدة في الاستبيانات وجمع الملاحظات",
+            "en": "Assists with surveys and feedback collection"
+          },
+          {
+            "ar": "تحسين تجربة الرعاية للمقيمين وعائلاتهم",
+            "en": "Enhanced care experience for residents and families"
+          }
+        ]
+      },
+      {
+        "slug": "nao",
+        "docName": "NAO in Autism Care",
+        "blurb": {
+          "ar": "NAO روبوت مدمج شبيه بالإنسان، مصمم لدعم علاج التوحد من خلال تفاعلات منظمة ويمكن التنبؤ بها وجذابة. ومن خلال توفير سلوك ثابت وتفاعل خالٍ من الأحكام، يخلق NAO بيئة آمنة ومحفزة تكمّل التدخلات التي يقودها المعالجون.",
+          "en": "NAO is a compact humanoid robot designed to support autism therapy through structured, predictable, and engaging interactions. By providing consistent behavior and non-judgmental interaction, NAO creates a safe and motivating environment that complements therapist-led interventions."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت شبيه بالإنسان مدمج بالكامل",
+            "en": "Full Compact humanoid robot"
+          },
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "مظهر ودود وقريب من الإنسان",
+            "en": "Friendly and approachable look"
+          },
+          {
+            "ar": "منصة سهلة البرمجة",
+            "en": "Easy to program platform"
+          },
+          {
+            "ar": "يأتي مع استوديو للرسوم المتحركة",
+            "en": "Comes with Animation Studio"
+          },
+          {
+            "ar": "مناسب للأبحاث",
+            "en": "Suitable for researches"
+          },
+          {
+            "ar": "يتعرف على الوجوه ويحس باللمس",
+            "en": "Recognize faces& sense touches"
+          },
+          {
+            "ar": "توازن وحركات سلسة",
+            "en": "Balance and smooth movements"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "أسئلة وأجوبة تفاعلية بالذكاء الاصطناعي",
+            "en": "Interactive AI Q&A"
+          },
+          {
+            "ar": "علاج حالات التوحد",
+            "en": "treating cases of autism"
+          },
+          {
+            "ar": "تصميم وبرمجة حركات وتطبيقات مخصصة",
+            "en": "Design and program custom movements and applications"
+          },
+          {
+            "ar": "تذكير بالروتين اليومي والعلاج",
+            "en": "Daily Routine and Treatment Remindering"
+          },
+          {
+            "ar": "التعرف على كل طفل وبدء المحادثة",
+            "en": "Recognize each child and start the conversation"
+          },
+          {
+            "ar": "جمع بيانات كل طفل على حدة",
+            "en": "Collect the data of each child separately"
+          },
+          {
+            "ar": "إرسال تقارير وملاحظات يومية",
+            "en": "Send daily report and feedbacks"
+          }
+        ]
+      },
+      {
+        "slug": null,
+        "docName": "CC1 Pro Cleaning Robot",
+        "blurb": {
+          "ar": "CC1 Pro روبوت تنظيف مستقل يعمل بالذكاء الاصطناعي، مصمم خصيصًا للبيئات الطبية، ويوفر تنظيفًا وتعقيمًا ثابتًا ومبنيًا على البيانات للأرضيات. يعمل بأمان حول المرضى والموظفين والمعدات — مما يساعد المنشآت على الحفاظ على معايير نظافة عالية مع تقليل العبء اليدوي.",
+          "en": "CC1 Pro is an AI-powered autonomous cleaning robot designed specifically for medical environments, delivering consistent, data-driven floor cleaning and disinfection. It operates safely around patients, staff, and equipment—helping facilities maintain high hygiene standards while reducing manual workload."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تنظيف مستقل يعمل بالذكاء الاصطناعي",
+            "en": "AI-powered Autonomous Cleaning Robot"
+          },
+          {
+            "ar": "تنظيف متعدد الاستخدامات 4 في 1 (كنس، فرك، شفط، ومسح الغبار)",
+            "en": "4-in-1 Versatile Cleaning (Sweeping, Scrubbing, Vacuuming and Dust-mopping)"
+          },
+          {
+            "ar": "يتنقل في البيئات المعقدة بدقة عالية",
+            "en": "Navigates complex environments with high accuracy"
+          },
+          {
+            "ar": "معتمد وفق معيار IEC 63327",
+            "en": "IEC 63327 Certification"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "تنظيف ذاتي وتعبئة وشحن تلقائي (عند الطلب)",
+            "en": "Self-Cleaning, Auto-refill and auto recharge (on request)"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "فرك البقع بالذكاء الاصطناعي",
+            "en": "AI Spot Scrubbing"
+          },
+          {
+            "ar": "التحكم بشدة التنظيف بالذكاء الاصطناعي",
+            "en": "AI Cleaning Intensity Control"
+          },
+          {
+            "ar": "كشف أداء التنظيف اللحظي بالذكاء الاصطناعي",
+            "en": "AI Real-Time Cleaning Performance Detection"
+          },
+          {
+            "ar": "يتعامل تلقائيًا مع تعبئة المياه وتصريفها",
+            "en": "Automatically handles water refill and drainage"
+          },
+          {
+            "ar": "قابل للتكامل مع البوابات الإلكترونية والمصاعد",
+            "en": "Completable with E-Gates and Elevators"
+          },
+          {
+            "ar": "يضبط أوضاع التنظيف تلقائيًا حسب نوع الأرضية",
+            "en": "Automatically adjusts cleaning modes based on floor type"
+          },
+          {
+            "ar": "وضع اقتصادي للمناطق النظيفة، وتنظيف عميق للبقع المتسخة",
+            "en": "eco mode for clean areas, deep cleaning for dirty spots"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "المستشفيات",
+        "en": "Hospitals"
+      },
+      {
+        "ar": "العيادات",
+        "en": "Clinics"
+      },
+      {
+        "ar": "مؤسسات التوحد ودور الرعاية",
+        "en": "Autism organizations & Nursing Houses"
+      },
+      {
+        "ar": "بيئات التعليم الخاص",
+        "en": "Special education environments"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "دعم فني على مدار الساعة طوال أيام الأسبوع",
+        "en": "Technical support 24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "banking": {
+    "sectorKey": "banking",
+    "title": {
+      "ar": "حلول روبوتات القطاع المصرفي",
+      "en": "Banking Robotics Solutions"
+    },
+    "hook": {
+      "ar": "عزز ثقة العملاء بحلول تقنية حديثة.",
+      "en": "Boost customer trust with modern technological solutions."
+    },
+    "intro": {
+      "ar": "بما أن الثقة هي أساس القطاع المصرفي، فإن تبني التقنيات المتقدمة هو المفتاح لكسبها والحفاظ عليها. ومع روبوتات الاستقبال والإرشاد والتنظيف، تصبح الثقة في متناول يديك مباشرة.",
+      "en": "Because trust is the foundation of the banking sector, embracing advanced technology is the key to earning and maintaining it. With reception, guidance, and cleaning robots, confidence is placed directly in your hands."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "تعزيز ثقة العملاء",
+          "en": "Boost customer trust"
+        },
+        "description": {
+          "ar": "يؤدي تبني وتطوير التقنيات الجديدة إلى زيادة ثقة العملاء ببنككم",
+          "en": "Adopting and upgrading new technologies increase customer trust with your bank"
+        }
+      },
+      {
+        "title": {
+          "ar": "التنظيف والتعقيم المنتظم",
+          "en": "Regular cleaning and disinfection"
+        },
+        "description": {
+          "ar": "تنظيف وتعقيم الأرضيات بشكل منتظم ومستقل خلال ساعات العمل الطويلة",
+          "en": "Regular and independent floor cleaning and sanitizing during long working hours"
+        }
+      },
+      {
+        "title": {
+          "ar": "الترحيب والإرشاد",
+          "en": "Greeting and Guiding"
+        },
+        "description": {
+          "ar": "الترحيب بالعملاء وإرشادهم داخل البنك بأسلوب ثابت وممتع",
+          "en": "Greet and guide customers within the bank in a consistent and pleasant manner"
+        }
+      },
+      {
+        "title": {
+          "ar": "تقليل وقت الانتظار",
+          "en": "Reduce Waiting Time"
+        },
+        "description": {
+          "ar": "يمكن للروبوتات تنظيم الطوابير الطويلة، وحجز المواعيد، وتقديم الأسئلة الشائعة للمرضى",
+          "en": "Robots can organize long Queue, Booking appointments, and provide FAQs for patients"
+        }
+      },
+      {
+        "title": {
+          "ar": "متصل بالنظام",
+          "en": "Connected to System"
+        },
+        "description": {
+          "ar": "يمكن للروبوتات الاتصال بنظام البنك وأجهزته (نظام الطابور، جهاز الدفع، إلخ)",
+          "en": "Robots can connect with the bank system and devices (Queueing system, payment terminal, etc.)"
+        }
+      },
+      {
+        "title": {
+          "ar": "التفاعل",
+          "en": "Interaction"
+        },
+        "description": {
+          "ar": "تتفاعل الروبوتات مع العملاء بالصوت، أو المصافحة، أو بصريًا عبر الشاشة",
+          "en": "Robots interact with customers by voice, shake hands or visually by screen"
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": "wnno",
+        "docName": "Wnno Robot Concierge",
+        "blurb": {
+          "ar": "يمكن أن يكون Wnno (Promobot) مستشار العملاء الخاص بكم، متصلًا بنظامكم وأجهزتكم وقواعد بياناتكم؛ فـ Wnno لا يتأخر أبدًا، ولا يتشتت انتباهه، ولا يأخذ إجازات أو استراحات غداء، وهو دائمًا في مزاج رائع.",
+          "en": "Wnno (Promobot) can be your customer consultant, connected to your system, devices and databases, Wnno is never late, does not get distracted, does not go on vacations or takes lunch breaks, and it is always in a great mood."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي ذكي مدعوم بالذكاء الاصطناعي",
+            "en": "Intelligent AI-Powered Interactive Robot"
+          },
+          {
+            "ar": "مزوّد داخليًا بعدة أجهزة (طابعات، أنظمة دفع، كاميرات، إلخ)",
+            "en": "Equipped with several Devices (Printers, Payments, Cameras, etc.) Internally"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة إضافية",
+            "en": "Completable with additional devices"
+          },
+          {
+            "ar": "شحن وتنقل تلقائي (عند الطلب)",
+            "en": "Auto-charge&Navigation (on request)"
+          },
+          {
+            "ar": "عمر بطارية طويل",
+            "en": "Long battery life"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "نشاط أسئلة وأجوبة تفاعلي مدعوم بالذكاء الاصطناعي",
+            "en": "Interactive AI-Powered Q&A Activity"
+          },
+          {
+            "ar": "تقديم معلومات عن الشركة وخدماتها",
+            "en": "Give information on company and services"
+          },
+          {
+            "ar": "مسح وتعبئة المستندات (عند الطلب)",
+            "en": "Scan and fill in the documents (on request)"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect customers data&feedback"
+          },
+          {
+            "ar": "العمل مع نظام إدارة الطوابير",
+            "en": "Work with the queue management system"
+          },
+          {
+            "ar": "إرشاد العملاء إلى جميع الأقسام (عند الطلب)",
+            "en": "Guide customers to all departments (on request)"
+          },
+          {
+            "ar": "تطبيق تفاعلي على الشاشة لمزيد من التفاعل",
+            "en": "Interactive app on screen for more engagement"
+          },
+          {
+            "ar": "التعرف على الوجوه وتذكرها",
+            "en": "Recognize and remember faces"
+          }
+        ]
+      },
+      {
+        "slug": "cruzr",
+        "docName": "Cruzr",
+        "blurb": {
+          "ar": "يعمل Cruzr كمستشار خدمات مصرفية ذكي، حيث يجمع بين الاستقبال والإرشاد وتقديم المعلومات المالية وخدمة العملاء عبر الفيديو في منصة واحدة مستقلة. وهو يدعم العملاء طوال رحلة الخدمة، مما يتيح للموظفين التركيز على اتخاذ القرارات المالية عالية القيمة.",
+          "en": "Cruzr acts as a smart banking service consultant, combining reception, guidance, financial information, and video-based customer service in one autonomous platform. It supports customers throughout the service journey while allowing human staff to focus on high-value financial decision-making."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل ذاتي سلس ومستقل",
+            "en": "Autonomous smooth Navigation"
+          },
+          {
+            "ar": "شحن ذاتي عبر محطة شحن",
+            "en": "Self-Charging with charging station"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect customers data&feedback"
+          },
+          {
+            "ar": "إجراء مكالمات فيديو بين العملاء وخدمة العملاء",
+            "en": "Make video call between customers and Customer Service"
+          },
+          {
+            "ar": "عرض المواد الترويجية والإعلامية على الشاشة",
+            "en": "Show promotional & media material on screen"
+          },
+          {
+            "ar": "تنظيم الطوابير الطويلة",
+            "en": "Organize long queues"
+          },
+          {
+            "ar": "إرشاد العملاء عبر مناطق الشركة",
+            "en": "Guide customers through companies zones"
+          }
+        ]
+      },
+      {
+        "slug": "pepper",
+        "docName": "Pepper",
+        "blurb": {
+          "ar": "يعمل Pepper كمساعد تفاعلي في أكشاك البنوك، حيث يجمع بين التفاعل الشبيه بالإنسان وشاشة اللمس والتواصل الصوتي لإرشاد العملاء عبر الخدمات المصرفية. وعند وضعه في أكشاك الفروع أو الردهات أو المناطق الترويجية، يحوّل Pepper الأكشاك الثابتة إلى تجارب مصرفية تفاعلية وجذابة.",
+          "en": "Pepper acts as an interactive banking booth assistant, combining human-like interaction, a touch screen, and voice communication to guide customers through banking services. Placed in branch booths, lobbies, or promotional zones, Pepper transforms static kiosks into engaging, conversational banking experiences."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي بوجه ودود يشبه الإنسان",
+            "en": "Interactive robot with human-friend face"
+          },
+          {
+            "ar": "شاشة لمس واسعة ونظيفة على الصدر",
+            "en": "Clean and wide touch screen on chest"
+          },
+          {
+            "ar": "مزوّد بالعديد من المستشعرات",
+            "en": "Equipped with many sensors"
+          },
+          {
+            "ar": "يأتي مع استوديو للرسوم المتحركة",
+            "en": "Comes with Animation Studio"
+          },
+          {
+            "ar": "تتبّع الوجوه واكتشاف المشاعر",
+            "en": "Track faces & detect emotions"
+          },
+          {
+            "ar": "تنقل بسيط ضمن مساحات صغيرة",
+            "en": "Simple & small area navigation"
+          },
+          {
+            "ar": "أداء بطارية ممتد",
+            "en": "Extended Battery Performance"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "تقديم نشاط أسئلة وأجوبة",
+            "en": "Provide Q&A Activity"
+          },
+          {
+            "ar": "مساعدة العملاء في تعبئة النماذج",
+            "en": "helping customers fill out forms"
+          },
+          {
+            "ar": "تثقيف الأشخاص حول المنتجات والخدمات",
+            "en": "educating people on products and services"
+          },
+          {
+            "ar": "تقليل وقت الانتظار وتحرير الموظفين للمهام الأكثر أهمية",
+            "en": "reduces wait times and frees up staff for more important tasks"
+          },
+          {
+            "ar": "المساعدة في الاستبيانات وجمع الملاحظات",
+            "en": "Assists with surveys and feedback collection"
+          },
+          {
+            "ar": "تحسين تجربة العملاء",
+            "en": "Enhanced customers experience"
+          }
+        ]
+      },
+      {
+        "slug": null,
+        "docName": "CC1 Pro Cleaning Robot",
+        "blurb": {
+          "ar": "CC1 Pro روبوت تنظيف مستقل يعمل بالذكاء الاصطناعي، يحافظ على نظافة البيئات المصرفية وسلامتها واحترافيتها بشكل ثابت — دون تعطيل العمليات اليومية. ويعمل بهدوء حول العملاء والموظفين، مما يضمن معايير نظافة عالية في الردهات وصالات الخدمة والممرات والمكاتب.",
+          "en": "CC1 Pro is an AI-powered autonomous cleaning robot that keeps banking environments consistently clean, safe, and professional—without interrupting daily operations. It works quietly around customers and staff, ensuring high hygiene standards across lobbies, service halls, corridors, and offices."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تنظيف مستقل يعمل بالذكاء الاصطناعي",
+            "en": "AI-powered Autonomous Cleaning Robot"
+          },
+          {
+            "ar": "تنظيف متعدد الاستخدامات 4 في 1 (كنس، فرك، شفط، ومسح الغبار)",
+            "en": "4-in-1 Versatile Cleaning (Sweeping, Scrubbing, Vacuuming and Dust-mopping)"
+          },
+          {
+            "ar": "يتنقل في البيئات المعقدة بدقة عالية",
+            "en": "Navigates complex environments with high accuracy"
+          },
+          {
+            "ar": "معتمد وفق معيار IEC 63327",
+            "en": "IEC 63327 Certification"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "تنظيف ذاتي وتعبئة وشحن تلقائي (عند الطلب)",
+            "en": "Self-Cleaning, Auto-refill and auto recharge (on request)"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "فرك البقع بالذكاء الاصطناعي",
+            "en": "AI Spot Scrubbing"
+          },
+          {
+            "ar": "التحكم بشدة التنظيف بالذكاء الاصطناعي",
+            "en": "AI Cleaning Intensity Control"
+          },
+          {
+            "ar": "كشف أداء التنظيف اللحظي بالذكاء الاصطناعي",
+            "en": "AI Real-Time Cleaning Performance Detection"
+          },
+          {
+            "ar": "يتعامل تلقائيًا مع تعبئة المياه وتصريفها",
+            "en": "Automatically handles water refill and drainage"
+          },
+          {
+            "ar": "قابل للتكامل مع البوابات الإلكترونية والمصاعد",
+            "en": "Completable with E-Gates and Elevators"
+          },
+          {
+            "ar": "يضبط أوضاع التنظيف تلقائيًا حسب نوع الأرضية",
+            "en": "Automatically adjusts cleaning modes based on floor type"
+          },
+          {
+            "ar": "وضع اقتصادي للمناطق النظيفة، وتنظيف عميق للبقع المتسخة",
+            "en": "eco mode for clean areas, deep cleaning for dirty spots"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "البنوك",
+        "en": "Banks"
+      },
+      {
+        "ar": "المؤسسات المالية",
+        "en": "Financial Institution"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "دعم فني على مدار الساعة طوال أيام الأسبوع",
+        "en": "Technical support 24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "restaurants": {
+    "sectorKey": "restaurants",
+    "title": {
+      "ar": "حلول روبوتات المقاهي والمطاعم",
+      "en": "Cafe & Restaurant Robotics Solutions"
+    },
+    "hook": {
+      "ar": "عزز تجربة مطعمك باستخدام روبوتات ذكية.",
+      "en": "Enhance your restaurant experience using smart robots."
+    },
+    "intro": {
+      "ar": "ادعم فريق مطعمك بمجموعة من الحلول الروبوتية الحديثة للتوصيل والاستقبال. عزز رحلة العميل منذ لحظة دخوله — بالترحيب به، وأخذ الطلبات، وتوصيل الوجبات، وجمع الملاحظات، وضمان تجربة سلسة حتى مغادرته.",
+      "en": "Support your restaurant team with a suite of modern robotic solutions for delivery and reception. Enhance the customer journey from the moment they enter—welcoming them, taking orders, delivering meals, collecting feedback, and ensuring a seamless experience all the way to their departure."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "توصيل ذكي للطلبات",
+          "en": "Intelligent orders delivery"
+        },
+        "description": {
+          "ar": "توصيل الطعام والمشروبات داخل المقهى والمطعم",
+          "en": "Deliver food and drinks within the Cafe& Restaurant"
+        }
+      },
+      {
+        "title": {
+          "ar": "الترحيب والإرشاد",
+          "en": "Greeting and Guiding"
+        },
+        "description": {
+          "ar": "الترحيب بالعملاء وإرشادهم إلى طاولتهم المحجوزة مسبقًا",
+          "en": "Greet and Guide customers to his pre-reserved table"
+        }
+      },
+      {
+        "title": {
+          "ar": "عرض قائمة الطعام وأخذ الطلبات",
+          "en": "Show Menu and take orders"
+        },
+        "description": {
+          "ar": "تعرض شاشات الروبوتات قائمة الطعام وتأخذ الطلبات عبر اللمس أو الصوت",
+          "en": "Robots screens show the menu and take orders via touch or voice"
+        }
+      },
+      {
+        "title": {
+          "ar": "احتفالات أعياد الميلاد",
+          "en": "Birthday Celebration"
+        },
+        "description": {
+          "ar": "يمكن للروبوتات إقامة احتفالات أعياد الميلاد بالموسيقى وأنشطة الرقص",
+          "en": "Robots can make birthday celebration with music and dancing activity"
+        }
+      },
+      {
+        "title": {
+          "ar": "التنظيف والتعقيم المنتظم",
+          "en": "Regular cleaning and disinfection"
+        },
+        "description": {
+          "ar": "تنظيف وتعقيم الأرضيات بشكل منتظم ومستقل خلال ساعات العمل الطويلة",
+          "en": "Regular and independent floor cleaning and sanitizing during long working hours"
+        }
+      },
+      {
+        "title": {
+          "ar": "شرح الأطعمة",
+          "en": "Foods explanation"
+        },
+        "description": {
+          "ar": "تشرح الروبوتات الأطعمة والمشروبات، ويمكن للعميل سؤال الروبوت عن الطعم ومكوناته والأسئلة الشائعة المتعلقة بها",
+          "en": "Robots explain food and drinks, customer can ask the robot about the taste, what is it made of and related FAQs"
+        }
+      },
+      {
+        "title": {
+          "ar": "دعم الموظفين خلال أوقات الذروة",
+          "en": "Supporting staff during peak hours"
+        },
+        "description": {
+          "ar": "تقلل الروبوتات العبء عن الموظفين من الأعمال المتكررة، مما يتيح لهم التركيز على المهام الأساسية.",
+          "en": "Robots reduce the burden on the staff from repetitive work, allowing them to focus on essential tasks."
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": "bellabot-pro",
+        "docName": "BellaBot Pro",
+        "blurb": {
+          "ar": "يحوّل BellaBot Pro خدمة تقديم الطلبات إلى تجربة ممتعة، وليست مجرد مهمة. يمكن للشاشة التفاعلية الكبيرة عرض العروض الترويجية، ويمكن أن تدر إيرادات من خلال رعاية علامات تجارية أخرى.",
+          "en": "BellaBot Pro turns room service into a pleasant experience, not just a task. The large interactive screen can display promotions, and it can bring revenues by sponsoring other brands."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل ذكي مستقل",
+            "en": "Smart Autonomous Delivery Robot"
+          },
+          {
+            "ar": "تجربة تفاعل ودية وجذابة مع العملاء",
+            "en": "Friendly and engaging customer interaction experience"
+          },
+          {
+            "ar": "شاشة عرض تفاعلية كبيرة للعلامة التجارية والإعلانات والعروض الترويجية",
+            "en": "Large interactive display for branding, ads, and promotions"
+          },
+          {
+            "ar": "تنقل آمن ومتقدم في البيئات المزدحمة والمتغيرة",
+            "en": "Advanced safe navigation in crowded and dynamic environments"
+          },
+          {
+            "ar": "مزوّد بـ4 أدراج (بسعة 10 كغم لكل درج) مع تقنية التعرف الذكي على الأطباق",
+            "en": "Equipped with 4 trays (10kg capacity each) with intelligent dish recognition"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "يأتي بـ5 أوضاع توصيل",
+            "en": "Comes with 5 delivering modes"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "توصيل الطعام والمشروبات",
+            "en": "Deliver food & drinks"
+          },
+          {
+            "ar": "إرشاد العملاء إلى الطاولات",
+            "en": "Guide Customers to the tables"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          },
+          {
+            "ar": "احتفال بعيد الميلاد بالموسيقى والوسائط على الشاشة",
+            "en": "Birthday Celebration with music and media on screen"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية ومستشعرات بتصميم بطابع القطط",
+            "en": "Interactive touch screen and sensors with Cat-themed design"
+          },
+          {
+            "ar": "تغطية مساحة واسعة وتوزيع المواد الترويجية والكتيبات",
+            "en": "Cover a large space and dispensing promotional materials and brochures"
+          }
+        ]
+      },
+      {
+        "slug": "kittybot-pro",
+        "docName": "KettyBot Pro",
+        "blurb": {
+          "ar": "يتميز KettyBot Pro بتصميم مدمج محسّن للممرات الضيقة، وهو مصمم ليكون في آن واحد نادل خدمة وشاشة معلومات متحركة. يمكن للشاشة التفاعلية الكبيرة عرض العروض الترويجية، ويمكن أن تدر إيرادات من خلال رعاية علامات تجارية أخرى.",
+          "en": "KettyBot Pro is Compact design optimized for narrow paths, it is designed for both a service runner and a moving information screen. The large interactive screen can display promotions, and it can bring revenues by sponsoring other brands."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل مستقل",
+            "en": "Autonomous Delivery robot"
+          },
+          {
+            "ar": "مناسب للممرات الضيقة",
+            "en": "Suitable for Narrow paths"
+          },
+          {
+            "ar": "شاشة وسائط تفاعلية كبيرة للعلامة التجارية والإعلانات والعروض الترويجية",
+            "en": "Large interactive Media display for branding, ads, and promotions"
+          },
+          {
+            "ar": "درجان بسعة 10 كغم لكل منهما مع سلة واحدة",
+            "en": "2*10Kg traies with one Basket"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "أكثر من 6 أوضاع توصيل",
+            "en": "More than 6 Delivery modes"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "توصيل الطعام والمشروبات",
+            "en": "Deliver food & drinks"
+          },
+          {
+            "ar": "إرشاد العملاء إلى الطاولات",
+            "en": "Guide Customers to tables"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          },
+          {
+            "ar": "احتفال بعيد الميلاد بالموسيقى والوسائط على الشاشة",
+            "en": "Birthday Celebration with music and media on screen"
+          },
+          {
+            "ar": "يتنقل في البيئات المعقدة بدقة عالية",
+            "en": "Navigates complex environments with high accuracy"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بسيط",
+            "en": "Simple Q&A Activity"
+          }
+        ]
+      },
+      {
+        "slug": "cruzr",
+        "docName": "Cruzr",
+        "blurb": {
+          "ar": "Cruzr روبوت شبيه بالإنسان مصمم للعمل كنادل رقمي وموظف استقبال ومساعد لإشراك العملاء — كل ذلك في منصة واحدة. يجمع بين التفاعل الشبيه بالإنسان، وشاشة اللمس الكبيرة، والتفاعل المدعوم بالذكاء الاصطناعي لدعم العملاء والموظفين على حد سواء.",
+          "en": "Cruzr is a humanoid robot designed to act as a digital waiter, receptionist, and customer engagement assistant—all in one platform. It combines human-like interaction, a large touch screen, and AI-powered interaction to support both customers and staff."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل ذاتي سلس ومستقل",
+            "en": "Autonomous smooth Navigation"
+          },
+          {
+            "ar": "شحن ذاتي عبر محطة شحن",
+            "en": "Self-Charging with charging station"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          },
+          {
+            "ar": "يتوفر اختياريًا بكاميرا حرارية",
+            "en": "Optionally come with Thermal camera"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "عرض قائمة الطعام وأخذ الطلبات",
+            "en": "Show Menu and take the orders"
+          },
+          {
+            "ar": "شرح مكونات الأطعمة والمشروبات",
+            "en": "Explain foods and drinks ingredients"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          },
+          {
+            "ar": "إرشاد العملاء عبر المكان",
+            "en": "Guide Customers through venue"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          }
+        ]
+      },
+      {
+        "slug": "timo",
+        "docName": "Timo",
+        "blurb": {
+          "ar": "لا يقدّم Timo الطعام — بل يقدّم التجربة. فهو يرحّب ويسلّي ويرشد ويروّج، بينما يركّز الموظفون على جودة الطعام والخدمة.",
+          "en": "Timo doesn't serve food — it serves the experience. It welcomes, entertains, guides, and promotes, while staff focus on food and service quality."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل مستقل",
+            "en": "Autonomous Navigation"
+          },
+          {
+            "ar": "التعرف على الوجوه واكتشافها",
+            "en": "Face recognition and detection"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "عرض قائمة الطعام وأخذ الطلبات",
+            "en": "Show Menu and take the orders"
+          },
+          {
+            "ar": "شرح مكونات الأطعمة والمشروبات",
+            "en": "Explain foods and drinks ingredients"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          },
+          {
+            "ar": "إرشاد العملاء عبر المكان",
+            "en": "Guide Customers through venue"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "المقاهي",
+        "en": "Cafe"
+      },
+      {
+        "ar": "المطاعم",
+        "en": "Restaurants"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "دعم فني على مدار الساعة طوال أيام الأسبوع",
+        "en": "Technical support 24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "warehousing": {
+    "sectorKey": "warehousing",
+    "title": {
+      "ar": "حلول روبوتات المستودعات",
+      "en": "Warehousing Robotics Solutions"
+    },
+    "hook": {
+      "ar": "لا مزيد من الفوضى مع روبوتات المستودعات.",
+      "en": "There is no more Chaos with warehouse robots."
+    },
+    "intro": {
+      "ar": "إذا كانت مستودعاتكم تعاني من الفوضى وبطء النقل الداخلي، فإن روبوتات المستودعات الذكية والمتقدمة هي الحل الأمثل. اطلبوا روبوتات المستودعات الآن وبسّطوا عملياتكم.",
+      "en": "If your warehouses are plagued by chaos and slow internal transport, smart, advanced Warehouse robots are the perfect solution. Order your Warehouse robots NOW and streamline your operations."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "تقليل تكاليف العمالة",
+          "en": "Reducing labor costs"
+        },
+        "description": {
+          "ar": "يمكن لروبوتات المستودعات العمل باستمرار دون تعب",
+          "en": "Warehouse robots can work continuously with no suffering"
+        }
+      },
+      {
+        "title": {
+          "ar": "أحمال وأحجام مختلفة",
+          "en": "Different loads and sizes"
+        },
+        "description": {
+          "ar": "يمكنها التعامل مع مجموعة متنوعة من الأحمال بأحجام مختلفة لتناسب متطلباتكم",
+          "en": "Can handle range of loads with many sizes to suite your requirements"
+        }
+      },
+      {
+        "title": {
+          "ar": "تنقل مستقل ومستقر",
+          "en": "Stable autonomous Navigation"
+        },
+        "description": {
+          "ar": "التنقل بأمان واستقلالية دون تصادم",
+          "en": "Navigate safely and autonomously with no collusion"
+        }
+      },
+      {
+        "title": {
+          "ar": "توفير وقتكم",
+          "en": "Save your time"
+        },
+        "description": {
+          "ar": "يمكن للروبوتات تقليل وقت المهام المتكررة والسماح للموظفين بالتركيز على المهام المهمة",
+          "en": "Robots can reduce repetitive tasks time and let staff focus on important tasks"
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": null,
+        "docName": "Pudu T-Series (T300)",
+        "blurb": {
+          "ar": "صُمم Pudu T-Series لتولي مهام النقل الداخلي، ليتمكن الأشخاص من التركيز على القيمة التشغيلية الحقيقية. الروبوتات لا تتعب. الروبوتات لا تتباطأ. الروبوتات لا تحتاج إلى عمل إضافي. صُمم طراز T300 للمستودعات التي ترغب في الأتمتة دون تعقيد. إنه التوازن المثالي بين: سعة الحمولة، والسرعة، والمرونة، وكفاءة التكلفة.",
+          "en": "The PUDU T-Series is built to take over internal transportation, so people can focus on real operational value. Robots don't get tired. Robots don't slow down. Robots don't need overtime. T300 is designed for warehouses that want automation without complexity. It's the perfect balance between: Payload capacity Speed Flexibility Cost efficiency"
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل صناعي",
+            "en": "Industrial Delivery Robot"
+          },
+          {
+            "ar": "نطاق الحمولة [150-300-600] كغم",
+            "en": "Load range [150-300-600] KG"
+          },
+          {
+            "ar": "مدة العمل 12 ساعة",
+            "en": "Work time 12 hours"
+          },
+          {
+            "ar": "شحن تلقائي وسريع خلال ساعتين",
+            "en": "Auto&Fast charge in 2 Hours"
+          },
+          {
+            "ar": "بطارية قابلة للاستبدال للتشغيل المستمر على مدار الساعة",
+            "en": "Replaceable Battery for 24/7 continuous Operation"
+          },
+          {
+            "ar": "تجنب العوائق الثابتة والمتحركة",
+            "en": "Static& Dynamic Obstacle Avoidance"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "أوضاع توصيل تلقائية وشبه تلقائية",
+            "en": "Auto & Semi-auto Delivery Modes"
+          },
+          {
+            "ar": "يمكن دفع T-Series يدويًا من قبل العمال لمهمة محددة",
+            "en": "T-Series can be manually pushed by workers for specific task"
+          },
+          {
+            "ar": "قابل للتكامل مع أجهزة إنترنت الأشياء [المصاعد، البوابات الإلكترونية، الاستدعاء عبر جهاز النداء]",
+            "en": "Completable with IoT Devices [Elevators, E-Gates, Call with Pager]"
+          },
+          {
+            "ar": "تشغيل آمن في حركة مرور مختلطة بين البشر والروبوتات",
+            "en": "Safe Operation in Mixed Human-Robot Traffic"
+          },
+          {
+            "ar": "جدولة أولوية للمصعد الخالي",
+            "en": "Idle Elevator Priority Scheduling"
+          },
+          {
+            "ar": "شاشة تحكم لاختيار الأوضاع",
+            "en": "Control screen to choose between Modes"
+          }
+        ]
+      },
+      {
+        "slug": "pudubot",
+        "docName": "PuduBot 2",
+        "blurb": {
+          "ar": "PuduBot 2 روبوت نقل خفيف الوزن وموثوق ومستقل، مصمم لأتمتة مهام النقل الروتينية دون تغيير طريقة عمل المستودع. إنها أتمتة تبدو سهلة وعملية ومتاحة للجميع.",
+          "en": "PuduBot 2 is a light, reliable autonomous transport robot designed to automate routine movement tasks without changing how the warehouse works. It's automation that feels easy, practical, and accessible."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل ذكي مستقل",
+            "en": "Smart Autonomous Delivery Robot"
+          },
+          {
+            "ar": "تنقل آمن ومتقدم في البيئات المزدحمة والمتغيرة",
+            "en": "Advanced safe navigation in crowded and dynamic environments"
+          },
+          {
+            "ar": "3 أدراج كبيرة مفتوحة الجوانب (بسعة 13 كغم لكل درج)",
+            "en": "Open sides 3 large trays (13kg capacity each)"
+          },
+          {
+            "ar": "مستشعر LiDAR مزدوج لمسح المساحات الواسعة",
+            "en": "Double LiDAR for large area scanning"
+          },
+          {
+            "ar": "مزوّد بشاشة لمس مقاس 7 إنش لأوضاع التشغيل",
+            "en": "Equipped with 7-inch touch screen modes"
+          },
+          {
+            "ar": "شحن تلقائي وسريع خلال 4 ساعات",
+            "en": "Auto&Fast charge in 4 Hours"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "توصيل المواد بين المناطق",
+            "en": "Deliver stuff between areas"
+          },
+          {
+            "ar": "إرشاد الموظفين إلى منطقة المواد",
+            "en": "Guide staff to stuffs zone"
+          },
+          {
+            "ar": "شاشة تحكم لاختيار وضع التوصيل",
+            "en": "Control screen to choose deliver mode"
+          },
+          {
+            "ar": "وضع التجوال للتنقل حول المكان",
+            "en": "Cruise mode to cruise around"
+          },
+          {
+            "ar": "ارتفاع الأدراج قابل للتعديل",
+            "en": "Trays height can be adjustable"
+          },
+          {
+            "ar": "تشغيل مستمر لمدة 12 ساعة",
+            "en": "12-Hours Continuous Operation"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "مستودعات الأسواق",
+        "en": "Markets Warehouses"
+      },
+      {
+        "ar": "مستودعات تجار الجملة",
+        "en": "Wholesalers Warehouses"
+      },
+      {
+        "ar": "مستودعات الخدمات اللوجستية",
+        "en": "Logistics Warehouses"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "دعم فني على مدار الساعة طوال أيام الأسبوع",
+        "en": "Technical support 24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "malls": {
+    "sectorKey": "malls",
+    "title": {
+      "ar": "حلول روبوتات المولات والأسواق",
+      "en": "Malls & Markets Robotics Solutions"
+    },
+    "hook": {
+      "ar": "تسويق متكرر ومملّ؟ الروبوتات ستحل ذلك",
+      "en": "Repetitive Marketing? Robots Will Solve That"
+    },
+    "intro": {
+      "ar": "هل تسويقكم مملّ ومتكرر؟ تقدّم الروبوتات حلولًا مبتكرة لا حدود لها تُبقي عروضكم الترويجية جديدة وجذابة. اجعلوا الروبوتات الوجه الحديث لإعلاناتكم — للترويج للمتاجر والعلامات التجارية داخل مولكم أو مساحتكم التجارية بتأثير وتميّز.",
+      "en": "Your marketing is boring and repetitive? Robots deliver limitless, innovative solutions that keep your promotions fresh and engaging. Make robotics the modern face of your advertising—promoting stores and brands within your mall or retail space with impact and distinction."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "الترويج للمتاجر والمنتجات",
+          "en": "Promote Stores& Products"
+        },
+        "description": {
+          "ar": "ستروّج الروبوتات للمتاجر والمنتجات وتقدّم المعلومات داخل المول أو السوق",
+          "en": "Robots will promote stores and products and provide informations inside your Mall or Market"
+        }
+      },
+      {
+        "title": {
+          "ar": "التنظيف والتعقيم المنتظم",
+          "en": "Regular cleaning and disinfection"
+        },
+        "description": {
+          "ar": "تنظيف وتعقيم الأرضيات بشكل منتظم ومستقل خلال ساعات العمل الطويلة",
+          "en": "Regular and independent floor cleaning and sanitizing during long working hours"
+        }
+      },
+      {
+        "title": {
+          "ar": "الترحيب والإرشاد",
+          "en": "Greeting and Guiding"
+        },
+        "description": {
+          "ar": "الترحيب بالعملاء وإرشادهم داخل المول أو السوق إلى جميع المتاجر والمنتجات",
+          "en": "Greet and guide customers within the Mall or Market to all stores and products"
+        }
+      },
+      {
+        "title": {
+          "ar": "التقاط صور تذكارية",
+          "en": "Take Memorial Photos"
+        },
+        "description": {
+          "ar": "يمكن للروبوتات المزودة بكاميرا التقاط صور تذكارية مع خيار طباعتها أو استلامها عبر واتساب",
+          "en": "Robots with camera can take memorial photos with the options of print or receive it on Whatsapp"
+        }
+      },
+      {
+        "title": {
+          "ar": "الأنشطة الترويجية",
+          "en": "Promotional Activities"
+        },
+        "description": {
+          "ar": "يمكن للروبوتات طباعة المواد الترويجية والكوبونات، أو تشغيل نشاط عجلة الحظ",
+          "en": "Robots can print promotionals, coupons, or play Spin to Win activity"
+        }
+      },
+      {
+        "title": {
+          "ar": "التفاعل",
+          "en": "Interaction"
+        },
+        "description": {
+          "ar": "تتفاعل الروبوتات مع العملاء بالصوت، أو المصافحة، أو بصريًا عبر الشاشة",
+          "en": "Robots interact with customers by voice, shake hands or visually by screen"
+        }
+      },
+      {
+        "title": {
+          "ar": "ربطه بأنظمتكم وأجهزتكم",
+          "en": "Connect it to your systems and devices"
+        },
+        "description": {
+          "ar": "يمكن ربط بعض الروبوتات بنظامكم أو أجهزتكم بناءً على المتطلبات وإمكانيات الروبوت",
+          "en": "Part of robots can be connected to your system or devices based on requirements and robots capabilities"
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": "wnno",
+        "docName": "Wnno Promoter",
+        "blurb": {
+          "ar": "Wnno (Promobot) هو الروبوت الجذاب والمشوّق للغاية، المدعوم بالذكاء الاصطناعي لإجراء محادثات لا نهائية وشخصية قابلة للتخصيص. يمكنه التعامل داخليًا مع أجهزة عديدة مثل أجهزة الدفع، وطابعات الصور والكوبونات، لتقديم مزيد من حلول التفاعل.",
+          "en": "Wnno (Promobot) is the super attractive and engaging robot Powered with AI for endless conversations and customized personality. It can handle internally many devices like payment devices, photos and coupons printers to provide more engagement solutions"
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي ذكي مدعوم بالذكاء الاصطناعي",
+            "en": "Intelligent AI-Powered Interactive Robot"
+          },
+          {
+            "ar": "مزوّد داخليًا بأجهزة طبية (قياس الضغط، السكر، الأكسجين، ودرجة الحرارة)",
+            "en": "Equipped with Medical Devices (Pressure, Sugar, Oxygen, Temperature measurements) Internally"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة إضافية",
+            "en": "Completable with additional devices"
+          },
+          {
+            "ar": "شحن وتنقل تلقائي (عند الطلب)",
+            "en": "Auto-charge&Navigation (on request)"
+          },
+          {
+            "ar": "عمر بطارية طويل",
+            "en": "Long battery life"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "نشاط أسئلة وأجوبة تفاعلي مدعوم بالذكاء الاصطناعي",
+            "en": "Interactive AI-Powered Q&A Activity"
+          },
+          {
+            "ar": "التقاط صور تذكارية وطباعتها أو إرسالها عبر واتساب",
+            "en": "Take memorial photos and print it or send it to Whatsapp"
+          },
+          {
+            "ar": "تقديم معلومات عن المول أو السوق",
+            "en": "Provide Mall or Market information"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          },
+          {
+            "ar": "إرشاد العملاء إلى المتاجر والمنتجات (عند الطلب)",
+            "en": "Guide Customers to stores and products (on request)"
+          },
+          {
+            "ar": "تطبيق تفاعلي على الشاشة لمزيد من التفاعل (تشغيل عجلة الحظ)",
+            "en": "Interactive app on screen for more engagement (play Spin to Win)"
+          },
+          {
+            "ar": "عرض العروض الترويجية على الشاشة، وطباعة الكوبونات",
+            "en": "Show promotionals on the screen, Print coupons"
+          }
+        ]
+      },
+      {
+        "slug": "cruzr",
+        "docName": "Cruzr",
+        "blurb": {
+          "ar": "Cruzr روبوت خدمي شبيه بالإنسان مصمم للعمل كدليل للمول ومروّج وموظف استقبال رقمي، يجمع بين التفاعل الشبيه بالإنسان والتنقل المستقل وشاشة لمس كبيرة.",
+          "en": "Cruzr is a humanoid service robot designed to act as a mall guide, promoter, and digital concierge, combining human-like interaction with autonomous navigation and a large touch screen."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل ذاتي سلس ومستقل",
+            "en": "Autonomous smooth Navigation"
+          },
+          {
+            "ar": "شحن ذاتي عبر محطة شحن",
+            "en": "Self-Charging with charging station"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          },
+          {
+            "ar": "يتوفر اختياريًا بكاميرا حرارية",
+            "en": "Optionally come with Thermal camera"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "التقاط صور تذكارية وطباعتها أو إرسالها عبر واتساب",
+            "en": "Take memorial photos and print it or send it to Whatsapp"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          },
+          {
+            "ar": "إجراء مكالمات فيديو مع خدمة العملاء",
+            "en": "Make video call with Customers Services"
+          },
+          {
+            "ar": "تقديم معلومات تفصيلية عن المنتجات",
+            "en": "Provide detailed product information"
+          },
+          {
+            "ar": "إرشاد العملاء إلى المتاجر والمنتجات",
+            "en": "Guide Customers to stores and products"
+          }
+        ]
+      },
+      {
+        "slug": "pepper",
+        "docName": "Pepper",
+        "blurb": {
+          "ar": "Pepper روبوت اجتماعي شبيه بالإنسان مصمم للعمل من كشك أو منصة ثابتة، ليعمل كمساعد رقمي ودليل وممثل للعلامة التجارية. وبفضل الكلام الطبيعي والإيماءات وشاشة اللمس، يحوّل Pepper الأكشاك الثابتة إلى وجهات تفاعلية.",
+          "en": "Pepper is a social humanoid robot designed to operate from a fixed booth or kiosk, acting as a digital assistant, guide, and brand representative. With natural speech, gestures, and a touch screen, Pepper turns static booths into interactive destinations."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي بوجه ودود يشبه الإنسان",
+            "en": "Interactive robot with human-friend face"
+          },
+          {
+            "ar": "شاشة لمس واسعة ونظيفة على الصدر",
+            "en": "Clean and wide touch screen on chest"
+          },
+          {
+            "ar": "مزوّد بالعديد من المستشعرات",
+            "en": "Equipped with many sensors"
+          },
+          {
+            "ar": "يأتي مع استوديو للرسوم المتحركة",
+            "en": "Comes with Animation Studio"
+          },
+          {
+            "ar": "تتبّع الوجوه واكتشاف المشاعر",
+            "en": "Track faces & detect emotions"
+          },
+          {
+            "ar": "تنقل بسيط ضمن مساحات صغيرة",
+            "en": "Simple & small area navigation"
+          },
+          {
+            "ar": "أداء بطارية ممتد",
+            "en": "Extended Battery Performance"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "تقديم نشاط أسئلة وأجوبة",
+            "en": "Provide Q&A Activity"
+          },
+          {
+            "ar": "تقديم توصيات حول المنتجات",
+            "en": "Give recommendations on items"
+          },
+          {
+            "ar": "عرض العروض الترويجية على الشاشة",
+            "en": "Show promotionals on screen"
+          },
+          {
+            "ar": "وجه شبيه بالإنسان للتسويق",
+            "en": "Humen-like face for Marketing"
+          },
+          {
+            "ar": "المساعدة في الاستبيانات وجمع الملاحظات",
+            "en": "Assists with surveys and feedback collection"
+          },
+          {
+            "ar": "تحسين تجربة العملاء",
+            "en": "Enhanced the experience for customers"
+          }
+        ]
+      },
+      {
+        "slug": "timo",
+        "docName": "Timo",
+        "blurb": {
+          "ar": "Timo روبوت جذاب يعمل بالذكاء الاصطناعي، يرحّب بالضيوف ويخلق انطباعًا أوليًا نشطًا في مراكز الألعاب. يساعد الزوار في الاتجاهات، ويقدّم معلومات لحظية حول العروض والفعاليات. وبفضل إمكانيات اللمس والصوت التفاعلية، يعزز Timo تفاعل العملاء والترفيه.",
+          "en": "Timo is an engaging AI-powered robot that welcomes guests and creates an energetic first impression at gaming centers. It assists visitors with directions, and provides real-time information about offers and events. With interactive touch and voice capabilities, Timo enhances customer engagement and entertainment."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل مستقل",
+            "en": "Autonomous Navigation"
+          },
+          {
+            "ar": "التعرف على الوجوه واكتشافها",
+            "en": "Face recognition and detection"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          },
+          {
+            "ar": "إرشاد العملاء عبر مناطق المول والسوق",
+            "en": "Guide Customers through mall and market zones"
+          },
+          {
+            "ar": "عرض العروض الترويجية على الشاشة",
+            "en": "Show promotionals on screen"
+          },
+          {
+            "ar": "تقديم نبذة عن المنتجات وتوصيات",
+            "en": "Give Products brief and recommendation"
+          }
+        ]
+      },
+      {
+        "slug": null,
+        "docName": "CC1 Pro Cleaning Robot",
+        "blurb": {
+          "ar": "CC1 Pro روبوت تنظيف مستقل يعمل بالذكاء الاصطناعي، مصمم خصيصًا للمساحات المفتوحة، ويوفر تنظيفًا وتعقيمًا ثابتًا ومبنيًا على البيانات للأرضيات. يعمل بأمان حول المرضى والموظفين والمعدات — مما يساعد المنشآت على الحفاظ على معايير نظافة عالية مع تقليل العبء اليدوي.",
+          "en": "CC1 Pro is an AI-powered autonomous cleaning robot designed specifically for open spaces environments, delivering consistent, data-driven floor cleaning and disinfection. It operates safely around patients, staff, and equipment—helping facilities maintain high hygiene standards while reducing manual workload."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تنظيف مستقل يعمل بالذكاء الاصطناعي",
+            "en": "AI-powered Autonomous Cleaning Robot"
+          },
+          {
+            "ar": "تنظيف متعدد الاستخدامات 4 في 1 (كنس، فرك، شفط، ومسح الغبار)",
+            "en": "4-in-1 Versatile Cleaning (Sweeping, Scrubbing, Vacuuming and Dust-mopping)"
+          },
+          {
+            "ar": "يتنقل في البيئات المعقدة بدقة عالية",
+            "en": "Navigates complex environments with high accuracy"
+          },
+          {
+            "ar": "معتمد وفق معيار IEC 63327",
+            "en": "IEC 63327 Certification"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "تنظيف ذاتي وتعبئة وشحن تلقائي (عند الطلب)",
+            "en": "Self-Cleaning, Auto-refill and auto recharge (on request)"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "فرك البقع بالذكاء الاصطناعي",
+            "en": "AI Spot Scrubbing"
+          },
+          {
+            "ar": "التحكم بشدة التنظيف بالذكاء الاصطناعي",
+            "en": "AI Cleaning Intensity Control"
+          },
+          {
+            "ar": "كشف أداء التنظيف اللحظي بالذكاء الاصطناعي",
+            "en": "AI Real-Time Cleaning Performance Detection"
+          },
+          {
+            "ar": "يتعامل تلقائيًا مع تعبئة المياه وتصريفها",
+            "en": "Automatically handles water refill and drainage"
+          },
+          {
+            "ar": "قابل للتكامل مع البوابات الإلكترونية والمصاعد",
+            "en": "Completable with E-Gates and Elevators"
+          },
+          {
+            "ar": "يضبط أوضاع التنظيف تلقائيًا حسب نوع الأرضية",
+            "en": "Automatically adjusts cleaning modes based on floor type"
+          },
+          {
+            "ar": "وضع اقتصادي للمناطق النظيفة، وتنظيف عميق للبقع المتسخة",
+            "en": "eco mode for clean areas, deep cleaning for dirty spots"
+          }
+        ]
+      },
+      {
+        "slug": "bellabot-pro",
+        "docName": "BellaBot Pro",
+        "blurb": {
+          "ar": "يحوّل BellaBot Pro خدمة تقديم الطلبات إلى تجربة ممتعة، وليست مجرد مهمة. يمكن للشاشة التفاعلية الكبيرة عرض العروض الترويجية، ويمكن أن تدر إيرادات من خلال رعاية علامات تجارية أخرى.",
+          "en": "BellaBot Pro turns room service into a pleasant experience, not just a task. The large interactive screen can display promotions, and it can bring revenues by sponsoring other brands."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل ذكي مستقل",
+            "en": "Smart Autonomous Delivery Robot"
+          },
+          {
+            "ar": "تجربة تفاعل ودية وجذابة مع العملاء",
+            "en": "Friendly and engaging customer interaction experience"
+          },
+          {
+            "ar": "شاشة عرض تفاعلية كبيرة للعلامة التجارية والإعلانات والعروض الترويجية",
+            "en": "Large interactive display for branding, ads, and promotions"
+          },
+          {
+            "ar": "تنقل آمن ومتقدم في البيئات المزدحمة والمتغيرة",
+            "en": "Advanced safe navigation in crowded and dynamic environments"
+          },
+          {
+            "ar": "مزوّد بـ4 أدراج (بسعة 10 كغم لكل درج) مع تقنية التعرف الذكي على الأطباق",
+            "en": "Equipped with 4 trays (10kg capacity each) with intelligent dish recognition"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "يأتي بـ5 أوضاع توصيل",
+            "en": "Comes with 5 delivering modes"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "توصيل المنتجات والتنقل بين الموظفين",
+            "en": "Deliver products& staff around"
+          },
+          {
+            "ar": "إرشاد العملاء داخل المول أو السوق",
+            "en": "Guide Customers into the mall or market"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          },
+          {
+            "ar": "احتفال بعيد الميلاد بالموسيقى والوسائط على الشاشة",
+            "en": "Birthday Celebration with music and media on screen"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية ومستشعرات بتصميم بطابع القطط",
+            "en": "Interactive touch screen and sensors with Cat-themed design"
+          },
+          {
+            "ar": "تغطية مساحة واسعة وتوزيع المواد الترويجية والكتيبات",
+            "en": "Cover a large space and dispensing promotional materials and brochures"
+          }
+        ]
+      },
+      {
+        "slug": "kittybot-pro",
+        "docName": "KettyBot Pro",
+        "blurb": {
+          "ar": "يتميز KettyBot Pro بتصميم مدمج محسّن للممرات الضيقة، وهو مصمم ليكون في آن واحد نادل خدمة وشاشة معلومات متحركة. يمكن للشاشة التفاعلية الكبيرة عرض العروض الترويجية، ويمكن أن تدر إيرادات من خلال رعاية علامات تجارية أخرى.",
+          "en": "KettyBot Pro is Compact design optimized for narrow paths, it is designed for both a service runner and a moving information screen. The large interactive screen can display promotions, and it can bring revenues by sponsoring other brands."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل مستقل",
+            "en": "Autonomous Delivery robot"
+          },
+          {
+            "ar": "مناسب للممرات الضيقة",
+            "en": "Suitable for Narrow paths"
+          },
+          {
+            "ar": "شاشة وسائط تفاعلية كبيرة للعلامة التجارية والإعلانات والعروض الترويجية",
+            "en": "Large interactive Media display for branding, ads, and promotions"
+          },
+          {
+            "ar": "درجان بسعة 10 كغم لكل منهما مع سلة واحدة",
+            "en": "2*10Kg traies with one Basket"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "أكثر من 6 أوضاع توصيل",
+            "en": "More than 6 Delivery modes"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "توصيل المنتجات والتنقل بين الموظفين",
+            "en": "Deliver products& staff around"
+          },
+          {
+            "ar": "إرشاد العملاء داخل المول أو السوق",
+            "en": "Guide Customers into the mall or market"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          },
+          {
+            "ar": "احتفال بعيد الميلاد بالموسيقى والوسائط على الشاشة",
+            "en": "Birthday Celebration with music and media on screen"
+          },
+          {
+            "ar": "يتنقل في البيئات المعقدة بدقة عالية",
+            "en": "Navigates complex environments with high accuracy"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بسيط",
+            "en": "Simple Q&A Activity"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "المولات",
+        "en": "Malls"
+      },
+      {
+        "ar": "المتاجر",
+        "en": "Shops"
+      },
+      {
+        "ar": "الهايبرماركت والسوبرماركت",
+        "en": "Hypermarkets&Supermarkets"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "دعم فني على مدار الساعة طوال أيام الأسبوع",
+        "en": "Technical support 24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "universities": {
+    "sectorKey": "universities",
+    "title": {
+      "ar": "حلول روبوتات الجامعات",
+      "en": "University Robotics Solutions"
+    },
+    "hook": {
+      "ar": "عزز التعليم الذكي والمتقدم بالروبوتات المناسبة",
+      "en": "Enhance smart and advanced education with appropriate robots"
+    },
+    "intro": {
+      "ar": "لا يكتمل التعليم الحديث دون دمج التعلم العملي والنظري، سواء في المدرسة أو الجامعة. تقدّم الجزري مجموعة واسعة من الروبوتات التعليمية المصممة خصيصًا لكل مرحلة من مراحل تدريس الروبوتات والذكاء الاصطناعي باستخدام أساليب حديثة.",
+      "en": "Modern education is incomplete without integrating practical and theoretical learning, whether in a school or university. Aljazari offers a wide range of educational robots tailored to each stage of teaching robotics and artificial intelligence using modern methods."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "مجموعة واسعة من التطبيقات",
+          "en": "Wide range of applications"
+        },
+        "description": {
+          "ar": "يمكن لكل روبوت التعامل مع مجموعة واسعة من المحاضرات والتطبيقات",
+          "en": "Each robot can handle a wide range of Lectures and applications"
+        }
+      },
+      {
+        "title": {
+          "ar": "مجموعة واسعة من المستويات",
+          "en": "Wide range of Levels"
+        },
+        "description": {
+          "ar": "روبوتات EDU مناسبة لجميع المستويات والأعمار، من الصفر إلى الاحتراف",
+          "en": "EDU robots are for all levels and ages, from zero to hero"
+        }
+      },
+      {
+        "title": {
+          "ar": "مجموعة واسعة من الأنواع",
+          "en": "Wide range of types"
+        },
+        "description": {
+          "ar": "بدءًا من الروبوتات الميكانيكية، والروبوتات المتنقلة، والذراع الروبوتية، والروبوتات الشبيهة بالإنسان",
+          "en": "Starting from Mechano robots, Mobile robots, Robotic Arm and Humenoid robots"
+        }
+      },
+      {
+        "title": {
+          "ar": "تعلم الذكاء الاصطناعي في الروبوتات",
+          "en": "Learn AI in Robotics"
+        },
+        "description": {
+          "ar": "توفر روبوتاتنا التعليمية دروسًا في الذكاء الاصطناعي ضمن الروبوتات لتغطية كلا المجالين",
+          "en": "Our EDU robots provide AI in robotics Lessons to cover both"
+        }
+      },
+      {
+        "title": {
+          "ar": "روبوتات مفتوحة المصدر",
+          "en": "Open-source robots"
+        },
+        "description": {
+          "ar": "جميع الروبوتات التعليمية مفتوحة المصدر ومرنة وقابلة للبرمجة",
+          "en": "All EDU robots are open source, flexible and programmable"
+        }
+      },
+      {
+        "title": {
+          "ar": "تعلم حركية الروبوتات",
+          "en": "Learn robotic Kinematics"
+        },
+        "description": {
+          "ar": "توفر الروبوتات التعليمية دروسًا عملية في علم الحركة",
+          "en": "EDU robots provide practical lessons on Kinematics"
+        }
+      },
+      {
+        "title": {
+          "ar": "مجموعة واسعة من لغات البرمجة",
+          "en": "Wide range of programming languages"
+        },
+        "description": {
+          "ar": "بدءًا من البرمجة بالمكعبات (Block Programming)، وJAVA، وPython، وC++",
+          "en": "Starting from Block Programming, JAVA, Python and C++"
+        }
+      },
+      {
+        "title": {
+          "ar": "تعلم نظام تشغيل الروبوتات ROS",
+          "en": "Learn ROS (Robots Operating System)"
+        },
+        "description": {
+          "ar": "توفر الروبوتات التعليمية دروسًا في ROS1 وROS2",
+          "en": "EDU robots provide lessons in ROS1 & ROS2"
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": "ugot",
+        "docName": "UGOT Education Solution",
+        "blurb": {
+          "ar": "UGOT منصة روبوتات متعددة الأشكال تعمل بالذكاء الاصطناعي، مصممة لسد الفجوة بين النظرية والتجريب والبحث التطبيقي. تجمع بين عتاد روبوتي قابل لإعادة التشكيل، وحوسبة ذكاء اصطناعي على الجهاز (CPU + GPU + NPU)، وبرمجة مفتوحة (Python، SDKs، مستشعرات مفتوحة)، ومناهج منظمة في الذكاء الاصطناعي والروبوتات. كل ذلك في نظام بيئي واحد قابل للتوسع.",
+          "en": "UGOT is a polymorphic AI robotics platform designed to bridge the gap between theory, experimentation, and applied research. It combines Reconfigurable robot hardware, On-device AI computing (CPU + GPU + NPU), Open programming (Python, SDKs, open sensors), Structured AI & robotics curricula. All in one expandable ecosystem."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوتات متعددة الأشكال",
+            "en": "Multi-mimetic robots"
+          },
+          {
+            "ar": "تعليم متقدم في الذكاء الاصطناعي والروبوتات",
+            "en": "Advanced AI and robotics education"
+          },
+          {
+            "ar": "7 أشكال وهيئات مختلفة",
+            "en": "7 different shapes and forms"
+          },
+          {
+            "ar": "مدعوم بمنصات برمجة",
+            "en": "Supported with Programming platforms"
+          },
+          {
+            "ar": "منهجان مختلفان",
+            "en": "Two different curriculum"
+          },
+          {
+            "ar": "البرمجة بالمكعبات وPython",
+            "en": "Block programming & Python"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "تعلم الروبوتات المتقدمة",
+            "en": "Learn advanced robotics"
+          },
+          {
+            "ar": "تعلم كيفية برمجة المستشعرات",
+            "en": "Learn how to program sensors"
+          },
+          {
+            "ar": "تعلم كيفية تحريك الروبوت",
+            "en": "Learn how to make robot move"
+          },
+          {
+            "ar": "حوسبة ذكاء اصطناعي على الجهاز (CPU + GPU + NPU)",
+            "en": "On-device AI computing (CPU + GPU + NPU)"
+          },
+          {
+            "ar": "تعلم كيفية استخدام الكاميرا",
+            "en": "Learn how to use camera"
+          },
+          {
+            "ar": "تعلم مفاهيم الذكاء الاصطناعي (التعرف على الوجوه، التعرف على الصوت، تحويل النص إلى كلام، التعرف على الأجسام، التعرف على الإيماءات، إلخ)",
+            "en": "Learn AI concepts (Face recognition, ASR, TTS, Object recognition, gesture recognition, etc.)"
+          },
+          {
+            "ar": "سيتعلم طلاب الجامعة حل المشكلات، والتفكير الهندسي، ومفاهيم الروبوتات والذكاء الاصطناعي",
+            "en": "University student will learn problem solving, engineering thinking, Robotics and AI concepts"
+          }
+        ]
+      },
+      {
+        "slug": "nao",
+        "docName": "NAO V6",
+        "blurb": {
+          "ar": "NAO V6 روبوت مدمج شبيه بالإنسان، مصمم خصيصًا للتعليم والبحث والتجريب المتقدم في الذكاء الاصطناعي. يجمع بين: حركة كاملة للجسم شبيهة بالإنسان (25 درجة حرية)، والرؤية، والكلام، والصوت، والاستشعار اللمسي، وحوسبة مدمجة، وبرمجة مفتوحة باستخدام حزم تطوير برمجية احترافية. NAO ليس مجرد عدة تعليمية — بل منصة بحثية متكاملة.",
+          "en": "NAO V6 is a compact humanoid robot designed specifically for education, research, and advanced AI experimentation. It combines: Full-body humanoid motion (25 DoF), Vision, speech, audio, and tactile sensing On-board computing Open programming with professional SDKs NAO is not a kit — it is a complete research platform."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت شبيه بالإنسان مدمج بالكامل (25 درجة حرية)",
+            "en": "Full-compact humanoid robot (25 DoF)"
+          },
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "مظهر ودود وقريب من الإنسان",
+            "en": "Friendly and approachable look"
+          },
+          {
+            "ar": "يأتي مع استوديو للرسوم المتحركة",
+            "en": "Comes with Animation Studio"
+          },
+          {
+            "ar": "مناسب للأبحاث",
+            "en": "Suitable for researches"
+          },
+          {
+            "ar": "روبوت مفتوح المصدر",
+            "en": "Open-Source robot"
+          },
+          {
+            "ar": "الرؤية، والكلام، والصوت، والاستشعار اللمسي",
+            "en": "Vision, speech, audio, and tactile sensing"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "أسئلة وأجوبة تفاعلية بالذكاء الاصطناعي",
+            "en": "Interactive AI Q&A"
+          },
+          {
+            "ar": "برمجة بلغات متعددة (Python، C++، البرمجة بالمكعبات)",
+            "en": "Many language program (Python, C++, Block programming)"
+          },
+          {
+            "ar": "تعلم التطبيقات الروبوتية",
+            "en": "Learn robotic applications"
+          },
+          {
+            "ar": "تعلم الرؤية الحاسوبية",
+            "en": "Learn computer vision"
+          },
+          {
+            "ar": "تعلم التعرف على الصوت وتحويل النص إلى كلام المتقدم",
+            "en": "Learn advanced ASR& TTS"
+          },
+          {
+            "ar": "منصة سهلة البرمجة",
+            "en": "Easy to program platform"
+          }
+        ]
+      },
+      {
+        "slug": "jetarm",
+        "docName": "HiWonder JetArm",
+        "blurb": {
+          "ar": "JetArm ذراع روبوتية تعمل بمعالج Jetson ومدفوعة بالذكاء الاصطناعي، مصممة لتعليم المناولة الحقيقية والإدراك والذكاء الاصطناعي المجسّد. تحوّل الفصول الدراسية إلى مختبرات للمناولة الروبوتية.",
+          "en": "JetArm is a Jetson-powered, AI-driven robotic arm designed to teach real manipulation, perception, and embodied AI. It transforms classrooms into robotic manipulation laboratories."
+        },
+        "whoIs": [
+          {
+            "ar": "ذراع روبوتية بـ6 درجات حرية",
+            "en": "6-DOF robotic Arm"
+          },
+          {
+            "ar": "تعمل بمعالج NVIDIA Jetson",
+            "en": "Powered with NVIDIA Jetson"
+          },
+          {
+            "ar": "مزوّدة بكاميرا عمق عالية الدقة",
+            "en": "Equipped with a high-precision depth camera"
+          },
+          {
+            "ar": "مصفوفة مدمجة من 6 ميكروفونات",
+            "en": "Built-in 6-microphone array"
+          },
+          {
+            "ar": "ذراع روبوتية مفتوحة المصدر",
+            "en": "Open-Source Robotics Arm"
+          },
+          {
+            "ar": "مزوّدة بمحركات سيرفو بقوة 35 كغم",
+            "en": "Equipped with 35 KG Servo motors"
+          },
+          {
+            "ar": "مزوّدة بشاشة مقاس 7 إنش",
+            "en": "Equipped with 7-inch screen"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "تعلم الروبوتات المتقدمة",
+            "en": "Learn advanced robotics"
+          },
+          {
+            "ar": "تعلم كيفية برمجة المستشعرات",
+            "en": "Learn how to program sensors"
+          },
+          {
+            "ar": "تعلم كيفية استخدام كاميرا العمق (OpenCV، YOLO، إلخ)",
+            "en": "Learn how to use depth camera (OpenCV, YOLO, etc.)"
+          },
+          {
+            "ar": "دعم Python وC++",
+            "en": "Support Python& C++"
+          },
+          {
+            "ar": "تعلم ROS المتقدم",
+            "en": "Learn Advanced ROS"
+          },
+          {
+            "ar": "الحركية الأمامية والعكسية",
+            "en": "Foreword& Inverse kinematics"
+          },
+          {
+            "ar": "التفاعل بالذكاء الاصطناعي والأوامر الصوتية",
+            "en": "AI interaction and Voice Commands"
+          },
+          {
+            "ar": "سيتعلم طلاب الجامعة حل المشكلات، والتفكير الهندسي، ومفاهيم الروبوتات والذكاء الاصطناعي",
+            "en": "University student will learn problem solving, engineering thinking, Robotics and AI concepts"
+          }
+        ]
+      },
+      {
+        "slug": "jetauto",
+        "docName": "HiWonder JetAuto",
+        "blurb": {
+          "ar": "JetAuto سيارة روبوتية مستقلة تعمل بمعالج Jetson، مصممة خصيصًا لتعليم القيادة الذاتية الحقيقية والروبوتات والذكاء الاصطناعي المجسّد. تحوّل الفصول الدراسية إلى مختبرات للمركبات ذاتية القيادة.",
+          "en": "JetAuto is a Jetson-powered autonomous robotic car designed specifically to teach real autonomous driving, robotics, and embodied AI. It turns classrooms into autonomous vehicle labs."
+        },
+        "whoIs": [
+          {
+            "ar": "مركبة مستقلة حقيقية",
+            "en": "Real Autonomous Vehicle"
+          },
+          {
+            "ar": "تعمل بمعالج NVIDIA Jetson",
+            "en": "Powered with NVIDIA Jetson"
+          },
+          {
+            "ar": "مزوّدة بكاميرا عمق عالية الدقة",
+            "en": "Equipped with a high-precision depth camera"
+          },
+          {
+            "ar": "مصفوفة مدمجة من 6 ميكروفونات",
+            "en": "Built-in 6-microphone array"
+          },
+          {
+            "ar": "مركبة روبوتية مفتوحة المصدر",
+            "en": "Open-Source Robotic Vehicle"
+          },
+          {
+            "ar": "مزوّدة بمستشعر LiDAR",
+            "en": "Equipped with LiDAR"
+          },
+          {
+            "ar": "مزوّدة بشاشة مقاس 7 إنش",
+            "en": "Equipped with 7-inch screen"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "تعلم الروبوتات المتقدمة",
+            "en": "Learn advanced robotics"
+          },
+          {
+            "ar": "تعلم كيفية برمجة المستشعرات",
+            "en": "Learn how to program sensors"
+          },
+          {
+            "ar": "تعلم كيفية استخدام كاميرا العمق (OpenCV، YOLO، إلخ)",
+            "en": "Learn how to use depth camera (OpenCV, YOLO, etc.)"
+          },
+          {
+            "ar": "دعم Python وC++",
+            "en": "Support Python& C++"
+          },
+          {
+            "ar": "تعلم ROS وROS2 المتقدم",
+            "en": "Learn Advanced ROS &ROS2"
+          },
+          {
+            "ar": "تعلم SLAM والتنقل",
+            "en": "Learn SLAM & Navigation"
+          },
+          {
+            "ar": "تجنب العوائق الديناميكية",
+            "en": "Dynamic obstacle avoidance"
+          },
+          {
+            "ar": "التفاعل بالذكاء الاصطناعي والأوامر الصوتية",
+            "en": "AI interaction and Voice Commands"
+          },
+          {
+            "ar": "سيتعلم طلاب الجامعة حل المشكلات، والتفكير الهندسي، ومفاهيم الروبوتات والذكاء الاصطناعي",
+            "en": "University student will learn problem solving, engineering thinking, Robotics and AI concepts"
+          }
+        ]
+      },
+      {
+        "slug": null,
+        "docName": "Unitree G1 EDU",
+        "blurb": {
+          "ar": "Unitree G1 روبوت شبيه بالإنسان من الجيل التالي، مصمم خصيصًا للتعلم المدفوع بالذكاء الاصطناعي، وتعليم الروبوتات، والبحث التطبيقي. يمنح الطلاب منصة إنسانية حقيقية لتجاوز الجانب النظري وبناء مهارات عملية جاهزة للبحث.",
+          "en": "Unitree G1 is a next-generation humanoid robot designed specifically for AI-driven learning, robotics education, and applied research. It gives students a real humanoid platform to move beyond theory and build practical, research-ready skills."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت شبيه بالإنسان بالكامل مدعوم بالذكاء الاصطناعي (23-43 درجة حرية)",
+            "en": "AI Full humanoid robot 23-43 DoF"
+          },
+          {
+            "ar": "قدرة حوسبة عالية بالذكاء الاصطناعي (NVIDIA Jetson Orin)",
+            "en": "High AI computing power (NVIDIA jetson Orin)"
+          },
+          {
+            "ar": "مستشعر LiDAR وكاميرا عمق",
+            "en": "LiDAR and Depth camera"
+          },
+          {
+            "ar": "عمر بطارية يقارب ساعتين من التشغيل المستمر",
+            "en": "Battery life about 2h continuous operation"
+          },
+          {
+            "ar": "روبوت مفتوح المصدر",
+            "en": "Open-Source robot"
+          },
+          {
+            "ar": "روبوت يعمل بنظام Linux",
+            "en": "Linux-Based robot"
+          },
+          {
+            "ar": "حركة إنسانية مستقرة للبيئات المعقدة",
+            "en": "stable humanoid movement for complex environments"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "تعلم الروبوتات المتقدمة",
+            "en": "Learn advanced robotics"
+          },
+          {
+            "ar": "تعلم كيفية استخدام كاميرا العمق (OpenCV، YOLO، إلخ)",
+            "en": "Learn how to use depth camera (OpenCV, YOLO, etc.)"
+          },
+          {
+            "ar": "دعم Python وC++",
+            "en": "Support Python& C++"
+          },
+          {
+            "ar": "تعلم ROS المتقدم",
+            "en": "Learn Advanced ROS"
+          },
+          {
+            "ar": "تعلم الرؤية الحاسوبية",
+            "en": "Learn computer vision"
+          },
+          {
+            "ar": "تعلم التعرف على الصوت وتحويل النص إلى كلام المتقدم",
+            "en": "Learn advanced ASR& TTS"
+          },
+          {
+            "ar": "يدعم تجارب المشي والتوازن",
+            "en": "Supports Walking & balance experiments"
+          }
+        ]
+      },
+      {
+        "slug": "unitree",
+        "docName": "Unitree Go2 EDU",
+        "blurb": {
+          "ar": "Unitree Go2 EDU روبوت رباعي الأرجل متقدم، مصمم خصيصًا لتعليم الروبوتات والذكاء الاصطناعي، يمنح الطلاب منصة حقيقية وسريعة ومستقرة لاختبار خوارزميات الاستقلالية والإدراك والتحكم في العالم الفعلي.",
+          "en": "Unitree Go2 EDU is an advanced quadruped robot designed specifically for robotics & AI education, giving students a real, fast, and stable platform to test autonomy, perception, and control algorithms in the physical world."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت رباعي الأرجل مستقر بالكامل",
+            "en": "Full-Stable Quadrupted Robot"
+          },
+          {
+            "ar": "قدرة حوسبة عالية بالذكاء الاصطناعي (NVIDIA Jetson Orin)",
+            "en": "High AI computing power (NVIDIA jetson Orin)"
+          },
+          {
+            "ar": "مزوّد بمستشعر LiDAR رباعي الأبعاد فائق الاتساع",
+            "en": "Equipped with ultra-wide 4D LiDAR"
+          },
+          {
+            "ar": "عمر بطارية يتراوح بين 2-4 ساعات من التشغيل المستمر",
+            "en": "Battery life about 2-4h continuous operation"
+          },
+          {
+            "ar": "روبوت مفتوح المصدر",
+            "en": "Open-Source robot"
+          },
+          {
+            "ar": "كاميرا واسعة عالية الدقة",
+            "en": "HD wide camera"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "تعلم الروبوتات المتقدمة",
+            "en": "Learn advanced robotics"
+          },
+          {
+            "ar": "دعم Python وC++",
+            "en": "Support Python& C++"
+          },
+          {
+            "ar": "تعلم ROS المتقدم",
+            "en": "Learn Advanced ROS"
+          },
+          {
+            "ar": "تعلم التعرف على الصوت وتحويل النص إلى كلام المتقدم",
+            "en": "Learn advanced ASR& TTS"
+          },
+          {
+            "ar": "تعلم SLAM والتنقل",
+            "en": "Learn SLAM & Navigation"
+          },
+          {
+            "ar": "يدعم تجارب المشي والتوازن",
+            "en": "Supports Walking & balance experiments"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "الجامعات",
+        "en": "Universities"
+      },
+      {
+        "ar": "مختبر الذكاء الاصطناعي والروبوتات",
+        "en": "AI and Robotics Lab"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "دعم فني على مدار الساعة طوال أيام الأسبوع",
+        "en": "Technical support 24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "schools": {
+    "sectorKey": "schools",
+    "title": {
+      "ar": "حلول روبوتات المدارس",
+      "en": "Schools Robotics Solutions"
+    },
+    "hook": {
+      "ar": "عزز التعليم الذكي والمتقدم بالروبوتات المناسبة",
+      "en": "Enhance smart and advanced education with appropriate robots"
+    },
+    "intro": {
+      "ar": "لا يكتمل التعليم الحديث دون دمج التعلم العملي والنظري، سواء في المدرسة أو الجامعة. تقدّم الجزري مجموعة واسعة من الروبوتات التعليمية المصممة خصيصًا لكل مرحلة من مراحل تدريس الروبوتات والذكاء الاصطناعي باستخدام أساليب حديثة.",
+      "en": "Modern education is incomplete without integrating practical and theoretical learning, whether in a school or university. Aljazari offers a wide range of educational robots tailored to each stage of teaching robotics and artificial intelligence using modern methods."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "مجموعة واسعة من التطبيقات",
+          "en": "Wide range of applications"
+        },
+        "description": {
+          "ar": "يمكن لكل روبوت التعامل مع مجموعة واسعة من المحاضرات والتطبيقات",
+          "en": "Each robot can handle a wide range of Lectures and applications"
+        }
+      },
+      {
+        "title": {
+          "ar": "مجموعة واسعة من المستويات",
+          "en": "Wide range of Levels"
+        },
+        "description": {
+          "ar": "روبوتات EDU مناسبة لجميع المستويات والأعمار، من الصفر إلى الاحتراف",
+          "en": "EDU robots are for all levels and ages, from zero to hero"
+        }
+      },
+      {
+        "title": {
+          "ar": "مجموعة واسعة من الأنواع",
+          "en": "Wide range of types"
+        },
+        "description": {
+          "ar": "بدءًا من الروبوتات الميكانيكية، والروبوتات المتنقلة، والذراع الروبوتية، والروبوتات الشبيهة بالإنسان",
+          "en": "Starting from Mechano robots, Mobile robots, Robotic Arm and Humenoid robots"
+        }
+      },
+      {
+        "title": {
+          "ar": "تعلم الذكاء الاصطناعي في الروبوتات",
+          "en": "Learn AI in Robotics"
+        },
+        "description": {
+          "ar": "توفر روبوتاتنا التعليمية دروسًا في الذكاء الاصطناعي ضمن الروبوتات لتغطية كلا المجالين",
+          "en": "Our EDU robots provide AI in robotics Lessons to cover both"
+        }
+      },
+      {
+        "title": {
+          "ar": "روبوتات مفتوحة المصدر",
+          "en": "Open-source robots"
+        },
+        "description": {
+          "ar": "جميع الروبوتات التعليمية مفتوحة المصدر ومرنة وقابلة للبرمجة",
+          "en": "All EDU robots are open source, flexible and programmable"
+        }
+      },
+      {
+        "title": {
+          "ar": "لغات البرمجة",
+          "en": "Programming languages"
+        },
+        "description": {
+          "ar": "بدءًا من البرمجة بالمكعبات (Block Programming)، وJAVA، وPython، وC++",
+          "en": "Starting from Block Programming, JAVA, Python and C++"
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": "kebbi",
+        "docName": "Kebbi Air S",
+        "blurb": {
+          "ar": "صُمم Kebbi كروبوت مكتبي/ثابت لتقليل عبء العمل وتعزيز التعلم من خلال التفاعل الودي وأدوات الذكاء الاصطناعي. يمكن لـ Kebbi إرشاد الطلاب بمطالبات صوتية وخطوات عبر شاشة اللمس (خدمة ذاتية سلسة) والمزيد.",
+          "en": "Kebbi is designed as a desk / stationary robot to reduce workload and boost learning through friendly interaction and AI tools. Kebbi Can guide students with voice prompts + touch screen steps (smooth self-service) and more"
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت ذكي مدعوم بالذكاء الاصطناعي",
+            "en": "Intelligent AI-Powered Robot"
+          },
+          {
+            "ar": "حركات وأداء جذابة للغاية",
+            "en": "Super attractive movements and performance"
+          },
+          {
+            "ar": "التعرف على الوجوه واكتشافها",
+            "en": "Face recognition and detection"
+          },
+          {
+            "ar": "سهل الاستخدام والتشغيل",
+            "en": "Easy to use and operate"
+          },
+          {
+            "ar": "عمر بطارية طويل",
+            "en": "Long battery life"
+          },
+          {
+            "ar": "روبوت مفتوح المصدر",
+            "en": "Open-source robot"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية مقاس 7 إنش",
+            "en": "Interactive 7-inch touch screen"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "نشاط أسئلة وأجوبة تفاعلي مدعوم بالذكاء الاصطناعي",
+            "en": "Interactive AI-Powered Q&A Activity"
+          },
+          {
+            "ar": "تسجيل حضور الطلاب يوميًا باستخدام التعرف على الوجه",
+            "en": "Daily Student Registration using face recognition"
+          },
+          {
+            "ar": "مساعدة المعلم في الاختبارات الإلكترونية",
+            "en": "Assist teacher with E-Quizes"
+          },
+          {
+            "ar": "التعامل مع كتاب كل مادة لمراجعته",
+            "en": "Handle each subject book for reviewing"
+          },
+          {
+            "ar": "مدعوم بلوحة تحكم للتحكم بالمحتوى والتحليلات",
+            "en": "Supported with Control dashboard to control content and analytics"
+          },
+          {
+            "ar": "يأتي مع منصة برمجة بالمكعبات",
+            "en": "Come with Block programming platform"
+          },
+          {
+            "ar": "ألعاب تعليمية تفاعلية",
+            "en": "Interactive education games"
+          }
+        ]
+      },
+      {
+        "slug": "ukit",
+        "docName": "uKit Building Blocks",
+        "blurb": {
+          "ar": "uKit عدة تعليمية متكاملة للذكاء الاصطناعي والروبوتات، تجمع بين عتاد روبوتي معياري، وبرمجيات برمجة من المستوى المبتدئ إلى المتقدم، ومناهج منظمة في الذكاء الاصطناعي والروبوتات. صُممت جميعها لتنمو مع الطالب. ما يتعلمه الطلاب مع uKit هو بناء روبوتات حقيقية باستخدام مكعبات وأجزاء ميكانيكية معيارية، ومحركات، ومستشعرات، ووحدات تحكم. يتعلم الطلاب التفكير الهندسي من خلال البناء والاختبار والتحسين.",
+          "en": "uKit is a complete AI & robotics education robotic kit, combining Modular robotics hardware, Beginner-to-advanced programming software, Structured AI & robotics curricula. All built to grow with the student. What Students Learn with uKit is to Build Real Robots Modular blocks and mechanical parts, Motors, sensors, and controllers. Students learn engineering thinking by building, testing, and improving."
+        },
+        "whoIs": [
+          {
+            "ar": "عدة تعليمية للروبوتات والذكاء الاصطناعي",
+            "en": "Robotics and AI Educational Kit"
+          },
+          {
+            "ar": "من المرحلة الابتدائية إلى المتوسطة",
+            "en": "From primary to middle school"
+          },
+          {
+            "ar": "7 مستويات مختلفة",
+            "en": "7 different levels"
+          },
+          {
+            "ar": "مدعومة بمنصات برمجة",
+            "en": "Supported with Programming platforms"
+          },
+          {
+            "ar": "أجزاء ميكانيكية على شكل مكعبات بناء",
+            "en": "Building block mechanical parts"
+          },
+          {
+            "ar": "البرمجة بالمكعبات وPython",
+            "en": "Block programming & Python"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "تعلم أساسيات الروبوتات",
+            "en": "Learn basic robotics"
+          },
+          {
+            "ar": "تعلم كيفية برمجة المستشعرات",
+            "en": "Learn how to program sensors"
+          },
+          {
+            "ar": "تعلم كيفية تحريك الروبوت",
+            "en": "Learn how to make robot move"
+          },
+          {
+            "ar": "يحتوي كل مستوى على أكثر من 10 روبوتات مختلفة",
+            "en": "Each level contain +10 different robot"
+          },
+          {
+            "ar": "تعلم مفاهيم الذكاء الاصطناعي (التعرف على الوجوه، التعرف على الصوت، تحويل النص إلى كلام، التعرف على الأجسام، إلخ)",
+            "en": "Learn AI concepts (Face recognition, ASR, TTS, Object recognition, etc.)"
+          },
+          {
+            "ar": "سيتعلم الأطفال حل المشكلات، والتفكير الهندسي، ومفاهيم الروبوتات والذكاء الاصطناعي",
+            "en": "Kids will learn problem solving, engineering thinking, Robotics and AI concepts"
+          }
+        ]
+      },
+      {
+        "slug": "sanbot",
+        "docName": "Sanbot Nano",
+        "blurb": {
+          "ar": "صُمم Sanbot Nano كروبوت تعليمي خصيصًا للمدارس وبيئات التعلم، يجمع بين التعليم والتفاعل والسلامة والأتمتة الذكية في منصة واحدة.",
+          "en": "Sanbot Nano as education robot designed specifically for schools and learning environments, combining education, interaction, safety, and smart automation in one platform."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت شبيه بالإنسان مدمج",
+            "en": "Compact Humenoid robot"
+          },
+          {
+            "ar": "أكثر من 50 مستشعرًا مختلفًا",
+            "en": "+50 different sensor"
+          },
+          {
+            "ar": "شاشة لمس مقاس 10.1 إنش",
+            "en": "10.1 inch touch screen"
+          },
+          {
+            "ar": "قابل للتكامل مع Alexa",
+            "en": "Completable with Alexa"
+          },
+          {
+            "ar": "شحن تلقائي عبر محطة شحن",
+            "en": "Auto charge with Changing station"
+          },
+          {
+            "ar": "مزود بجهاز عرض بسيط",
+            "en": "Combined with Simple Projector"
+          },
+          {
+            "ar": "روبوت مفتوح المصدر",
+            "en": "Open-Source Robot"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "ألعاب تعليمية مخصصة للأطفال",
+            "en": "Customized Education games for children"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A Activity"
+          },
+          {
+            "ar": "التعامل مع كتاب كل مادة لمراجعته",
+            "en": "Handle each subject book for reviewing"
+          },
+          {
+            "ar": "يمكن لطلاب المرحلة الثانوية برمجة الروبوت بلغة JAVA لمشاريع إنترنت الأشياء",
+            "en": "High schools students can program robot with JAVA for IoT Projects"
+          },
+          {
+            "ar": "جهاز عرض بسيط للعروض التقديمية",
+            "en": "Simple projector for presentations"
+          },
+          {
+            "ar": "التقاط صور تذكارية",
+            "en": "Take memorial photos"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "المدارس الدولية",
+        "en": "International Schools"
+      },
+      {
+        "ar": "المدارس الخاصة والحكومية",
+        "en": "Private and public schools"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "دعم فني على مدار الساعة طوال أيام الأسبوع",
+        "en": "Technical support 24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "hospitality": {
+    "sectorKey": "hospitality",
+    "title": {
+      "ar": "حلول روبوتات الضيافة",
+      "en": "Hospitality Robotics Solutions"
+    },
+    "hook": {
+      "ar": "نهتم بانطباعكم الأول",
+      "en": "We care about your First Impression"
+    },
+    "intro": {
+      "ar": "الانطباعات الأولى هي أهم جانب في أي عمل، بغض النظر عن القطاع. وإذا كانت الانطباعات الأولى تمثل أولوية لكم، فإن روبوتات الضيافة والاستقبال من الجزري هي الحل الحديث الذي يوفر لكم تجربة فريدة ومتقدمة وعالمية المستوى.",
+      "en": "First impressions are the most important aspect of any work, regardless of sector. If the first impressions are your priority, AlJazari Hospitality and Reception Robots are the modern solution that provides you with a unique, advanced, and world-class experience."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "الانطباع الأول",
+          "en": "First Impression"
+        },
+        "description": {
+          "ar": "الانطباع الأول القوي يخلق تجربة لا تُنسى",
+          "en": "A strong first impression creates an unforgettable experience"
+        }
+      },
+      {
+        "title": {
+          "ar": "الترحيب والاستقبال",
+          "en": "Greeting and Welcoming"
+        },
+        "description": {
+          "ar": "الترحيب باستقبال الضيوف والعملاء المميزين",
+          "en": "Welcoming and greeting distinguished guests and clients"
+        }
+      },
+      {
+        "title": {
+          "ar": "خدمة توصيل ممتازة",
+          "en": "Excellent delivery service"
+        },
+        "description": {
+          "ar": "تعامل ممتاز مع الأمتعة وتنفيذ الطلبات، وخدمة غرف متميزة",
+          "en": "Excellent baggage handling and order fulfillment, and outstanding room service"
+        }
+      },
+      {
+        "title": {
+          "ar": "المساعدة والإرشاد",
+          "en": "Assist and guide"
+        },
+        "description": {
+          "ar": "مساعدة وإرشاد المسافرين داخل صالات المطار",
+          "en": "Assisting and guiding travelers within airport terminals"
+        }
+      },
+      {
+        "title": {
+          "ar": "تقديم المعلومات",
+          "en": "Information providing"
+        },
+        "description": {
+          "ar": "تقديم معلومات الطوابق ومساعدة السكان في المجمعات السكنية",
+          "en": "Providing floor information and assisting residents in residential complexes"
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": "cruzr",
+        "docName": "Cruzr",
+        "blurb": {
+          "ar": "لا يحل Cruzr محل موظفي الضيافة — بل يرتقي بهم. فهو يتولى المهام المتكررة، ويعزز تجربة الضيوف، ويقوي صورة العلامة التجارية، ويقدم خدمة ذكية على مدار الساعة بثبات وأناقة.",
+          "en": "Cruzr doesn't replace hospitality staff—it elevates them. It handles repetitive tasks, enhances guest experience, strengthens brand image, and delivers intelligent service 24/7 with consistency and style."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل ذاتي سلس ومستقل",
+            "en": "Autonomous smooth Navigation"
+          },
+          {
+            "ar": "شحن ذاتي عبر محطة شحن",
+            "en": "Self-Charging with charging station"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          },
+          {
+            "ar": "يتوفر اختياريًا بكاميرا حرارية",
+            "en": "Optionally come with Thermal camera"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "جمع بيانات المسافرين/الضيوف وملاحظاتهم",
+            "en": "Collect Travelers/ guests data&feedback"
+          },
+          {
+            "ar": "إجراء مكالمات فيديو مع خدمة العملاء",
+            "en": "Make video call to customer service"
+          },
+          {
+            "ar": "تقديم الأسئلة الشائعة",
+            "en": "Provide FAQs"
+          },
+          {
+            "ar": "إرشاد المسافرين/الضيوف عبر المنشأة",
+            "en": "Guide Travelers/ guests through the institute"
+          },
+          {
+            "ar": "يمكنه مسح بطاقات الهوية وبطاقات RFID (عند الطلب)",
+            "en": "It can scan IDs, RFID cards (On Request)"
+          }
+        ]
+      },
+      {
+        "slug": "timo",
+        "docName": "Timo",
+        "blurb": {
+          "ar": "Timo روبوت جذاب يعمل بالذكاء الاصطناعي، يرحّب بالضيوف ويخلق انطباعًا أوليًا نشطًا في مراكز الألعاب. يساعد الزوار في الاتجاهات، ويقدّم معلومات لحظية. وبفضل إمكانيات اللمس والصوت التفاعلية، يعزز Timo التفاعل والترفيه.",
+          "en": "Timo is an engaging AI-powered robot that welcomes guests and creates an energetic first impression at gaming centers. It assists visitors with directions, and provides real-time information. With interactive touch and voice capabilities, Timo enhances engagement and entertainment."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل مستقل",
+            "en": "Autonomous Navigation"
+          },
+          {
+            "ar": "التعرف على الوجوه واكتشافها",
+            "en": "Face recognition and detection"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "جمع بيانات المسافرين/الضيوف وملاحظاتهم",
+            "en": "Collect Travelers/ guests data&feedback"
+          },
+          {
+            "ar": "شرح وإرشاد المسافرين/الضيوف داخل المنشأة",
+            "en": "Explains and guide Travelers/ guests into the facility"
+          },
+          {
+            "ar": "التعرف على ضيوف كبار الشخصيات والترحيب بهم",
+            "en": "Recognize and greet VIP guests"
+          },
+          {
+            "ar": "عرض الوسائط الترويجية على الشاشة",
+            "en": "Show promotional media on screen"
+          }
+        ]
+      },
+      {
+        "slug": "bellabot-pro",
+        "docName": "BellaBot Pro",
+        "blurb": {
+          "ar": "يحوّل BellaBot Pro خدمة تقديم الطلبات إلى تجربة ممتعة، وليست مجرد مهمة. يمكن للشاشة التفاعلية الكبيرة عرض العروض الترويجية، ويمكن أن تدر إيرادات من خلال رعاية علامات تجارية أخرى.",
+          "en": "BellaBot Pro turns room service into a pleasant experience, not just a task. The large interactive screen can display promotions, and it can bring revenues by sponsoring other brands."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل ذكي مستقل",
+            "en": "Smart Autonomous Delivery Robot"
+          },
+          {
+            "ar": "تجربة تفاعل ودية وجذابة مع العملاء",
+            "en": "Friendly and engaging customer interaction experience"
+          },
+          {
+            "ar": "شاشة عرض تفاعلية كبيرة للعلامة التجارية والإعلانات والعروض الترويجية",
+            "en": "Large interactive display for branding, ads, and promotions"
+          },
+          {
+            "ar": "تنقل آمن ومتقدم في البيئات المزدحمة والمتغيرة",
+            "en": "Advanced safe navigation in crowded and dynamic environments"
+          },
+          {
+            "ar": "مزوّد بـ4 أدراج (بسعة 10 كغم لكل درج) مع تقنية التعرف الذكي على الأطباق",
+            "en": "Equipped with 4 trays (10kg capacity each) with intelligent dish recognition"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "يأتي بـ5 أوضاع توصيل",
+            "en": "Comes with 5 delivering modes"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "توصيل المنتجات والتنقل بين الموظفين",
+            "en": "Deliver products& staff around"
+          },
+          {
+            "ar": "إرشاد العملاء داخل المول أو السوق",
+            "en": "Guide Customers into the mall or market"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          },
+          {
+            "ar": "احتفال بعيد الميلاد بالموسيقى والوسائط على الشاشة",
+            "en": "Birthday Celebration with music and media on screen"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية ومستشعرات بتصميم بطابع القطط",
+            "en": "Interactive touch screen and sensors with Cat-themed design"
+          },
+          {
+            "ar": "تغطية مساحة واسعة وتوزيع المواد الترويجية والكتيبات",
+            "en": "Cover a large space and dispensing promotional materials and brochures"
+          }
+        ]
+      },
+      {
+        "slug": "kittybot-pro",
+        "docName": "KettyBot Pro",
+        "blurb": {
+          "ar": "يتميز KettyBot Pro بتصميم مدمج محسّن للممرات الضيقة، وهو مصمم ليكون في آن واحد نادل خدمة وشاشة معلومات متحركة. يمكن للشاشة التفاعلية الكبيرة عرض العروض الترويجية، ويمكن أن تدر إيرادات من خلال رعاية علامات تجارية أخرى.",
+          "en": "KettyBot Pro is Compact design optimized for narrow paths, it is designed for both a service runner and a moving information screen. The large interactive screen can display promotions, and it can bring revenues by sponsoring other brands."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل مستقل",
+            "en": "Autonomous Delivery robot"
+          },
+          {
+            "ar": "مناسب للممرات الضيقة",
+            "en": "Suitable for Narrow paths"
+          },
+          {
+            "ar": "شاشة وسائط تفاعلية كبيرة للعلامة التجارية والإعلانات والعروض الترويجية",
+            "en": "Large interactive Media display for branding, ads, and promotions"
+          },
+          {
+            "ar": "درجان بسعة 10 كغم لكل منهما مع سلة واحدة",
+            "en": "2*10Kg traies with one Basket"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "أكثر من 6 أوضاع توصيل",
+            "en": "More than 6 Delivery modes"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "توصيل المنتجات والتنقل بين الموظفين",
+            "en": "Deliver products& staff around"
+          },
+          {
+            "ar": "إرشاد العملاء داخل المول أو السوق",
+            "en": "Guide Customers into the mall or market"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          },
+          {
+            "ar": "احتفال بعيد الميلاد بالموسيقى والوسائط على الشاشة",
+            "en": "Birthday Celebration with music and media on screen"
+          },
+          {
+            "ar": "يتنقل في البيئات المعقدة بدقة عالية",
+            "en": "Navigates complex environments with high accuracy"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بسيط",
+            "en": "Simple Q&A Activity"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "الفنادق",
+        "en": "Hotels"
+      },
+      {
+        "ar": "المطارات",
+        "en": "Airports"
+      },
+      {
+        "ar": "سكان المجمعات السكنية",
+        "en": "Complex residents"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق تطوير محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Developing Team"
+      },
+      {
+        "ar": "على مدار الساعة طوال أيام الأسبوع",
+        "en": "24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "gaming": {
+    "sectorKey": "gaming",
+    "title": {
+      "ar": "حلول روبوتات مراكز الألعاب",
+      "en": "Gaming Centers Robotics Solutions"
+    },
+    "hook": {
+      "ar": "مركز ألعاب عادي؟ أم مركز ألعاب ذكي؟",
+      "en": "A Normal gaming center? or Smart Gaming center?"
+    },
+    "intro": {
+      "ar": "عزز الإثارة واخلق لحظات لا تُنسى مع حلول الجزري الروبوتية المتقدمة المصممة خصيصًا لمراكز الألعاب.",
+      "en": "Enhance the excitement and create unforgettable moments with Al-Jazari's advanced robotic solutions designed specifically for gaming centers."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "إدارة الطوابير",
+          "en": "Queue managements"
+        },
+        "description": {
+          "ar": "إدارة طلبات الألعاب وتتبع الوقت المنقضي",
+          "en": "Manage the game orders and tracking elapsed time"
+        }
+      },
+      {
+        "title": {
+          "ar": "الترحيب والاستقبال",
+          "en": "Greeting and Welcoming"
+        },
+        "description": {
+          "ar": "الترحيب بالعملاء وتقديم جميع المعلومات عن المركز",
+          "en": "Greet customers and provide all information about the center"
+        }
+      },
+      {
+        "title": {
+          "ar": "توصيل ذكي للطلبات",
+          "en": "Intelligent orders delivery"
+        },
+        "description": {
+          "ar": "توصيل الطعام والمشروبات داخل مراكز الألعاب",
+          "en": "Deliver food and drinks within the gaming centers"
+        }
+      },
+      {
+        "title": {
+          "ar": "مساعد غرف كبار الشخصيات",
+          "en": "VIP Room Assistant"
+        },
+        "description": {
+          "ar": "تحتوي كل غرفة على روبوت صغير خاص بها لخدمة عملاء كبار الشخصيات",
+          "en": "Each room has its own small robot to serve VIP customer"
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": "kebbi",
+        "docName": "Kebbi Air S",
+        "blurb": {
+          "ar": "Kebbi Air S روبوت مكتبي ثابت يعمل بالذكاء الاصطناعي، مصمم للتكامل السلس مع أنظمة مراكز الألعاب، ويعمل كمساعد لغرف كبار الشخصيات وموظف استقبال ذكي في آن واحد.",
+          "en": "Kebbi Air S is a stationary AI desk robot designed to integrate seamlessly with gaming center systems, acting as both a VIP room assistant and a smart receptionist."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت ذكي مدعوم بالذكاء الاصطناعي",
+            "en": "Intelligent AI-Powered Robot"
+          },
+          {
+            "ar": "حركات وأداء جذابة للغاية",
+            "en": "Super attractive movements and performance"
+          },
+          {
+            "ar": "التعرف على الوجوه واكتشافها",
+            "en": "Face recognition and detection"
+          },
+          {
+            "ar": "سهل الاستخدام والتشغيل",
+            "en": "Easy to use and operate"
+          },
+          {
+            "ar": "عمر بطارية طويل",
+            "en": "Long battery life"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية مقاس 7 إنش",
+            "en": "Interactive 7-inch touch screen"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "نشاط أسئلة وأجوبة تفاعلي مدعوم بالذكاء الاصطناعي",
+            "en": "Interactive AI-Powered Q&A Activity"
+          },
+          {
+            "ar": "حساب الوقت المنقضي وإصدار تنبيهات بشأنه",
+            "en": "Calculate elapsed time and give alarms about the time"
+          },
+          {
+            "ar": "يمكن للاعبين كبار الشخصيات إجراء مكالمة فيديو مع الاستقبال للحصول على الطلبات أو الدعم عبر Kebbi",
+            "en": "VIP gamers can make a Video call to reception to get orders or support through Kebbi"
+          },
+          {
+            "ar": "جمع بيانات اللاعبين وملاحظاتهم",
+            "en": "Collect gamers data&feedback"
+          },
+          {
+            "ar": "التعرف على وجوه اللاعبين كبار الشخصيات والترحيب بهم",
+            "en": "Recognize VIP gamers faces and greet them"
+          },
+          {
+            "ar": "يمكن أن يكون موظف استقبال المركز الذي يأخذ الطلبات ويدير النظام",
+            "en": "Can be a center's receptionist that take orders and manage the system"
+          },
+          {
+            "ar": "تقديم نبذة عن الألعاب وتوصيات ونصائح",
+            "en": "Give games brief, recommendation and tips"
+          }
+        ]
+      },
+      {
+        "slug": "timo",
+        "docName": "Timo",
+        "blurb": {
+          "ar": "Timo روبوت خدمي يعمل بالذكاء الاصطناعي، ويقع بشكل مثالي بين Cruzr وPepper. فهو يجمع بين: التنقل المستقل، والتفاعل الصوتي، والتصميم الودي القريب من الإنسان، وشاشة لمس قوية. مما يجعله رفيقًا متنقلًا مثاليًا للمول.",
+          "en": "Timo is an AI service robot that sits perfectly between Cruzr and Pepper. It combines: Autonomous navigation Voice-based interaction A friendly, approachable design A powerful touch screen Making it ideal as a mobile mall companion."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل مستقل",
+            "en": "Autonomous Navigation"
+          },
+          {
+            "ar": "التعرف على الوجوه واكتشافها",
+            "en": "Face recognition and detection"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "جمع بيانات اللاعبين وملاحظاتهم",
+            "en": "Collect Gamers data&feedback"
+          },
+          {
+            "ar": "شرح وإرشاد اللاعبين عبر مناطق الألعاب",
+            "en": "Explains and guide gamers through game zones"
+          },
+          {
+            "ar": "التعرف على اللاعبين كبار الشخصيات والترحيب بهم",
+            "en": "Recognize and greet VIP gamers"
+          },
+          {
+            "ar": "تقديم نبذة عن الألعاب وتوصيات ونصائح",
+            "en": "Give games brief, recommendation and tips"
+          }
+        ]
+      },
+      {
+        "slug": "bellabot-pro",
+        "docName": "BellaBot Pro",
+        "blurb": {
+          "ar": "يضيف BellaBot Pro الإثارة إلى مراكز الألعاب من خلال توصيل ذكي للطعام والمشروبات، بما في ذلك وضع خاص للاحتفال بأعياد الميلاد. ويخلق لحظات لا تُنسى من خلال إحضار الطلبات مباشرة إلى غرف كبار الشخصيات ومناطق الحفلات. يمكن للشاشة التفاعلية الكبيرة عرض العروض الترويجية ورسائل أعياد الميلاد، ويمكن أن تدر إيرادات من خلال رعاية علامات تجارية أخرى.",
+          "en": "BellaBot Pro adds excitement to gaming centers with smart food and drinks delivery, including a special birthday celebration mode. It creates memorable moments by bringing orders directly to VIP rooms and party areas. The large interactive screen can display promotions, birthday messages, and it can bring revenues by sponsoring other brands."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل ذكي مستقل",
+            "en": "Smart Autonomous Delivery Robot"
+          },
+          {
+            "ar": "تجربة تفاعل ودية وجذابة مع العملاء",
+            "en": "Friendly and engaging customer interaction experience"
+          },
+          {
+            "ar": "شاشة عرض تفاعلية كبيرة للعلامة التجارية والإعلانات والعروض الترويجية",
+            "en": "Large interactive display for branding, ads, and promotions"
+          },
+          {
+            "ar": "تنقل آمن ومتقدم في البيئات المزدحمة والمتغيرة",
+            "en": "Advanced safe navigation in crowded and dynamic environments"
+          },
+          {
+            "ar": "مزوّد بـ4 أدراج (بسعة 10 كغم لكل درج) مع تقنية التعرف الذكي على الأطباق",
+            "en": "Equipped with 4 trays (10kg capacity each) with intelligent dish recognition"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "يأتي بـ5 أوضاع توصيل",
+            "en": "Comes with 5 delivering modes"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "توصيل الطلبات إلى غرف كبار الشخصيات",
+            "en": "Deliver orders to VIP rooms"
+          },
+          {
+            "ar": "إرشاد اللاعبين داخل المركز",
+            "en": "Guide gamers into the center"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          },
+          {
+            "ar": "احتفال بعيد الميلاد بالموسيقى والوسائط على الشاشة",
+            "en": "Birthday Celebration with music and media on screen"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية ومستشعرات بتصميم بطابع القطط",
+            "en": "Interactive touch screen and sensors with Cat-themed design"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "مراكز الألعاب",
+        "en": "Gaming centers"
+      },
+      {
+        "ar": "مهرجانات اللاعبين",
+        "en": "Gamers festivals"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "دعم فني على مدار الساعة طوال أيام الأسبوع",
+        "en": "Technical support 24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "enterprises": {
+    "sectorKey": "enterprises",
+    "title": {
+      "ar": "حلول روبوتات المؤسسات والشركات",
+      "en": "Enterprises & Companies Robotics Solutions"
+    },
+    "hook": {
+      "ar": "واكب المؤسسات العالمية، وخصص روبوتك الخاص",
+      "en": "Align with global enterprises, Customize your own robot"
+    },
+    "intro": {
+      "ar": "واكبوا العالم، وتنافسوا، وتفوقوا على منافسيكم من خلال تبني أحدث التقنيات التفاعلية العالمية. يمكنكم توظيفها في أدوار متنوعة، مثل الاستقبال، وإدارة الطوابير، ومراقبة العمل، والترويج للمعارض والمؤتمرات، وأكثر من ذلك بكثير. خصصوا روبوتكم الآن ليناسب احتياجاتكم مع الجزري.",
+      "en": "Align the globe, compete, and outpace your rivals by embracing the world's latest interactive technology. You can employ it in various roles, such as reception, queue management, work monitoring, exhibition and conference promotion, and much more. Customize your robot now to suit your needs with Aljazari."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "موظف استقبال حديث",
+          "en": "Modern receptionist"
+        },
+        "description": {
+          "ar": "تمنح الروبوتات تجربة لا تُنسى للزوار",
+          "en": "Robots gives an unforgettable experience for Visitors"
+        }
+      },
+      {
+        "title": {
+          "ar": "التفاعل بالذكاء الاصطناعي",
+          "en": "AI Interaction"
+        },
+        "description": {
+          "ar": "تفاعل بالذكاء الاصطناعي عبر المحادثة الصوتية، أو بصريًا باستخدام الكاميرات والشاشات",
+          "en": "AI interaction by voice conversation, or visually using cameras and screens"
+        }
+      },
+      {
+        "title": {
+          "ar": "الإرشاد",
+          "en": "Guiding"
+        },
+        "description": {
+          "ar": "إرشاد الزوار عبر مناطق مؤسستكم بدقة",
+          "en": "Guide visitors through your enterprise zones precisely"
+        }
+      },
+      {
+        "title": {
+          "ar": "تقليل وقت الانتظار",
+          "en": "Reduce Waiting Time"
+        },
+        "description": {
+          "ar": "يمكن للروبوتات تنظيم الطوابير الطويلة، وحجز المواعيد، وتقديم الأسئلة الشائعة للزوار",
+          "en": "Robots can organize long Queue, Booking appointments, and provide FAQs for Visitors"
+        }
+      },
+      {
+        "title": {
+          "ar": "الاتصال بنظامكم",
+          "en": "Connect to your system"
+        },
+        "description": {
+          "ar": "قم بتوصيل روبوتك بنظامك ودعه يكون أذكى موظف لديك",
+          "en": "Connect your robot to your system and let it be your smartest employ"
+        }
+      },
+      {
+        "title": {
+          "ar": "الاتصال بأجهزتكم",
+          "en": "Connect to your devices"
+        },
+        "description": {
+          "ar": "قم بتوصيل روبوتك بالعديد من الأجهزة (الدفع، الطابعة، الكاميرا، إلخ) داخليًا أو خارجيًا",
+          "en": "Connect your robot to many devices (Payment, printer, camera, etc.) internally or externally"
+        }
+      },
+      {
+        "title": {
+          "ar": "العلامة التجارية والتخصيص",
+          "en": "Branding and Customization"
+        },
+        "description": {
+          "ar": "اجعل روبوتك يمثل علامتكم التجارية، وخصص تطبيق الروبوت لتقديم خدماتكم الإلكترونية",
+          "en": "Make your robot represent your brand Customize your robot app to provide your E-Services"
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": "wnno",
+        "docName": "Wnno",
+        "blurb": {
+          "ar": "يمكن لـ Wnno التبديل بين أدوار مؤسسية مختلفة حسب متطلباتكم وسير العمل اليومي. يمكن أن يكون Wnno مروّجًا (للفعاليات، والحملات الداخلية، والتسويق المؤسسي)، أو مساعدًا إداريًا، أو حتى موظف استقبال ذكي وموظف إرشاد.",
+          "en": "Wnno can switch between enterprise roles depending on your requirements and daily workflow. Wnno can be Promoter (Events, Internal Campaigns, and Corporate Marketing). Also Administrative Assistant or even your smart receptionist and guiding employee"
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي ذكي مدعوم بالذكاء الاصطناعي",
+            "en": "Intelligent AI-Powered Interactive Robot"
+          },
+          {
+            "ar": "مزوّد داخليًا بعدة أجهزة (طابعات، أنظمة دفع، كاميرات، إلخ)",
+            "en": "Equipped with several Devices (Printers, Payments, Cameras, etc.) Internally"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة إضافية",
+            "en": "Completable with additional devices"
+          },
+          {
+            "ar": "شحن وتنقل تلقائي (عند الطلب)",
+            "en": "Auto-charge&Navigation (on request)"
+          },
+          {
+            "ar": "عمر بطارية طويل",
+            "en": "Long battery life"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "نشاط أسئلة وأجوبة تفاعلي مدعوم بالذكاء الاصطناعي",
+            "en": "Interactive AI-Powered Q&A Activity"
+          },
+          {
+            "ar": "تقديم معلومات عن الشركة وخدماتها",
+            "en": "Give information on company and services"
+          },
+          {
+            "ar": "مسح وتعبئة المستندات (عند الطلب)",
+            "en": "Scan and fill in the documents (on request)"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect customers data&feedback"
+          },
+          {
+            "ar": "العمل مع نظام إدارة الطوابير",
+            "en": "Work with the queue management system"
+          },
+          {
+            "ar": "إرشاد العملاء إلى جميع الأقسام (عند الطلب)",
+            "en": "Guide customers to all departments (on request)"
+          },
+          {
+            "ar": "تطبيق تفاعلي على الشاشة لمزيد من التفاعل",
+            "en": "Interactive app on screen for more engagement"
+          },
+          {
+            "ar": "التعرف على الوجوه وتذكرها",
+            "en": "Recognize and remember faces"
+          }
+        ]
+      },
+      {
+        "slug": "cruzr",
+        "docName": "Cruzr",
+        "blurb": {
+          "ar": "يحوّل Cruzr بيئات الشركات إلى أماكن عمل ذكية وتفاعلية ومبنية على البيانات. وبفضل الشاشة التفاعلية والتواصل المدعوم بالذكاء الاصطناعي، يحسّن Cruzr الانطباعات الأولى مع ضمان تدفق سلس للعملاء.",
+          "en": "Cruzr transforms corporate environments into intelligent, interactive, and data-driven workplaces. With an interactive screen and AI-powered communication, Cruzr improves first impressions while ensuring smooth customers flow."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل ذاتي سلس ومستقل",
+            "en": "Autonomous smooth Navigation"
+          },
+          {
+            "ar": "شحن ذاتي عبر محطة شحن",
+            "en": "Self-Charging with charging station"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect customers data&feedback"
+          },
+          {
+            "ar": "إجراء مكالمات فيديو بين العملاء والأطباء",
+            "en": "Make video call Between customers and doctors"
+          },
+          {
+            "ar": "عرض المواد الترويجية والإعلامية على الشاشة",
+            "en": "Show promotional & media material on screen"
+          },
+          {
+            "ar": "تنظيم الطوابير الطويلة",
+            "en": "Organize long queues"
+          },
+          {
+            "ar": "إرشاد العملاء عبر مناطق الشركة",
+            "en": "Guide customers through company zones"
+          }
+        ]
+      },
+      {
+        "slug": "timo",
+        "docName": "Timo",
+        "blurb": {
+          "ar": "Timo روبوت خدمي متنقل يعمل بالذكاء الاصطناعي، مصمم للعمل في البيئات المؤسسية والشركات، يجمع بين التنقل المستقل، والتفاعل الصوتي الطبيعي، والتواصل البصري في منصة واحدة. يساعد الزوار في الاتجاهات، ويقدّم معلومات لحظية.",
+          "en": "Timo is a mobile AI service robot designed to operate in corporate and institutional environments, combining autonomous navigation, natural voice interaction, and visual communication in one platform. It assists visitors with directions, and provides real-time information"
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل مستقل",
+            "en": "Autonomous Navigation"
+          },
+          {
+            "ar": "التعرف على الوجوه واكتشافها",
+            "en": "Face recognition and detection"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          },
+          {
+            "ar": "شرح وإرشاد العملاء داخل المنشأة",
+            "en": "Explains and guide Customers into the facility"
+          },
+          {
+            "ar": "التعرف على ضيوف كبار الشخصيات والترحيب بهم",
+            "en": "Recognize and greet VIP guests"
+          },
+          {
+            "ar": "عرض الوسائط الترويجية على الشاشة",
+            "en": "Show promotional media on screen"
+          }
+        ]
+      },
+      {
+        "slug": null,
+        "docName": "Booster T1",
+        "blurb": {
+          "ar": "T1 روبوت خدمي متقدم شبيه بالإنسان، مصمم للاستقبال والإرشاد والتفاعل الذكي مع العملاء. وبفضل قدراته الذكية المدعومة بالذكاء الاصطناعي وتصميمه الحديث، يعزز حضور العلامة التجارية مع تقديم تجربة ذكية ولا تُنسى.",
+          "en": "T1 is an advanced humanoid service robot designed for reception, guidance, and interactive customer engagement. With intelligent AI capabilities and a modern design, it enhances brand presence while delivering a smart and memorable experience."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت شبيه بالإنسان بالكامل مدعوم بالذكاء الاصطناعي",
+            "en": "AI Full humanoid robot"
+          },
+          {
+            "ar": "قدرة حوسبة عالية بالذكاء الاصطناعي (NVIDIA AGX Orin)",
+            "en": "High AI computing power (NVIDIA AGX Orin)"
+          },
+          {
+            "ar": "وزن خفيف ومرونة عالية",
+            "en": "Light weight & high flexibility"
+          },
+          {
+            "ar": "ساعتان من العمل، و4 ساعات من الاستعداد",
+            "en": "2h Working, 4h standby"
+          },
+          {
+            "ar": "يتعرف على الوجوه ويحس باللمس",
+            "en": "Recognize faces& sense touches"
+          },
+          {
+            "ar": "توازن وحركات مستقلة",
+            "en": "Balance and Autonomous movements"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "أسئلة وأجوبة تفاعلية بالذكاء الاصطناعي",
+            "en": "Interactive AI Q&A"
+          },
+          {
+            "ar": "الترحيب بالعملاء وإرشادهم",
+            "en": "Greet and guide customers"
+          },
+          {
+            "ar": "تصميم وبرمجة حركات وتطبيقات مخصصة",
+            "en": "Design and program custom movements and applications"
+          },
+          {
+            "ar": "الاتصال بأنظمتكم وأجهزتكم",
+            "en": "Connect to your systems and devices"
+          },
+          {
+            "ar": "التعرف على وجوه كبار الشخصيات",
+            "en": "Recognize VIP faces"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          }
+        ]
+      },
+      {
+        "slug": null,
+        "docName": "Unitree G1",
+        "blurb": {
+          "ar": "G1 روبوت متقدم شبيه بالإنسان، مصمم لدعم بيئات المؤسسات بقدرات تنقل وتفاعل ذكية. يعزز العمليات، وصورة العلامة التجارية، وتفاعل العملاء من خلال ذكاء اصطناعي متطور وأداء متعدد المهام.",
+          "en": "G1 is an advanced humanoid robot designed to support enterprise environments with intelligent mobility and interactive capabilities. It enhances operations, brand image, and customer engagement through cutting-edge AI and versatile task performance."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت شبيه بالإنسان بالكامل مدعوم بالذكاء الاصطناعي",
+            "en": "AI Full humanoid robot"
+          },
+          {
+            "ar": "قدرة حوسبة عالية بالذكاء الاصطناعي (NVIDIA Jetson Orin)",
+            "en": "High AI computing power (NVIDIA jetson Orin)"
+          },
+          {
+            "ar": "مستشعر LiDAR وكاميرا عمق",
+            "en": "LiDAR and Depth camera"
+          },
+          {
+            "ar": "عمر بطارية يقارب ساعتين من التشغيل المستمر",
+            "en": "Battery life about 2h continuous operation"
+          },
+          {
+            "ar": "يتعرف على الوجوه ويحس باللمس",
+            "en": "Recognize faces& sense touches"
+          },
+          {
+            "ar": "حركة إنسانية مستقرة للبيئات المعقدة",
+            "en": "stable humanoid movement for complex environments"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "نشاط أسئلة وأجوبة تفاعلي بالذكاء الاصطناعي",
+            "en": "Interactive AI Q&A activity"
+          },
+          {
+            "ar": "مروّج تفاعلي للخدمات والأقسام",
+            "en": "Interactive promoter for services & departments"
+          },
+          {
+            "ar": "استقبال ذكي وإرشاد للزوار",
+            "en": "Intelligent reception & visitor guidance"
+          },
+          {
+            "ar": "الاتصال بأنظمتكم وأجهزتكم",
+            "en": "Connect to your systems and devices"
+          },
+          {
+            "ar": "التعرف على وجوه كبار الشخصيات",
+            "en": "Recognize VIP faces"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "المؤسسات",
+        "en": "Enterprices"
+      },
+      {
+        "ar": "الشركات",
+        "en": "Companies"
+      },
+      {
+        "ar": "المنظمات",
+        "en": "Organizations"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "دعم فني على مدار الساعة طوال أيام الأسبوع",
+        "en": "Technical support 24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "showroom": {
+    "sectorKey": "showroom",
+    "title": {
+      "ar": "حلول روبوتات صالات العرض",
+      "en": "Showroom Robotics Solutions"
+    },
+    "hook": {
+      "ar": "ميّز صالة عرضكم بأحدث التقنيات",
+      "en": "Distinguish your showroom with the latest technology"
+    },
+    "intro": {
+      "ar": "عززوا ترويجكم ومبيعاتكم بمجموعة متطورة من الروبوتات للاستقبال والإرشاد، والمبيعات، والتنظيف، وحتى الضيافة. جميعها مدعومة بالذكاء الاصطناعي ومخصصة لتمثيل علامتكم التجارية.",
+      "en": "Boost your promoting and sales with a sophisticated range of robots for reception and guidance, sales, cleaning, and even hospitality. All powered by AI and customized to represent your brand."
+    },
+    "benefits": [
+      {
+        "title": {
+          "ar": "الترحيب والإرشاد",
+          "en": "Greeting and Guiding"
+        },
+        "description": {
+          "ar": "الترحيب بعملائكم وإرشادهم بطريقة تفاعلية عبر صالة العرض",
+          "en": "Greet your customers and guide them in engagement way through your showroom"
+        }
+      },
+      {
+        "title": {
+          "ar": "التفاعل بالذكاء الاصطناعي",
+          "en": "AI Interaction"
+        },
+        "description": {
+          "ar": "تتفاعل الروبوتات مع العملاء باستخدام الذكاء الاصطناعي لمحادثات سلسة",
+          "en": "Robots interact with customers using AI for smooth conversations"
+        }
+      },
+      {
+        "title": {
+          "ar": "جمع البيانات والملاحظات",
+          "en": "Collect data& feedback"
+        },
+        "description": {
+          "ar": "جمع بيانات العملاء وملاحظاتهم لتحسين تجربة العملاء",
+          "en": "Collect customer data and feedback to improve customer experience"
+        }
+      },
+      {
+        "title": {
+          "ar": "الترويج",
+          "en": "Promoting"
+        },
+        "description": {
+          "ar": "تروّج الروبوتات لمنتجكم أو علامتكم التجارية، أو حتى علامات تجارية أخرى داخل صالة العرض وتحقق إيرادات",
+          "en": "Robots prompt your product or brand, or even other brands inside your showroom and get revenue"
+        }
+      },
+      {
+        "title": {
+          "ar": "التنظيف والتعقيم المنتظم",
+          "en": "Regular cleaning and disinfection"
+        },
+        "description": {
+          "ar": "تنظيف وتعقيم الأرضيات بشكل منتظم ومستقل خلال ساعات العمل الطويلة",
+          "en": "Regular and independent floor cleaning and sanitizing during long working hours"
+        }
+      },
+      {
+        "title": {
+          "ar": "توصيل ضيافة ذكي",
+          "en": "Intelligent hospitality delivery"
+        },
+        "description": {
+          "ar": "توصيل الطعام والمشروبات للضيوف والعملاء وحول صالة العرض",
+          "en": "Deliver food and drinks to guests, customers and around the showroom"
+        }
+      }
+    ],
+    "robots": [
+      {
+        "slug": "wnno",
+        "docName": "Wnno Promoter and Consultant",
+        "blurb": {
+          "ar": "Wnno روبوت خدمي شبيه بالإنسان يعمل في صالات العرض بدورين: مروّج — يجذب الزوار ويرحّب بهم ويتفاعل معهم. ومستشار — يشرح المنتجات، ويجيب على الأسئلة، ويرشد المشترين. يجمع بين التفاعل الشبيه بالإنسان، والمحادثة بالذكاء الاصطناعي، وشاشة تفاعلية كبيرة لدعم رحلة العميل بأكملها.",
+          "en": "Wnno is a humanoid service robot that works in showrooms as both: Promoter — attracting, welcoming, and engaging visitors Consultant — explaining products, answering questions, and guiding buyers It combines human-like interaction, AI conversation, and a large interactive screen to support the full customer journey."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي ذكي مدعوم بالذكاء الاصطناعي",
+            "en": "Intelligent AI-Powered Interactive Robot"
+          },
+          {
+            "ar": "مزوّد داخليًا بأجهزة (طابعات، كاميرا، دفع، إلخ)",
+            "en": "Equipped with Devices (Printers, Camera, Payment, etc.) Internally"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة إضافية",
+            "en": "Completable with additional devices"
+          },
+          {
+            "ar": "شحن وتنقل تلقائي (عند الطلب)",
+            "en": "Auto-charge&Navigation (on request)"
+          },
+          {
+            "ar": "عمر بطارية طويل",
+            "en": "Long battery life"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "نشاط أسئلة وأجوبة تفاعلي مدعوم بالذكاء الاصطناعي",
+            "en": "Interactive AI-Powered Q&A Activity"
+          },
+          {
+            "ar": "تقديم معلومات عن منتجاتكم وخدماتكم",
+            "en": "Give information about your products and services"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect customers data&feedback"
+          },
+          {
+            "ar": "العمل مع نظام إدارة الطوابير",
+            "en": "Work with the queue management system"
+          },
+          {
+            "ar": "إرشاد العملاء إلى جميع الأقسام (عند الطلب)",
+            "en": "Guide customers to all departments (on request)"
+          },
+          {
+            "ar": "تطبيق تفاعلي على الشاشة لمزيد من التفاعل",
+            "en": "Interactive app on screen for more engagement"
+          },
+          {
+            "ar": "التعرف على الوجوه وتذكرها",
+            "en": "Recognize and remember faces"
+          },
+          {
+            "ar": "حركات تفاعلية مثل المصافحة والرقص، أو يمكنكم تصميم حركاتكم الخاصة",
+            "en": "Engagement movements such as hand shake, dances, or you can design your own"
+          }
+        ]
+      },
+      {
+        "slug": "cruzr",
+        "docName": "Cruzr",
+        "blurb": {
+          "ar": "Cruzr روبوت خدمي شبيه بالإنسان يعمل عبر السحابة، مصمم للعمل في البيئات التجارية وبيئات البيع بالتجزئة، مما يجعله مثاليًا لصالات العرض التي تبيع منتجات معقدة وعالية القيمة. يجمع بين: التفاعل الشبيه بالإنسان، والحركة المستقلة، والمحادثة بالذكاء الاصطناعي، وشاشة لمس تفاعلية كبيرة.",
+          "en": "Cruzr is a cloud-based humanoid service robot designed to operate in commercial and retail environments, making it ideal for showrooms that sell complex, high-value products. It combines: Human-like interaction Autonomous movement AI conversation A large interactive touch screen"
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل ذاتي سلس ومستقل",
+            "en": "Autonomous smooth Navigation"
+          },
+          {
+            "ar": "شحن ذاتي عبر محطة شحن",
+            "en": "Self-Charging with charging station"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          },
+          {
+            "ar": "يتوفر اختياريًا بكاميرا حرارية",
+            "en": "Optionally come with Thermal camera"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "ترحيب واستقبال ذكي",
+            "en": "Smart greeting and Reception"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect customers data&feedback"
+          },
+          {
+            "ar": "إجراء مكالمات فيديو بين العملاء وخدمة العملاء",
+            "en": "Make video call between customers and Customer Service"
+          },
+          {
+            "ar": "عرض المواد الترويجية والإعلامية على الشاشة",
+            "en": "Show promotional & media material on screen"
+          },
+          {
+            "ar": "تنظيم الطوابير الطويلة",
+            "en": "Organize long queues"
+          },
+          {
+            "ar": "إرشاد العملاء عبر مناطق الشركة",
+            "en": "Guide customers through companies zones"
+          }
+        ]
+      },
+      {
+        "slug": "timo",
+        "docName": "Timo",
+        "blurb": {
+          "ar": "Timo روبوت خدمي يعمل بالذكاء الاصطناعي، مصمم للمساحات التجارية المفتوحة للجمهور، مما يجعله مثاليًا لصالات العرض التي ترغب في التفاعل والإرشاد والجذب — دون تعقيد. يجمع Timo بين: تصميم ودي شبيه بالإنسان، وتفاعل صوتي طبيعي، وتنقل مستقل، وشاشة لمس كبيرة عالية الدقة.",
+          "en": "Timo is an AI service robot designed for public-facing commercial spaces, making it ideal for showrooms that want interaction, guidance, and attraction — without complexity. Timo combines: Friendly humanoid design Natural voice interaction Autonomous navigation A large HD touch screen"
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل مستقل",
+            "en": "Autonomous Navigation"
+          },
+          {
+            "ar": "التعرف على الوجوه واكتشافها",
+            "en": "Face recognition and detection"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "ترحيب واستقبال ذكي",
+            "en": "Smart greeting and Reception"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          },
+          {
+            "ar": "عرض المواد الترويجية على الشاشة",
+            "en": "Show promotional material on screen"
+          },
+          {
+            "ar": "شرح مزايا المنتجات",
+            "en": "Explain products features"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          },
+          {
+            "ar": "إرشاد العملاء عبر المكان",
+            "en": "Guide Customers through venue"
+          }
+        ]
+      },
+      {
+        "slug": null,
+        "docName": "Booster T1",
+        "blurb": {
+          "ar": "T1 روبوت خدمي متقدم شبيه بالإنسان، مصمم للاستقبال والإرشاد والتفاعل الذكي مع العملاء. وبفضل قدراته الذكية المدعومة بالذكاء الاصطناعي وتصميمه الحديث، يعزز حضور العلامة التجارية مع تقديم تجربة ذكية ولا تُنسى.",
+          "en": "T1 is an advanced humanoid service robot designed for reception, guidance, and interactive customer engagement. With intelligent AI capabilities and a modern design, it enhances brand presence while delivering a smart and memorable experience."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت شبيه بالإنسان بالكامل مدعوم بالذكاء الاصطناعي",
+            "en": "AI Full humanoid robot"
+          },
+          {
+            "ar": "قدرة حوسبة عالية بالذكاء الاصطناعي (NVIDIA AGX Orin)",
+            "en": "High AI computing power (NVIDIA AGX Orin)"
+          },
+          {
+            "ar": "وزن خفيف ومرونة عالية",
+            "en": "Light weight & high flexibility"
+          },
+          {
+            "ar": "ساعتان من العمل، و4 ساعات من الاستعداد",
+            "en": "2h Working, 4h standby"
+          },
+          {
+            "ar": "يتعرف على الوجوه ويحس باللمس",
+            "en": "Recognize faces& sense touches"
+          },
+          {
+            "ar": "توازن وحركات مستقلة",
+            "en": "Balance and Autonomous movements"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "أسئلة وأجوبة تفاعلية بالذكاء الاصطناعي",
+            "en": "Interactive AI Q&A"
+          },
+          {
+            "ar": "الترحيب بالعملاء وإرشادهم",
+            "en": "Greet and guide customers"
+          },
+          {
+            "ar": "تصميم وبرمجة حركات وتطبيقات مخصصة",
+            "en": "Design and program custom movements and applications"
+          },
+          {
+            "ar": "الاتصال بأنظمتكم وأجهزتكم",
+            "en": "Connect to your systems and devices"
+          },
+          {
+            "ar": "التعرف على وجوه كبار الشخصيات",
+            "en": "Recognize VIP faces"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          }
+        ]
+      },
+      {
+        "slug": null,
+        "docName": "Unitree G1",
+        "blurb": {
+          "ar": "G1 روبوت متقدم شبيه بالإنسان، مصمم لدعم صالات العرض بقدرات تنقل وتفاعل ذكية. يعزز العمليات، وصورة العلامة التجارية، وتفاعل العملاء من خلال ذكاء اصطناعي متطور وأداء متعدد المهام.",
+          "en": "G1 is an advanced humanoid robot designed to support showrooms with intelligent mobility and interactive capabilities. It enhances operations, brand image, and customer engagement through cutting-edge AI and versatile task performance."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت شبيه بالإنسان بالكامل مدعوم بالذكاء الاصطناعي",
+            "en": "AI Full humanoid robot"
+          },
+          {
+            "ar": "قدرة حوسبة عالية بالذكاء الاصطناعي (NVIDIA Jetson Orin)",
+            "en": "High AI computing power (NVIDIA jetson Orin)"
+          },
+          {
+            "ar": "مستشعر LiDAR وكاميرا عمق",
+            "en": "LiDAR and Depth camera"
+          },
+          {
+            "ar": "عمر بطارية يقارب ساعتين من التشغيل المستمر",
+            "en": "Battery life about 2h continuous operation"
+          },
+          {
+            "ar": "يتعرف على الوجوه ويحس باللمس",
+            "en": "Recognize faces& sense touches"
+          },
+          {
+            "ar": "حركة إنسانية مستقرة للبيئات المعقدة",
+            "en": "stable humanoid movement for complex environments"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "نشاط أسئلة وأجوبة تفاعلي بالذكاء الاصطناعي",
+            "en": "Interactive AI Q&A activity"
+          },
+          {
+            "ar": "مروّج تفاعلي للخدمات والأقسام",
+            "en": "Interactive promoter for services & departments"
+          },
+          {
+            "ar": "استقبال ذكي وإرشاد للزوار",
+            "en": "Intelligent reception & visitor guidance"
+          },
+          {
+            "ar": "الاتصال بأنظمتكم وأجهزتكم",
+            "en": "Connect to your systems and devices"
+          },
+          {
+            "ar": "التعرف على وجوه كبار الشخصيات",
+            "en": "Recognize VIP faces"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          }
+        ]
+      },
+      {
+        "slug": "kebbi",
+        "docName": "Kebbi Air S",
+        "blurb": {
+          "ar": "Kebbi Air S روبوت خدمي ثابت ومدمج يعمل بالذكاء الاصطناعي، مصمم ليوضع بشكل مثالي على المكاتب والطاولات ومناطق الاستقبال، مما يجعله مثاليًا لصالات العرض ذات المساحة المحدودة. يجمع Kebbi بين: - تصميم ودي شبيه بالإنسان - تفاعل صوتي طبيعي - تفاعل بالوجه واللمس - شاشة عرض متعددة اللمس",
+          "en": "Kebbi Air S is a compact, stationary AI service robot designed to sit perfectly on desks, counters, and reception areas, making it ideal for space-limited showrooms. Kebbi combines: - Friendly humanoid design - Natural voice interaction - Facial & touch interaction - A multi-touch display"
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت ذكي مدعوم بالذكاء الاصطناعي",
+            "en": "Intelligent AI-Powered Robot"
+          },
+          {
+            "ar": "حركات وأداء جذابة للغاية",
+            "en": "Super attractive movements and performance"
+          },
+          {
+            "ar": "التعرف على الوجوه واكتشافها",
+            "en": "Face recognition and detection"
+          },
+          {
+            "ar": "سهل الاستخدام والتشغيل",
+            "en": "Easy to use and operate"
+          },
+          {
+            "ar": "عمر بطارية طويل",
+            "en": "Long battery life"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية مقاس 7 إنش",
+            "en": "Interactive 7-inch touch screen"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "نشاط أسئلة وأجوبة تفاعلي مدعوم بالذكاء الاصطناعي",
+            "en": "Interactive AI-Powered Q&A Activity"
+          },
+          {
+            "ar": "روبوت ترويجي على المكتب",
+            "en": "On-Desk promotion robot"
+          },
+          {
+            "ar": "جمع بيانات العملاء وملاحظاتهم",
+            "en": "Collect Customers data&feedback"
+          },
+          {
+            "ar": "التعرف على وجوه العملاء كبار الشخصيات والترحيب بهم",
+            "en": "Recognize VIP Customers faces and greet them"
+          },
+          {
+            "ar": "يمكن أن يكون موظف استقبال صالة العرض ويدير النظام",
+            "en": "Can be a Showroom receptionist and manage the system"
+          },
+          {
+            "ar": "تقديم نبذة عن المنتجات وتوصيات ونصائح",
+            "en": "Give products brief, recommendation and tips"
+          },
+          {
+            "ar": "تطبيق وهوية بصرية مخصصان",
+            "en": "Customized application and branding"
+          }
+        ]
+      },
+      {
+        "slug": "bellabot-pro",
+        "docName": "BellaBot Pro",
+        "blurb": {
+          "ar": "يحوّل BellaBot Pro خدمة صالة العرض إلى تجربة ممتعة، وليست مجرد مهمة. يمكن للشاشة التفاعلية الكبيرة عرض العروض الترويجية، ويمكن أن تدر إيرادات من خلال رعاية علامات تجارية أخرى.",
+          "en": "BellaBot Pro turns showroom service into a pleasant experience, not just a task. The large interactive screen can display promotions, and it can bring revenues by sponsoring other brands."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل ذكي مستقل",
+            "en": "Smart Autonomous Delivery Robot"
+          },
+          {
+            "ar": "تجربة تفاعل ودية وجذابة مع العملاء",
+            "en": "Friendly and engaging customer interaction experience"
+          },
+          {
+            "ar": "شاشة عرض تفاعلية كبيرة للعلامة التجارية والإعلانات والعروض الترويجية",
+            "en": "Large interactive display for branding, ads, and promotions"
+          },
+          {
+            "ar": "تنقل آمن ومتقدم في البيئات المزدحمة والمتغيرة",
+            "en": "Advanced safe navigation in crowded and dynamic environments"
+          },
+          {
+            "ar": "مزوّد بـ4 أدراج (بسعة 10 كغم لكل درج) مع تقنية التعرف الذكي على الأطباق",
+            "en": "Equipped with 4 trays (10kg capacity each) with intelligent dish recognition"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "يأتي بـ5 أوضاع توصيل",
+            "en": "Comes with 5 delivering modes"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "توصيل الطعام والمشروبات",
+            "en": "Deliver food & drinks"
+          },
+          {
+            "ar": "إرشاد العملاء عبر المكان",
+            "en": "Guide Customers through venue"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          },
+          {
+            "ar": "التجول حول المكان للترويج",
+            "en": "Cruise around the venue for promoting"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية ومستشعرات بتصميم بطابع القطط",
+            "en": "Interactive touch screen and sensors with Cat-themed design"
+          },
+          {
+            "ar": "تغطية مساحة واسعة وتوزيع المواد الترويجية والكتيبات",
+            "en": "Cover a large space and dispensing promotional materials and brochures"
+          }
+        ]
+      },
+      {
+        "slug": "kittybot-pro",
+        "docName": "KettyBot Pro",
+        "blurb": {
+          "ar": "يتميز KettyBot Pro بتصميم مدمج محسّن للممرات الضيقة، وهو مصمم ليكون في آن واحد نادل خدمة وشاشة معلومات متحركة. يمكن للشاشة التفاعلية الكبيرة عرض العروض الترويجية، ويمكن أن تدر إيرادات من خلال رعاية علامات تجارية أخرى.",
+          "en": "KettyBot Pro is Compact design optimized for narrow paths, it is designed for both a service runner and a moving information screen. The large interactive screen can display promotions, and it can bring revenues by sponsoring other brands."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت توصيل مستقل",
+            "en": "Autonomous Delivery robot"
+          },
+          {
+            "ar": "مناسب للممرات الضيقة",
+            "en": "Suitable for Narrow paths"
+          },
+          {
+            "ar": "شاشة وسائط تفاعلية كبيرة للعلامة التجارية والإعلانات والعروض الترويجية",
+            "en": "Large interactive Media display for branding, ads, and promotions"
+          },
+          {
+            "ar": "درجان بسعة 10 كغم لكل منهما مع سلة واحدة",
+            "en": "2*10Kg traies with one Basket"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "أكثر من 6 أوضاع توصيل",
+            "en": "More than 6 Delivery modes"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "توصيل الطعام والمشروبات",
+            "en": "Deliver food & drinks"
+          },
+          {
+            "ar": "إرشاد العملاء عبر المكان",
+            "en": "Guide Customers through venue"
+          },
+          {
+            "ar": "عرض الإعلانات على الشاشة لتحقيق إيرادات",
+            "en": "Show adds on screen to make revenue"
+          },
+          {
+            "ar": "التجول حول المكان للترويج",
+            "en": "Cruise around the venue for promoting"
+          },
+          {
+            "ar": "يتنقل في البيئات المعقدة بدقة عالية",
+            "en": "Navigates complex environments with high accuracy"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بسيط",
+            "en": "Simple Q&A Activity"
+          }
+        ]
+      },
+      {
+        "slug": null,
+        "docName": "CC1 Pro Cleaning Robot",
+        "blurb": {
+          "ar": "CC1 Pro روبوت تنظيف مستقل يعمل بالذكاء الاصطناعي، مصمم خصيصًا للبيئات الطبية، ويوفر تنظيفًا وتعقيمًا ثابتًا ومبنيًا على البيانات للأرضيات. يعمل بأمان حول المرضى والموظفين والمعدات — مما يساعد المنشآت على الحفاظ على معايير نظافة عالية مع تقليل العبء اليدوي.",
+          "en": "CC1 Pro is an AI-powered autonomous cleaning robot designed specifically for medical environments, delivering consistent, data-driven floor cleaning and disinfection. It operates safely around patients, staff, and equipment—helping facilities maintain high hygiene standards while reducing manual workload."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تنظيف مستقل يعمل بالذكاء الاصطناعي",
+            "en": "AI-powered Autonomous Cleaning Robot"
+          },
+          {
+            "ar": "تنظيف متعدد الاستخدامات 4 في 1 (كنس، فرك، شفط، ومسح الغبار)",
+            "en": "4-in-1 Versatile Cleaning (Sweeping, Scrubbing, Vacuuming and Dust-mopping)"
+          },
+          {
+            "ar": "يتنقل في البيئات المعقدة بدقة عالية",
+            "en": "Navigates complex environments with high accuracy"
+          },
+          {
+            "ar": "معتمد وفق معيار IEC 63327",
+            "en": "IEC 63327 Certification"
+          },
+          {
+            "ar": "تطبيق هاتفي ولوحة مراقبة",
+            "en": "Phone app& monitoring dashboard"
+          },
+          {
+            "ar": "تنظيف ذاتي وتعبئة وشحن تلقائي (عند الطلب)",
+            "en": "Self-Cleaning, Auto-refill and auto recharge (on request)"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "فرك البقع بالذكاء الاصطناعي",
+            "en": "AI Spot Scrubbing"
+          },
+          {
+            "ar": "التحكم بشدة التنظيف بالذكاء الاصطناعي",
+            "en": "AI Cleaning Intensity Control"
+          },
+          {
+            "ar": "كشف أداء التنظيف اللحظي بالذكاء الاصطناعي",
+            "en": "AI Real-Time Cleaning Performance Detection"
+          },
+          {
+            "ar": "يتعامل تلقائيًا مع تعبئة المياه وتصريفها",
+            "en": "Automatically handles water refill and drainage"
+          },
+          {
+            "ar": "قابل للتكامل مع البوابات الإلكترونية والمصاعد",
+            "en": "Completable with E-Gates and Elevators"
+          },
+          {
+            "ar": "يضبط أوضاع التنظيف تلقائيًا حسب نوع الأرضية",
+            "en": "Automatically adjusts cleaning modes based on floor type"
+          },
+          {
+            "ar": "وضع اقتصادي للمناطق النظيفة، وتنظيف عميق للبقع المتسخة",
+            "en": "eco mode for clean areas, deep cleaning for dirty spots"
+          }
+        ]
+      }
+    ],
+    "industries": [
+      {
+        "ar": "معارض السيارات",
+        "en": "Car showrooms"
+      },
+      {
+        "ar": "متاجر الإلكترونيات",
+        "en": "Electronics stores"
+      },
+      {
+        "ar": "الأجهزة الكهربائية",
+        "en": "Electrical devices"
+      },
+      {
+        "ar": "متاجر الهواتف المحمولة",
+        "en": "Mobile phone stores"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "دعم فني على مدار الساعة طوال أيام الأسبوع",
+        "en": "Technical support 24/7"
+      },
+      {
+        "ar": "لوحات تحكم سهلة الاستخدام للتحكم بالمحتوى ومعلومات الروبوت",
+        "en": "Easy to use control dashboards to control content and robot info"
+      },
+      {
+        "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
+        "en": "On site Free staff training period on how to use"
+      }
+    ]
+  },
+  "rental": {
+    "sectorKey": null,
+    "title": {
+      "ar": "استئجار روبوت",
+      "en": "Rent a Robot"
+    },
+    "hook": {
+      "ar": "استأجر روبوتك المفضل وخصصه",
+      "en": "Rent and custom your favorite robot"
+    },
+    "intro": {
+      "ar": "هل تحتاج إلى روبوت لفترة قصيرة؟ توفر الجزري مجموعة واسعة من الروبوتات الجاهزة للتخصيص لفترة قصيرة من الزمن، ويمكن أن تقدم جميع مواصفاتها بناءً على متطلباتكم وإمكانياتها.",
+      "en": "Need a robot for short period? Aljazari provide a wide range of robots which ready to customized for short period of time, it can give all its specs based on your requirements and its capabilities"
+    },
+    "robots": [
+      {
+        "slug": "wnno",
+        "docName": "Wnno",
+        "tag": {
+          "ar": "قابل للتخصيص",
+          "en": "Customizable"
+        }
+      },
+      {
+        "slug": "cruzr",
+        "docName": "Cruzr",
+        "tag": {
+          "ar": "قابل للتخصيص",
+          "en": "Customizable"
+        }
+      },
+      {
+        "slug": "pepper",
+        "docName": "Pepper",
+        "tag": {
+          "ar": "قابل للتخصيص",
+          "en": "Customizable"
+        }
+      },
+      {
+        "slug": "kittybot-pro",
+        "docName": "KettyBot",
+        "tag": {
+          "ar": "قابل للتخصيص",
+          "en": "Customizable"
+        }
+      },
+      {
+        "slug": "pudubot",
+        "docName": "PuduBot 2",
+        "tag": {
+          "ar": "قابل للتخصيص",
+          "en": "Customizable"
+        }
+      },
+      {
+        "slug": "bellabot-pro",
+        "docName": "BellaBot",
+        "tag": {
+          "ar": "قابل للتخصيص",
+          "en": "Customizable"
+        }
+      },
+      {
+        "slug": "unitree",
+        "docName": "Unitree Go2",
+        "tag": {
+          "ar": "قابل للتخصيص",
+          "en": "Customizable"
+        }
+      }
+    ],
+    "industries": [
+      {
+        "ar": "الفعاليات",
+        "en": "Events"
+      },
+      {
+        "ar": "المهرجانات",
+        "en": "Fastival"
+      },
+      {
+        "ar": "المؤتمرات",
+        "en": "Conferences"
+      }
+    ],
+    "whyChoose": [
+      {
+        "ar": "تطبيق مخصص بناءً على متطلباتكم وإمكانيات الروبوت",
+        "en": "Custom application based on your requirements and robot capabilities"
+      },
+      {
+        "ar": "تصميم مخصص لهوية الروبوت ليعكس علامتكم التجارية",
+        "en": "Custom Robot branding to represent your brand"
+      },
+      {
+        "ar": "فريق محترف ومدرّب جيدًا",
+        "en": "Professional and well trained Team"
+      },
+      {
+        "ar": "نقل الروبوت وتوصيله إلى موقعكم",
+        "en": "Transport and deliver the robot to your site"
+      },
+      {
+        "ar": "الروبوت مدعوم بمهندس فني طوال فترة الإيجار",
+        "en": "Robot supported with Technical Engineer throughout the rental period"
+      }
+    ]
+  }
+}

@@ -28,7 +28,13 @@ export type SectorKey =
   | 'events'
   | 'home'
   | 'research'
-  | 'security';
+  | 'security'
+  | 'warehousing'
+  | 'universities'
+  | 'schools'
+  | 'gaming'
+  | 'enterprises'
+  | 'showroom';
 
 /** ميزة وظيفية للروبوت (عنوان + شرح قصير) */
 export interface RobotFeature {
