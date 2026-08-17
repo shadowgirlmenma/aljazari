@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import Container from '@/components/ui/Container';
+import { Link } from '@/i18n/navigation';
 import { SECTORS } from '@/data/taxonomy';
 import type { Locale, Robot } from '@/lib/types';
 
@@ -92,16 +93,20 @@ export default function RobotDetailClient({
             </h2>
             <div className="flex flex-wrap gap-3">
               {robot.sectors.map((sector, i) => (
-                <motion.span
+                <motion.div
                   key={sector}
                   initial={{ opacity: 0, scale: 0.85 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="rounded-full border border-purple-500/40 bg-purple-900/30 px-5 py-2 text-sm text-purple-200"
                 >
-                  {SECTORS[sector][locale]}
-                </motion.span>
+                  <Link
+                    href="/robot-solutions"
+                    className="block rounded-full border border-purple-500/40 bg-purple-900/30 px-5 py-2 text-sm text-purple-200 transition hover:border-purple-400 hover:bg-purple-900/50 hover:text-white"
+                  >
+                    {SECTORS[sector][locale]}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </Container>

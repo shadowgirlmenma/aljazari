@@ -28,7 +28,7 @@ export default function Footer() {
           <h2 className="text-2xl font-semibold text-white sm:text-3xl">
             {locale === 'ar'
               ? 'كن أول من يعرف آخر أخبار الجزري'
-              : 'Be the first to get the latest news from Al-Jazari'}
+              : 'Be the first to get the latest news from Aljazari'}
           </h2>
           <NewsletterForm />
         </Container>
@@ -47,7 +47,7 @@ export default function Footer() {
                   {COMPANY.name[locale]}
                 </p>
                 <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-purple-400">
-                  AL-JAZARI ROBOTICS
+                  {locale === 'ar' ? 'حلول الروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
                 </p>
               </div>
             </Link>

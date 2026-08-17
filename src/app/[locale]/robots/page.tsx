@@ -6,6 +6,7 @@ import RobotsPageBanner from '@/components/robots/RobotsPageBanner';
 import { PUBLISHED_ROBOTS } from '@/data/robots';
 // أضيفي هذا الاستيراد فوق مع الباقي
 import RobotsShowcaseGallery from '@/components/robots/RobotsShowcaseGallery';
+import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 export async function generateMetadata({
   params,
 }: {
@@ -35,11 +36,15 @@ export default async function RobotsPage({
   return (
     <>
       <RobotsPageBanner title={t('title')} subtitle={t('subtitle')} />
-      <div className="bg-[#0a0414] pt-4">
-        <RobotsShowcaseGallery robots={PUBLISHED_ROBOTS} />
+      <div className="relative overflow-hidden bg-[#0a0414] py-10 sm:py-14">
+        <DotGridBackdrop opacity={0.4} />
+        <Container className="relative z-10">
+          <RobotsShowcaseGallery robots={PUBLISHED_ROBOTS} />
+        </Container>
       </div>
-      <div className="min-h-screen bg-[#0a0414]">
-        <Container className="py-12 sm:py-16">
+      <div id="catalog" className="relative min-h-screen scroll-mt-24 overflow-hidden bg-[#0a0414]">
+        <DotGridBackdrop opacity={0.4} />
+        <Container className="relative z-10 py-12 sm:py-16">
           <RobotsGrid robots={PUBLISHED_ROBOTS} />
         </Container>
       </div>

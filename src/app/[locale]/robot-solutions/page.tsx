@@ -42,10 +42,10 @@ export default async function RobotSolutionsPage({
         { key: 'malls',       label: t('sectors.malls') },
       ]}
       services={[
-        { label: t('services.maintenance'), icon: '🔧' },
-        { label: t('services.software'),    icon: '💻' },
-        { label: t('services.training'),    icon: '🎓' },
-        { label: t('services.support'),     icon: '🛠' },
+        { key: 'maintenance', label: t('services.maintenance'), desc: t('services.maintenanceDesc') },
+        { key: 'software',    label: t('services.software'),    desc: t('services.softwareDesc') },
+        { key: 'training',    label: t('services.training'),    desc: t('services.trainingDesc') },
+        { key: 'support',     label: t('services.support'),     desc: t('services.supportDesc') },
       ]}
       ctaLabel={t('cta')}
     />

@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import TrueFocus from '@/components/reactbits/TrueFocus';
+import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import type { Locale } from '@/lib/types';
 
 export default function VisionSection({ locale }: { locale: Locale }) {
@@ -12,8 +13,9 @@ export default function VisionSection({ locale }: { locale: Locale }) {
   const focusSentence = isAr ? 'رؤيتنا|مهمتنا' : 'Vision|Mission';
 
   return (
-    <section className="bg-black text-white">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
+    <section className="section-dark relative overflow-hidden text-white">
+      <DotGridBackdrop />
+      <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
 
         <div className="text-4xl font-bold sm:text-6xl">
           <TrueFocus

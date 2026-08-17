@@ -39,7 +39,7 @@ export default function EnrollmentsPage() {
             <div key={i} className="h-20 animate-pulse rounded-2xl border border-white/10 bg-white/5" />
           ))
         ) : items.length === 0 ? (
-          <p className="py-10 text-center text-purple-300/50">ماكو نتائج</p>
+          <p className="py-10 text-center text-purple-300/50">لا توجد نتائج</p>
         ) : (
           <AnimatePresence mode="popLayout">
             {items.map((e, i) => (

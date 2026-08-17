@@ -1,118 +1,287 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { Link } from '@/i18n/navigation';
-import ScrollReveal from '@/components/reactbits/ScrollReveal';
-import StarBorder from '@/components/reactbits/StarBorder';
-// MagicRingsBackground may not exist in some environments — provide a lightweight
-// fallback to avoid module resolution errors. If you have the original
-// component, replace this with the proper import path.
-import React from 'react';
+import {
+  Package, Building2, MessagesSquare, Compass,
+  TrendingUp, Brain, DollarSign, UserCheck,
+  Eye, PenTool, Cpu, CheckCircle2, Rocket, RefreshCw,
+  Briefcase, HeartPulse, Landmark, ShoppingCart, Truck, Factory,
+  type LucideIcon,
+} from 'lucide-react';
+import AiSolutionsBannerBackground from '@/components/pages/AiSolutionsBannerBackground';
+import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
+import FloatingLineRobot from '@/components/pages/FloatingLineRobot';
 
-const MagicRingsBackground: React.FC = () => (
-  <div className="absolute inset-0 -z-10" aria-hidden />
-);
+const SOLUTION_ICONS: Record<string, LucideIcon> = {
+  product: Package,
+  enterprise: Building2,
+  agents: MessagesSquare,
+  consulting: Compass,
+};
+
+const BENEFIT_ICONS: Record<string, LucideIcon> = {
+  efficiency: TrendingUp,
+  decisions: Brain,
+  cost: DollarSign,
+  personalization: UserCheck,
+};
+
+const PROCESS_ICONS: Record<string, LucideIcon> = {
+  vision: Eye,
+  design: PenTool,
+  build: Cpu,
+  test: CheckCircle2,
+  deploy: Rocket,
+  upgrade: RefreshCw,
+};
+
+const INDUSTRY_ICONS: Record<string, LucideIcon> = {
+  enterprises: Briefcase,
+  healthcare: HeartPulse,
+  finance: Landmark,
+  ecommerce: ShoppingCart,
+  logistics: Truck,
+  realEstate: Building2,
+  manufacturing: Factory,
+};
+
+type NamedItem = { key: string; title: string; desc: string };
+type LabeledItem = { key: string; label: string };
 
 export default function AiSolutionsClient({
-  title, subtitle, bannerLabel, intro, services, ctaLabel,
+  title, solutionsHeading, solutions,
+  interfaceHeading, interfaceBenefits,
+  customerHeading, process,
+  industriesHeading, industries,
 }: {
   title: string;
-  subtitle: string;
-  bannerLabel: string;
-  intro: string;
-  services: { title: string; desc: string; icon: string }[];
-  ctaLabel: string;
+  solutionsHeading: string;
+  solutions: NamedItem[];
+  interfaceHeading: string;
+  interfaceBenefits: LabeledItem[];
+  customerHeading: string;
+  process: LabeledItem[];
+  industriesHeading: string;
+  industries: NamedItem[];
 }) {
   return (
     <>
-      {/* ── البانر مع MagicRings ── */}
-      <div className="relative overflow-hidden bg-[#120621]" style={{ minHeight: '380px' }}>
-        <MagicRingsBackground />
+      {/* ── البانر: خيوط WebThreads بنفسجية متوهجة كخلفية، بحجم الشاشة كاملة متل باقي الصفحات ── */}
+      <div className="relative w-full overflow-hidden bg-[#120621]" style={{ height: '100svh' }}>
+        <AiSolutionsBannerBackground />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(18,6,33,0.3) 0%, rgba(18,6,33,0.85) 100%)',
+              'linear-gradient(to bottom, rgba(18,6,33,0.25) 0%, rgba(18,6,33,0.55) 65%, rgba(10,4,20,0.9) 100%)',
           }}
         />
-        <div className="relative flex min-h-[380px] flex-col items-center justify-center px-5 py-20 text-center">
-          <motion.p
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-mono text-[11px] uppercase tracking-[0.3em] text-purple-400"
-          >
-            {bannerLabel}
-          </motion.p>
+        <div className="relative z-10 flex h-full flex-col items-center justify-end px-5 pb-24 text-center sm:pb-28">
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.12 }}
-            className="mt-4 max-w-2xl text-4xl font-semibold text-white sm:text-5xl"
+            className="mx-auto max-w-3xl text-3xl font-semibold text-white sm:text-5xl"
           >
             {title}
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.28 }}
-            className="mx-auto mt-4 max-w-xl text-purple-200/80"
-          >
-            {subtitle}
-          </motion.p>
         </div>
       </div>
 
-      {/* ── مقدمة ScrollReveal ── */}
-      <div className="bg-black">
-        <div className="mx-auto max-w-4xl px-5 py-20 sm:px-8 lg:px-10">
-          <ScrollReveal
-            baseOpacity={0.06}
-            baseRotation={2}
-            blurStrength={5}
-            textClassName="text-white text-2xl sm:text-3xl leading-relaxed"
+      {/* ── حلولنا — أربع بطاقات (منتج مخصص / أنظمة مؤسسية / وكلاء ذكاء اصطناعي / استشارات) ── */}
+      <div className="section-dark seam-glow relative overflow-hidden">
+        <DotGridBackdrop />
+        <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center text-3xl font-semibold text-white sm:text-4xl"
           >
-            {intro}
-          </ScrollReveal>
-        </div>
-      </div>
+            {solutionsHeading}
+          </motion.h2>
 
-      {/* ── الخدمات ── */}
-      <div className="bg-[#0a0414]">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
-          <div className="grid gap-8 sm:grid-cols-2">
-            {services.map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ delay: i * 0.1, duration: 0.55 }}
-                className="group rounded-2xl border border-purple-500/20 bg-purple-900/10 p-10 transition-all hover:border-purple-400/40 hover:bg-purple-900/20"
-              >
-                <span className="text-5xl">{service.icon}</span>
-                <h3 className="mt-6 text-xl font-semibold text-white">
-                  {service.title}
-                </h3>
-                <p className="mt-3 leading-relaxed text-purple-200/70">
-                  {service.desc}
-                </p>
-              </motion.div>
-            ))}
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+            {solutions.map((item, i) => {
+              const Icon = SOLUTION_ICONS[item.key] ?? Package;
+              return (
+                <motion.div
+                  key={item.key}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ delay: i * 0.08 }}
+                  className="glass-card relative overflow-hidden rounded-2xl p-8"
+                >
+                  <FloatingLineRobot
+                    delay={i * 0.4}
+                    icon={Icon}
+                    className="absolute -top-2 end-3 h-24 w-24 sm:h-28 sm:w-28"
+                  />
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-purple-400/30 bg-purple-900/30">
+                    <Icon size={22} className="text-purple-300" />
+                  </div>
+                  <h3 className="relative z-10 mt-5 text-xl font-medium text-white">{item.title}</h3>
+                  <p className="relative z-10 mt-3 leading-relaxed text-purple-200/75">{item.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
+        </div>
+      </div>
 
-          {/* CTA */}
-          <div className="mt-20 text-center">
-            <StarBorder
-              as={Link}
-              href="/contact"
-              color="#a78bfa"
-              speed="5s"
-              thickness={2}
-            >
-              <span className="px-4 text-sm font-medium sm:text-base">
-                {ctaLabel}
-              </span>
-            </StarBorder>
+      {/* ── واجهة ذكاء اصطناعي واحدة — بخلفية صورة يد الروبوت + تعتيم لوضوح القراءة ── */}
+      <div className="edge-travel relative overflow-hidden bg-[#0a0414]">
+        {/* توهّج بنفسجي محيط بالصورة */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -inset-10 z-0 opacity-70 blur-3xl"
+          style={{
+            background:
+              'radial-gradient(60% 60% at 50% 45%, rgba(167,139,250,0.45) 0%, rgba(82,39,255,0.25) 45%, transparent 75%)',
+          }}
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/ai-solutions/automation.jpg"
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* صبغة بنفسجية توحّد لون الصورة (فيها لمسات زرقاء) مع هوية الموقع */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(160deg, rgba(124,58,237,0.32) 0%, rgba(88,28,135,0.22) 45%, rgba(10,4,20,0.3) 100%)',
+            mixBlendMode: 'color',
+          }}
+        />
+        {/* تعتيم متدرّج يذوب بلون خلفية الموقع نفسه بأعلى وأسفل الشريط، حتى ما يصير قطع لوني مفاجئ بين الأقسام */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to bottom, #0a0414 0%, rgba(10,4,20,0.55) 16%, rgba(10,4,20,0.45) 50%, rgba(10,4,20,0.55) 84%, #0a0414 100%)',
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            boxShadow: 'inset 0 0 140px 40px rgba(167,139,250,0.28)',
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-4xl px-5 py-20 text-center sm:px-8 lg:px-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl font-semibold leading-relaxed text-white sm:text-4xl"
+          >
+            {interfaceHeading}
+          </motion.h2>
+
+          <div className="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-4">
+            {interfaceBenefits.map((item, i) => {
+              const Icon = BENEFIT_ICONS[item.key] ?? TrendingUp;
+              return (
+                <motion.div
+                  key={item.key}
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="flex flex-col items-center"
+                >
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border border-purple-400/30 bg-purple-900/30">
+                    <Icon size={26} className="text-purple-300" />
+                  </div>
+                  <span className="mt-4 text-sm font-medium leading-snug text-purple-100 sm:text-base">
+                    {item.label}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* ── خدمة العملاء بوكلاء الذكاء الاصطناعي — عنوان + خطوات العمل الست ── */}
+      <div className="section-dark seam-glow relative overflow-hidden">
+        <DotGridBackdrop />
+        <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center text-2xl font-semibold text-white sm:text-4xl"
+          >
+            {customerHeading}
+          </motion.h2>
+
+          <div className="mt-14 grid gap-8 sm:grid-cols-3 lg:grid-cols-6">
+            {process.map((step, i) => {
+              const Icon = PROCESS_ICONS[step.key] ?? Eye;
+              return (
+                <motion.div
+                  key={step.key}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ delay: i * 0.06 }}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-full border border-purple-400/30 bg-purple-900/30">
+                    <Icon size={24} className="text-purple-300" />
+                    <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-purple-500 font-mono text-[11px] font-semibold text-white">
+                      {i + 1}
+                    </span>
+                  </div>
+                  <span className="mt-4 text-sm font-medium leading-snug text-purple-100">
+                    {step.label}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* ── القطاعات التي نخدمها ── */}
+      <div className="section-darker seam-glow relative overflow-hidden">
+        <DotGridBackdrop />
+        <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center text-3xl font-semibold text-white sm:text-4xl"
+          >
+            {industriesHeading}
+          </motion.h2>
+
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {industries.map((item, i) => {
+              const Icon = INDUSTRY_ICONS[item.key] ?? Briefcase;
+              return (
+                <motion.div
+                  key={item.key}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ delay: i * 0.05 }}
+                  className="glass-card rounded-2xl p-6"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-purple-400/30 bg-purple-900/30">
+                    <Icon size={20} className="text-purple-300" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-medium text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-purple-200/75">{item.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

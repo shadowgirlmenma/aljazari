@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
 import { X, CheckCircle } from 'lucide-react';
@@ -8,19 +8,20 @@ import PhoneInput from '@/components/ui/PhoneInput';
 import { api, ApiError } from '@/lib/api';
 
 export default function BookRobotModal({
-  open, onClose, robotSlug, robotName,
+  open, onClose, robotSlug, robotName, initialType = 'rent',
 }: {
   open: boolean;
   onClose: () => void;
   robotSlug: string;
   robotName: string;
+  initialType?: 'buy' | 'rent';
 }) {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [phoneValid, setPhoneValid] = useState(true);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [form, setForm] = useState({
-    type: 'rent' as 'buy' | 'rent',
+    type: initialType,
     name: '', email: '', phone: '', organization: '', notes: '',
   });
 
@@ -33,9 +34,14 @@ export default function BookRobotModal({
 
   const reset = () => {
     setSent(false);
-    setForm({ type: 'rent', name: '', email: '', phone: '', organization: '', notes: '' });
+    setForm({ type: initialType, name: '', email: '', phone: '', organization: '', notes: '' });
     setTouched({});
   };
+
+  useEffect(() => {
+    if (open) setForm((f) => ({ ...f, type: initialType }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, initialType]);
 
   const handleClose = () => {
     onClose();
@@ -90,7 +96,7 @@ export default function BookRobotModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 20 }}
             transition={{ type: 'spring', damping: 26, stiffness: 300 }}
-            className="fixed inset-x-4 top-1/2 z-[90] max-h-[88vh] -translate-y-1/2 overflow-y-auto rounded-2xl border border-purple-500/25 bg-[#120621] p-6 shadow-2xl sm:inset-x-auto sm:start-1/2 sm:w-full sm:max-w-lg sm:-translate-x-1/2 sm:p-8"
+            className="fixed inset-x-4 top-1/2 z-[90] max-h-[88vh] -translate-y-1/2 overflow-y-auto glass-strong rounded-2xl p-6 shadow-2xl sm:inset-x-auto sm:start-1/2 sm:w-full sm:max-w-lg sm:-translate-x-1/2 sm:p-8"
           >
             <button
               type="button"
@@ -123,19 +129,19 @@ export default function BookRobotModal({
                 <p className="mt-1 text-sm text-purple-300/70">اطلبيه الآن</p>
 
                 {/* شراء أو إيجار */}
-                <div className="mt-5 flex gap-2">
-                  {(['rent', 'buy'] as const).map((t) => (
+                <div className="mt-5 flex gap-3">
+                  {(['rent', 'buy'] as const).map((type) => (
                     <button
-                      key={t}
+                      key={type}
                       type="button"
-                      onClick={() => setForm((f) => ({ ...f, type: t }))}
-                      className={`flex-1 rounded-xl border py-2.5 text-sm font-medium transition ${
-                        form.type === t
+                      onClick={() => setForm((f) => ({ ...f, type }))}
+                      className={`flex-1 rounded-xl border py-3.5 text-base font-semibold transition ${
+                        form.type === type
                           ? 'border-purple-500 bg-purple-600 text-white'
-                          : 'border-purple-500/30 text-purple-200/60 hover:border-purple-400'
+                          : 'glass border-purple-500/30 text-purple-200/60 hover:border-purple-400'
                       }`}
                     >
-                      {t === 'rent' ? 'إيجار' : 'شراء'}
+                      {type === 'rent' ? 'إيجار' : 'شراء'}
                     </button>
                   ))}
                 </div>

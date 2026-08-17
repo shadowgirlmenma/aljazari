@@ -3,13 +3,14 @@ import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import Container from '@/components/ui/Container';
-import HardwareCallouts from '@/components/robots/HardwareCallouts';
 import { getRobot, PUBLISHED_ROBOTS } from '@/data/robots';
 import { CATEGORIES, SECTORS } from '@/data/taxonomy';
 import { routing } from '@/i18n/routing';
 import type { Locale } from '@/lib/types';
 import RobotDetailClient from '@/components/robots/RobotDetailClient';
 import BookRobotButton from '@/components/robots/BookRobotButton';
+import RobotGallery from '@/components/robots/RobotGallery';
+import RobotInstagramReels from '@/components/robots/RobotInstagramReels';
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     PUBLISHED_ROBOTS.map((robot) => ({ locale, slug: robot.slug })),
@@ -61,7 +62,7 @@ export default async function RobotPage({
             name: robot.name,
             description: robot.summary[lang],
             brand: robot.brand || undefined,
-            category: CATEGORIES[robot.category].label.en,
+            category: CATEGORIES[robot.categories[0]].label.en,
           }),
         }}
       />
@@ -76,11 +77,7 @@ export default async function RobotPage({
             ← {t('title')}
           </Link>
 
-          <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.25em] text-purple-400">
-            {CATEGORIES[robot.category].label[lang]}
-          </p>
-
-          <h1 className="mt-3 text-5xl font-semibold tracking-tight sm:text-7xl">
+          <h1 className="mt-8 text-5xl font-semibold tracking-tight sm:text-7xl">
             {robot.name}
           </h1>
           <p className="mt-2 text-xl text-purple-200">{robot.tagline[lang]}</p>
@@ -98,12 +95,15 @@ export default async function RobotPage({
         </Container>
       </div>
 
-      {/* ── التأشيرات المنقطة (توقيع الكتالوج) ── */}
-      <div className="bg-[#0a0414]">
-        <Container className="py-16 sm:py-20">
-          <HardwareCallouts robot={robot} />
-        </Container>
-      </div>
+      {/* ── معرض الصور — يظهر بس إذا الروبوت عنده أكثر من صورة بـ gallery ── */}
+      {robot.gallery && robot.gallery.length > 1 && (
+        <div className="section-dark">
+          <Container className="py-16 sm:py-20">
+            <RobotGallery robot={robot} />
+            <RobotInstagramReels robot={robot} />
+          </Container>
+        </div>
+      )}
 
       {/* ── المميزات + المواصفات + القطاعات (client للأنيمشن) ── */}
       <RobotDetailClient robot={robot} locale={lang} t_features={t('features')} t_specs={t('specs')} t_sectors={t('sectors')} t_madeBy={t('madeBy')} />

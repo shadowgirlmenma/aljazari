@@ -2,14 +2,16 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import ScrollReveal from '@/components/reactbits/ScrollReveal';
+import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import Logo from '@/components/Logo';
 import type { Locale } from '@/lib/types';
 
 export default function AboutSection({ locale }: { locale: Locale }) {
   const t = useTranslations('home');
   return (
-    <section className="bg-black text-white">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
+    <section className="section-dark relative overflow-hidden text-white">
+      <DotGridBackdrop />
+      <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
         <p className="border-t border-white/20 pt-3 font-mono text-[11px] uppercase tracking-[0.3em] text-purple-300">
           {t('about.eyebrow')}
         </p>

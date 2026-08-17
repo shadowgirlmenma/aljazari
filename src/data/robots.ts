@@ -1,4 +1,4 @@
-import type { Robot } from '@/lib/types';
+import type { Robot, RobotCategory } from '@/lib/types';
 
 // ─────────────────────────────────────────────────────────────
 // بيانات الروبوتات — مصدرها كتالوغ شركة الجزري الرسمي
@@ -16,10 +16,10 @@ export const ROBOTS: Robot[] = [
     slug: 'pepper',
     name: 'Pepper',
     brand: 'SoftBank Robotics',
-    category: 'humanoid',
+    categories: ['humanoid'],
     order: 1,
     featured: true,
-    image: '/robots/pepper.avif',
+    image: '/robots/pepper.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت بشري يقرأ تعبير الوجه ويتفاعل وياه، يستقبل الزائر ويجاوب على أسئلته ويعرض المعلومات على شاشة صدره. مستخدم بالمستشفيات والمدارس وصالات الاستقبال.',
@@ -85,10 +85,10 @@ export const ROBOTS: Robot[] = [
     slug: 'timo',
     name: 'Timo',
     brand: 'Alpha',
-    category: 'humanoid',
+    categories: ['humanoid'],
     order: 2,
     featured: true,
-    image: '/robots/timo.png',
+    image: '/robots/timo.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت خدمة ذكي يقود الزوار بجولات إرشادية، يرحّب بيهم ويجاوب استفساراتهم، ويقدر يسوي دوريات أمنية على مدار 24 ساعة.',
@@ -167,10 +167,10 @@ export const ROBOTS: Robot[] = [
     slug: 'cruzr',
     name: 'CRUZR',
     brand: 'UBTECH',
-    category: 'humanoid',
+    categories: ['humanoid'],
     order: 3,
     featured: true,
-    image: '/robots/cruzr.avif',
+    image: '/robots/cruzr.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت بتصميم بشري بأذرع مرنة، يستقبل الزوار ويوجههم داخل المؤسسة، ويربط الفروع بمكالمات فيديو عالية الدقة عبر نظام U-Meeting.',
@@ -249,9 +249,9 @@ export const ROBOTS: Robot[] = [
     slug: 'wnno',
     name: 'Wnno',
     brand: '',
-    category: 'humanoid',
+    categories: ['humanoid'],
     order: 4,
-    image: '/robots/wnno.avif',
+    image: '/robots/wnno.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت بشري مجهّز للمعاملات: يتعرف على الوجوه، يطبع الإيصالات والصور، يوزّع البطاقات، ويستلم الدفع إلكترونياً — كل هذا بمكان واحد.',
@@ -325,10 +325,11 @@ export const ROBOTS: Robot[] = [
     slug: 'bellabot-pro',
     name: 'BellaBot Pro',
     brand: 'Pudu Robotics',
-    category: 'service',
+    categories: ['service'],
     order: 1,
     featured: true,
-    image: '/robots/bellabot-pro.avif',
+    image: '/robots/bellabot-pro.webp',
+    gallery: ['/robots/bellabot-pro.webp', '/robots/bellabot-pro-2.webp'],
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
       ar: 'روبوت توصيل بشخصية محبوبة: يوصّل الطلبات للطاولة، يجمع الصحون، ويحوّل عيد ميلاد الزبون إلى لحظة احتفال بموسيقى وإضاءة.',
@@ -393,9 +394,10 @@ export const ROBOTS: Robot[] = [
     slug: 'kittybot-pro',
     name: 'Kittybot Pro',
     brand: 'Pudu Robotics',
-    category: 'service',
+    categories: ['service'],
     order: 2,
-    image: '/robots/kittybot-pro.avif',
+    image: '/robots/kittybot-pro.webp',
+    gallery: ['/robots/kittybot-pro.webp', '/robots/kittybot-pro-2.webp'],
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
       ar: 'روبوت خدمي بستة أوضاع تشغيل، يجمع بين التوصيل والإرشاد والإعلان — شاشته تعرض عروضك وهو يتنقل بين الزبائن.',
@@ -466,9 +468,9 @@ export const ROBOTS: Robot[] = [
     slug: 'pudubot',
     name: 'Pudubot',
     brand: 'Pudu Robotics',
-    category: 'service',
+    categories: ['service'],
     order: 3,
-    image: '/robots/pudubot.avif',
+    image: '/robots/pudubot.webp',
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
       ar: 'روبوت توصيل مصنوع بالكامل من سبيكة ألمنيوم بدرجة الطيران، بصوانٍ قابلة للتعديل وليدار مقاوم لأشعة الشمس — مبني للاشتغال المتواصل.',
@@ -550,10 +552,10 @@ export const ROBOTS: Robot[] = [
     slug: 'sanbot',
     name: 'Sanbot',
     brand: 'Qihan Technology',
-    category: 'home',
+    categories: ['service'],
     order: 1,
-    image: '/robots/sanbot.avif',
-    tagline: { ar: 'روبوت منزلي', en: 'Home robot' },
+    image: '/robots/sanbot.webp',
+    tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
       ar: 'مساعد منزلي ذكي يدعم Alexa: يراقب البيت، يجري مكالمات مرئية، يشغّل الموسيقى، ويلعب مع الأطفال ألعاب تفاعلية.',
       en: 'A smart home companion with Alexa support: it keeps an eye on the house, makes video calls, plays music, and runs interactive games with the kids.',
@@ -624,10 +626,10 @@ export const ROBOTS: Robot[] = [
     slug: 'nao',
     name: 'NAO',
     brand: 'SoftBank Robotics',
-    category: 'educational',
+    categories: ['educational'],
     order: 1,
     featured: true,
-    image: '/robots/nao.avif',
+    image: '/robots/nao.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'روبوت بشري صغير بمفاصل كاملة، يمشي ويتكلم ويتعرف على الوجوه والمشاعر. يُستخدم بتعليم اللغات، وبمساعدة أطفال التوحد على تحسين مهارات التواصل، وبأبحاث تحليل السلوك.',
@@ -708,9 +710,18 @@ export const ROBOTS: Robot[] = [
     slug: 'kebbi',
     name: 'Kebbi',
     brand: 'NUWA Robotics',
-    category: 'educational',
+    categories: ['educational'],
     order: 2,
-    image: '/robots/kebbi.png',
+    image: '/robots/kebbi.webp',
+    gallery: [
+      '/robots/kebbi-1.avif',
+      '/robots/kebbi-2.avif',
+      '/robots/kebbi-3.avif',
+      '/robots/kebbi-4.avif',
+      '/robots/kebbi-5.avif',
+      { type: 'instagram', url: 'https://www.instagram.com/reel/Dbp9IoSoZn6/' },
+      { type: 'instagram', url: 'https://www.instagram.com/reel/DaQM0Sto23e/' },
+    ],
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'روبوت تعليمي صغير بتعابير وجه متحركة، يتكلم ويستمع ويرد بذكاء. يدعم لغة Scratch ويمكن ربطه بـ ChatGPT وتطبيقات IoT.',
@@ -779,15 +790,15 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'منفذ الشحن', en: 'Charging port' }, side: 'end' },
       { label: { ar: 'مكبرات الصوت', en: 'Speakers' }, side: 'end' },
     ],
-    sectors: ['education', 'home'],
+    sectors: ['education'],
   },
   {
     slug: 'jetauto',
     name: 'JetAuto',
     brand: 'Hiwonder',
-    category: 'educational',
+    categories: ['educational'],
     order: 3,
-    image: '/robots/jetauto.avif',
+    image: '/robots/jetauto.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'منصة روبوتية ذكية لتعلم وتطوير ROS، مزودة بمعالج Jetson NVIDIA وليدار وكاميرا عمق ثلاثية الأبعاد. تدعم رسم الخرائط SLAM وتخطيط المسار.',
@@ -862,9 +873,9 @@ export const ROBOTS: Robot[] = [
     slug: 'jetarm',
     name: 'JetArm',
     brand: 'Hiwonder',
-    category: 'educational',
+    categories: ['educational'],
     order: 4,
-    image: '/robots/jetarm.avif',
+    image: '/robots/jetarm.webp',
     tagline: { ar: 'ذراع روبوتية تعليمية', en: 'Educational robotic arm' },
     summary: {
       ar: 'ذراع روبوتية بمعالج Jetson NVIDIA وكاميرا عمق عالية الدقة، تدعم مهام الالتقاط والوضع وتخطيط المسارات. مصممة لمختبرات الروبوتات الجامعية والدراسات العليا.',
@@ -936,9 +947,9 @@ export const ROBOTS: Robot[] = [
     slug: 'ugot',
     name: 'Ugot',
     brand: 'UBTECH',
-    category: 'educational',
+    categories: ['educational'],
     order: 5,
-    image: '/robots/ugot.jpg', 
+    image: '/robots/ugot.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'روبوت تعليمي معياري يتركّب بأكثر من شكل — سيارة، ذراع، أو روبوت متحرك. يدعم البرمجة البلوكية و Python، ويتعرف على الأشياء والوجوه والإيماءات.',
@@ -982,9 +993,9 @@ export const ROBOTS: Robot[] = [
     slug: 'ukit',
     name: 'Ukit',
     brand: 'UBTECH',
-    category: 'educational',
+    categories: ['educational'],
     order: 6,
-    image: '/robots/ukitrobot.jpg',
+    image: '/robots/ukit.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'مجموعة تركيب تعليمية للمراحل المتوسطة والثانوية: الطالب يركّب الروبوت بيده ويبرمجه بالبرمجة البلوكية، ويتعلم أساسيات الذكاء الاصطناعي والروبوتات.',
@@ -1014,7 +1025,7 @@ export const ROBOTS: Robot[] = [
     slug: 'unitree',
     name: 'Unitree',
     brand: 'Unitree',
-    category: 'quadruped',
+    categories: ['quadruped'],
     order: 1,
     draft: true, // ← ينتظر مواصفات من الشركة (ظهر بغلاف الكتالوغ بدون صفحة تفاصيل)
     image: '/robots/unitree.avif',
@@ -1041,8 +1052,8 @@ export function getRobot(slug: string): Robot | undefined {
   return ROBOTS.find((r) => r.slug === slug);
 }
 
-export function getRobotsByCategory(category: Robot['category']): Robot[] {
-  return ROBOTS.filter((r) => r.category === category).sort((a, b) => a.order - b.order);
+export function getRobotsByCategory(category: RobotCategory): Robot[] {
+  return ROBOTS.filter((r) => r.categories.includes(category)).sort((a, b) => a.order - b.order);
 }
 
 export function getFeaturedRobots(): Robot[] {

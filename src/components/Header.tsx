@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useState, useEffect, useRef } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
-import Logo from '@/components/Logo';
+import LogoFull from '@/components/LogoFull';
 import dynamic from 'next/dynamic';
 
 const Lightfall = dynamic(() => import('@/components/reactbits/Lightfall'), { ssr: false });
@@ -22,40 +22,58 @@ const NAV = [
 export default function Header() {
   const t  = useTranslations('nav');
   const tc = useTranslations('cta');
+  const locale = useLocale();
   const pathname = usePathname();
-  const [open,     setOpen]     = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  /* الهيدر يختفي (fade) وأنتِ تنزلين بالسكرول، ويرجع يظهر وأنتِ تطلعين لفوق —
+     حتى ما يتراكب مع كتابة الصفحة اللي تحته وهو شفاف. */
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => setOpen(false), [pathname]);
-
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 12);
-    window.addEventListener('scroll', handler, { passive: true });
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
+  useEffect(() => {
+    const handler = () => {
+      const currentY = window.scrollY;
+      if (currentY <= 16) {
+        setVisible(true);
+      } else if (currentY > lastScrollY.current) {
+        setVisible(false); // نازلة بالسكرول
+      } else {
+        setVisible(true); // طالعة لفوق
+      }
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener('scroll', handler, { passive: true });
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
   return (
     <>
+      {/* هيدر ثابت (fixed) فوق محتوى الصفحة مباشرة — بدون ما ياخذ مساحته من التخطيط،
+          حتى الصور والأقسام بأول الصفحة تلتصق بحافة الصفحة تماماً والهيدر يطلع فوقها شفاف.
+          يختفي بفيد وأنتِ تنزلين بالسكرول، ويرجع يظهر وأنتِ تطلعين لفوق. */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'border-b border-white/10 bg-[#120621]/80 shadow-lg shadow-black/20 backdrop-blur-2xl'
-            : 'border-b border-white/5 bg-[#120621]/60 backdrop-blur-xl'
+        className={`fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent transition-all duration-300 ${
+          visible ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-4 opacity-0'
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
 
           <Link href="/" className="flex items-center gap-2.5 text-white">
-            <Logo className="w-9 shrink-0 text-purple-400" title="الجزري" />
             <div className="leading-none">
-              <span className="block text-base font-semibold tracking-tight">الجزري</span>
-              <span className="block font-mono text-[9px] uppercase tracking-[0.2em] text-purple-400 opacity-80">
-                AL-JAZARI ROBOTICS
+              <LogoFull
+                locale={locale as 'ar' | 'en'}
+                className="h-6 w-auto text-white sm:h-7"
+                title={locale === 'ar' ? 'الجزري' : 'Aljazari'}
+              />
+              <span className="mt-1 block font-mono text-[9px] uppercase tracking-[0.2em] text-purple-400 opacity-80">
+                {locale === 'ar' ? 'حلول الروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
               </span>
             </div>
           </Link>
@@ -138,10 +156,7 @@ export default function Header() {
               </div>
 
               <div className="relative z-10 flex items-center justify-between border-b border-white/10 px-6 py-5">
-                <div className="flex items-center gap-2.5">
-                  <Logo className="w-8 text-purple-300" />
-                  <span className="text-sm font-semibold text-white">الجزري</span>
-                </div>
+                <LogoFull locale={locale as 'ar' | 'en'} className="h-6 w-auto text-white" />
                 <button
                   type="button"
                   onClick={() => setOpen(false)}

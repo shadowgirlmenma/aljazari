@@ -83,7 +83,7 @@ export default function AboutServices({
                     }
                   />
                 </motion.div>
-                <h3 className="mt-5 text-lg font-semibold text-white">{service.title}</h3>
+                <h3 className="mt-5 text-lg font-medium text-white">{service.title}</h3>
                 <p className="text-brand-200/75 mt-2 text-sm leading-relaxed">{service.desc}</p>
               </motion.div>
             ))}

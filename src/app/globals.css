@@ -16,8 +16,13 @@
 
   --color-ink: #0d0818;
 
-  --font-sans: 'Readex Pro', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  /* هذولا لازم يشيرون لمتغيرات next/font (--font-readex / --font-plex-mono)
+     المولّدة بملف layout.tsx، مو اسم الخط كنص حرفي — لأنه "Readex Pro"
+     كنص مو مثبّت كخط بالنظام، ونيكست يحمّله بنفسه باسم مستعار مختلف.
+     كتابته حرفياً هنا كانت تلغي (تصادم أسماء) متغير next/font وتخلي
+     الموقع يرجع لخط النظام الافتراضي بشكل غير موحّد بين صفحة وصفحة. */
+  --font-sans: var(--font-readex), sans-serif;
+  --font-mono: var(--font-plex-mono), monospace;
 }
 
 /* ═══ قاعدة ═══ */
@@ -27,6 +32,10 @@ html {
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+}
+/* النسخة الإنجليزية تستخدم Space Grotesk بدل Readex Pro (العربي يبقى Readex Pro) */
+html:lang(en) {
+  --font-sans: var(--font-space-grotesk), sans-serif;
 }
 /* ═══ الأقسام الداكنة ═══ */
 .bg-brand-gradient {
@@ -63,4 +72,253 @@ html {
 :focus-visible {
   outline: 2px solid var(--color-brand-400);
   outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Glassmorphism — إلزامي بكل الموقع
+   لوحة زجاجية موحدة تستخدم فوق التدرّج البنفسجي، بدرجتين:
+   خفيفة (glass) للشرائح والأزرار، وقوية (glass-strong) للمودالات
+   ═══════════════════════════════════════════════════════════ */
+.glass {
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.glass-card {
+  position: relative;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(124, 71, 224, 0.07) 100%
+  );
+  backdrop-filter: blur(26px) saturate(190%);
+  -webkit-backdrop-filter: blur(26px) saturate(190%);
+  border: 1px solid rgba(196, 165, 255, 0.25);
+  box-shadow:
+    0 8px 32px rgba(9, 3, 20, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+/* لمعة خفيفة متحركة تعبر البطاقة الزجاجية كل فترة — تعطي إحساس "حي"
+   حتى بدون ما الماوس يكون فوقها */
+.glass-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.045) 48%,
+    rgba(255, 255, 255, 0.045) 52%,
+    transparent 65%
+  );
+  background-size: 250% 250%;
+  background-position: 130% 130%;
+  animation: glass-shine 9s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes glass-shine {
+  0%, 15%   { background-position: 130% 130%; }
+  50%, 65%  { background-position: -30% -30%; }
+  100%      { background-position: -30% -30%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .glass-card::after { animation: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   شريط تفاعلي — يستخدم لأي "شريط" بالموقع (شعارات، بانرات...):
+   يرتفع خفيف (pop) عند مرور الماوس + إضاءة تمشي على طول حوافه
+   بشكل مستمر (مو ذهاب-رجوع متل StarBorder). ضيفي class="strip-glow"
+   على أي حاوية شريط زجاجية.
+   ═══════════════════════════════════════════════════════════ */
+.strip-glow {
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.strip-glow:hover {
+  transform: translateY(-5px) scale(1.012);
+  box-shadow: 0 18px 44px rgba(9, 3, 20, 0.5);
+}
+.strip-glow::before,
+.strip-glow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 40%;
+  height: 2px;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(90deg, transparent, #c4a5ff, #a78bfa, transparent);
+  filter: blur(1px);
+  animation: strip-travel 4.5s linear infinite;
+}
+.strip-glow::before { top: 0; }
+.strip-glow::after  { bottom: 0; animation-delay: -2.25s; }
+@keyframes strip-travel {
+  0%   { transform: translateX(-40%); opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { transform: translateX(250%); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .strip-glow::before, .strip-glow::after { animation: none; opacity: 0; }
+  .strip-glow:hover { transform: none; }
+}
+
+/* نفس إضاءة الحواف الماشية، بس بدون "pop" الماوس — لأقسام كاملة العرض
+   (مو بطاقات محصورة) متل قسم "الجزري بالأرقام" وغيره من الأقسام الكبيرة. */
+.edge-travel {
+  position: relative;
+}
+.edge-travel::before,
+.edge-travel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 30%;
+  height: 2px;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(90deg, transparent, #c4a5ff, #a78bfa, transparent);
+  filter: blur(1px);
+  animation: strip-travel 6s linear infinite;
+}
+.edge-travel::before { top: 0; }
+.edge-travel::after  { bottom: 0; animation-delay: -3s; }
+@media (prefers-reduced-motion: reduce) {
+  .edge-travel::before, .edge-travel::after { animation: none; opacity: 0; }
+}
+
+/* خط إضاءة مستمر (ثابت، مو ماشي) أبيض إلى بنفسجي فاتح جداً — يوضع
+   بأعلى القسم ليضيء الخط الفاصل بين قسمين بلونين مختلفين من البنفسجي
+   الغامق، حتى ما يبين القطع بينهم حاد. ضيفي class="seam-glow" على
+   الحاوية الي تبدأ بعد القسم السابق مباشرة. */
+.seam-glow {
+  position: relative;
+}
+.seam-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(196, 165, 255, 0.75) 12%,
+    #f5f0ff 50%,
+    rgba(196, 165, 255, 0.75) 88%,
+    transparent
+  );
+  box-shadow:
+    0 0 14px 2px rgba(196, 165, 255, 0.5),
+    0 0 5px 1px rgba(245, 240, 255, 0.65);
+  animation: seam-glow-breathe 3.6s ease-in-out infinite;
+}
+@keyframes seam-glow-breathe {
+  0%, 100% { opacity: 0.7; }
+  50%      { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .seam-glow::before { animation: none; opacity: 0.85; }
+}
+
+/* إطار سميك بنفسجي متوهج ونابض — لصور كبيرة بارزة (مثل صورة الجزري
+   بقسم "لماذا اسمنا الجزري") حتى تبين مميزة وحية بدون ما تنكسر الصورة. */
+.portrait-frame-glow {
+  border: 3px solid rgba(196, 165, 255, 0.55);
+  animation: portrait-frame-pulse 4s ease-in-out infinite;
+}
+@keyframes portrait-frame-pulse {
+  0%, 100% {
+    border-color: rgba(167, 139, 250, 0.4);
+    box-shadow:
+      0 0 0 1px rgba(167, 139, 250, 0.15),
+      0 0 30px 4px rgba(124, 71, 224, 0.18),
+      inset 0 0 30px rgba(124, 71, 224, 0.08);
+  }
+  50% {
+    border-color: rgba(196, 165, 255, 0.85);
+    box-shadow:
+      0 0 0 1px rgba(196, 165, 255, 0.3),
+      0 0 55px 12px rgba(167, 139, 250, 0.4),
+      inset 0 0 45px rgba(167, 139, 250, 0.16);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait-frame-glow { animation: none; }
+}
+
+/* بقع ضوء بنفسجية خلف أي قسم فيه بطاقات زجاجية — بدونها الـ blur ما يبين
+   لأنه ما فيه شي وراه يشوّشه. حطي class="... glass-backdrop" على أي
+   <div> قسم فيه بطاقات .glass أو .glass-card، وحطي على العنصر اللي
+   جواه فيه المحتوى class="relative z-10" حتى يظهر فوق البقع مو تحتها. */
+.glass-backdrop {
+  position: relative;
+  overflow: hidden;
+}
+.glass-backdrop::before,
+.glass-backdrop::after {
+  content: '';
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.glass-backdrop::before {
+  width: 460px;
+  height: 460px;
+  top: -120px;
+  left: 8%;
+  background: rgba(124, 71, 224, 0.5);
+}
+.glass-backdrop::after {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: 6%;
+  background: rgba(196, 100, 236, 0.38);
+}
+
+.glass-strong {
+  background: rgba(18, 6, 33, 0.58);
+  backdrop-filter: blur(34px) saturate(180%);
+  -webkit-backdrop-filter: blur(34px) saturate(180%);
+  border: 1px solid rgba(196, 165, 255, 0.24);
+  box-shadow: 0 20px 60px rgba(4, 1, 10, 0.5);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* ═══ خلفية موحّدة بنفسجية بالكامل — بديل أي bg-black ═══ */
+.section-dark {
+  background: var(--color-brand-950);
+}
+.section-darker {
+  background: #0a0414;
+}
+
+/* ═══ شبكة الأفق المتحركة (PerspectiveGrid) ═══ */
+.perspective-grid__floor {
+  animation: perspective-grid-move 14s linear infinite;
+}
+@keyframes perspective-grid-move {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 0 54px, 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .perspective-grid__floor { animation: none; }
 }

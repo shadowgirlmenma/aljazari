@@ -1,10 +1,18 @@
 .logoloop { position: relative; --logoloop-gap: 32px; --logoloop-logoHeight: 28px; --logoloop-fadeColorAuto: #ffffff; overflow: hidden; }
 .logoloop__track { display: flex; width: max-content; will-change: transform; user-select: none; position: relative; z-index: 0; }
 .logoloop__list { display: flex; align-items: center; }
-.logoloop__item { flex: 0 0 auto; margin-right: var(--logoloop-gap); font-size: var(--logoloop-logoHeight); line-height: 1; }
+.logoloop__item { flex: 0 0 auto; margin-right: var(--logoloop-gap); font-size: var(--logoloop-logoHeight); line-height: 1; border-radius: 10px; animation: logoloop-halo 3.6s ease-in-out infinite; }
 .logoloop__item:last-child { margin-right: var(--logoloop-gap); }
+.logoloop__item:nth-child(2n) { animation-delay: -1.2s; }
+.logoloop__item:nth-child(3n) { animation-delay: -2.4s; }
 .logoloop__node { display: inline-flex; align-items: center; }
-.logoloop__item img { height: var(--logoloop-logoHeight); width: auto; display: block; object-fit: contain; -webkit-user-drag: none; pointer-events: none; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); }
+.logoloop__item img { height: var(--logoloop-logoHeight); width: auto; display: block; object-fit: contain; -webkit-user-drag: none; pointer-events: none; border-radius: 8px; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); }
+/* هالة إضاءة بيضاء-وردية تحيط كل شعار وتخفت وتقوى بشكل مستمر */
+@keyframes logoloop-halo {
+  0%, 100% { box-shadow: 0 0 0 rgba(255,255,255,0), 0 0 0 rgba(236,164,255,0); }
+  50%      { box-shadow: 0 0 12px 2px rgba(255,255,255,0.4), 0 0 22px 7px rgba(236,164,255,0.28); }
+}
+@media (prefers-reduced-motion: reduce) { .logoloop__item { animation: none; } }
 .logoloop--scale-hover .logoloop__item { overflow: visible; }
 .logoloop--scale-hover .logoloop__item:hover img, .logoloop--scale-hover .logoloop__item:hover .logoloop__node { transform: scale(1.2); transform-origin: center center; }
 .logoloop__link { display: inline-flex; align-items: center; text-decoration: none; border-radius: 4px; transition: opacity 0.2s ease; }

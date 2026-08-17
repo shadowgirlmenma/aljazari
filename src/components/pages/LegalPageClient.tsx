@@ -18,7 +18,7 @@ export default function LegalPageClient({
           animate={{ opacity: 1, y: 0 }}
           className="font-mono text-[11px] uppercase tracking-[0.3em] text-purple-400"
         >
-          Al-Jazari Robotics
+          Robotics & AI
         </motion.p>
 
         <motion.h1

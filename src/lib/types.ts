@@ -11,7 +11,7 @@ export type Locale = (typeof LOCALES)[number];
 export type LocalizedText = Record<Locale, string>;
 
 /** تصنيفات الروبوتات كما وردت في كتالوغ الشركة */
-export type RobotCategory = 'humanoid' | 'service' | 'educational' | 'home' | 'quadruped';
+export type RobotCategory = 'humanoid' | 'service' | 'educational' | 'quadruped';
 
 /** القطاعات المستهدفة — المفاتيح معرّفة مرة وحدة في data/sectors.ts */
 export type SectorKey =
@@ -59,7 +59,11 @@ export interface Robot {
   name: string;
   /** الشركة المصنّعة */
   brand: string;
-  category: RobotCategory;
+  /**
+   * تصنيف أو أكثر — أول عنصر هو التصنيف الأساسي (يظهر بصفحة التفاصيل والبطاقة)،
+   * وبقية العناصر تخلي الروبوت يظهر بفلاتر إضافية بصفحة "روبوتاتنا".
+   */
+  categories: RobotCategory[];
   /** سطر واحد تحت الاسم، مثل "روبوت بشري" */
   tagline: LocalizedText;
   /** فقرة تعريفية قصيرة تظهر في البطاقة وفي أعلى صفحة التفاصيل */
@@ -68,8 +72,24 @@ export interface Robot {
   specs: RobotSpec[];
   hardware: RobotHardware[];
   sectors: SectorKey[];
-  /** مسار الصورة داخل /public */
+  /**
+   * نوع/أنواع التوفّر — يُستخدم بفلتر "نوع المنتج" بصفحة "روبوتاتنا".
+   * rent = متوفر للإيجار، sale = متوفر للبيع، preorder = حجز مسبق (لسا ما وصل).
+   * روبوت واحد ممكن يكون بأكثر من نوع (مثلاً rent + sale). إذا الحقل فاضي
+   * يُعتبر الروبوت متوفر للإيجار والبيع (الوضع الافتراضي الحالي).
+   */
+  productType?: ('rent' | 'sale' | 'preorder')[];
+  /** مسار الصورة الرئيسية داخل /public */
   image: string;
+  /**
+   * معرض صور/فيديو إضافي (اختياري) — بأي ترتيب تحبين، يظهر بنفس الشريط
+   * بصفحة تفاصيل الروبوت (قبل جدول المعلومات مباشرة).
+   * - صورة: مسار نصي داخل /public، مثلاً '/robots/kebbi-1.avif'
+   * - فيديو ريلز إنستغرام: { type: 'instagram', url: 'رابط الريلز الكامل' }
+   *   يتشغل مباشرة بالموقع (embed)، وفيه رابط "فتح بإنستغرام" أسفله.
+   * إذا الحقل فاضي أو فيه عنصر وحد بس، تظهر الصورة الرئيسية بس وكل شي يشتغل عادي.
+   */
+  gallery?: (string | { type: 'instagram'; url: string })[];
   /** موديل ثلاثي الأبعاد اختياري (.glb) */
   model3d?: string;
   /** يظهر في الصفحة الرئيسية */

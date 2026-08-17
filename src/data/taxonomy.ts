@@ -2,7 +2,7 @@ import type { LocalizedText, RobotCategory, SectorKey } from '@/lib/types';
 
 // ─────────────────────────────────────────────────────────────
 // التصنيفات والقطاعات — معرّفة مرة وحدة، وكل الروبوتات تشير إلها
-// هيچ ما تنكرر الترجمة ولا تصير تناقضات بين صفحة وصفحة
+// حتى لا تتكرر الترجمة ولا تحدث تناقضات بين صفحة وأخرى
 // ─────────────────────────────────────────────────────────────
 
 export const CATEGORIES: Record<
@@ -28,13 +28,6 @@ export const CATEGORIES: Record<
     description: {
       ar: 'منصّات تعليم برمجة وذكاء اصطناعي، من المدرسة إلى مختبرات الجامعة.',
       en: 'Platforms for teaching programming and AI, from school labs to university research.',
-    },
-  },
-  home: {
-    label: { ar: 'روبوتات منزلية', en: 'Home robots' },
-    description: {
-      ar: 'مساعد منزلي ذكي للمراقبة والترفيه والتواصل مع العائلة.',
-      en: 'A smart home companion for monitoring, entertainment, and staying in touch.',
     },
   },
   quadruped: {
@@ -68,6 +61,16 @@ export const CATEGORY_ORDER: RobotCategory[] = [
   'humanoid',
   'service',
   'educational',
-  'home',
   'quadruped',
 ];
+
+/** أنواع توفّر المنتج — تُستخدم بفلتر "نوع المنتج" بصفحة "روبوتاتنا" */
+export type ProductType = 'rent' | 'sale' | 'preorder';
+
+export const PRODUCT_TYPES: Record<ProductType, { label: LocalizedText }> = {
+  rent: { label: { ar: 'للإيجار', en: 'For Rent' } },
+  sale: { label: { ar: 'للبيع', en: 'For Sale' } },
+  preorder: { label: { ar: 'حجز مسبق', en: 'Pre-order' } },
+};
+
+export const PRODUCT_TYPE_ORDER: ProductType[] = ['rent', 'sale', 'preorder'];

@@ -74,7 +74,7 @@ export const LogoLoop = memo(({
     if (renderItem) return <li className="logoloop__item" key={key} role="listitem">{renderItem(item, key)}</li>;
     const isNode = 'node' in item;
     const content = isNode ? <span className="logoloop__node" aria-hidden={!!item.href && !item.ariaLabel}>{item.node}</span>
-      : <img src={item.src} srcSet={item.srcSet} sizes={item.sizes} width={item.width} height={item.height} alt={item.alt ?? ''} title={item.title} loading="lazy" decoding="async" draggable={false} />;
+      : <img src={item.src} srcSet={item.srcSet} sizes={item.sizes} width={item.width} height={item.height} alt={item.alt ?? ''} title={item.title} loading="lazy" decoding="async" draggable={false} onError={(e) => { e.currentTarget.style.display = 'none'; }} />;
     const label = isNode ? (item.ariaLabel ?? item.title) : (item.alt ?? item.title);
     const inner = item.href ? <a className="logoloop__link" href={item.href} aria-label={label || 'logo link'} target="_blank" rel="noreferrer noopener">{content}</a> : content;
     return <li className="logoloop__item" key={key} role="listitem">{inner}</li>;

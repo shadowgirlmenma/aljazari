@@ -1,7 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
-import { Link } from '@/i18n/navigation';
+import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import type { Locale } from '@/lib/types';
 
 export default function LocationSection({
@@ -15,8 +15,9 @@ export default function LocationSection({
   const mapsUrl = 'https://www.google.com/maps/place/Aljazari+Robotics/@33.3152,44.3661,17z';
 
   return (
-    <section className="bg-black text-white">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
+    <section className="section-dark relative overflow-hidden text-white">
+      <DotGridBackdrop />
+      <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -24,15 +25,9 @@ export default function LocationSection({
             viewport={{ once: true, margin: '-60px' }}
             className="flex flex-col justify-center"
           >
-            <h2 className="text-2xl font-semibold sm:text-3xl">{t('visit.loginTitle')}</h2>
-            <p className="mt-3 leading-relaxed text-white/65">{t('visit.loginDesc')}</p>
+            <h2 className="text-2xl font-semibold sm:text-3xl">{t('visit.title')}</h2>
+            <p className="mt-3 leading-relaxed text-white/65">{t('visit.subtitle')}</p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/login"
-                className="rounded-full bg-white px-7 py-3 text-sm font-medium text-purple-950 transition hover:bg-purple-100"
-              >
-                {t('visit.login')}
-              </Link>
               <a
                 href={mapsUrl}
                 target="_blank"

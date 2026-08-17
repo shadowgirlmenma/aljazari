@@ -38,19 +38,22 @@ export default async function AboutPage({
       storyBody2={t('story.body2')}
       nameTitle={t('name.title')}
       nameBody={t('name.body')}
+      videoTitle={t('video.title')}
+      videoWatch={t('video.watch')}
+      symbolTitle={t('symbol.title')}
+      symbolSubtitle={t('symbol.subtitle')}
+      symbolArabicTitle={t('symbol.arabicLetter.title')}
+      symbolArabicDesc={t('symbol.arabicLetter.desc')}
+      symbolEnglishTitle={t('symbol.englishLetter.title')}
+      symbolEnglishDesc={t('symbol.englishLetter.desc')}
+      symbolRobotTitle={t('symbol.robotShape.title')}
+      symbolRobotDesc={t('symbol.robotShape.desc')}
       foundersTitle={t('founders.title')}
       foundersBody1={t('founders.body1')}
       foundersBody2={t('founders.body2')}
       foundersBody3={t('founders.body3')}
       signature={t('founders.signature')}
       signature2={t('founders.signature2')}
-      valuesTitle={t('values.title')}
-      values={[
-        { title: t('values.innovation.title'), desc: t('values.innovation.desc') },
-        { title: t('values.quality.title'),    desc: t('values.quality.desc') },
-        { title: t('values.trust.title'),      desc: t('values.trust.desc') },
-        { title: t('values.iraq.title'),       desc: t('values.iraq.desc') },
-      ]}
       contactTitle={t('contact.title')}
       contactAddress={t('contact.address')}
       contactPhone="+964 7802 555 444"

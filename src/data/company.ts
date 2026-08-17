@@ -127,15 +127,17 @@ export interface Partner {
   url?: string;
 }
 
+// المصدر: ملف "Partners and Clients Logos" الي زودتنا فيه الشركة (٠٧-٠٨-٢٠٢٦) —
+// الشعارات الحقيقية تحت عنواني Our Partners و Our clients بالضبط (تجاهلنا
+// صور قسم Events لأنها مو شعارات شركاء/عملاء).
 export const PARTNERS: Partner[] = [
-  { name: 'Promobot', logo: '/partners/promobot.svg' },
-  { name: 'UBTECH', logo: '/partners/ubtech.svg' },
-  { name: 'Pudu Robotics', logo: '/partners/pudu.svg' },
-  { name: 'SoftBank', logo: '/partners/softbank.svg' },
-  { name: 'Action To Action', logo: '/partners/action-to-action.svg' },
-  { name: 'Alpha', logo: '/partners/alpha.svg' },
-  { name: 'Unitree', logo: '/partners/unitree.svg' },
-  { name: 'Hiwonder', logo: '/partners/hiwonder.svg' },
+  { name: 'Nuwa Robotics', logo: '/partners/nuwa-robotics.png' },
+  { name: 'Unitree', logo: '/partners/unitree.png' },
+  { name: 'Pudu Robotics', logo: '/partners/pudu.png' },
+  { name: 'Promobot', logo: '/partners/promobot.png' },
+  { name: 'UBTECH', logo: '/partners/ubtech.png' },
+  { name: 'Action To Action', logo: '/partners/action-to-action.png' },
+  { name: 'Alpha', logo: '/partners/alpha.png' },
 ];
 
 // ═════════════════ العملاء ═════════════════
@@ -146,23 +148,30 @@ export interface Client {
 }
 
 export const CLIENTS: Client[] = [
-  { name: { ar: 'آسياسيل', en: 'Asiacell' }, logo: '/clients/asiacell.svg' },
-  { name: { ar: 'أسترازينيكا', en: 'AstraZeneca' }, logo: '/clients/astrazeneca.svg' },
-  { name: { ar: 'جيتور', en: 'Jetour' }, logo: '/clients/jetour.svg' },
-  { name: { ar: 'ميديكو', en: 'Medico' }, logo: '/clients/medico.svg' },
-  { name: { ar: 'TEDx نشتيمان', en: 'TEDx Nishtiman' }, logo: '/clients/tedx-nishtiman.svg' },
-  { name: { ar: 'أدرا', en: 'Adra' }, logo: '/clients/adra.svg' },
-  { name: { ar: 'بريفيستا', en: 'Brivesta' }, logo: '/clients/brivesta.svg' },
-  { name: { ar: 'أسوار', en: 'Aswar' }, logo: '/clients/aswar.svg' },
-  { name: { ar: 'مسارات العراق لتكنولوجيا المعلومات', en: 'Masarat Al-Iraq IT' }, logo: '/clients/masarat.svg' },
-  { name: { ar: 'إيجاف تكنولوجي', en: 'EJAF Technology' }, logo: '/clients/ejaf.svg' },
-  { name: { ar: 'NSCO', en: 'NSCO' }, logo: '/clients/nsco.svg' },
-  { name: { ar: 'جيل', en: 'Jeel' }, logo: '/clients/jeel.svg' },
-  { name: { ar: 'الكحال للعيون', en: 'Al-Kahhal Eye Center' }, logo: '/clients/alkahhal.svg' },
-  { name: { ar: 'منتدى المدن الذكية العراقي', en: 'Iraqi Smart Cities Forum' }, logo: '/clients/smart-cities.svg' },
-  { name: { ar: 'زيارة كردستان', en: 'Visit Kurdistan' }, logo: '/clients/visit-kurdistan.svg' },
-  { name: { ar: 'ساوث إيست', en: 'Soueast' }, logo: '/clients/soueast.svg' },
-  { name: { ar: 'PTC', en: 'PTC' }, logo: '/clients/ptc.svg' },
+  { name: { ar: 'أدرا', en: 'Adra' }, logo: '/clients/adra.png' },
+  { name: { ar: 'زوم دنت', en: 'Zoom Dent' }, logo: '/clients/zoom-dent.png' },
+  { name: { ar: 'جامعة المعارف', en: 'University of Al-Ma’arif' }, logo: '/clients/university-of-al-maarif.png' },
+  { name: { ar: 'حكاية الجمال', en: 'Hikayat Aljamal' }, logo: '/clients/hikayat-aljamal.png' },
+  { name: { ar: 'PTC', en: 'PTC Progress Group' }, logo: '/clients/ptc-progress-group.png' },
+  { name: { ar: 'B.G', en: 'B.G' }, logo: '/clients/bg.png' },
+  { name: { ar: 'الغدير', en: 'Al-Ghadeer' }, logo: '/clients/al-ghadeer.png' },
+  { name: { ar: 'الجامعة الإسلامية', en: 'The Islamic University' }, logo: '/clients/islamic-university.png' },
+  { name: { ar: 'نقابة المهندسين العراقية', en: 'Iraqi Engineers Union' }, logo: '/clients/iraqi-engineers-union.png' },
+  { name: { ar: 'مسارات العراق لتكنولوجيا المعلومات', en: 'Masarat Al-Iraq IT' }, logo: '/clients/masarat-aliraq-it.png' },
+  { name: { ar: 'منتدى المدن الذكية العراقي', en: 'Iraqi Smart Cities Forum' }, logo: '/clients/iraqi-smart-cities-forum.png' },
+  { name: { ar: 'زيارة كردستان', en: 'Visit Kurdistan' }, logo: '/clients/visit-kurdistan.png' },
+  { name: { ar: 'جيل', en: 'Jeel' }, logo: '/clients/jeel.png' },
+  { name: { ar: 'بذور بغداد', en: 'Budoor Baghdad' }, logo: '/clients/budoor-baghdad.png' },
+  { name: { ar: 'ميديكو إربيل', en: 'Medico Erbil' }, logo: '/clients/medico-erbil.png' },
+  { name: { ar: 'جامعة الفارابي', en: 'Al-Farabi University' }, logo: '/clients/alfarabi-university.png' },
+  { name: { ar: 'IDF', en: 'IDF' }, logo: '/clients/idf.png' },
+  { name: { ar: 'غرفة تجارة بغداد', en: 'Baghdad Chamber of Commerce' }, logo: '/clients/baghdad-chamber-of-commerce.png' },
+  { name: { ar: 'الكحال للعيون', en: 'Al-Kahhal Eye Center' }, logo: '/clients/alkahhal-eye-center.png' },
+  { name: { ar: 'IEE 10', en: '10th IEE' }, logo: '/clients/10th-iee.png' },
+  { name: { ar: 'VEX IQ Robotics', en: 'VEX IQ Robotics' }, logo: '/clients/vex-iq-robotics.png' },
+  { name: { ar: 'عميل', en: 'Client' }, logo: '/clients/client-q.png' },
+  { name: { ar: 'عميل', en: 'Client' }, logo: '/clients/client-15.png' },
+  { name: { ar: 'عميل', en: 'Client' }, logo: '/clients/client-20.png' },
 ];
 
 // ═════════════════ معلومات التواصل ═════════════════

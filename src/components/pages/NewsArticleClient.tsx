@@ -2,9 +2,11 @@
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 import Logo from '@/components/Logo';
+import type { Locale } from '@/lib/types';
 
 export default function NewsArticleClient({
   title, excerpt, category, date, readTime, backLabel, image,
@@ -13,17 +15,20 @@ export default function NewsArticleClient({
   date: string; readTime: string; backLabel: string;
   image?: string;
 }) {
+  void readTime; // شيلنا عرض دقائق القراءة من صفحة المقال
+  const locale = useLocale() as Locale;
+
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr);
-    return d.toLocaleDateString('ar-IQ', {
+    return d.toLocaleDateString(locale === 'ar' ? 'ar-IQ' : 'en-US', {
       year: 'numeric', month: 'long', day: 'numeric',
     });
   };
 
   return (
     <article>
-      {/* ── صورة/بانر — أو شعار الجزري إذا الصورة لسه ما انحطت ── */}
-      <div className="relative flex h-72 items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900/60 to-[#120621] sm:h-96">
+      {/* ── صورة/بانر بنسبة landscape كاملة العرض — أو شعار الجزري إذا الصورة لسه ما انحطت ── */}
+      <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-purple-900/60 to-[#120621]">
         {image ? (
           <Image
             src={image}
@@ -34,9 +39,11 @@ export default function NewsArticleClient({
             className="object-cover"
           />
         ) : (
-          <Logo className="w-24 text-purple-400/25" />
+          <div className="flex h-full w-full items-center justify-center">
+            <Logo className="w-24 text-purple-400/25" />
+          </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0414] via-transparent to-black/30" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a0414] via-transparent to-transparent" />
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -74,11 +81,9 @@ export default function NewsArticleClient({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="mt-4 flex items-center gap-2 font-mono text-xs text-purple-400/70"
+            className="mt-4 font-mono text-xs text-purple-400/70"
           >
-            <span>{formatDate(date)}</span>
-            <span>·</span>
-            <span>{readTime} دقائق قراءة</span>
+            {formatDate(date)}
           </motion.div>
 
           <motion.p
@@ -89,19 +94,6 @@ export default function NewsArticleClient({
           >
             {excerpt}
           </motion.p>
-
-          {/* محتوى إضافي placeholder — يتحول لمحتوى حقيقي من الباكند لاحقاً */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-10 space-y-5 leading-relaxed text-purple-200/70"
-          >
-            <p>
-              تفاصيل الخبر الكاملة راح تنضاف هنا لما يجهز الباكند ويصير عدنا نظام إدارة محتوى فعلي.
-              حالياً هذا محتوى مبدئي يوضح شكل صفحة المقال.
-            </p>
-          </motion.div>
 
           {/* مشاركة / رجوع */}
           <div className="mt-14 border-t border-purple-900/40 pt-8">
