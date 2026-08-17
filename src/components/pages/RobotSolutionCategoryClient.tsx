@@ -9,17 +9,16 @@ import RobotVisual from '@/components/robots/RobotVisual';
 import StarBorder from '@/components/reactbits/StarBorder';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import { getRobot } from '@/data/robots';
-import type { RobotSolutionCategory } from '@/data/robotSolutions';
+import { ROBOT_SOLUTION_ICONS, type RobotSolutionCategory, type RobotSolutionSlug } from '@/data/robotSolutions';
 import type { Locale } from '@/lib/types';
-import type { LucideIcon } from 'lucide-react';
 
 export default function RobotSolutionCategoryClient({
   category,
-  Icon,
+  slug,
   t,
 }: {
   category: RobotSolutionCategory;
-  Icon: LucideIcon;
+  slug: RobotSolutionSlug;
   t: {
     backToSolutions: string;
     meetRobots: string;
@@ -34,6 +33,7 @@ export default function RobotSolutionCategoryClient({
   };
 }) {
   const locale = useLocale() as Locale;
+  const Icon = ROBOT_SOLUTION_ICONS[slug];
 
   return (
     <>

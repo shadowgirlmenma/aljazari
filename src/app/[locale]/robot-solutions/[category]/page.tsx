@@ -5,9 +5,8 @@ import { routing } from '@/i18n/routing';
 import type { Locale } from '@/lib/types';
 import {
   ROBOT_SOLUTIONS_ORDER,
-  ROBOT_SOLUTIONS,
-  ROBOT_SOLUTION_ICONS,
   getRobotSolution,
+  type RobotSolutionSlug,
 } from '@/data/robotSolutions';
 import RobotSolutionCategoryClient from '@/components/pages/RobotSolutionCategoryClient';
 
@@ -50,13 +49,12 @@ export default async function RobotSolutionCategoryPage({
   const category = getRobotSolution(slug);
   if (!category) notFound();
 
-  const Icon = ROBOT_SOLUTION_ICONS[slug as keyof typeof ROBOT_SOLUTIONS];
   const t = await getTranslations('robotSolutions');
 
   return (
     <RobotSolutionCategoryClient
       category={category}
-      Icon={Icon}
+      slug={slug as RobotSolutionSlug}
       t={{
         backToSolutions: t('backToSolutions'),
         meetRobots: t('meetRobots'),
