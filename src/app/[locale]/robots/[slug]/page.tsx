@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
@@ -68,30 +69,61 @@ export default async function RobotPage({
       />
 
       {/* ── Header البنفسجي الداكن ── */}
-      <div className="bg-brand-gradient text-white">
-        <Container className="py-12 sm:py-16">
-          <Link
-            href="/robots"
-            className="font-mono text-xs uppercase tracking-widest text-purple-300 transition hover:text-white"
+      <div className="relative overflow-hidden bg-brand-gradient text-white">
+        {/* صورة الروبوت — تطفو بالجهة المقابلة للنص، بدون خلفية */}
+        {robot.image && (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 end-0 hidden w-[42%] md:block"
           >
-            ← {t('title')}
-          </Link>
+            <Image
+              src={robot.image}
+              alt=""
+              fill
+              priority
+              sizes="42vw"
+              className="object-contain object-center p-6 drop-shadow-2xl"
+            />
+          </div>
+        )}
+        <Container className="relative z-10 py-12 sm:py-16">
+          <div className={robot.image ? 'md:max-w-[54%]' : ''}>
+            <Link
+              href="/robots"
+              className="font-mono text-xs uppercase tracking-widest text-purple-300 transition hover:text-white"
+            >
+              ← {t('title')}
+            </Link>
 
-          <h1 className="mt-8 text-5xl font-semibold tracking-tight sm:text-7xl">
-            {robot.name}
-          </h1>
-          <p className="mt-2 text-xl text-purple-200">{robot.tagline[lang]}</p>
-          <p className="mt-6 max-w-2xl leading-relaxed text-purple-100/85">
-            {robot.summary[lang]}
-          </p>
-
-          {robot.brand && (
-            <p className="mt-6 font-mono text-xs text-purple-400">
-              {t('madeBy')}: {robot.brand}
+            <h1 className="mt-8 text-5xl font-semibold tracking-tight sm:text-7xl">
+              {robot.name}
+            </h1>
+            <p className="mt-2 text-xl text-purple-200">{robot.tagline[lang]}</p>
+            <p className="mt-6 max-w-2xl leading-relaxed text-purple-100/85">
+              {robot.summary[lang]}
             </p>
-          )}
 
-          <BookRobotButton robotSlug={robot.slug} robotName={robot.name} />
+            {robot.brand && (
+              <p className="mt-6 font-mono text-xs text-purple-400">
+                {t('madeBy')}: {robot.brand}
+              </p>
+            )}
+
+            <BookRobotButton robotSlug={robot.slug} robotName={robot.name} />
+
+            {/* صورة الروبوت على الموبايل — تحت النص */}
+            {robot.image && (
+              <div className="relative mx-auto mt-10 aspect-square w-full max-w-xs md:hidden">
+                <Image
+                  src={robot.image}
+                  alt={robot.name}
+                  fill
+                  sizes="90vw"
+                  className="object-contain"
+                />
+              </div>
+            )}
+          </div>
         </Container>
       </div>
 

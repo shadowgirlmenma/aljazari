@@ -19,7 +19,7 @@ export const ROBOTS: Robot[] = [
     categories: ['humanoid'],
     order: 3,
     featured: true,
-    image: '/robots/pepper.webp',
+    image: '/robots/pepper-nobg.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت بشري يقرأ تعبير الوجه ويتفاعل وياه، يستقبل الزائر ويجاوب على أسئلته ويعرض المعلومات على شاشة صدره. مستخدم بالمستشفيات والمدارس وصالات الاستقبال.',
@@ -88,7 +88,7 @@ export const ROBOTS: Robot[] = [
     categories: ['humanoid'],
     order: 8,
     featured: true,
-    image: '/robots/timo.webp',
+    image: '/robots/timo-nobg.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت خدمة ذكي يقود الزوار بجولات إرشادية، يرحّب بيهم ويجاوب استفساراتهم، ويقدر يسوي دوريات أمنية على مدار 24 ساعة.',
@@ -170,7 +170,7 @@ export const ROBOTS: Robot[] = [
     categories: ['humanoid'],
     order: 2,
     featured: true,
-    image: '/robots/cruzr.webp',
+    image: '/robots/cruzr-nobg.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت بتصميم بشري بأذرع مرنة، يستقبل الزوار ويوجههم داخل المؤسسة، ويربط الفروع بمكالمات فيديو عالية الدقة عبر نظام U-Meeting.',
@@ -251,7 +251,7 @@ export const ROBOTS: Robot[] = [
     brand: '',
     categories: ['humanoid'],
     order: 1,
-    image: '/robots/wnno.webp',
+    image: '/robots/wnno-nobg.webp',
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت بشري مجهّز للمعاملات: يتعرف على الوجوه، يطبع الإيصالات والصور، يوزّع البطاقات، ويستلم الدفع إلكترونياً — كل هذا بمكان واحد.',
@@ -328,7 +328,7 @@ export const ROBOTS: Robot[] = [
     categories: ['service'],
     order: 1,
     featured: true,
-    image: '/robots/bellabot-pro.webp',
+    image: '/robots/bellabot-pro-nobg.webp',
     gallery: ['/robots/bellabot-pro.webp', '/robots/bellabot-pro-2.webp'],
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
@@ -396,7 +396,7 @@ export const ROBOTS: Robot[] = [
     brand: 'Pudu Robotics',
     categories: ['service'],
     order: 2,
-    image: '/robots/kittybot-pro.webp',
+    image: '/robots/kittybot-pro-nobg.webp',
     gallery: ['/robots/kittybot-pro.webp', '/robots/kittybot-pro-2.webp'],
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
@@ -470,7 +470,7 @@ export const ROBOTS: Robot[] = [
     brand: 'Pudu Robotics',
     categories: ['service'],
     order: 3,
-    image: '/robots/pudubot.webp',
+    image: '/robots/pudubot-nobg.webp',
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
       ar: 'روبوت توصيل مصنوع بالكامل من سبيكة ألمنيوم بدرجة الطيران، بصوانٍ قابلة للتعديل وليدار مقاوم لأشعة الشمس — مبني للاشتغال المتواصل.',
@@ -552,7 +552,7 @@ export const ROBOTS: Robot[] = [
     brand: 'Pudu Robotics',
     categories: ['service'],
     order: 0,
-    image: '/robots/cc1-pro.webp',
+    image: '/robots/cc1-pro-nobg.webp',
     gallery: [
       '/robots/cc1-pro-2.webp',
       '/robots/cc1-pro-3.webp',
@@ -635,7 +635,7 @@ export const ROBOTS: Robot[] = [
     brand: 'Qihan Technology',
     categories: ['service'],
     order: 1,
-    image: '/robots/sanbot.webp',
+    image: '/robots/sanbot-nobg.webp',
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
       ar: 'مساعد منزلي ذكي يدعم Alexa: يراقب البيت، يجري مكالمات مرئية، يشغّل الموسيقى، ويلعب مع الأطفال ألعاب تفاعلية.',
@@ -710,7 +710,7 @@ export const ROBOTS: Robot[] = [
     categories: ['humanoid', 'educational'],
     order: 4,
     featured: true,
-    image: '/robots/nao.webp',
+    image: '/robots/nao-nobg.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'روبوت بشري صغير بمفاصل كاملة، يمشي ويتكلم ويتعرف على الوجوه والمشاعر. يُستخدم بتعليم اللغات، وبمساعدة أطفال التوحد على تحسين مهارات التواصل، وبأبحاث تحليل السلوك.',
@@ -793,7 +793,7 @@ export const ROBOTS: Robot[] = [
     brand: 'NUWA Robotics',
     categories: ['humanoid'],
     order: 7,
-    image: '/robots/kebbi.webp',
+    image: '/robots/kebbi-nobg.webp',
     gallery: [
       '/robots/kebbi-1.avif',
       '/robots/kebbi-2.avif',
@@ -879,7 +879,7 @@ export const ROBOTS: Robot[] = [
     brand: 'Hiwonder',
     categories: ['educational'],
     order: 2,
-    image: '/robots/jetauto.webp',
+    image: '/robots/jetauto-nobg.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'منصة روبوتية ذكية لتعلم وتطوير ROS، مزودة بمعالج Jetson NVIDIA وليدار وكاميرا عمق ثلاثية الأبعاد. تدعم رسم الخرائط SLAM وتخطيط المسار.',
@@ -956,7 +956,7 @@ export const ROBOTS: Robot[] = [
     brand: 'Hiwonder',
     categories: ['educational'],
     order: 1,
-    image: '/robots/jetarm.webp',
+    image: '/robots/jetarm-nobg.webp',
     tagline: { ar: 'ذراع روبوتية تعليمية', en: 'Educational robotic arm' },
     summary: {
       ar: 'ذراع روبوتية بمعالج Jetson NVIDIA وكاميرا عمق عالية الدقة، تدعم مهام الالتقاط والوضع وتخطيط المسارات. مصممة لمختبرات الروبوتات الجامعية والدراسات العليا.',
@@ -1030,7 +1030,7 @@ export const ROBOTS: Robot[] = [
     brand: 'UBTECH',
     categories: ['educational'],
     order: 4,
-    image: '/robots/ugot.webp',
+    image: '/robots/ugot-nobg.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'روبوت تعليمي معياري يتركّب بأكثر من شكل — سيارة، ذراع، أو روبوت متحرك. يدعم البرمجة البلوكية و Python، ويتعرف على الأشياء والوجوه والإيماءات.',
@@ -1076,7 +1076,7 @@ export const ROBOTS: Robot[] = [
     brand: 'UBTECH',
     categories: ['educational'],
     order: 5,
-    image: '/robots/ukit.webp',
+    image: '/robots/ukit-nobg.webp',
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'مجموعة تركيب تعليمية للمراحل المتوسطة والثانوية: الطالب يركّب الروبوت بيده ويبرمجه بالبرمجة البلوكية، ويتعلم أساسيات الذكاء الاصطناعي والروبوتات.',
@@ -1108,7 +1108,7 @@ export const ROBOTS: Robot[] = [
     brand: 'Unitree',
     categories: ['quadruped', 'educational'],
     order: 1,
-    image: '/robots/unitree-go2.webp',
+    image: '/robots/unitree-go2-nobg.webp',
     tagline: { ar: 'روبوت رباعي تعليمي', en: 'Educational quadruped robot' },
     summary: {
       ar: 'روبوت رباعي الأرجل متقدم مخصص للجامعات ومختبرات الروبوتات، لتعليم الاستقلالية الواقعية والإدراك بالذكاء الاصطناعي والتنقل الذكي — منصة عملية للطلبة لبناء واختبار خوارزميات الروبوتات على جهاز حقيقي سريع وثابت.',
@@ -1179,7 +1179,7 @@ export const ROBOTS: Robot[] = [
     categories: ['humanoid', 'educational'],
     order: 5,
     productType: ['preorder'],
-    image: '/robots/unitree-g1.webp',
+    image: '/robots/unitree-g1-nobg.webp',
     gallery: ['/robots/unitree-g1.webp', '/robots/unitree-g1-2.webp'],
     tagline: { ar: 'روبوت بشري تعليمي — حجز مسبق', en: 'Educational humanoid — pre-order' },
     summary: {
@@ -1242,7 +1242,7 @@ export const ROBOTS: Robot[] = [
     brand: 'Booster Robotics',
     categories: ['humanoid'],
     order: 6,
-    image: '/robots/booster-t1.webp',
+    image: '/robots/booster-t1-nobg.webp',
     gallery: ['/robots/booster-t1.webp', '/robots/booster-t1-2.webp'],
     tagline: { ar: 'روبوت بشري مفتوح المصدر', en: 'Open-source humanoid robot' },
     summary: {
@@ -1310,7 +1310,7 @@ export const ROBOTS: Robot[] = [
     brand: 'Qihan Technology',
     categories: ['humanoid'],
     order: 9,
-    image: '/robots/sanbot-nano.webp',
+    image: '/robots/sanbot-nano-nobg.webp',
     tagline: { ar: 'روبوت بشري تفاعلي', en: 'Interactive humanoid robot' },
     summary: {
       ar: 'روبوت ذكي تفاعلي مصمم لمساعدة الأشخاص بأماكن مثل المدارس ورياض الأطفال والبيئات التعليمية المشابهة. يتكلم ويستمع ويتحرك ويعرض المعلومات على شاشته ويتفاعل باللمس والحساسات. بقدرات قابلة للترقية، يوفّر Sanbot Nano خدمات مثل المحادثة بالذكاء الاصطناعي وألعاب تعليمية ومكالمات الفيديو وغيرها.',
