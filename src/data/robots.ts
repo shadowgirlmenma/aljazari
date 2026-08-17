@@ -1097,6 +1097,17 @@ export const ROBOTS: Robot[] = [
     categories: ['educational'],
     order: 5,
     image: '/robots/ukit-nobg.webp',
+    gallery: [
+      '/robots/ukit-real-1.webp',
+      '/robots/ukit-real-2.webp',
+      '/robots/ukit-real-3.webp',
+      '/robots/ukit-real-4.webp',
+      '/robots/ukit-real-5.webp',
+      '/robots/ukit-real-6.webp',
+      '/robots/ukit-real-7.webp',
+      '/robots/ukit-real-8.webp',
+      '/robots/ukit-real-9.webp',
+    ],
     tagline: { ar: 'روبوت تعليمي', en: 'Educational robot' },
     summary: {
       ar: 'مجموعة تركيب تعليمية للمراحل المتوسطة والثانوية: الطالب يركّب الروبوت بيده ويبرمجه بالبرمجة البلوكية، ويتعلم أساسيات الذكاء الاصطناعي والروبوتات.',
