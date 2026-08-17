@@ -262,6 +262,16 @@ export const ROBOTS: Robot[] = [
     categories: ['humanoid'],
     order: 1,
     image: '/robots/wnno-nobg.webp',
+    gallery: [
+      '/robots/wnno-real-1.webp',
+      { type: 'video', url: '/robots/wnno-video.mp4', poster: '/robots/wnno-video-poster.webp' },
+      '/robots/wnno-real-2.webp',
+      '/robots/wnno-real-3.webp',
+      '/robots/wnno-real-4.webp',
+      '/robots/wnno-real-5.webp',
+      '/robots/wnno-real-6.webp',
+      '/robots/wnno-real-7.webp',
+    ],
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت بشري مجهّز للمعاملات: يتعرف على الوجوه، يطبع الإيصالات والصور، يوزّع البطاقات، ويستلم الدفع إلكترونياً — كل هذا بمكان واحد.',

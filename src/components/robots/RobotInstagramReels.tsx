@@ -19,7 +19,8 @@ function instagramEmbedSrc(url: string): string {
 export default function RobotInstagramReels({ robot }: { robot: Robot }) {
   const t = useTranslations('robots');
   const reels = (robot.gallery ?? []).filter(
-    (item): item is { type: 'instagram'; url: string } => typeof item === 'object',
+    (item): item is { type: 'instagram'; url: string } =>
+      typeof item === 'object' && item.type === 'instagram',
   );
 
   if (reels.length === 0) return null;
