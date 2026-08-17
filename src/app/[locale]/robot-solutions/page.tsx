@@ -33,13 +33,6 @@ export default async function RobotSolutionsPage({
       title={t('title')}
       subtitle={t('subtitle')}
       bannerLabel={t('bannerLabel')}
-      exploreHeading={t('exploreHeading')}
-      services={[
-        { key: 'maintenance', label: t('services.maintenance'), desc: t('services.maintenanceDesc') },
-        { key: 'software',    label: t('services.software'),    desc: t('services.softwareDesc') },
-        { key: 'training',    label: t('services.training'),    desc: t('services.trainingDesc') },
-        { key: 'support',     label: t('services.support'),     desc: t('services.supportDesc') },
-      ]}
       ctaLabel={t('cta')}
     />
   );

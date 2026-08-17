@@ -8,6 +8,7 @@ import Logo from '@/components/Logo';
 import RobotVisual from '@/components/robots/RobotVisual';
 import StarBorder from '@/components/reactbits/StarBorder';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
+import RobotSolutionsBannerBackground from './RobotSolutionsBannerBackground';
 import { getRobot } from '@/data/robots';
 import { ROBOT_SOLUTION_ICONS, type RobotSolutionCategory, type RobotSolutionSlug } from '@/data/robotSolutions';
 import type { Locale } from '@/lib/types';
@@ -37,17 +38,18 @@ export default function RobotSolutionCategoryClient({
 
   return (
     <>
-      {/* ── البانر ── */}
+      {/* ── البانر: توهّج Lightfall بنفسجي متحرك بالخلفية ── */}
       <div className="relative overflow-hidden bg-[#120621] py-20 text-center">
+        <RobotSolutionsBannerBackground />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(124,71,224,0.35) 0%, transparent 70%)',
+              'linear-gradient(to bottom, rgba(18,6,33,0.15) 0%, rgba(18,6,33,0.55) 70%, rgba(10,4,20,0.85) 100%)',
           }}
         />
-        <div className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-10">
+        <div className="relative z-10 mx-auto max-w-4xl px-5 sm:px-8 lg:px-10">
           <Link
             href="/robot-solutions"
             className="font-mono text-xs uppercase tracking-widest text-purple-300 transition hover:text-white"
