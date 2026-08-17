@@ -89,6 +89,14 @@ export const ROBOTS: Robot[] = [
     order: 8,
     featured: true,
     image: '/robots/timo-nobg.webp',
+    gallery: [
+      '/robots/timo-real-1.webp',
+      '/robots/timo-real-2.webp',
+      '/robots/timo-real-3.webp',
+      '/robots/timo-real-4.webp',
+      '/robots/timo-real-5.webp',
+      '/robots/timo-real-6.webp',
+    ],
     tagline: { ar: 'روبوت بشري', en: 'Humanoid robot' },
     summary: {
       ar: 'روبوت خدمة ذكي يقود الزوار بجولات إرشادية، يرحّب بيهم ويجاوب استفساراتهم، ويقدر يسوي دوريات أمنية على مدار 24 ساعة.',
