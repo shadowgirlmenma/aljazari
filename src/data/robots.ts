@@ -365,7 +365,15 @@ export const ROBOTS: Robot[] = [
     order: 1,
     featured: true,
     image: '/robots/bellabot-pro-nobg.webp',
-    gallery: ['/robots/bellabot-pro.webp', '/robots/bellabot-pro-2.webp'],
+    gallery: [
+      '/robots/bellabot-real-1.webp',
+      '/robots/bellabot-real-2.webp',
+      '/robots/bellabot-real-3.webp',
+      '/robots/bellabot-real-4.webp',
+      '/robots/bellabot-real-5.webp',
+      '/robots/bellabot-real-6.webp',
+      '/robots/bellabot-real-7.webp',
+    ],
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
       ar: 'روبوت توصيل بشخصية محبوبة: يوصّل الطلبات للطاولة، يجمع الصحون، ويحوّل عيد ميلاد الزبون إلى لحظة احتفال بموسيقى وإضاءة.',
