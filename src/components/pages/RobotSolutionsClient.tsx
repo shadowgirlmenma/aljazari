@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { useLocale } from 'next-intl';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import Container from '@/components/ui/Container';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
@@ -11,6 +12,7 @@ import {
   ROBOT_SOLUTIONS_ORDER,
   ROBOT_SOLUTIONS,
   ROBOT_SOLUTION_ICONS,
+  ROBOT_SOLUTION_CARD_IMAGES,
 } from '@/data/robotSolutions';
 import type { Locale } from '@/lib/types';
 
@@ -61,10 +63,11 @@ export default function RobotSolutionsClient({
       <div className="relative overflow-hidden bg-[#0a0414]">
         <DotGridBackdrop opacity={0.35} />
         <Container className="relative z-10 py-16 sm:py-20">
-          <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
             {ROBOT_SOLUTIONS_ORDER.map((slug, i) => {
               const cat = ROBOT_SOLUTIONS[slug];
               const Icon = ROBOT_SOLUTION_ICONS[slug];
+              const image = ROBOT_SOLUTION_CARD_IMAGES[slug];
               return (
                 <motion.div
                   key={slug}
@@ -77,15 +80,31 @@ export default function RobotSolutionsClient({
                     href={`/robot-solutions/${slug}`}
                     onMouseMove={handleMouseMove}
                     style={{ '--mx': '50%', '--my': '50%' } as React.CSSProperties}
-                    className="glass-card group relative flex h-full flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl px-4 py-8 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl hover:shadow-brand-700/25 sm:py-10"
+                    className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:shadow-2xl hover:shadow-brand-700/25 sm:aspect-square"
                   >
+                    <Image
+                      src={image}
+                      alt={cat.title[locale]}
+                      fill
+                      sizes="(max-width: 640px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {/* تعتيم متدرج حتى يبين النص فوق الصورة */}
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0"
+                      style={{
+                        background:
+                          'linear-gradient(to top, rgba(10,4,20,0.92) 0%, rgba(10,4,20,0.35) 55%, rgba(10,4,20,0.05) 100%)',
+                      }}
+                    />
                     {/* توهّج ناعم يتبع الماوس */}
                     <span
                       aria-hidden
                       className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                       style={{
                         background:
-                          'radial-gradient(260px circle at var(--mx) var(--my), rgba(124,71,224,0.22), transparent 70%)',
+                          'radial-gradient(260px circle at var(--mx) var(--my), rgba(124,71,224,0.28), transparent 70%)',
                       }}
                     />
                     {/* حدّ مضيء رفيع يتبع الماوس */}
@@ -102,12 +121,14 @@ export default function RobotSolutionsClient({
                       }}
                     />
 
-                    <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-900/30 text-purple-200 ring-1 ring-purple-400/20 transition-colors group-hover:text-white">
-                      <Icon size={26} strokeWidth={1.5} />
-                    </span>
-                    <p className="relative z-10 text-sm font-medium text-white sm:text-base">
-                      {cat.title[locale]}
-                    </p>
+                    <div className="relative z-10 flex items-center gap-2.5 p-4 sm:gap-3 sm:p-6">
+                      <span className="glass flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-purple-200 sm:h-12 sm:w-12">
+                        <Icon size={20} strokeWidth={1.5} />
+                      </span>
+                      <p className="text-sm font-semibold text-white sm:text-lg">
+                        {cat.title[locale]}
+                      </p>
+                    </div>
                   </Link>
                 </motion.div>
               );

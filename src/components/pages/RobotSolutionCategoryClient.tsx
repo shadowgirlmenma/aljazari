@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { useLocale } from 'next-intl';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import Container from '@/components/ui/Container';
 import Logo from '@/components/Logo';
@@ -10,7 +11,12 @@ import StarBorder from '@/components/reactbits/StarBorder';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import RobotSolutionsBannerBackground from './RobotSolutionsBannerBackground';
 import { getRobot } from '@/data/robots';
-import { ROBOT_SOLUTION_ICONS, type RobotSolutionCategory, type RobotSolutionSlug } from '@/data/robotSolutions';
+import {
+  ROBOT_SOLUTION_ICONS,
+  ROBOT_SOLUTION_BANNER_IMAGES,
+  type RobotSolutionCategory,
+  type RobotSolutionSlug,
+} from '@/data/robotSolutions';
 import type { Locale } from '@/lib/types';
 
 export default function RobotSolutionCategoryClient({
@@ -35,40 +41,82 @@ export default function RobotSolutionCategoryClient({
 }) {
   const locale = useLocale() as Locale;
   const Icon = ROBOT_SOLUTION_ICONS[slug];
+  const bannerImage = ROBOT_SOLUTION_BANNER_IMAGES[slug];
 
   return (
     <>
-      {/* ── البانر: توهّج Lightfall بنفسجي متحرك بالخلفية ── */}
-      <div className="relative overflow-hidden bg-[#120621] py-20 text-center">
-        <RobotSolutionsBannerBackground />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(to bottom, rgba(18,6,33,0.15) 0%, rgba(18,6,33,0.55) 70%, rgba(10,4,20,0.85) 100%)',
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-4xl px-5 sm:px-8 lg:px-10">
-          <Link
-            href="/robot-solutions"
-            className="font-mono text-xs uppercase tracking-widest text-purple-300 transition hover:text-white"
-          >
-            ← {t.backToSolutions}
-          </Link>
-          <span className="glass mx-auto mt-8 flex h-16 w-16 items-center justify-center rounded-2xl text-purple-200">
-            <Icon size={30} strokeWidth={1.5} />
-          </span>
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-6 text-3xl font-semibold text-white sm:text-5xl"
-          >
-            {category.title[locale]}
-          </motion.h1>
-          <p className="mt-3 text-lg text-purple-200/85">{category.hook[locale]}</p>
+      {bannerImage ? (
+        /* ── بانر بصورة حقيقية — فل سكرين، بنفس أسلوب بانرات باقي صفحات الموقع ── */
+        <div className="relative w-full overflow-hidden bg-[#120621]" style={{ height: '100svh' }}>
+          <Image
+            src={bannerImage}
+            alt={category.title[locale]}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to bottom, rgba(18,6,33,0.25) 0%, rgba(18,6,33,0.55) 65%, rgba(10,4,20,0.9) 100%)',
+            }}
+          />
+          <div className="relative z-10 flex h-full flex-col items-center justify-end px-5 pb-24 text-center sm:pb-28">
+            <Link
+              href="/robot-solutions"
+              className="font-mono text-xs uppercase tracking-widest text-purple-300 transition hover:text-white"
+            >
+              ← {t.backToSolutions}
+            </Link>
+            <span className="glass mt-8 flex h-16 w-16 items-center justify-center rounded-2xl text-purple-200">
+              <Icon size={30} strokeWidth={1.5} />
+            </span>
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mx-auto mt-6 max-w-3xl text-3xl font-semibold text-white sm:text-5xl"
+            >
+              {category.title[locale]}
+            </motion.h1>
+            <p className="mt-3 max-w-2xl text-lg text-purple-200/85">{category.hook[locale]}</p>
+          </div>
         </div>
-      </div>
+      ) : (
+        /* ── البانر: توهّج Lightfall بنفسجي متحرك بالخلفية ── */
+        <div className="relative overflow-hidden bg-[#120621] py-20 text-center">
+          <RobotSolutionsBannerBackground />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to bottom, rgba(18,6,33,0.15) 0%, rgba(18,6,33,0.55) 70%, rgba(10,4,20,0.85) 100%)',
+            }}
+          />
+          <div className="relative z-10 mx-auto max-w-4xl px-5 sm:px-8 lg:px-10">
+            <Link
+              href="/robot-solutions"
+              className="font-mono text-xs uppercase tracking-widest text-purple-300 transition hover:text-white"
+            >
+              ← {t.backToSolutions}
+            </Link>
+            <span className="glass mx-auto mt-8 flex h-16 w-16 items-center justify-center rounded-2xl text-purple-200">
+              <Icon size={30} strokeWidth={1.5} />
+            </span>
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-6 text-3xl font-semibold text-white sm:text-5xl"
+            >
+              {category.title[locale]}
+            </motion.h1>
+            <p className="mt-3 text-lg text-purple-200/85">{category.hook[locale]}</p>
+          </div>
+        </div>
+      )}
 
       {/* ── المقدمة ── */}
       <div className="relative overflow-hidden bg-[#0a0414]">
