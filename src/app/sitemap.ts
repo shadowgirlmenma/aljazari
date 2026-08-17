@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { PUBLISHED_ROBOTS } from '@/data/robots';
+import { ARTICLES } from '@/data/newsArticles';
 import { routing } from '@/i18n/routing';
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aljazari.iq';
@@ -34,6 +35,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.7,
+      });
+    }
+
+    for (const slug of ARTICLES) {
+      entries.push({
+        url: `${BASE}/${locale}/news/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'yearly',
+        priority: 0.5,
       });
     }
   }

@@ -76,10 +76,11 @@ export default function HeroSection({ locale }: { locale: Locale }) {
       <div className="relative z-10 flex min-h-[92vh] flex-col justify-end px-5 pb-12 sm:px-8 lg:px-10 lg:pb-16">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-end justify-between gap-8 lg:flex-row lg:items-end">
 
-          {/* ── النص ── */}
+          {/* ── النص — h1 حقيقي حتى يفهم كوكل موضوع الصفحة الرئيسية (كان فاضي قبل) ── */}
           <div className={isRtl ? 'text-right' : 'text-left'}>
-            <div className="space-y-0.5">
+            <h1 className="space-y-0.5">
               <BlurText
+                as="span"
                 text={t('hero.line1')}
                 delay={80}
                 animateBy="words"
@@ -87,13 +88,14 @@ export default function HeroSection({ locale }: { locale: Locale }) {
                 className="text-xl font-medium uppercase leading-[1.15] text-white sm:text-2xl lg:text-3xl"
               />
               <BlurText
+                as="span"
                 text={t('hero.line2')}
                 delay={80}
                 animateBy="words"
                 direction="top"
                 className="text-xl font-medium uppercase leading-[1.15] text-purple-300 sm:text-2xl lg:text-3xl"
               />
-            </div>
+            </h1>
           </div>
 
           {/* ── زر ثانوي، أسفل يمين، متل "Full Video" بالمرجع ── */}

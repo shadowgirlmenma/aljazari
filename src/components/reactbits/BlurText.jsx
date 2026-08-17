@@ -12,7 +12,8 @@ const buildKeyframes = (from, steps) => {
 export default function BlurText({
   text = '', delay = 200, className = '', animateBy = 'words',
   direction = 'top', threshold = 0.1, rootMargin = '0px',
-  animationFrom, animationTo, easing = t => t, onAnimationComplete, stepDuration = 0.35
+  animationFrom, animationTo, easing = t => t, onAnimationComplete, stepDuration = 0.35,
+  as: Tag = 'p'
 }) {
   const elements = animateBy === 'words' ? text.split(' ') : text.split('');
   const [inView, setInView] = useState(false);
@@ -38,7 +39,7 @@ export default function BlurText({
   const totalDuration = stepDuration * (stepCount - 1);
   const times = Array.from({ length: stepCount }, (_, i) => (stepCount === 1 ? 0 : i / (stepCount - 1)));
   return (
-    <p ref={ref} className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <Tag ref={ref} className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
         const spanTransition = { duration: totalDuration, times, delay: (index * delay) / 1000, ease: easing };
@@ -52,6 +53,6 @@ export default function BlurText({
           </motion.span>
         );
       })}
-    </p>
+    </Tag>
   );
 }

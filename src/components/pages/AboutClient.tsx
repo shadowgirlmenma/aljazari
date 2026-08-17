@@ -91,7 +91,8 @@ export default function AboutClient({
           }}
         />
         <div className="relative flex h-full w-full flex-col justify-end px-6 pb-16 pt-20 sm:px-10 lg:px-16">
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} style={{ width: 'fit-content' }}>
+          {/* h1 حقيقي حتى يفهم كوكل ان هذي صفحة "من نحن" — كان النص يترندر SVG بس بدون وسم عنونة */}
+          <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} style={{ width: 'fit-content' }}>
             <StrokeText
               text={title}
               strokeColor="#a78bfa"
@@ -106,7 +107,7 @@ export default function AboutClient({
               fontWeight={700}
               className="max-w-2xl"
             />
-          </motion.div>
+          </motion.h1>
         </div>
       </div>
 
