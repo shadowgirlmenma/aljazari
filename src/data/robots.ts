@@ -1006,6 +1006,16 @@ export const ROBOTS: Robot[] = [
     categories: ['educational'],
     order: 1,
     image: '/robots/jetarm-nobg.webp',
+    gallery: [
+      '/robots/jetarm-real-1.webp',
+      '/robots/jetarm-real-2.webp',
+      '/robots/jetarm-real-3.webp',
+      '/robots/jetarm-real-4.webp',
+      '/robots/jetarm-real-5.webp',
+      '/robots/jetarm-real-6.webp',
+      '/robots/jetarm-real-7.webp',
+      '/robots/jetarm-real-8.webp',
+    ],
     tagline: { ar: 'ذراع روبوتية تعليمية', en: 'Educational robotic arm' },
     summary: {
       ar: 'ذراع روبوتية بمعالج Jetson NVIDIA وكاميرا عمق عالية الدقة، تدعم مهام الالتقاط والوضع وتخطيط المسارات. مصممة لمختبرات الروبوتات الجامعية والدراسات العليا.',
