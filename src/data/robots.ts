@@ -1129,6 +1129,13 @@ export const ROBOTS: Robot[] = [
     categories: ['quadruped', 'educational'],
     order: 1,
     image: '/robots/unitree-go2-nobg.webp',
+    gallery: [
+      '/robots/unitree-go2-real-1.webp',
+      '/robots/unitree-go2-real-2.webp',
+      '/robots/unitree-go2-real-3.webp',
+      '/robots/unitree-go2-real-4.webp',
+      '/robots/unitree-go2-real-5.webp',
+    ],
     tagline: { ar: 'روبوت رباعي تعليمي', en: 'Educational quadruped robot' },
     summary: {
       ar: 'روبوت رباعي الأرجل متقدم مخصص للجامعات ومختبرات الروبوتات، لتعليم الاستقلالية الواقعية والإدراك بالذكاء الاصطناعي والتنقل الذكي — منصة عملية للطلبة لبناء واختبار خوارزميات الروبوتات على جهاز حقيقي سريع وثابت.',
