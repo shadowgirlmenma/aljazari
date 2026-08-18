@@ -441,7 +441,7 @@ export const ROBOTS: Robot[] = [
     categories: ['service'],
     order: 2,
     image: '/robots/kittybot-pro-nobg.webp',
-    gallery: ['/robots/kittybot-pro.webp', '/robots/kittybot-pro-2.webp'],
+    gallery: ['/robots/kittybot-pro-real-1.webp', '/robots/kittybot-pro-real-2.webp'],
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
       ar: 'روبوت خدمي بستة أوضاع تشغيل، يجمع بين التوصيل والإرشاد والإعلان — شاشته تعرض عروضك وهو يتنقل بين الزبائن.',
