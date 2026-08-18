@@ -12,6 +12,7 @@ import {
   ROBOT_SOLUTIONS,
   ROBOT_SOLUTION_ICONS,
   ROBOT_SOLUTION_CARD_IMAGES,
+  shortSolutionTitle,
 } from '@/data/robotSolutions';
 import type { Locale } from '@/lib/types';
 
@@ -72,6 +73,7 @@ export default function RobotSolutionsClient({
           <div className="grid grid-cols-2 gap-4 sm:gap-6">
             {ROBOT_SOLUTIONS_ORDER.map((slug, i) => {
               const cat = ROBOT_SOLUTIONS[slug];
+              const shortTitle = shortSolutionTitle(cat.title);
               const Icon = ROBOT_SOLUTION_ICONS[slug];
               const image = ROBOT_SOLUTION_CARD_IMAGES[slug];
               return (
@@ -90,7 +92,7 @@ export default function RobotSolutionsClient({
                   >
                     <Image
                       src={image}
-                      alt={cat.title[locale]}
+                      alt={shortTitle[locale]}
                       fill
                       sizes="(max-width: 640px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -132,7 +134,7 @@ export default function RobotSolutionsClient({
                         <Icon size={20} strokeWidth={1.5} />
                       </span>
                       <p className="text-sm font-semibold text-white sm:text-lg">
-                        {cat.title[locale]}
+                        {shortTitle[locale]}
                       </p>
                     </div>
                   </Link>

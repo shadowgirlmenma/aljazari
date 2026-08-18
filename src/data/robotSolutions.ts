@@ -69,6 +69,19 @@ export const ROBOT_SOLUTIONS = content as unknown as Record<
   RobotSolutionCategory
 >;
 
+/**
+ * عنوان مختصر للاستخدام ببطاقات شبكة "حلول الروبوتات" الرئيسية بس —
+ * يشيل بادئة "حلول روبوتات" (عربي) أو لاحقة "Robotics Solutions" (إنجليزي)
+ * لأنها تتكرر ببطاقة-ببطاقة وتصير حشو. صفحة تفاصيل كل قطاع تبقى تستخدم
+ * العنوان الكامل (category.title) لأنه هناك عنوان رئيسي كبير لحاله ومناسب.
+ */
+export function shortSolutionTitle(title: LocalizedText): LocalizedText {
+  return {
+    ar: title.ar.replace(/^حلول روبوتات\s+/, ''),
+    en: title.en.replace(/\s+Robotics Solutions$/, ''),
+  };
+}
+
 export const ROBOT_SOLUTION_ICONS: Record<RobotSolutionSlug, LucideIcon> = {
   healthcare: HeartPulse,
   banking: Landmark,

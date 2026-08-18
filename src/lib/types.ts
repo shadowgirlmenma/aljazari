@@ -11,7 +11,7 @@ export type Locale = (typeof LOCALES)[number];
 export type LocalizedText = Record<Locale, string>;
 
 /** تصنيفات الروبوتات كما وردت في كتالوغ الشركة */
-export type RobotCategory = 'humanoid' | 'service' | 'educational' | 'quadruped';
+export type RobotCategory = 'humanoid' | 'service' | 'educational';
 
 /** القطاعات المستهدفة — المفاتيح معرّفة مرة وحدة في data/sectors.ts */
 export type SectorKey =

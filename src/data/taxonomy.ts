@@ -30,13 +30,6 @@ export const CATEGORIES: Record<
       en: 'Platforms for teaching programming and AI, from school labs to university research.',
     },
   },
-  quadruped: {
-    label: { ar: 'روبوتات رباعية', en: 'Quadruped robots' },
-    description: {
-      ar: 'روبوتات تمشي على أربع، للتفتيش والمسح والعروض الميدانية.',
-      en: 'Four-legged robots for inspection, mapping, and field demonstrations.',
-    },
-  },
 };
 
 export const SECTORS: Record<SectorKey, LocalizedText> = {
@@ -67,7 +60,6 @@ export const CATEGORY_ORDER: RobotCategory[] = [
   'humanoid',
   'service',
   'educational',
-  'quadruped',
 ];
 
 /** أنواع توفّر المنتج — تُستخدم بفلتر "نوع المنتج" بصفحة "روبوتاتنا" */
