@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
@@ -173,9 +174,9 @@ function CategoryTile({
           : 'glass border-purple-500/20 hover:border-purple-400/50'
       }`}
     >
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white/95">
+      <span className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white/95">
         {image ? (
-          <img src={image} alt="" className="h-full w-full object-contain p-1" />
+          <Image src={image} alt="" fill sizes="48px" className="object-contain p-1" />
         ) : (
           <span className="h-full w-full bg-purple-200/70" />
         )}
