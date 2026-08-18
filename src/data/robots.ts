@@ -680,6 +680,13 @@ export const ROBOTS: Robot[] = [
     categories: ['service'],
     order: 1,
     image: '/robots/sanbot-nobg.webp',
+    gallery: [
+      '/robots/sanbot-real-1.webp',
+      '/robots/sanbot-real-2.webp',
+      '/robots/sanbot-real-3.webp',
+      '/robots/sanbot-real-4.webp',
+      '/robots/sanbot-real-5.webp',
+    ],
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
       ar: 'مساعد منزلي ذكي يدعم Alexa: يراقب البيت، يجري مكالمات مرئية، يشغّل الموسيقى، ويلعب مع الأطفال ألعاب تفاعلية.',
