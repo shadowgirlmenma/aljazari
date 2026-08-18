@@ -8,13 +8,15 @@ import PhoneInput from '@/components/ui/PhoneInput';
 import { api, ApiError } from '@/lib/api';
 
 export default function BookRobotModal({
-  open, onClose, robotSlug, robotName, initialType = 'rent',
+  open, onClose, robotSlug, robotName, initialType = 'rent', preorder = false,
 }: {
   open: boolean;
   onClose: () => void;
   robotSlug: string;
   robotName: string;
   initialType?: 'buy' | 'rent';
+  /** روبوت حجز مسبق فقط — نخفي مفتاح شراء/إيجار لأنه ما فيه غير خيار وحد */
+  preorder?: boolean;
 }) {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -126,25 +128,29 @@ export default function BookRobotModal({
             ) : (
               <>
                 <h2 className="text-xl font-semibold text-white">{robotName}</h2>
-                <p className="mt-1 text-sm text-purple-300/70">اطلبيه الآن</p>
+                <p className="mt-1 text-sm text-purple-300/70">
+                  {preorder ? 'سجّلي اهتمامك بالحجز المسبق' : 'اطلبيه الآن'}
+                </p>
 
-                {/* شراء أو إيجار */}
-                <div className="mt-5 flex gap-3">
-                  {(['rent', 'buy'] as const).map((type) => (
-                    <button
-                      key={type}
-                      type="button"
-                      onClick={() => setForm((f) => ({ ...f, type }))}
-                      className={`flex-1 rounded-xl border py-3.5 text-base font-semibold transition ${
-                        form.type === type
-                          ? 'border-purple-500 bg-purple-600 text-white'
-                          : 'glass border-purple-500/30 text-purple-200/60 hover:border-purple-400'
-                      }`}
-                    >
-                      {type === 'rent' ? 'إيجار' : 'شراء'}
-                    </button>
-                  ))}
-                </div>
+                {/* شراء أو إيجار — تختفي للروبوتات المتاحة بالحجز المسبق فقط */}
+                {!preorder && (
+                  <div className="mt-5 flex gap-3">
+                    {(['rent', 'buy'] as const).map((type) => (
+                      <button
+                        key={type}
+                        type="button"
+                        onClick={() => setForm((f) => ({ ...f, type }))}
+                        className={`flex-1 rounded-xl border py-3.5 text-base font-semibold transition ${
+                          form.type === type
+                            ? 'border-purple-500 bg-purple-600 text-white'
+                            : 'glass border-purple-500/30 text-purple-200/60 hover:border-purple-400'
+                        }`}
+                      >
+                        {type === 'rent' ? 'إيجار' : 'شراء'}
+                      </button>
+                    ))}
+                  </div>
+                )}
 
                 <form onSubmit={handleSubmit} className="mt-5 space-y-4" noValidate>
                   <div>

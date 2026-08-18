@@ -109,7 +109,7 @@ export default async function RobotPage({
               </p>
             )}
 
-            <BookRobotButton robotSlug={robot.slug} robotName={robot.name} />
+            <BookRobotButton robotSlug={robot.slug} robotName={robot.name} productType={robot.productType} />
 
             {/* صورة الروبوت على الموبايل — تحت النص */}
             {robot.image && (
