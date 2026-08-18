@@ -680,87 +680,6 @@ export const ROBOTS: Robot[] = [
     sectors: ['healthcare', 'banking', 'showroom', 'restaurants', 'enterprises', 'malls'],
   },
 
-  // ══════════════════════ منزلية ══════════════════════
-  {
-    slug: 'sanbot',
-    name: 'Sanbot',
-    brand: 'Qihan Technology',
-    categories: ['service'],
-    order: 1,
-    image: '/robots/sanbot-nobg.webp',
-    gallery: [
-      '/robots/sanbot-real-1.webp',
-      '/robots/sanbot-real-2.webp',
-      '/robots/sanbot-real-3.webp',
-      '/robots/sanbot-real-4.webp',
-      '/robots/sanbot-real-5.webp',
-    ],
-    tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
-    summary: {
-      ar: 'مساعد منزلي ذكي يدعم Alexa: يراقب البيت، يجري مكالمات مرئية، يشغّل الموسيقى، ويلعب مع الأطفال ألعاب تفاعلية.',
-      en: 'A smart home companion with Alexa support: it keeps an eye on the house, makes video calls, plays music, and runs interactive games with the kids.',
-    },
-    features: [
-      {
-        title: { ar: 'تحكم صوتي', en: 'Voice control' },
-        description: {
-          ar: 'أوامر صوتية للتحكم بالروبوت وبالأجهزة المنزلية.',
-          en: 'Voice commands control the robot and connected home devices.',
-        },
-      },
-      {
-        title: { ar: 'مكالمات مرئية وصوتية', en: 'Video & voice calls' },
-        description: {
-          ar: 'تواصل مع العائلة بالصوت والصورة من أي مكان.',
-          en: 'Stay in touch with family by voice or video from anywhere.',
-        },
-      },
-      {
-        title: { ar: 'مراقبة المنزل عن بُعد', en: 'Remote home monitoring' },
-        description: {
-          ar: 'متابعة البيت عن بُعد عبر كاميراته وحساساته.',
-          en: 'Check on the house remotely through its cameras and sensors.',
-        },
-      },
-      {
-        title: { ar: 'ترفيه عائلي', en: 'Family entertainment' },
-        description: {
-          ar: 'تشغيل الموسيقى وألعاب تفاعلية للأطفال.',
-          en: 'Plays music and runs interactive games for children.',
-        },
-      },
-      {
-        title: { ar: 'متجر تطبيقات', en: 'App store' },
-        description: {
-          ar: 'تطبيقات إضافية تتوسع بقدرات الروبوت.',
-          en: 'Extra apps extend what the robot can do.',
-        },
-      },
-    ],
-    specs: [
-      { label: { ar: 'الشاشة', en: 'Display' }, value: '10 inch touchscreen' },
-      { label: { ar: 'الكاميرا', en: 'Camera' }, value: '8.0 MP HD' },
-      { label: { ar: 'كاميرات RGB', en: 'RGB cameras' }, value: '10 ×' },
-      { label: { ar: 'الاستشعار', en: 'Sensing' }, value: '3D sensor + PIR + IR' },
-      { label: { ar: 'الحركة', en: 'Movement' }, value: 'Tri-wheels + movable arm' },
-      { label: { ar: 'المساعد الصوتي', en: 'Voice assistant' }, value: 'Alexa' },
-    ],
-    hardware: [
-      { label: { ar: 'كاميرا RGB ×10 وحساس 3D', en: '10 × RGB camera + 3D sensor' }, side: 'start' },
-      { label: { ar: 'مايكروفون', en: 'Microphone' }, side: 'start' },
-      { label: { ar: 'ذراع متحركة', en: 'Articulated arm' }, side: 'start' },
-      { label: { ar: 'حساس أشعة تحت الحمراء', en: 'Infrared sensor' }, side: 'start' },
-      { label: { ar: 'عجلات ثلاثية', en: 'Three-wheel base' }, side: 'start' },
-      { label: { ar: 'حساس لمس', en: 'Touch sensor' }, side: 'end' },
-      { label: { ar: 'ضوء كشاف', en: 'Spotlight' }, side: 'end' },
-      { label: { ar: 'شاشة لمس 10 inch', en: '10-inch touchscreen' }, side: 'end' },
-      { label: { ar: 'كاميرا 8.0 MP HD', en: '8.0 MP HD camera' }, side: 'end' },
-      { label: { ar: 'حساس PIR', en: 'PIR sensor' }, side: 'end' },
-      { label: { ar: 'حساس تخطي العوائق', en: 'Obstacle-crossing sensor' }, side: 'end' },
-    ],
-    sectors: ['home', 'education', 'healthcare', 'schools'],
-  },
-
   // ══════════════════════ تعليمية ══════════════════════
   {
     slug: 'nao',
@@ -1448,6 +1367,13 @@ export const ROBOTS: Robot[] = [
     categories: ['humanoid'],
     order: 9,
     image: '/robots/sanbot-nano-nobg.webp',
+    gallery: [
+      '/robots/sanbot-nano-real-1.webp',
+      '/robots/sanbot-nano-real-2.webp',
+      '/robots/sanbot-nano-real-3.webp',
+      '/robots/sanbot-nano-real-4.webp',
+      '/robots/sanbot-nano-real-5.webp',
+    ],
     tagline: { ar: 'روبوت بشري تفاعلي', en: 'Interactive humanoid robot' },
     summary: {
       ar: 'روبوت ذكي تفاعلي مصمم لمساعدة الأشخاص بأماكن مثل المدارس ورياض الأطفال والبيئات التعليمية المشابهة. يتكلم ويستمع ويتحرك ويعرض المعلومات على شاشته ويتفاعل باللمس والحساسات. بقدرات قابلة للترقية، يوفّر Sanbot Nano خدمات مثل المحادثة بالذكاء الاصطناعي وألعاب تعليمية ومكالمات الفيديو وغيرها.',
@@ -1473,8 +1399,32 @@ export const ROBOTS: Robot[] = [
         title: { ar: 'شحن ذاتي تلقائي', en: 'Auto charge' },
       },
     ],
-    specs: [],
-    hardware: [],
+    specs: [
+      { label: { ar: 'الأبعاد', en: 'Size' }, value: '848.32 × 395.22 × 420.59 mm' },
+      { label: { ar: 'الوزن', en: 'Weight' }, value: '19 kg' },
+      { label: { ar: 'البطارية', en: 'Battery' }, value: 'Lithium 20Ah / 300W' },
+      { label: { ar: 'زمن التشغيل', en: 'Runtime' }, value: '4h active, 10h+ standby' },
+      { label: { ar: 'الكاميرا', en: 'Video' }, value: '8.0 MP HD + 1.0 MP HD 140° camera' },
+      { label: { ar: 'الشاشة', en: 'Display' }, value: '10.1 inch 1080P 10-point touch' },
+      { label: { ar: 'المنصة', en: 'Platform' }, value: 'ROS1.1' },
+      { label: { ar: 'الصوت', en: 'Sound' }, value: 'Voice control, 360° localization, 2 tweeters + subwoofer' },
+      { label: { ar: 'شبكة WiFi', en: 'WiFi network' }, value: 'IEEE 802.11 a/b/g/n (2.4GHz/5GHz)' },
+      { label: { ar: 'الشبكة اللاسلكية', en: 'Wireless network' }, value: 'ZigBee' },
+      { label: { ar: 'الإضاءة', en: 'Lights' }, value: '250 customizable colors' },
+      { label: { ar: 'سرعة الحركة', en: 'Moving speed' }, value: '0.8 m/s max' },
+      { label: { ar: 'تخطي العوائق', en: 'Grade' }, value: '1.5 cm max' },
+    ],
+    hardware: [
+      { label: { ar: 'مايكروفون × 7 وكاميرا RGB × 2', en: '7 × mic + 2 × RGB camera (head)' }, side: 'start' },
+      { label: { ar: 'حساس 3D ولمس × 7', en: '3D sensor + 7 × touch (head)' }, side: 'start' },
+      { label: { ar: 'حساس جيروسكوب وبوصلة إلكترونية', en: 'Gyroscope + electronic compass (body)' }, side: 'start' },
+      { label: { ar: 'حساسات استشعار جسم بشري × 2', en: '2 × human body sensors (body)' }, side: 'start' },
+      { label: { ar: 'حساسات تجنب عوائق بالأشعة تحت الحمراء', en: 'IR obstacle-evading sensors (body/hand/leg)' }, side: 'start' },
+      { label: { ar: 'حساسات لمس باليد', en: 'Touch sensors (hand)' }, side: 'end' },
+      { label: { ar: 'عجلات أومني × 3', en: '3 × omni wheels (leg)' }, side: 'end' },
+      { label: { ar: 'حساس استقبال رسائل بالأشعة تحت الحمراء × 6', en: '6 × IR message-receiving sensors (body)' }, side: 'end' },
+      { label: { ar: 'شاشة لمس 10.1 إنش', en: '10.1-inch touch display' }, side: 'end' },
+    ],
     sectors: ['schools'],
   },
 ];
