@@ -1,22 +1,20 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
-import { Wrench, BrainCircuit, GraduationCap } from 'lucide-react';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import type { Locale } from '@/lib/types';
-import type { ComponentType } from 'react';
 
-const SERVICES: { key: string; image: string; Icon: ComponentType<{ size?: number; className?: string }> }[] = [
-  { key: 'maintenance', image: '/services/maintenance.jpg', Icon: Wrench },
-  { key: 'ai',           image: '/services/ai.jpg',          Icon: BrainCircuit },
-  { key: 'training',     image: '/services/training.jpg',    Icon: GraduationCap },
+const SERVICES: { key: string; image: string }[] = [
+  { key: 'maintenance', image: '/services/maintenance.jpg' },
+  { key: 'ai',           image: '/services/ai.jpg' },
+  { key: 'training',     image: '/services/training.jpg' },
 ];
 
 /**
- * "ماذا نقدم" — شبكة بسيطة عمودين (بطاقات صور بأيقونة + عنوان بالزاوية)، بدون
- * بوردر وبدون شريط متحرك أوتوماتيكي. نفس التخطيط بكل مقاسات الشاشة (2 أعمدة
- * دايماً) حسب طلب المراجعة. 3 خدمات فقط فعلياً (لا يوجد "تجارة روبوتات" كخدمة
- * منفصلة) — آخر بطاقة تمتد بعرض الصفين حتى ما تبقى وحيدة بزاوية.
+ * "ماذا نقدم" — شبكة بسيطة عمودين (بطاقات صور بعنوان بالزاوية، بدون أيقونات)،
+ * بدون بوردر وبدون شريط متحرك أوتوماتيكي. نفس التخطيط بكل مقاسات الشاشة
+ * (2 أعمدة دايماً) حسب طلب المراجعة. 3 خدمات فقط فعلياً (لا يوجد "تجارة
+ * روبوتات" كخدمة منفصلة) — آخر بطاقة تمتد بعرض الصفين حتى ما تبقى وحيدة بزاوية.
  */
 export default function ServicesSection({ locale: _locale }: { locale: Locale }) {
   const t = useTranslations('home');
@@ -30,7 +28,7 @@ export default function ServicesSection({ locale: _locale }: { locale: Locale })
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4">
-          {SERVICES.map(({ key, image, Icon }, i) => {
+          {SERVICES.map(({ key, image }, i) => {
             const isLast = i === SERVICES.length - 1;
             return (
             <motion.div
@@ -52,11 +50,7 @@ export default function ServicesSection({ locale: _locale }: { locale: Locale })
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
 
-              <div className="absolute inset-x-3 bottom-3 flex items-center gap-2 sm:inset-x-4 sm:bottom-4 sm:gap-2.5">
-                <span className="glass-pill flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white sm:h-9 sm:w-9">
-                  <Icon size={16} className="sm:hidden" />
-                  <Icon size={18} className="hidden sm:block" />
-                </span>
+              <div className="absolute inset-x-3 bottom-3 sm:inset-x-4 sm:bottom-4">
                 <span className="text-sm font-semibold leading-tight text-white sm:text-base">
                   {t(`services.${key}.title`)}
                 </span>
