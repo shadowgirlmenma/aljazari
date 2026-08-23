@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import LogoFull from '@/components/LogoFull';
+import { AljazariWordAr, AljazariIconAr } from '@/components/LogoAr';
 import dynamic from 'next/dynamic';
 
 const Lightfall = dynamic(() => import('@/components/reactbits/Lightfall'), { ssr: false });
@@ -67,11 +68,18 @@ export default function Header() {
 
           <Link href="/" className="flex items-center gap-2.5 text-white">
             <div className="inline-flex flex-col leading-none">
-              <LogoFull
-                locale={locale as 'ar' | 'en'}
-                className="h-6 w-auto text-white sm:h-7"
-                title={locale === 'ar' ? 'الجزري' : 'Aljazari'}
-              />
+              {locale === 'ar' ? (
+                <div dir="ltr" className="flex h-6 w-full items-end justify-between gap-3 sm:h-7">
+                  <AljazariWordAr className="h-full w-auto text-white" />
+                  <AljazariIconAr className="h-[74%] w-auto" />
+                </div>
+              ) : (
+                <LogoFull
+                  locale="en"
+                  className="h-6 w-auto text-white sm:h-7"
+                  title="Aljazari"
+                />
+              )}
               <span className="mt-1 block text-justify font-mono text-[9px] uppercase tracking-normal text-purple-400 opacity-80 [text-align-last:justify]">
                 {locale === 'ar' ? 'للروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
               </span>

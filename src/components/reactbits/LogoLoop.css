@@ -22,12 +22,14 @@
 .logoloop--fade::after { right: 0; background: linear-gradient(to left, var(--logoloop-fadeColor, var(--logoloop-fadeColorAuto)) 0%, rgba(0,0,0,0) 100%); }
 @media (prefers-reduced-motion: reduce) { .logoloop__track { transform: translate3d(0,0,0) !important; } .logoloop__item img, .logoloop__node { transition: none !important; } }
 
-/* نسخة بسيطة بدون هالة إضاءة/خلفية خلف الشعار — شعارات بيضاء فقط،
-   تُستخدم بقسم شركاؤنا وعملاؤنا حسب طلب المراجعة (بدون خلفية أو "ريبون"). */
+/* نسخة بسيطة بدون هالة إضاءة/خلفية خلف الشعار — تُستخدم بقسم شركاؤنا وعملاؤنا
+   حسب طلب المراجعة (بدون خلفية أو "ريبون"). الشعارات هسة بخلفية شفافة حقيقية
+   (انشالت الخلفية البيضاء/الملونة من كل ملف)، فتركناها بألوانها الأصلية —
+   تحويلها لأبيض بالكامل (filter) يفقدها التفاصيل بشعارات الأختام/الشارات
+   متعددة الألوان. إذا حبت المستخدمة نسخة بيضاء بحتة نقدر نضيفها لاحقاً. */
 .logoloop--plain .logoloop__item { animation: none; border-radius: 0; }
 .logoloop--plain .logoloop__item img {
-  filter: brightness(0) invert(1);
-  opacity: 0.72;
+  opacity: 0.9;
   transition: opacity 0.25s ease;
 }
 .logoloop--plain .logoloop__item:hover img { opacity: 1; }

@@ -42,12 +42,12 @@ export default function PartnersSection({
           </p>
         </div>
 
-        <div className="mt-10 w-full overflow-hidden px-5 sm:px-8 lg:px-10">
+        <div className="mt-10 w-full overflow-hidden border-y border-white/10 py-6 sm:px-8 lg:px-10">
           <LogoLoop
             logos={toLogos(partners)}
             speed={60}
             direction="left"
-            logoHeight={44}
+            logoHeight={56}
             gap={56}
             pauseOnHover={false}
             fadeOut
@@ -61,12 +61,12 @@ export default function PartnersSection({
             {t('clients.title')}
           </p>
         </div>
-        <div className="mt-10 w-full overflow-hidden px-5 sm:px-8 lg:px-10">
+        <div className="mt-10 w-full overflow-hidden border-y border-white/10 py-6 sm:px-8 lg:px-10">
           <LogoLoop
             logos={toLogos(clients)}
             speed={75}
             direction="left"
-            logoHeight={44}
+            logoHeight={56}
             gap={56}
             pauseOnHover={false}
             fadeOut
