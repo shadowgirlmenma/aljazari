@@ -181,7 +181,7 @@ export const CONTACT = {
   phone: '',
   whatsapp: '',
   email: '',
-  address: { ar: 'بغداد، العراق', en: 'Baghdad, Iraq' },
+  address: { ar: 'شارع الرباعي، الزيونة، بغداد، العراق', en: 'Rubaie St, Ziyouna, Baghdad, Iraq' },
   social: {
     instagram: '',
     facebook: '',

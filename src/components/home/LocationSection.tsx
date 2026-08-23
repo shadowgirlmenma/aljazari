@@ -12,7 +12,10 @@ export default function LocationSection({
   contact: { address: { ar: string; en: string }; phone?: string; email?: string };
 }) {
   const t = useTranslations('home');
-  const mapsUrl = 'https://www.google.com/maps/place/Aljazari+Robotics/@33.3152,44.3661,17z';
+  const mapsUrl =
+    'https://www.google.com/maps?q=Aljazari+Robotics+%D8%B4%D8%B1%D9%83%D8%A9+%D8%A7%D9%84%D8%AC%D8%B2%D8%B1%D9%8A+%D9%84%D9%84%D8%B1%D9%88%D8%A8%D9%88%D8%AA%D8%A7%D8%AA%D8%8C+Rubaie+St,+Baghdad,+Baghdad+Governorate+Ziyouna,+Baghdad,+10091&ftid=0x155783b189945bcd:0xbfe977aae700955d';
+  const mapsEmbedUrl =
+    'https://www.google.com/maps?q=Aljazari+Robotics,+Rubaie+St,+Ziyouna,+Baghdad,+Iraq&output=embed';
 
   return (
     <section className="section-dark relative overflow-hidden text-white">
@@ -53,7 +56,7 @@ export default function LocationSection({
           >
             <iframe
               title="موقع الجزري على الخريطة"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.7!2d44.3661!3d33.3152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDE5JzEwLjciTiA0NMKwMjEnNTguNiJF!5e0!3m2!1sar!2siq!4v1234567890"
+              src={mapsEmbedUrl}
               className="h-72 w-full grayscale lg:h-96"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

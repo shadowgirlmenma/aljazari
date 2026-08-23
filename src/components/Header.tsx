@@ -66,14 +66,14 @@ export default function Header() {
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
 
           <Link href="/" className="flex items-center gap-2.5 text-white">
-            <div className="leading-none">
+            <div className="inline-flex flex-col leading-none">
               <LogoFull
                 locale={locale as 'ar' | 'en'}
                 className="h-6 w-auto text-white sm:h-7"
                 title={locale === 'ar' ? 'الجزري' : 'Aljazari'}
               />
-              <span className="mt-1 block font-mono text-[9px] uppercase tracking-[0.2em] text-purple-400 opacity-80">
-                {locale === 'ar' ? 'حلول الروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
+              <span className="mt-1 block text-justify font-mono text-[9px] uppercase tracking-normal text-purple-400 opacity-80 [text-align-last:justify]">
+                {locale === 'ar' ? 'للروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
               </span>
             </div>
           </Link>

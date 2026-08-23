@@ -1,11 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import dynamic from 'next/dynamic';
 import CountUp from '@/components/reactbits/CountUp';
-import DecorBoundary from '@/components/DecorBoundary';
 import type { Locale } from '@/lib/types';
-
-const Lightfall = dynamic(() => import('@/components/reactbits/Lightfall'), { ssr: false });
 
 const STATS: { to: number; suffix: string; prefix?: string; labelKey: string; unitKey?: string }[] = [
   { to: 20, suffix: '+', labelKey: 'teamAmbassadors' },
@@ -17,21 +13,7 @@ const STATS: { to: number; suffix: string; prefix?: string; labelKey: string; un
 export default function NumbersSection({ locale }: { locale: Locale }) {
   const t = useTranslations('home');
   return (
-    <section className="section-dark edge-travel relative overflow-hidden text-white">
-      <div className="pointer-events-none absolute inset-0 opacity-50">
-        <DecorBoundary>
-          <Lightfall
-            colors={['#bba4fc', '#7c47e0', '#4c1d80']}
-            backgroundColor="#120621"
-            speed={0.3}
-            streakCount={3}
-            density={0.45}
-            twinkle={0.6}
-            zoom={2.6}
-            mouseInteraction={false}
-          />
-        </DecorBoundary>
-      </div>
+    <section className="section-dark relative overflow-hidden text-white">
       <div className="relative z-10 mx-auto max-w-6xl border-t border-white/10 px-5 py-20 sm:px-8 lg:px-10">
         <h2 className="text-3xl font-semibold sm:text-4xl">{t('numbers.title')}</h2>
         <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">

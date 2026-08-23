@@ -17,12 +17,12 @@ export default function AboutSection({ locale }: { locale: Locale }) {
         </p>
 
         <div className="mt-8 grid items-center gap-12 lg:grid-cols-[1fr_280px]">
-          <div>
+          <div className="text-left">
             <ScrollReveal
               baseOpacity={0.06}
               baseRotation={2}
               blurStrength={5}
-              textClassName="text-white text-2xl sm:text-4xl leading-snug"
+              textClassName="text-white text-2xl sm:text-4xl leading-snug text-left"
             >
               {t('about.body')}
             </ScrollReveal>
@@ -31,7 +31,7 @@ export default function AboutSection({ locale }: { locale: Locale }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: 0.3 }}
-              className="mt-8 text-base leading-relaxed text-white/70 sm:text-lg"
+              className="mt-8 text-left text-base leading-relaxed text-white/70 sm:text-lg"
             >
               {t('about.body2')}
             </motion.p>

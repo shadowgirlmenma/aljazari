@@ -47,7 +47,7 @@ export default function Footer() {
                   {COMPANY.name[locale]}
                 </p>
                 <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-purple-400">
-                  {locale === 'ar' ? 'حلول الروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
+                  {locale === 'ar' ? 'للروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
                 </p>
               </div>
             </Link>
