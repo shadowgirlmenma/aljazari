@@ -36,8 +36,6 @@ export default async function AboutPage({
       storyTitle={t('story.title')}
       storyBody1={t('story.body1')}
       storyBody2={t('story.body2')}
-      nameTitle={t('name.title')}
-      nameBody={t('name.body')}
       videoTitle={t('video.title')}
       videoWatch={t('video.watch')}
       symbolTitle={t('symbol.title')}

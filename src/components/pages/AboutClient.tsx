@@ -1,21 +1,18 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import { motion } from 'motion/react';
 import { Link } from '@/i18n/navigation';
-import { MapPin, Phone, Mail, Youtube, Play, Pause } from 'lucide-react';
+import { MapPin, Phone, Mail, Youtube } from 'lucide-react';
 import ScrollReveal from '@/components/reactbits/ScrollReveal';
 import StarBorder from '@/components/reactbits/StarBorder';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import StrokeText from '@/components/reactbits/StrokeText';
-import AboutSymbolExplainer, { SymbolMark } from '@/components/pages/AboutSymbolExplainer';
+import AboutSymbolExplainer from '@/components/pages/AboutSymbolExplainer';
 
 const YOUTUBE_ID = 'AugXB9-TajA';
 
 export default function AboutClient({
   title,
   storyTitle, storyBody1, storyBody2,
-  nameTitle, nameBody,
   videoTitle, videoWatch,
   symbolTitle, symbolSubtitle,
   symbolArabicTitle, symbolArabicDesc,
@@ -28,7 +25,6 @@ export default function AboutClient({
 }: {
   title: string; subtitle: string;
   storyTitle: string; storyBody1: string; storyBody2: string;
-  nameTitle: string; nameBody: string;
   videoTitle: string; videoWatch: string;
   symbolTitle: string; symbolSubtitle: string;
   symbolArabicTitle: string; symbolArabicDesc: string;
@@ -41,32 +37,6 @@ export default function AboutClient({
   contactPhone: string; contactEmail: string;
   jobsTitle: string; jobsBody: string; jobsCta: string;
 }) {
-  /* رمز الجزري بجزئية قصتنا — يضوي حرف حرف (عربي ثم إنجليزي ثم الشكل الكامل) بشكل مستمر طول الوقت */
-  const STORY_SYMBOL_STEPS: Array<'left' | 'right' | 'both'> = ['left', 'right', 'both'];
-  const [storySymbolStep, setStorySymbolStep] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => {
-      setStorySymbolStep(i => (i + 1) % STORY_SYMBOL_STEPS.length);
-    }, 1800);
-    return () => clearInterval(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  /* زر تشغيل/إيقاف زجاجي لفيديو رسالة المؤسسين */
-  const foundersVideoRef = useRef<HTMLVideoElement>(null);
-  const [isFoundersVideoPlaying, setIsFoundersVideoPlaying] = useState(true);
-  const toggleFoundersVideo = () => {
-    const video = foundersVideoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      video.play();
-      setIsFoundersVideoPlaying(true);
-    } else {
-      video.pause();
-      setIsFoundersVideoPlaying(false);
-    }
-  };
-
   return (
     <>
    {/* ── البانر بفيديو الجزري — فيديو بدون صوت، مضغوط، بنفس أسلوب بانرات باقي الصفحات (فل سكرين) ── */}
@@ -111,105 +81,38 @@ export default function AboutClient({
         </div>
       </div>
 
-      {/* ── قصتنا — شريط بعرض الشاشة كامل بخلفية الموقع نفسها وإضاءة متوهجة على الحواف. رمز الجزري
-           كبير بالجهة الواسعة الفارغة (الترتيب بالـ DOM: الكتابة ثم الرمز يخليه يطلع بالجهة المقابلة
-           لبداية القراءة تلقائياً حسب اتجاه اللغة، مو فوق العنوان). ── */}
+      {/* ── قصتنا (مدمجة مع "لماذا اسمنا الجزري") — نص فقط بدون شعار أو صورة حسب طلب المراجعة،
+           بعرض الشاشة كامل بخلفية الموقع نفسها وإضاءة متوهجة على الحواف. ── */}
       <div className="relative left-1/2 w-screen -translate-x-1/2">
         <div className="strip-glow section-dark relative overflow-hidden">
           <DotGridBackdrop />
-          <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
-            <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-              <div>
-                <div style={{ width: 'fit-content' }}>
-                  <StrokeText
-                    text={storyTitle}
-                    strokeColor="#a78bfa"
-                    fillColor="#ffffff"
-                    strokeWidth={1.4}
-                    drawDuration={1.4}
-                    fillDelay={0.15}
-                    stagger={0.04}
-                    trigger="scroll"
-                    fillMode="wipe"
-                    fontSize={34}
-                    fontWeight={700}
-                  />
-                </div>
-                <ScrollReveal
-                  baseOpacity={0.06}
-                  baseRotation={1.5}
-                  blurStrength={4}
-                  textClassName="text-purple-200/80 text-lg leading-relaxed"
-                >
-                  {storyBody1}
-                </ScrollReveal>
-                <p className="mt-6 leading-relaxed text-purple-200/70">
-                  {storyBody2}
-                </p>
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.85 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="flex justify-center"
-              >
-                <motion.div
-                  animate={{ y: [0, -14, 0] }}
-                  transition={{ duration: 3.4, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  <SymbolMark group={STORY_SYMBOL_STEPS[storySymbolStep]} className="h-48 w-auto sm:h-64" />
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── لماذا اسمنا الجزري — عمودين: الكتابة ثم الصورة (الترتيب بالـ DOM يتبع اتجاه اللغة تلقائياً
-           عبر dir الصفحة، فتصير الصورة يمين بالإنجليزي ويسار بالعربي بدون أي شرط JS). الصورة بدون fade،
-           محاطة بإطار متوهج ينبض صعوداً ونزولاً. ── */}
-      <div className="relative left-1/2 w-screen -translate-x-1/2 section-dark">
-        <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 sm:px-10 lg:px-16">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <div style={{ width: 'fit-content' }}>
-                <StrokeText
-                  text={nameTitle}
-                  strokeColor="#a78bfa"
-                  fillColor="#ffffff"
-                  strokeWidth={1.4}
-                  drawDuration={1.4}
-                  fillDelay={0.15}
-                  stagger={0.04}
-                  trigger="scroll"
-                  fillMode="wipe"
-                  fontSize={34}
-                  fontWeight={700}
-                />
-              </div>
-              <p className="mt-6 leading-relaxed text-purple-100/85">
-                {nameBody}
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="portrait-frame-glow relative overflow-hidden rounded-3xl bg-[#120621]"
-              style={{ aspectRatio: '4 / 5' }}
-            >
-              {/* object-cover حتى تملي الإطار كامل بدون أي فراغات سوداء، حتى لو صار قص خفيف بعرض الصورة */}
-              <Image
-                src="/aljazari-portrait.jpg"
-                alt="الجزري"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
+          <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center sm:px-10 lg:px-16">
+            <div className="mx-auto" style={{ width: 'fit-content' }}>
+              <StrokeText
+                text={storyTitle}
+                strokeColor="#a78bfa"
+                fillColor="#ffffff"
+                strokeWidth={1.4}
+                drawDuration={1.4}
+                fillDelay={0.15}
+                stagger={0.04}
+                trigger="scroll"
+                fillMode="wipe"
+                fontSize={34}
+                fontWeight={700}
               />
-            </motion.div>
+            </div>
+            <ScrollReveal
+              baseOpacity={0.06}
+              baseRotation={1.5}
+              blurStrength={4}
+              textClassName="text-purple-200/80 text-lg leading-relaxed"
+            >
+              {storyBody1}
+            </ScrollReveal>
+            <p className="mt-6 leading-relaxed text-purple-200/70">
+              {storyBody2}
+            </p>
           </div>
         </div>
       </div>
@@ -303,89 +206,41 @@ export default function AboutClient({
         </div>
       </div>
 
-      {/* ── رسالة المؤسسين — الفيديو مال الروبوت والجزري جنب الرسالة. ترتيب الـ DOM (الفيديو ثم الكتابة)
-           يخلي الفيديو يطلع على اليسار بالإنجليزي، ويتبع نفس منطق اتجاه اللغة تلقائياً بالعربي. الفيديو
-           واضح بدون قص (object-contain)، ومحاط بتلاشي (vignette) خفيف بنفس لون خلفية القسم حتى ما يبين
-           فرق لون بينه وبين الخلفية. ── */}
+      {/* ── رسالة المؤسسين — نص فقط، بدون فيديو/شعار الجزري ولا الروبوت الصغير حسب طلب المراجعة. ── */}
       <div className="section-dark relative overflow-hidden">
         <DotGridBackdrop />
-        <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="strip-glow relative overflow-hidden rounded-3xl bg-[#120621]"
-              style={{ aspectRatio: '4 / 3' }}
-            >
-              <video
-                ref={foundersVideoRef}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 h-full w-full object-contain"
-              >
-                <source src="/aljazari-name-bg.mp4" type="video/mp4" />
-              </video>
-              {/* تلاشي (vignette) خفيف بنفس لون خلفية القسم حتى يندمج الفيديو مع الخلفية بدون فرق لون واضح */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    'radial-gradient(ellipse 78% 78% at 50% 50%, transparent 55%, #120621 100%)',
-                }}
+        <div className="relative z-10 mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 lg:px-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="mx-auto" style={{ width: 'fit-content' }}>
+              <StrokeText
+                text={foundersTitle}
+                strokeColor="#a78bfa"
+                fillColor="#ffffff"
+                strokeWidth={1.4}
+                drawDuration={1.4}
+                fillDelay={0.15}
+                stagger={0.04}
+                trigger="scroll"
+                fillMode="wipe"
+                fontSize={34}
+                fontWeight={700}
               />
-              {/* زر زجاجي لتشغيل/إيقاف الفيديو */}
-              <button
-                type="button"
-                onClick={toggleFoundersVideo}
-                aria-label={isFoundersVideoPlaying ? 'إيقاف الفيديو' : 'تشغيل الفيديو'}
-                className="glass-pill absolute bottom-4 flex h-11 w-11 items-center justify-center rounded-full text-white/90 transition hover:scale-105 hover:text-white active:scale-95"
-                style={{ insetInlineStart: '1rem' }}
-              >
-                {isFoundersVideoPlaying ? (
-                  <Pause size={18} fill="currentColor" />
-                ) : (
-                  <Play size={18} fill="currentColor" className="ms-0.5" />
-                )}
-              </button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              <div style={{ width: 'fit-content' }}>
-                <StrokeText
-                  text={foundersTitle}
-                  strokeColor="#a78bfa"
-                  fillColor="#ffffff"
-                  strokeWidth={1.4}
-                  drawDuration={1.4}
-                  fillDelay={0.15}
-                  stagger={0.04}
-                  trigger="scroll"
-                  fillMode="wipe"
-                  fontSize={34}
-                  fontWeight={700}
-                />
-              </div>
-              <div className="mt-8 space-y-5 leading-relaxed text-purple-200/75">
-                <p>{foundersBody1}</p>
-                <p>{foundersBody2}</p>
-                <p>{foundersBody3}</p>
-                <p className="pt-2 text-purple-300">
-                  {signature}
-                  <br />
-                  <span className="font-medium text-white">{signature2}</span>
-                </p>
-              </div>
-            </motion.div>
-          </div>
+            </div>
+            <div className="mt-8 space-y-5 leading-relaxed text-purple-200/75">
+              <p>{foundersBody1}</p>
+              <p>{foundersBody2}</p>
+              <p>{foundersBody3}</p>
+              <p className="pt-2 text-purple-300">
+                {signature}
+                <br />
+                <span className="font-medium text-white">{signature2}</span>
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
 

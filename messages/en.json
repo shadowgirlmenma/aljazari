@@ -155,7 +155,7 @@
     "visit": {
       "title": "Visit Us",
       "subtitle": "Our office is in the heart of Baghdad — you're welcome anytime",
-      "address": "Fifth Floor, Viola Commercial Center, AlRubaie Street, Baghdad",
+      "address": "Fifth Floor, Viola Commercial Center, AlRubaie Street, Ziyouna, Baghdad",
       "loginTitle": "Have an account?",
       "loginDesc": "Log in to track your requests and courses",
       "login": "Log In",
@@ -244,13 +244,9 @@
   "title": "Ahead of Our Time",
   "subtitle": "Iraq's first officially registered robotics company — founded with passion and built on vision",
   "story": {
-    "title": "Our Story",
-    "body1": "Aljazari is the leading and first of its kind company in Iraq, specializing in the trade and maintenance of robots, artificial intelligence, automation, and software solutions.",
-    "body2": "Founded by a group of engineers and academics with a visionary outlook, we are committed to providing the latest technologies and innovative services that meet market needs and contribute to driving technological progress in the country."
-  },
-  "name": {
-    "title": "Why the name Aljazari?",
-    "body": "We chose the name Aljazari in honor of the great scholar Ismail Aljazari, famously known as Badi alZaman, the exceptional scientist and engineer who lived in the 12th century and was renowned for his remarkable contributions to engineering and robotics. At Aljazari, we draw inspiration from his genius and creativity, striving to embody his vision through modern technologies and innovative solutions."
+    "title": "Our Story: Inspired by Al-Jazari",
+    "body1": "Aljazari is Iraq's pioneering robotics and AI company, created by engineers and academics with a vision to shape a smarter future through robotics, automation, and innovative software solutions.",
+    "body2": "Our name honors Ismail Al-Jazari, the legendary 12th-century engineer whose inventions helped shape the foundations of robotics and automation. Inspired by his genius, we carry his spirit forward — turning innovation into solutions for the future."
   },
   "video": {
     "title": "Meet Aljazari",
@@ -290,7 +286,7 @@
   },
   "contact": {
     "title": "Contact Us",
-    "address": "Fifth Floor, Viola Commercial Center, AlRubaie Street, Baghdad, Iraq"
+    "address": "Fifth Floor, Viola Commercial Center, AlRubaie Street, Ziyouna, Baghdad, Iraq"
   },
   "jobs": {
     "title": "Join Our Team",
@@ -320,7 +316,7 @@
   },
   "info": {
     "title": "Contact Information",
-    "address": "Fifth Floor, Viola Commercial Center, AlRubaie Street, Baghdad, Iraq",
+    "address": "Fifth Floor, Viola Commercial Center, AlRubaie Street, Ziyouna, Baghdad, Iraq",
     "hours": "Working Hours",
     "hoursValue": "Sunday — Thursday, 9AM — 5PM"
   }
