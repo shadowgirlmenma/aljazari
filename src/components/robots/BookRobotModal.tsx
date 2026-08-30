@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
 import { X, CheckCircle } from 'lucide-react';
 import PhoneInput from '@/components/ui/PhoneInput';
-import { api, ApiError } from '@/lib/api';
+import { buildMailto } from '@/lib/mailto';
 
 export default function BookRobotModal({
   open, onClose, robotSlug, robotName, initialType = 'rent', preorder = false,
@@ -20,8 +20,8 @@ export default function BookRobotModal({
   preorder?: boolean;
 }) {
   const t = useTranslations('robots.modal');
+  const locale = useLocale();
   const [sent, setSent] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [phoneValid, setPhoneValid] = useState(true);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [form, setForm] = useState({
@@ -52,29 +52,21 @@ export default function BookRobotModal({
     setTimeout(reset, 300);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!phoneValid) { toast.error(t('phoneError')); return; }
     if (errors.name || errors.email) { toast.error(t('formError')); return; }
 
-    setLoading(true);
-    try {
-      await api.requestRobot({
-        robot_slug: robotSlug,
-        robot_name: robotName,
-        request_type: form.type,
-        full_name: form.name,
-        email: form.email,
-        phone: form.phone,
-        organization: form.organization || undefined,
-        notes: form.notes || undefined,
-      });
-      setSent(true);
-    } catch (err) {
-      toast.error(err instanceof ApiError ? err.message : t('serverError'));
-    } finally {
-      setLoading(false);
-    }
+    /* بدون أي ربط بباكند — يفتح رابط mailto: بتطبيق البريد الافتراضي، معبّى
+       تلقائياً بكل الحقول اللي كتبها الزائر نصاً واضحاً. */
+    window.location.href = buildMailto(`${robotName} — ${form.type === 'rent' ? t('rent') : t('buy')}`, [
+      [t('namePlaceholder'), form.name],
+      [t('emailPlaceholder'), form.email],
+      [locale === 'ar' ? 'الهاتف' : 'Phone', form.phone],
+      [t('orgPlaceholder'), form.organization],
+      [t('notesPlaceholder'), form.notes],
+    ]);
+    setSent(true);
   };
 
   const fieldClass = (hasError: boolean) =>
@@ -198,10 +190,9 @@ export default function BookRobotModal({
 
                   <button
                     type="submit"
-                    disabled={loading}
                     className="w-full rounded-xl bg-purple-600 py-3.5 text-sm font-semibold text-white transition hover:bg-purple-500 disabled:opacity-60"
                   >
-                    {loading ? '…' : t('submit')}
+                    {t('submit')}
                   </button>
                 </form>
               </>

@@ -54,7 +54,8 @@ export default async function RobotPage({
 
   return (
     <>
-      {/* JSON-LD */}
+      {/* JSON-LD — نهرب "<" احتياطاً حتى لو صار البيانات مستقبلاً من حقل قابل
+          للتعديل من لوحة الأدمن، ما ينكسر الـ <script> ولا ينحقن HTML جواه */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -65,7 +66,7 @@ export default async function RobotPage({
             description: robot.summary[lang],
             brand: robot.brand || undefined,
             category: CATEGORIES[robot.categories[0]].label.en,
-          }),
+          }).replace(/</g, '\\u003c'),
         }}
       />
 

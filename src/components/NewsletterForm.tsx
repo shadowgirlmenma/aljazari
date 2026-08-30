@@ -2,32 +2,24 @@
 
 import { useState } from 'react';
 import { useLocale } from 'next-intl';
-import { toast } from 'sonner';
-import { api, ApiError } from '@/lib/api';
+import { buildMailto } from '@/lib/mailto';
 
 export default function NewsletterForm() {
   const locale = useLocale();
   const [email, setEmail] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
-    try {
-      const res = await api.subscribeNewsletter({ email });
-      toast.success(res.detail);
-      setEmail('');
-    } catch (err) {
-      toast.error(
-        err instanceof ApiError
-          ? err.message
-          : locale === 'ar'
-            ? 'تعذّر الاتصال بالخادم'
-            : 'Could not reach the server'
-      );
-    } finally {
-      setLoading(false);
-    }
+
+    /* بدون أي ربط بباكند — يفتح رابط mailto: بتطبيق البريد الافتراضي، معبّى
+       تلقائياً بالبريد الإلكتروني اللي كتبته الزائرة. */
+    window.location.href = buildMailto(
+      locale === 'ar' ? 'الاشتراك بنشرة الجزري' : 'Aljazari newsletter subscription',
+      [[locale === 'ar' ? 'البريد الإلكتروني' : 'Email', email]],
+    );
+    setSent(true);
+    setEmail('');
   };
 
   return (
@@ -45,10 +37,15 @@ export default function NewsletterForm() {
       />
       <button
         type="submit"
-        disabled={loading}
         className="rounded-full bg-purple-600 px-7 py-3 text-sm font-medium text-white transition hover:bg-purple-500 disabled:opacity-60"
       >
-        {loading ? '...' : locale === 'ar' ? 'اشترك' : 'Subscribe'}
+        {sent
+          ? locale === 'ar'
+            ? 'تم! ✓'
+            : 'Done! ✓'
+          : locale === 'ar'
+            ? 'اشترك'
+            : 'Subscribe'}
       </button>
     </form>
   );

@@ -63,7 +63,7 @@ export default function Header() {
       >
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
 
-          <Link href="/" className="flex w-40 items-center gap-2.5 text-white sm:w-48">
+          <Link href="/" className="flex shrink-0 items-center gap-2.5 text-white">
             <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
           </Link>
 
@@ -129,7 +129,7 @@ export default function Header() {
               className="fixed inset-y-0 end-0 z-[70] flex w-[85%] max-w-sm flex-col overflow-hidden border-s border-white/15 bg-[#120621]/70 shadow-2xl backdrop-blur-2xl lg:hidden"
             >
               <div className="relative z-10 flex items-center justify-between border-b border-white/10 px-6 py-5">
-                <div className="w-36 text-white">
+                <div className="text-white">
                   <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
                 </div>
                 <button

@@ -40,7 +40,7 @@ export default function Footer() {
 
           {/* الشركة — نفس بلوك الشعار المستخدم بالهيدر بالضبط (BrandLockup)، بس بحجم أكبر شوي */}
           <div>
-            <Link href="/" className="inline-flex w-44 text-white sm:w-52">
+            <Link href="/" className="inline-flex text-white">
               <BrandLockup locale={locale} size="footer" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">

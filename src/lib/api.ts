@@ -1,6 +1,8 @@
 /**
- * طبقة الاتصال بالباكند — كل استدعاء للـ API يمر من هنا.
- * العنوان يُقرأ من متغير بيئة حتى يسهل تغييره وقت النشر.
+ * طبقة الاتصال بالباكند — تُستخدم فقط للوحة تحكم الأدمن (تسجيل الدخول
+ * وعرض الطلبات المستلمة عبر البريد). كل النماذج العامة بالموقع (تواصل،
+ * حجز روبوت، التسجيل كمدرّب، دورة، نشرة) لا تستخدم هذا الملف إطلاقاً —
+ * شوفي src/lib/mailto.ts. العنوان يُقرأ من متغير بيئة حتى يسهل تغييره وقت النشر.
  */
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
@@ -39,82 +41,6 @@ async function request<T>(
   return res.json() as Promise<T>;
 }
 
-/* ═══════════ الأنواع ═══════════ */
-
-export type MessageResponse = { detail: string };
-
-export type ContactMessagePayload = {
-  full_name: string;
-  email: string;
-  phone?: string;
-  subject: string;
-  message: string;
-};
-
-export type RobotRequestPayload = {
-  robot_slug: string;
-  robot_name: string;
-  request_type: 'buy' | 'rent';
-  full_name: string;
-  email: string;
-  phone: string;
-  organization?: string;
-  notes?: string;
-};
-
-export type TrainerApplicationPayload = {
-  full_name: string;
-  email: string;
-  phone: string;
-  specialty: string;
-  experience: string;
-  cv_url?: string;
-};
-
-export type CourseEnrollmentPayload = {
-  course_slug: string;
-  course_name: string;
-  full_name: string;
-  email: string;
-  phone: string;
-  delivery: 'online' | 'onsite';
-};
-
-export type NewsletterPayload = { email: string };
-
-/* ═══════════ الاستدعاءات ═══════════ */
-
-export const api = {
-  sendContactMessage: (data: ContactMessagePayload) =>
-    request<MessageResponse>('/api/contact', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-
-  requestRobot: (data: RobotRequestPayload) =>
-    request<MessageResponse>('/api/robot-requests', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-
-  applyAsTrainer: (data: TrainerApplicationPayload) =>
-    request<MessageResponse>('/api/trainer-applications', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-
-  enrollInCourse: (data: CourseEnrollmentPayload) =>
-    request<MessageResponse>('/api/enrollments', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-
-  subscribeNewsletter: (data: NewsletterPayload) =>
-    request<MessageResponse>('/api/newsletter', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-};
 /* ═══════════ المصادقة ═══════════ */
 
 export type LoginPayload = { email: string; password: string };

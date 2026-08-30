@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
 import { X, CheckCircle } from 'lucide-react';
 import PhoneInput from '@/components/ui/PhoneInput';
-import { api, ApiError } from '@/lib/api';
+import { buildMailto } from '@/lib/mailto';
 
 export default function EnrollModal({
   open, onClose, courseSlug, courseName,
@@ -16,7 +16,6 @@ export default function EnrollModal({
   courseName: string;
 }) {
   const [sent, setSent] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [phoneValid, setPhoneValid] = useState(true);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [form, setForm] = useState({
@@ -42,27 +41,20 @@ export default function EnrollModal({
     setTimeout(reset, 300);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!phoneValid) { toast.error('رقم الهاتف غير مكتمل'); return; }
     if (errors.name || errors.email) { toast.error('راجعي الحقول المظلّلة بالأحمر'); return; }
 
-    setLoading(true);
-    try {
-      await api.enrollInCourse({
-        course_slug: courseSlug,
-        course_name: courseName,
-        full_name: form.name,
-        email: form.email,
-        phone: form.phone,
-        delivery: form.delivery,
-      });
-      setSent(true);
-    } catch (err) {
-      toast.error(err instanceof ApiError ? err.message : 'تعذّر الاتصال بالخادم');
-    } finally {
-      setLoading(false);
-    }
+    /* بدون أي ربط بباكند — يفتح رابط mailto: بتطبيق البريد الافتراضي، معبّى
+       تلقائياً بكل الحقول اللي كتبها المتدرّب نصاً واضحاً. */
+    window.location.href = buildMailto(`التسجيل بدورة: ${courseName}`, [
+      ['الاسم', form.name],
+      ['البريد الإلكتروني', form.email],
+      ['الهاتف', form.phone],
+      ['طريقة الحضور', form.delivery === 'online' ? 'أونلاين' : 'حضوري'],
+    ]);
+    setSent(true);
   };
 
   const fieldClass = (hasError: boolean) =>
@@ -102,10 +94,10 @@ export default function EnrollModal({
               <div className="flex flex-col items-center py-10 text-center">
                 <CheckCircle className="text-purple-400" size={52} strokeWidth={1.5} />
                 <p className="mt-5 text-lg font-semibold text-white">
-                  تم تسجيلك بنجاح
+                  فتحنالك تطبيق البريد
                 </p>
                 <p className="mt-2 text-sm text-purple-200/70">
-                  سنتواصل معك لتأكيد الموعد وطريقة الدفع
+                  راجعي الرسالة واضغطي إرسال داخل تطبيق البريد لإكمال تسجيلك
                 </p>
                 <button
                   type="button"
@@ -168,10 +160,9 @@ export default function EnrollModal({
 
                   <button
                     type="submit"
-                    disabled={loading}
                     className="w-full rounded-xl bg-purple-600 py-3.5 text-sm font-semibold text-white transition hover:bg-purple-500 disabled:opacity-60"
                   >
-                    {loading ? '...' : 'تأكيد التسجيل'}
+                    تأكيد التسجيل
                   </button>
                 </form>
               </>

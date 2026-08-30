@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 import { MapPin, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
 import PhoneInput from '@/components/ui/PhoneInput';
 import AnimatedSelect from '@/components/ui/AnimatedSelect';
-import { api, ApiError } from '@/lib/api';
+import { buildMailto } from '@/lib/mailto';
 
 export default function ContactClient({
   title, subtitle,
@@ -25,7 +25,6 @@ export default function ContactClient({
   hoursLabel: string; hours: string;
 }) {
   const [sent, setSent] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [phoneValid, setPhoneValid] = useState(true);
   const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>({});
   const [form, setForm] = useState({
@@ -41,7 +40,7 @@ export default function ContactClient({
   const markTouched = (field: string) =>
     setTouchedFields((t) => ({ ...t, [field]: true }));
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!phoneValid) {
@@ -53,25 +52,16 @@ export default function ContactClient({
       return;
     }
 
-    setLoading(true);
-    try {
-      await api.sendContactMessage({
-        full_name: form.name,
-        email: form.email,
-        phone: form.phone,
-        subject: form.subject,
-        message: form.message,
-      });
-      setSent(true);
-    } catch (err) {
-      toast.error(
-        err instanceof ApiError
-          ? err.message
-          : 'تعذّر الاتصال بالخادم — تأكدي أن الباكند شغّال'
-      );
-    } finally {
-      setLoading(false);
-    }
+    /* بدون أي ربط بباكند — يفتح رابط mailto: بتطبيق البريد الافتراضي، معبّى
+       تلقائياً بكل الحقول اللي كتبتها الزائرة نصاً واضحاً. */
+    window.location.href = buildMailto(`${subjectLabel}: ${form.subject}`, [
+      [nameLabel, form.name],
+      [emailLabel, form.email],
+      [phoneLabel, form.phone],
+      [subjectLabel, form.subject],
+      [messageLabel, form.message],
+    ]);
+    setSent(true);
   };
 
   const INFO = [
@@ -225,10 +215,9 @@ export default function ContactClient({
 
                     <button
                       type="submit"
-                      disabled={loading}
                       className="w-full rounded-xl bg-purple-600 py-4 text-sm font-semibold text-white transition hover:bg-purple-500 disabled:opacity-60"
                     >
-                      {loading ? '...' : submitLabel}
+                      {submitLabel}
                     </button>
                   </motion.form>
                 )}

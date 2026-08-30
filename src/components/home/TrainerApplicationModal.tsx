@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
 import { X, CheckCircle } from 'lucide-react';
 import PhoneInput from '@/components/ui/PhoneInput';
-import { api, ApiError } from '@/lib/api';
+import { buildMailto } from '@/lib/mailto';
 
 export default function TrainerApplicationModal({
   open, onClose,
@@ -14,7 +14,6 @@ export default function TrainerApplicationModal({
   onClose: () => void;
 }) {
   const [sent, setSent] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [phoneValid, setPhoneValid] = useState(true);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [form, setForm] = useState({
@@ -41,7 +40,7 @@ export default function TrainerApplicationModal({
     setTimeout(reset, 300);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!phoneValid) { toast.error('رقم الهاتف غير مكتمل'); return; }
     if (errors.name || errors.email || errors.specialty || errors.experience) {
@@ -53,21 +52,16 @@ export default function TrainerApplicationModal({
       return;
     }
 
-    setLoading(true);
-    try {
-      await api.applyAsTrainer({
-        full_name: form.name,
-        email: form.email,
-        phone: form.phone,
-        specialty: form.specialty,
-        experience: form.experience,
-      });
-      setSent(true);
-    } catch (err) {
-      toast.error(err instanceof ApiError ? err.message : 'تعذّر الاتصال بالخادم');
-    } finally {
-      setLoading(false);
-    }
+    /* بدون أي ربط بباكند — يفتح رابط mailto: بتطبيق البريد الافتراضي، معبّى
+       تلقائياً بكل الحقول اللي كتبها المتقدّم نصاً واضحاً. */
+    window.location.href = buildMailto('طلب انضمام كمدرّب', [
+      ['الاسم', form.name],
+      ['البريد الإلكتروني', form.email],
+      ['الهاتف', form.phone],
+      ['التخصص', form.specialty],
+      ['الخبرة', form.experience],
+    ]);
+    setSent(true);
   };
 
   const fieldClass = (hasError: boolean) =>
@@ -107,10 +101,10 @@ export default function TrainerApplicationModal({
               <div className="flex flex-col items-center py-10 text-center">
                 <CheckCircle className="text-purple-400" size={52} strokeWidth={1.5} />
                 <p className="mt-5 text-lg font-semibold text-white">
-                  تم استلام طلبك بنجاح
+                  فتحنالك تطبيق البريد
                 </p>
                 <p className="mt-2 text-sm text-purple-200/70">
-                  سنراجع طلبك ونتواصل معك قريباً
+                  راجعي الرسالة واضغطي إرسال داخل تطبيق البريد لإكمال طلبك
                 </p>
                 <button
                   type="button"
@@ -183,10 +177,9 @@ export default function TrainerApplicationModal({
 
                   <button
                     type="submit"
-                    disabled={loading}
                     className="w-full rounded-xl bg-purple-600 py-3.5 text-sm font-semibold text-white transition hover:bg-purple-500 disabled:opacity-60"
                   >
-                    {loading ? '...' : 'إرسال الطلب'}
+                    إرسال الطلب
                   </button>
                 </form>
               </>

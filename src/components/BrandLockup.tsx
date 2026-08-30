@@ -12,25 +12,31 @@ import type { Locale } from '@/lib/types';
  * عادي). هذا يخلي شكل العنوان مو موحّد بين مكان ومكان بالموقع. هسة الاثنين
  * يستخدمون نفس المكوّن.
  *
- * قرارات التصميم المتعلقة بطلب توحيد الشكل:
+ * قرارات التصميم (بعد ملاحظات المراجعة):
+ * - العنصر كامل (الأيقونة + الكلمة + العنوان الفرعي) صار بعرضه الطبيعي فقط
+ *   inline-flex بدون أي عرض ثابت مفروض من بره (w-40 / w-44 الخ بالـ Header
+ *   والـ Footer انشالت) — حتى ما تنمد الكلمة أو تطلع برة المساحة المتاحة.
+ * - الأيقونة صارت أكبر نسبياً مقارنة بالكلمة (قريبة من ارتفاع الصف كامل)
+ *   بدل ما تكون صغيرة بالزاوية.
  * - العربي: المسافة بين الحروف بالعنوان الفرعي عن طريق tracking حقيقي (مو
- *   تمديد بالمسافات الفارغة)، وصف الشعار (الأيقونة + الكلمة) وحجمه أكبر شوي
- *   من قبل بحيث عرض صف الشعار وعرض العنوان الفرعي تحته متساويين — نفس عرض
- *   "قالب" واحد، فيصير الـ padding من الجهتين متوازي.
+ *   تمديد بالمسافات الفارغة).
  * - الانكليزي: بدل ما نستخدم text-justify (الي كان يحط فراغات كبيرة بين
- *   الكلمات زي ما وضحتيه بالصورة عند "&")، نستخدم tracking (letter-spacing)
- *   مع font-semibold — يعني نمدد شكل الحرف نفسه ونثخّنه شوي، بدون ما نضيف
- *   فراغ فاضي بين الكلمات.
+ *   الكلمات)، نستخدم font-bold + tracking (letter-spacing) واضح ومحسوس
+ *   بين الحروف، مو بس بين الكلمات.
  */
 
 const SIZES = {
   header: {
-    logo: 'h-7 sm:h-8',
-    sub: 'mt-1.5 text-[9px] sm:text-[10px]',
+    logo: 'h-8 sm:h-9',
+    iconH: 'h-[92%]',
+    gap: 'gap-2',
+    sub: 'mt-1.5 text-[10px] sm:text-[11px]',
   },
   footer: {
-    logo: 'h-9 sm:h-10',
-    sub: 'mt-2 text-[10px] sm:text-[11px]',
+    logo: 'h-10 sm:h-12',
+    iconH: 'h-[92%]',
+    gap: 'gap-2.5',
+    sub: 'mt-2 text-[11px] sm:text-[12px]',
   },
 } as const;
 
@@ -47,20 +53,20 @@ export default function BrandLockup({
   const s = SIZES[size];
 
   return (
-    <div className={`inline-flex w-full flex-col leading-none ${className}`}>
+    <div className={`inline-flex flex-col items-start leading-none ${className}`}>
       {isAr ? (
-        <div dir="ltr" className={`flex w-full items-end justify-between gap-3 ${s.logo}`}>
-          <AljazariWordAr className="h-full w-auto" />
-          <AljazariIconAr className="h-[78%] w-auto" />
+        <div dir="ltr" className={`inline-flex items-end ${s.gap} ${s.logo}`}>
+          <AljazariWordAr className="h-full w-auto shrink-0" />
+          <AljazariIconAr className={`${s.iconH} w-auto shrink-0`} />
         </div>
       ) : (
-        <LogoFull locale="en" className={`w-auto ${s.logo}`} title="Aljazari" />
+        <LogoFull locale="en" className={`w-auto shrink-0 ${s.logo}`} title="Aljazari" />
       )}
 
       <span
         dir={isAr ? 'rtl' : 'ltr'}
-        className={`block w-full whitespace-nowrap font-mono uppercase text-purple-400 opacity-80 ${s.sub} ${
-          isAr ? 'tracking-[0.22em]' : 'font-semibold tracking-[0.28em]'
+        className={`block whitespace-nowrap font-mono font-bold uppercase text-purple-400 opacity-80 ${s.sub} ${
+          isAr ? 'tracking-[0.24em]' : 'tracking-[0.32em]'
         }`}
       >
         {isAr ? 'للروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
