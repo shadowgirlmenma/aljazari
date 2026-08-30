@@ -6,11 +6,8 @@ import { Link, usePathname } from '@/i18n/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
-import LogoFull from '@/components/LogoFull';
-import { AljazariWordAr, AljazariIconAr } from '@/components/LogoAr';
-import dynamic from 'next/dynamic';
+import BrandLockup from '@/components/BrandLockup';
 
-const Lightfall = dynamic(() => import('@/components/reactbits/Lightfall'), { ssr: false });
 const NAV = [
   { href: '/robots',          key: 'robots' },
   { href: '/robot-solutions', key: 'robotSolutions' },
@@ -66,24 +63,8 @@ export default function Header() {
       >
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
 
-          <Link href="/" className="flex items-center gap-2.5 text-white">
-            <div className="inline-flex flex-col leading-none">
-              {locale === 'ar' ? (
-                <div dir="ltr" className="flex h-6 w-full items-end justify-between gap-3 sm:h-7">
-                  <AljazariWordAr className="h-full w-auto text-white" />
-                  <AljazariIconAr className="h-[74%] w-auto" />
-                </div>
-              ) : (
-                <LogoFull
-                  locale="en"
-                  className="h-6 w-auto text-white sm:h-7"
-                  title="Aljazari"
-                />
-              )}
-              <span className="mt-1 block text-justify font-mono text-[9px] uppercase tracking-normal text-purple-400 opacity-80 [text-align-last:justify]">
-                {locale === 'ar' ? 'للروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
-              </span>
-            </div>
+          <Link href="/" className="flex w-40 items-center gap-2.5 text-white sm:w-48">
+            <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
           </Link>
 
           <nav className="hidden items-center gap-6 lg:flex">
@@ -147,24 +128,10 @@ export default function Header() {
               transition={{ type: 'spring', damping: 28, stiffness: 260 }}
               className="fixed inset-y-0 end-0 z-[70] flex w-[85%] max-w-sm flex-col overflow-hidden border-s border-white/15 bg-[#120621]/70 shadow-2xl backdrop-blur-2xl lg:hidden"
             >
-              {/* خلفية Lightfall */}
-              <div className="pointer-events-none absolute inset-0 opacity-70">
-                <Lightfall
-                  colors={['#bba4fc', '#7c47e0', '#4c1d80']}
-                  backgroundColor="#260b42"
-                  speed={0.35}
-                  streakCount={2}
-                  density={0.5}
-                  twinkle={0.7}
-                  zoom={3.2}
-                  backgroundGlow={0.4}
-                  opacity={0.8}
-                  mouseInteraction={false}
-                />
-              </div>
-
               <div className="relative z-10 flex items-center justify-between border-b border-white/10 px-6 py-5">
-                <LogoFull locale={locale as 'ar' | 'en'} className="h-6 w-auto text-white" />
+                <div className="w-36 text-white">
+                  <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
+                </div>
                 <button
                   type="button"
                   onClick={() => setOpen(false)}

@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
@@ -28,15 +27,6 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
     () => CATEGORY_ORDER.filter((c) => robots.some((r) => r.categories.includes(c))),
     [robots],
   );
-
-  /** أول صورة روبوت بكل تصنيف — تُستخدم كصورة مصغّرة ببطاقة التصنيف */
-  const categoryThumb = useMemo(() => {
-    const map: Partial<Record<RobotCategory, string>> = {};
-    for (const c of available) {
-      map[c] = robots.find((r) => r.categories.includes(c) && r.image)?.image;
-    }
-    return map;
-  }, [available, robots]);
 
   function toggleProductType(pt: ProductType) {
     setProductTypes((prev) => {
@@ -77,7 +67,6 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
             <CategoryTile
               key={category}
               active={filter === category}
-              image={categoryThumb[category]}
               onClick={() => setFilter(category)}
             >
               {CATEGORIES[category].label[locale]}
@@ -147,19 +136,17 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
 }
 
 /**
- * بطاقة تصنيف مبسّطة — صورة مصغّرة + اسم التصنيف بخط أوضح، بدون انحناء
- * كامل (rounded-xl فقط) حسب ملاحظة "Simplify the robot category banner
- * and improve typography. No curve".
+ * بطاقة تصنيف مبسّطة — بدون صورة (حسب طلب المراجعة: "No need to have image for
+ * each robot category title, just enlarge the category title")، عنوان التصنيف
+ * فقط بخط أكبر وأوضح.
  */
 function CategoryTile({
   active,
   onClick,
-  image,
   children,
 }: {
   active: boolean;
   onClick: () => void;
-  image?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -168,20 +155,13 @@ function CategoryTile({
       onClick={onClick}
       whileTap={{ scale: 0.97 }}
       aria-pressed={active}
-      className={`flex shrink-0 items-center gap-3 rounded-xl border px-4 py-3 transition sm:min-w-[220px] ${
+      className={`flex shrink-0 items-center rounded-xl border px-5 py-4 transition sm:min-w-[220px] ${
         active
           ? 'border-purple-400 bg-purple-600/25'
           : 'glass border-purple-500/20 hover:border-purple-400/50'
       }`}
     >
-      <span className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white/95">
-        {image ? (
-          <Image src={image} alt="" fill sizes="48px" className="object-contain p-1" />
-        ) : (
-          <span className="h-full w-full bg-purple-200/70" />
-        )}
-      </span>
-      <span className="text-start text-base font-semibold text-white">{children}</span>
+      <span className="text-start text-lg font-semibold text-white sm:text-xl">{children}</span>
     </motion.button>
   );
 }

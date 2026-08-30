@@ -18,15 +18,18 @@ export default function RobotVisual({
   className?: string;
 }) {
   if (robot.image) {
+    /* خلفية بيضاء موحّدة + padding ثابت حتى كل صور الروبوتات (بغض النظر عن دقتها أو
+       نسبة أبعادها الأصلية) تطلع بنفس المقاس والموضع بالضبط داخل الصندوق — بدون
+       صور صغيرة بزاوية أو صور تملي الصندوق بشكل غير متناسق مع الباقي. */
     return (
-      <div className={`relative aspect-square ${className}`}>
+      <div className={`relative aspect-square overflow-hidden rounded-2xl bg-white/95 ${className}`}>
         <Image
           src={robot.image}
           alt={robot.name}
           fill
           priority={priority}
           sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
-          className="object-contain"
+          className="object-contain p-4"
         />
       </div>
     );

@@ -47,7 +47,25 @@
     "newest": "Newest",
     "nameAZ": "Name A-Z",
     "nameZA": "Name Z-A",
-    "watchOnInstagram": "Watch on Instagram"
+    "watchOnInstagram": "Watch on Instagram",
+    "watchOnYoutube": "Watch on YouTube",
+    "modal": {
+      "rent": "Rent",
+      "buy": "Buy",
+      "subtitleOrder": "Request it now",
+      "subtitlePreorder": "Register your pre-order interest",
+      "namePlaceholder": "Full name",
+      "emailPlaceholder": "Email address",
+      "orgPlaceholder": "Organization (optional)",
+      "notesPlaceholder": "Additional notes (optional)",
+      "submit": "Send Request",
+      "successTitle": "Your request was received",
+      "successBody": "Our team will contact you soon to confirm the details",
+      "close": "Close",
+      "phoneError": "Phone number is incomplete",
+      "formError": "Please check the fields highlighted in red",
+      "serverError": "Could not reach the server"
+    }
   },
   "warranty": {
     "monthsLabel": "months of full warranty"
@@ -230,7 +248,9 @@
     "ecommerce": { "title": "eCommerce & Retail", "desc": "Personalization, inventory intelligence, demand forecasting, and automated support." },
     "logistics": { "title": "Logistics & Supply Chain", "desc": "Route optimization, tracking, demand prediction, and inventory visibility." },
     "realEstate": { "title": "Real Estate", "desc": "Property management automation, customer engagement, valuation insights, and investment support." },
-    "manufacturing": { "title": "Manufacturing", "desc": "Predictive maintenance, quality control, reduced downtime, and production optimization." }
+    "manufacturing": { "title": "Manufacturing", "desc": "Predictive maintenance, quality control, reduced downtime, and production optimization." },
+    "energy": { "title": "Energy & Utilities", "desc": "Balances grid distribution and predicts power demand, lowers data center and smart building cooling costs, and monitors renewable wind and solar asset performance." },
+    "education": { "title": "Education", "desc": "Powers adaptive learning platforms for tailored student pacing, assists instructors with automated quiz and lesson designs, and provides personalized virtual tutoring." }
   }
 },
 "training": {

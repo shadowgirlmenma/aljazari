@@ -12,6 +12,7 @@ import RobotDetailClient from '@/components/robots/RobotDetailClient';
 import BookRobotButton from '@/components/robots/BookRobotButton';
 import RobotGallery from '@/components/robots/RobotGallery';
 import RobotInstagramReels from '@/components/robots/RobotInstagramReels';
+import RobotYoutubeVideos from '@/components/robots/RobotYoutubeVideos';
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     PUBLISHED_ROBOTS.map((robot) => ({ locale, slug: robot.slug })),
@@ -74,15 +75,15 @@ export default async function RobotPage({
         {robot.image && (
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 end-0 hidden w-[42%] md:block"
+            className="pointer-events-none absolute inset-y-0 end-0 hidden w-[48%] md:block"
           >
             <Image
               src={robot.image}
               alt=""
               fill
               priority
-              sizes="42vw"
-              className="object-contain object-center p-6 drop-shadow-2xl"
+              sizes="48vw"
+              className="object-contain object-center p-4 drop-shadow-2xl"
             />
           </div>
         )}
@@ -113,7 +114,7 @@ export default async function RobotPage({
 
             {/* صورة الروبوت على الموبايل — تحت النص */}
             {robot.image && (
-              <div className="relative mx-auto mt-10 aspect-square w-full max-w-xs md:hidden">
+              <div className="relative mx-auto mt-10 aspect-square w-full max-w-sm md:hidden">
                 <Image
                   src={robot.image}
                   alt={robot.name}
@@ -133,6 +134,7 @@ export default async function RobotPage({
           <Container className="py-16 sm:py-20">
             <RobotGallery robot={robot} />
             <RobotInstagramReels robot={robot} />
+            <RobotYoutubeVideos robot={robot} />
           </Container>
         </div>
       )}

@@ -1,7 +1,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import Container from '@/components/ui/Container';
-import Logo from '@/components/Logo';
+import BrandLockup from '@/components/BrandLockup';
 import { COMPANY, CONTACT } from '@/data/company';
 import type { Locale } from '@/lib/types';
 import NewsletterForm from '@/components/NewsletterForm';
@@ -38,18 +38,10 @@ export default function Footer() {
       <Container className="py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
 
-          {/* الشركة */}
+          {/* الشركة — نفس بلوك الشعار المستخدم بالهيدر بالضبط (BrandLockup)، بس بحجم أكبر شوي */}
           <div>
-            <Link href="/" className="flex items-center gap-2.5">
-              <Logo className="w-10 text-purple-400" />
-              <div>
-                <p className="text-base font-semibold text-white">
-                  {COMPANY.name[locale]}
-                </p>
-                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-purple-400">
-                  {locale === 'ar' ? 'للروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
-                </p>
-              </div>
+            <Link href="/" className="inline-flex w-44 text-white sm:w-52">
+              <BrandLockup locale={locale} size="footer" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               {COMPANY.positioning[locale]}

@@ -6,6 +6,7 @@ import {
   TrendingUp, Brain, DollarSign, UserCheck,
   Eye, PenTool, Cpu, CheckCircle2, Rocket, RefreshCw,
   Briefcase, HeartPulse, Landmark, ShoppingCart, Truck, Factory,
+  Zap, GraduationCap,
   type LucideIcon,
 } from 'lucide-react';
 import AiSolutionsBannerBackground from '@/components/pages/AiSolutionsBannerBackground';
@@ -43,6 +44,8 @@ const INDUSTRY_ICONS: Record<string, LucideIcon> = {
   logistics: Truck,
   realEstate: Building2,
   manufacturing: Factory,
+  energy: Zap,
+  education: GraduationCap,
 };
 
 type NamedItem = { key: string; title: string; desc: string };
@@ -129,50 +132,9 @@ export default function AiSolutionsClient({
         </div>
       </div>
 
-      {/* ── واجهة ذكاء اصطناعي واحدة — بخلفية صورة يد الروبوت + تعتيم لوضوح القراءة ── */}
-      <div className="edge-travel relative overflow-hidden bg-[#0a0414]">
-        {/* توهّج بنفسجي محيط بالصورة */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -inset-10 z-0 opacity-70 blur-3xl"
-          style={{
-            background:
-              'radial-gradient(60% 60% at 50% 45%, rgba(167,139,250,0.45) 0%, rgba(82,39,255,0.25) 45%, transparent 75%)',
-          }}
-        />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/ai-solutions/automation.jpg"
-          alt=""
-          aria-hidden
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        {/* صبغة بنفسجية توحّد لون الصورة (فيها لمسات زرقاء) مع هوية الموقع */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(160deg, rgba(124,58,237,0.32) 0%, rgba(88,28,135,0.22) 45%, rgba(10,4,20,0.3) 100%)',
-            mixBlendMode: 'color',
-          }}
-        />
-        {/* تعتيم متدرّج يذوب بلون خلفية الموقع نفسه بأعلى وأسفل الشريط، حتى ما يصير قطع لوني مفاجئ بين الأقسام */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(to bottom, #0a0414 0%, rgba(10,4,20,0.55) 16%, rgba(10,4,20,0.45) 50%, rgba(10,4,20,0.55) 84%, #0a0414 100%)',
-          }}
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            boxShadow: 'inset 0 0 140px 40px rgba(167,139,250,0.28)',
-          }}
-        />
+      {/* ── واجهة ذكاء اصطناعي واحدة — بنفس خلفية باقي أقسام الصفحة، بدون صورة أو خلفية مختلفة (طلب المراجعة) ── */}
+      <div className="section-dark seam-glow relative overflow-hidden">
+        <DotGridBackdrop />
         <div className="relative z-10 mx-auto max-w-4xl px-5 py-20 text-center sm:px-8 lg:px-10">
           <motion.h2
             initial={{ opacity: 0, y: 16 }}

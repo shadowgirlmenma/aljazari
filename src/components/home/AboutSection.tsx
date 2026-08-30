@@ -16,7 +16,7 @@ export default function AboutSection({ locale }: { locale: Locale }) {
           {t('about.eyebrow')}
         </p>
 
-        <div className="mt-8 grid items-center gap-12 lg:grid-cols-[1fr_280px]">
+        <div className="mt-8 grid items-start gap-12 lg:grid-cols-[1fr_280px]">
           <div className="text-left">
             <ScrollReveal
               baseOpacity={0.06}
@@ -37,13 +37,13 @@ export default function AboutSection({ locale }: { locale: Locale }) {
             </motion.p>
           </div>
 
-          {/* لوغو كبير */}
+          {/* لوغو كبير — محاذي مع بداية الفقرة الرئيسية (مو نص العمود كامل شامل الفقرة الثانية) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7 }}
-            className="hidden lg:flex lg:items-center lg:justify-center"
+            className="hidden lg:flex lg:items-start lg:justify-center"
           >
             <Logo className="w-48 text-purple-400 opacity-70" />
           </motion.div>

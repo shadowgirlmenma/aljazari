@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
 import { X, CheckCircle } from 'lucide-react';
@@ -18,6 +19,7 @@ export default function BookRobotModal({
   /** روبوت حجز مسبق فقط — نخفي مفتاح شراء/إيجار لأنه ما فيه غير خيار وحد */
   preorder?: boolean;
 }) {
+  const t = useTranslations('robots.modal');
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [phoneValid, setPhoneValid] = useState(true);
@@ -52,8 +54,8 @@ export default function BookRobotModal({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!phoneValid) { toast.error('رقم الهاتف غير مكتمل'); return; }
-    if (errors.name || errors.email) { toast.error('راجعي الحقول المظلّلة بالأحمر'); return; }
+    if (!phoneValid) { toast.error(t('phoneError')); return; }
+    if (errors.name || errors.email) { toast.error(t('formError')); return; }
 
     setLoading(true);
     try {
@@ -69,7 +71,7 @@ export default function BookRobotModal({
       });
       setSent(true);
     } catch (err) {
-      toast.error(err instanceof ApiError ? err.message : 'تعذّر الاتصال بالخادم');
+      toast.error(err instanceof ApiError ? err.message : t('serverError'));
     } finally {
       setLoading(false);
     }
@@ -112,24 +114,24 @@ export default function BookRobotModal({
               <div className="flex flex-col items-center py-10 text-center">
                 <CheckCircle className="text-purple-400" size={52} strokeWidth={1.5} />
                 <p className="mt-5 text-lg font-semibold text-white">
-                  تم استلام طلبك بنجاح
+                  {t('successTitle')}
                 </p>
                 <p className="mt-2 text-sm text-purple-200/70">
-                  سيتواصل معك فريقنا قريباً لتأكيد التفاصيل
+                  {t('successBody')}
                 </p>
                 <button
                   type="button"
                   onClick={handleClose}
                   className="mt-6 rounded-full bg-purple-600 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-purple-500"
                 >
-                  إغلاق
+                  {t('close')}
                 </button>
               </div>
             ) : (
               <>
                 <h2 className="text-xl font-semibold text-white">{robotName}</h2>
                 <p className="mt-1 text-sm text-purple-300/70">
-                  {preorder ? 'سجّلي اهتمامك بالحجز المسبق' : 'اطلبيه الآن'}
+                  {preorder ? t('subtitlePreorder') : t('subtitleOrder')}
                 </p>
 
                 {/* شراء أو إيجار — تختفي للروبوتات المتاحة بالحجز المسبق فقط */}
@@ -146,7 +148,7 @@ export default function BookRobotModal({
                             : 'glass border-purple-500/30 text-purple-200/60 hover:border-purple-400'
                         }`}
                       >
-                        {type === 'rent' ? 'إيجار' : 'شراء'}
+                        {type === 'rent' ? t('rent') : t('buy')}
                       </button>
                     ))}
                   </div>
@@ -156,7 +158,7 @@ export default function BookRobotModal({
                   <div>
                     <input
                       required
-                      placeholder="الاسم الكامل"
+                      placeholder={t('namePlaceholder')}
                       value={form.name}
                       onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                       onBlur={() => markTouched('name')}
@@ -167,7 +169,7 @@ export default function BookRobotModal({
                     <input
                       required
                       type="email"
-                      placeholder="البريد الإلكتروني"
+                      placeholder={t('emailPlaceholder')}
                       value={form.email}
                       onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                       onBlur={() => markTouched('email')}
@@ -181,14 +183,14 @@ export default function BookRobotModal({
                     onValidityChange={setPhoneValid}
                   />
                   <input
-                    placeholder="اسم المؤسسة (اختياري)"
+                    placeholder={t('orgPlaceholder')}
                     value={form.organization}
                     onChange={(e) => setForm((f) => ({ ...f, organization: e.target.value }))}
                     className={fieldClass(false)}
                   />
                   <textarea
                     rows={3}
-                    placeholder="ملاحظات إضافية (اختياري)"
+                    placeholder={t('notesPlaceholder')}
                     value={form.notes}
                     onChange={(e) => setForm((f) => ({ ...f, notes: e.target.value }))}
                     className={`resize-none ${fieldClass(false)}`}
@@ -199,7 +201,7 @@ export default function BookRobotModal({
                     disabled={loading}
                     className="w-full rounded-xl bg-purple-600 py-3.5 text-sm font-semibold text-white transition hover:bg-purple-500 disabled:opacity-60"
                   >
-                    {loading ? '...' : 'إرسال الطلب'}
+                    {loading ? '…' : t('submit')}
                   </button>
                 </form>
               </>

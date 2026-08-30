@@ -24,6 +24,7 @@ const BENEFIT_KEYS = ['efficiency', 'decisions', 'cost', 'personalization'] as c
 const PROCESS_KEYS = ['vision', 'design', 'build', 'test', 'deploy', 'upgrade'] as const;
 const INDUSTRY_KEYS = [
   'enterprises', 'healthcare', 'finance', 'ecommerce', 'logistics', 'realEstate', 'manufacturing',
+  'energy', 'education',
 ] as const;
 
 export default async function AiSolutionsPage({

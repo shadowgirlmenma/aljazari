@@ -35,9 +35,9 @@ export default function BookRobotButton({
           <button
             type="button"
             onClick={() => openWith('buy')}
-            className="flex items-center justify-center gap-2 rounded-xl bg-purple-600 px-8 py-4 text-base font-semibold text-white transition hover:bg-purple-500 sm:text-lg"
+            className="flex items-center justify-center gap-2.5 rounded-xl bg-purple-600 px-10 py-5 text-lg font-bold text-white shadow-lg shadow-purple-900/40 transition hover:scale-[1.03] hover:bg-purple-500 sm:text-xl"
           >
-            <Clock size={20} />
+            <Clock size={22} />
             {t('preOrder')}
           </button>
         ) : (
@@ -46,9 +46,9 @@ export default function BookRobotButton({
               <button
                 type="button"
                 onClick={() => openWith('buy')}
-                className="flex items-center justify-center gap-2 rounded-xl bg-purple-600 px-8 py-4 text-base font-semibold text-white transition hover:bg-purple-500 sm:text-lg"
+                className="flex items-center justify-center gap-2.5 rounded-xl bg-purple-600 px-10 py-5 text-lg font-bold text-white shadow-lg shadow-purple-900/40 transition hover:scale-[1.03] hover:bg-purple-500 sm:text-xl"
               >
-                <ShoppingBag size={20} />
+                <ShoppingBag size={22} />
                 {t('forSale')}
               </button>
             )}
@@ -56,9 +56,9 @@ export default function BookRobotButton({
               <button
                 type="button"
                 onClick={() => openWith('rent')}
-                className="glass flex items-center justify-center gap-2 rounded-xl border border-purple-400/40 px-8 py-4 text-base font-semibold text-purple-100 transition hover:border-purple-300 hover:text-white sm:text-lg"
+                className="glass flex items-center justify-center gap-2.5 rounded-xl border-2 border-purple-400/50 px-10 py-5 text-lg font-bold text-purple-100 transition hover:scale-[1.03] hover:border-purple-300 hover:text-white sm:text-xl"
               >
-                <KeyRound size={20} />
+                <KeyRound size={22} />
                 {t('forRent')}
               </button>
             )}
