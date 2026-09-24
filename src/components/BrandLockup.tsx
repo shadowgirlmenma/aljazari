@@ -1,40 +1,26 @@
-'use client';
-
-import { useLayoutEffect, useRef } from 'react';
-import LogoFull from '@/components/LogoFull';
-import { AljazariWordAr, AljazariIconAr } from '@/components/LogoAr';
 import type { Locale } from '@/lib/types';
 
 /**
- * بلوك الشعار الموحّد (الأيقونة + كلمة "الجزري"/"ALJAZARI" + العنوان الفرعي)
- * — نفس القالب بالضبط بالـ Header والـ Footer، بس بحجمين مختلفين (size).
+ * بلوك الشعار الموحّد (الأيقونة + كلمة "الجزري"/"ALJAZARI" + العنوان الفرعي).
  *
- * ملاحظة المراجعة (10/09/2026): «The name of Aljazari with its subtitle ..
- * The subtitle is longer than the main title with the logo» — العنوان الفرعي كان
- * أعرض من الشعار. هسة عرض العنوان الفرعي يُضبط تلقائياً (fit) ليطابق عرض الشعار
- * بالضبط، لا أطول ولا أقصر: نقيس عرض صف الشعار ثم نحسب حجم خط العنوان الفرعي
- * بالتناسب. القياس يعاد عند تغيّر الحجم أو اللغة أو بعد تحميل الخطوط.
- *
- * - العربي: صف الأيقونة+الكلمة (SVG من `LogoAr.tsx`).
- * - الإنجليزي: `LogoFull` (SVG كامل).
- * - المسافة بين الحروف (tracking) ثابتة بوحدة em فيتناسب مع حجم الخط عند الضبط.
+ * ملاحظة المراجعة (25/09/2026): كان هذا مكوّن حي (SVG + قياس عرض بالـ
+ * JavaScript لضبط حجم العنوان الفرعي تلقائياً وقت التشغيل) — وطلعت مشاكل
+ * محاذاة مختلفة حسب الجهاز/المتصفح. هسة الشعار بالكامل (الأيقونة + الكلمة +
+ * العنوان الفرعي) صورة PNG شفافة واحدة لكل لغة، مصمّمة ومحاذاة يدوياً مرّة
+ * وحدة بدقة، فتطلع نفسها بالضبط على كل جهاز بدون أي حسابات وقت التشغيل:
+ * - `/public/brand/logo-ar.png`: الأيقونة مرفوعة شوي فوق كلمة "الجزري" (بدل
+ *   محاذاتها بخط القاعدة)، وحجم كلمة "الجزري" مصغّر بالنسبة للأيقونة حتى
+ *   تكون العلاقة بينهم متناسقة (ملاحظة 25/09).
+ * - `/public/brand/logo-en.png`: "ALJAZARI" + "ROBOTICS & AI SOLUTIONS" —
+ *   تباعد العنوان الفرعي letter-spacing حقيقي بين الحروف (مو مسافات فراغ
+ *   يدوية بين الحروف/الكلمات).
+ * كلا الصورتين بنفس أبعاد المستطيل بالضبط (1600×576) حتى يكونان متطابقتين
+ * بالمحاذاة والتناسب أينما استُخدمتا.
  */
 
 const SIZES = {
-  header: {
-    logo: 'h-8 sm:h-9',
-    iconH: 'h-[92%]',
-    gap: 'gap-2',
-    sub: 'mt-1.5',
-    initialFont: 9,
-  },
-  footer: {
-    logo: 'h-10 sm:h-12',
-    iconH: 'h-[92%]',
-    gap: 'gap-2.5',
-    sub: 'mt-2',
-    initialFont: 10,
-  },
+  header: 'h-11 w-auto sm:h-12',
+  footer: 'h-16 w-auto sm:h-20',
 } as const;
 
 export default function BrandLockup({
@@ -47,56 +33,13 @@ export default function BrandLockup({
   className?: string;
 }) {
   const isAr = locale === 'ar';
-  const s = SIZES[size];
-  const rowRef = useRef<HTMLDivElement>(null);
-  const subRef = useRef<HTMLSpanElement>(null);
-
-  useLayoutEffect(() => {
-    const row = rowRef.current;
-    const sub = subRef.current;
-    if (!row || !sub) return;
-
-    const fit = () => {
-      const target = row.getBoundingClientRect().width;
-      if (!target) return;
-      // نقيس العرض الطبيعي بحجم مرجعي 20px ثم نحسب الحجم المطابق لعرض الشعار
-      sub.style.fontSize = '20px';
-      const natural = sub.getBoundingClientRect().width;
-      if (!natural) return;
-      sub.style.fontSize = `${((target / natural) * 20).toFixed(2)}px`;
-    };
-
-    fit();
-    const ro = new ResizeObserver(fit);
-    ro.observe(row);
-    // الخطوط قد تتأخر بالتحميل فيتغير عرض النص
-    if (document.fonts?.ready) document.fonts.ready.then(fit).catch(() => {});
-    return () => ro.disconnect();
-  }, [isAr, size]);
-
   return (
-    <div className={`inline-flex flex-col items-start leading-none ${className}`}>
-      <div ref={rowRef} className="inline-flex">
-        {isAr ? (
-          <div dir="ltr" className={`inline-flex items-end ${s.gap} ${s.logo}`}>
-            <AljazariWordAr className="h-full w-auto shrink-0" />
-            <AljazariIconAr className={`${s.iconH} w-auto shrink-0`} />
-          </div>
-        ) : (
-          <LogoFull locale="en" className={`w-auto shrink-0 ${s.logo}`} title="Aljazari" />
-        )}
-      </div>
-
-      <span
-        ref={subRef}
-        dir={isAr ? 'rtl' : 'ltr'}
-        style={{ fontSize: s.initialFont }}
-        className={`block w-max max-w-none whitespace-nowrap font-mono font-bold uppercase text-purple-400 opacity-80 ${s.sub} ${
-          isAr ? 'tracking-[0.24em]' : 'tracking-[0.32em]'
-        }`}
-      >
-        {isAr ? 'للروبوتات والذكاء الاصطناعي' : 'ROBOTICS & AI SOLUTIONS'}
-      </span>
-    </div>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={isAr ? '/brand/logo-ar.png' : '/brand/logo-en.png'}
+      alt="ALJAZARI — Robotics & AI Solutions"
+      className={`${SIZES[size]} select-none ${className}`}
+      draggable={false}
+    />
   );
 }

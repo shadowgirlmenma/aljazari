@@ -289,6 +289,28 @@
       "desc": "The logo as a whole traces the outline of a robot's face — a nod to the company's focus on robotics and artificial intelligence."
     }
   },
+  "talents": {
+    "title": "Our Talents",
+    "subtitle": "The team behind Aljazari's vision, turning it into reality",
+    "ceo": {
+      "name": "Sinan Majeed",
+      "role": "Executive Director | Co-Founder",
+      "desc": "Leading the vision and shaping Aljazari\u2019s future."
+    },
+    "members": [
+      { "name": "Abdulkareem Ahmed", "role": "Robotics Solutions & Sales Engineer", "desc": "Connecting robotic innovation with real-world opportunities." },
+      { "name": "Firas Abdulrahman", "role": "Robotics & AI Engineer", "desc": "Building intelligent solutions powered by robotics and AI." },
+      { "name": "Anas Alazzawi", "role": "Technical Engineer", "desc": "Turning technology into reliable, practical solutions." },
+      { "name": "Hadeel Ibraheem", "role": "Office Administrator", "desc": "Keeping our people, operations, and ideas moving forward." },
+      { "name": "Dina Alassaf", "role": "Sales Executive", "desc": "Connecting clients with technologies that create impact." }
+    ],
+    "ambassadors": {
+      "title": "Aljazari Ambassadors",
+      "count": "12 Ambassadors Across Iraqi Universities",
+      "desc": "Inspiring students, connecting universities, and building Iraq\u2019s next generation of technology leaders.",
+      "comingSoon": "Individual ambassador profiles will be added soon"
+    }
+  },
   "founders": {
     "title": "Founders' Message",
     "body1": "At Aljazari, we take pride in being pioneers in robot trade and maintenance, as well as artificial intelligence in Iraq. Our company was founded out of a deep passion for technology and a strong belief that continuous innovation and development are the keys to building a bright and sustainable future for our country.",

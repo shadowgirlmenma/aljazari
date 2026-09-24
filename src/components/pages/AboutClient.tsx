@@ -7,6 +7,7 @@ import StarBorder from '@/components/reactbits/StarBorder';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import StrokeText from '@/components/reactbits/StrokeText';
 import AboutSymbolExplainer from '@/components/pages/AboutSymbolExplainer';
+import TalentsSection, { type TalentPerson } from '@/components/pages/TalentsSection';
 
 const YOUTUBE_ID = 'AugXB9-TajA';
 
@@ -18,6 +19,8 @@ export default function AboutClient({
   symbolArabicTitle, symbolArabicDesc,
   symbolEnglishTitle, symbolEnglishDesc,
   symbolRobotTitle, symbolRobotDesc,
+  talentsTitle, talentsSubtitle, talentsCeo, talentsMembers,
+  talentsAmbassadorsTitle, talentsAmbassadorsCount, talentsAmbassadorsDesc, talentsAmbassadorsComingSoon,
   foundersTitle, foundersBody1, foundersBody2, foundersBody3,
   signature, signature2,
   contactTitle, contactAddress, contactPhone, contactEmail,
@@ -30,6 +33,10 @@ export default function AboutClient({
   symbolArabicTitle: string; symbolArabicDesc: string;
   symbolEnglishTitle: string; symbolEnglishDesc: string;
   symbolRobotTitle: string; symbolRobotDesc: string;
+  talentsTitle: string; talentsSubtitle: string;
+  talentsCeo: TalentPerson; talentsMembers: TalentPerson[];
+  talentsAmbassadorsTitle: string; talentsAmbassadorsCount: string;
+  talentsAmbassadorsDesc: string; talentsAmbassadorsComingSoon: string;
   foundersTitle: string; foundersBody1: string;
   foundersBody2: string; foundersBody3: string;
   signature: string; signature2: string;
@@ -205,6 +212,18 @@ export default function AboutClient({
           </a>
         </div>
       </div>
+
+      {/* ── كفاءاتنا — فريق العمل وسفراء الجزري (طلب المراجعة 25/09)، قبل رسالة المؤسسين مباشرة ── */}
+      <TalentsSection
+        title={talentsTitle}
+        subtitle={talentsSubtitle}
+        ceo={talentsCeo}
+        members={talentsMembers}
+        ambassadorsTitle={talentsAmbassadorsTitle}
+        ambassadorsCount={talentsAmbassadorsCount}
+        ambassadorsDesc={talentsAmbassadorsDesc}
+        ambassadorsComingSoon={talentsAmbassadorsComingSoon}
+      />
 
       {/* ── رسالة المؤسسين — نص فقط، بدون فيديو/شعار الجزري ولا الروبوت الصغير حسب طلب المراجعة. ── */}
       <div className="section-dark relative overflow-hidden">

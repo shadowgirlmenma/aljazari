@@ -46,6 +46,18 @@ export default async function AboutPage({
       symbolEnglishDesc={t('symbol.englishLetter.desc')}
       symbolRobotTitle={t('symbol.robotShape.title')}
       symbolRobotDesc={t('symbol.robotShape.desc')}
+      talentsTitle={t('talents.title')}
+      talentsSubtitle={t('talents.subtitle')}
+      talentsCeo={{
+        name: t('talents.ceo.name'),
+        role: t('talents.ceo.role'),
+        desc: t('talents.ceo.desc'),
+      }}
+      talentsMembers={t.raw('talents.members')}
+      talentsAmbassadorsTitle={t('talents.ambassadors.title')}
+      talentsAmbassadorsCount={t('talents.ambassadors.count')}
+      talentsAmbassadorsDesc={t('talents.ambassadors.desc')}
+      talentsAmbassadorsComingSoon={t('talents.ambassadors.comingSoon')}
       foundersTitle={t('founders.title')}
       foundersBody1={t('founders.body1')}
       foundersBody2={t('founders.body2')}
