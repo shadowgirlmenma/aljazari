@@ -73,6 +73,8 @@ export default function BookRobotButton({
         robotName={robotName}
         initialType={initialType}
         preorder={preorderOnly}
+        allowRent={canRent}
+        allowBuy={canSale}
       />
     </>
   );

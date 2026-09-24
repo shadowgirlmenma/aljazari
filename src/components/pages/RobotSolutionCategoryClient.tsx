@@ -10,6 +10,8 @@ import RobotVisual from '@/components/robots/RobotVisual';
 import StarBorder from '@/components/reactbits/StarBorder';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import RobotSolutionsBannerBackground from './RobotSolutionsBannerBackground';
+import HealthcareLayout from './HealthcareLayout';
+import SolutionStats from './SolutionStats';
 import { getRobot } from '@/data/robots';
 import {
   ROBOT_SOLUTION_ICONS,
@@ -128,6 +130,15 @@ export default function RobotSolutionCategoryClient({
         </Container>
       </div>
 
+      {/* ── المخطط ثلاثي الأبعاد التفاعلي (الرعاية الصحية) ── */}
+      {category.layout && category.benefits && category.benefits.length > 0 && (
+        <div className="relative overflow-hidden bg-[#120621]">
+          <Container className="relative z-10 py-16 sm:py-20">
+            <HealthcareLayout layout={category.layout} benefits={category.benefits} />
+          </Container>
+        </div>
+      )}
+
       {/* ── الفوائد ── */}
       {category.benefits && category.benefits.length > 0 && (
         <div className="bg-[#120621]">
@@ -149,6 +160,16 @@ export default function RobotSolutionCategoryClient({
                 </motion.div>
               ))}
             </div>
+          </Container>
+        </div>
+      )}
+
+      {/* ── أرقام القطاع (مثل أرقام PUDU للرعاية الصحية) ── */}
+      {category.stats && (
+        <div className="relative overflow-hidden bg-[#0a0414]">
+          <DotGridBackdrop opacity={0.35} />
+          <Container className="relative z-10 py-16 sm:py-20">
+            <SolutionStats stats={category.stats} />
           </Container>
         </div>
       )}

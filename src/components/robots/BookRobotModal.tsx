@@ -10,6 +10,7 @@ import { buildMailto } from '@/lib/mailto';
 
 export default function BookRobotModal({
   open, onClose, robotSlug, robotName, initialType = 'rent', preorder = false,
+  allowRent = true, allowBuy = true,
 }: {
   open: boolean;
   onClose: () => void;
@@ -18,6 +19,9 @@ export default function BookRobotModal({
   initialType?: 'buy' | 'rent';
   /** روبوت حجز مسبق فقط — نخفي مفتاح شراء/إيجار لأنه ما فيه غير خيار وحد */
   preorder?: boolean;
+  /** الإيجار متاح فقط للروبوتات البشرية وروبوتات التوصيل — غيرها (تعليمية/تنظيف) بيع فقط */
+  allowRent?: boolean;
+  allowBuy?: boolean;
 }) {
   const t = useTranslations('robots.modal');
   const locale = useLocale();
@@ -127,7 +131,7 @@ export default function BookRobotModal({
                 </p>
 
                 {/* شراء أو إيجار — تختفي للروبوتات المتاحة بالحجز المسبق فقط */}
-                {!preorder && (
+                {!preorder && allowRent && allowBuy && (
                   <div className="mt-5 flex gap-3">
                     {(['rent', 'buy'] as const).map((type) => (
                       <button

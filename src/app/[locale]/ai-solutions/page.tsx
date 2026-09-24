@@ -22,6 +22,8 @@ export async function generateMetadata({
 const SOLUTION_KEYS = ['product', 'enterprise', 'agents', 'consulting'] as const;
 const BENEFIT_KEYS = ['efficiency', 'decisions', 'cost', 'personalization'] as const;
 const PROCESS_KEYS = ['vision', 'design', 'build', 'test', 'deploy', 'upgrade'] as const;
+const CUSTOM_STEP_KEYS = ['discover', 'design', 'develop', 'test', 'deploy'] as const;
+const CUSTOM_CHIP_KEYS = ['tailored', 'innovation', 'performance'] as const;
 const INDUSTRY_KEYS = [
   'enterprises', 'healthcare', 'finance', 'ecommerce', 'logistics', 'realEstate', 'manufacturing',
   'energy', 'education',
@@ -61,6 +63,18 @@ export default async function AiSolutionsPage({
         title: t(`industries.${key}.title`),
         desc: t(`industries.${key}.desc`),
       }))}
+      customProduct={{
+        tag: t('customProduct.tag'),
+        title: t('solutions.product.title'),
+        desc: t('solutions.product.desc'),
+        chips: CUSTOM_CHIP_KEYS.map((key) => t(`customProduct.chips.${key}`)),
+        footerTag: t('customProduct.footerTag'),
+        steps: CUSTOM_STEP_KEYS.map((key) => ({
+          key,
+          title: t(`customProduct.steps.${key}.title`),
+          desc: t(`customProduct.steps.${key}.desc`),
+        })),
+      }}
     />
   );
 }

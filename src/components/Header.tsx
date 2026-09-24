@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { motion, AnimatePresence } from 'motion/react';
@@ -23,10 +23,11 @@ export default function Header() {
   const locale = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  /* الهيدر يختفي (fade) وأنتِ تنزلين بالسكرول، ويرجع يظهر وأنتِ تطلعين لفوق —
-     حتى ما يتراكب مع كتابة الصفحة اللي تحته وهو شفاف. */
-  const [visible, setVisible] = useState(true);
-  const lastScrollY = useRef(0);
+  /* ملاحظة المراجعة (10/09/2026): «the titles ribbon needs a background in order to keep it
+     visible even when we scroll down» — الهيدر هسة ثابت دايماً (ما يختفي بالسكرول)،
+     شفاف بأعلى الصفحة فوق الهيرو، وبمجرد ما تنزلين شوي يتحول لشريط زجاجي بنفسجي
+     (blur + خلفية داكنة شبه معتمة) حتى تبقى عناوين القائمة مقروءة فوق أي محتوى. */
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -36,29 +37,21 @@ export default function Header() {
   }, [open]);
 
   useEffect(() => {
-    const handler = () => {
-      const currentY = window.scrollY;
-      if (currentY <= 16) {
-        setVisible(true);
-      } else if (currentY > lastScrollY.current) {
-        setVisible(false); // نازلة بالسكرول
-      } else {
-        setVisible(true); // طالعة لفوق
-      }
-      lastScrollY.current = currentY;
-    };
+    const handler = () => setScrolled(window.scrollY > 16);
+    handler();
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
   return (
     <>
-      {/* هيدر ثابت (fixed) فوق محتوى الصفحة مباشرة — بدون ما ياخذ مساحته من التخطيط،
-          حتى الصور والأقسام بأول الصفحة تلتصق بحافة الصفحة تماماً والهيدر يطلع فوقها شفاف.
-          يختفي بفيد وأنتِ تنزلين بالسكرول، ويرجع يظهر وأنتِ تطلعين لفوق. */}
+      {/* هيدر ثابت (fixed) فوق محتوى الصفحة — دايماً ظاهر. شفاف بأعلى الصفحة، وزجاجي
+          بنفسجي (backdrop-blur) بعد السكرول حتى يبقى النص واضح. */}
       <header
-        className={`fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent transition-all duration-300 ${
-          visible ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-4 opacity-0'
+        className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+          scrolled
+            ? 'border-white/10 bg-[#120621]/75 shadow-[0_8px_30px_rgba(9,3,20,0.45)] backdrop-blur-2xl backdrop-saturate-150'
+            : 'border-transparent bg-transparent'
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">

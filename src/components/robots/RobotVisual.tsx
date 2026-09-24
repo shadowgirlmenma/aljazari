@@ -5,8 +5,17 @@ import type { Robot } from '@/lib/types';
 /**
  * صورة الروبوت — أو علامة الجزري إذا الصورة لسه ما انحطت.
  *
- * لإضافة صورة: حطي الملف بـ public/robots/ وبدّلي حقل image
- * بملف data/robots.ts، مثلاً: image: '/robots/pepper.png'
+ * التصميم (بعد ملاحظات المراجعة):
+ * - الخلفية مو بيضاء بعد: لوحة زجاجية بنفسجية (glassmorphism) بنفس ألوان الموقع،
+ *   بوهج بنفسجي ناعم خلف الروبوت وظل أرضي تحته، حتى يتناغم الروبوت مع باقي
+ *   الموقع بدل ما يظهر كصندوق أبيض غريب.
+ * - كل الروبوتات بنفس الحجم المنطقي بالضبط: نستخدم `robot.cardImage` (نسخة
+ *   موحّدة: الروبوت مقصوص على حدوده الفعلية ومتوسّط بنفس المساحة داخل مربع
+ *   ثابت). إذا ما وجدت نسخة موحّدة نرجع لـ `robot.image` العادية.
+ * - المربع دايماً aspect-square فالبطاقات كلها بنفس القياس.
+ *
+ * لإضافة روبوت جديد: حطي الصورة بـ public/robots/ ثم أنشئي نسخة موحّدة
+ * بـ public/robots/card/<slug>.webp (800×800 شفافة) وضيفيها بحقل cardImage.
  */
 export default function RobotVisual({
   robot,
@@ -17,19 +26,42 @@ export default function RobotVisual({
   priority?: boolean;
   className?: string;
 }) {
-  if (robot.image) {
-    /* خلفية بيضاء موحّدة + padding ثابت حتى كل صور الروبوتات (بغض النظر عن دقتها أو
-       نسبة أبعادها الأصلية) تطلع بنفس المقاس والموضع بالضبط داخل الصندوق — بدون
-       صور صغيرة بزاوية أو صور تملي الصندوق بشكل غير متناسق مع الباقي. */
+  const src = robot.cardImage ?? robot.image;
+
+  if (src) {
     return (
-      <div className={`relative aspect-square overflow-hidden rounded-2xl bg-white/95 ${className}`}>
+      <div
+        className={`relative aspect-square overflow-hidden rounded-2xl border border-purple-300/25 bg-gradient-to-br from-purple-400/25 via-purple-700/25 to-purple-950/50 shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] backdrop-blur-xl ${className}`}
+      >
+        {/* وهج بنفسجي ناعم خلف الروبوت */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(60% 55% at 50% 42%, rgba(167,139,250,0.42) 0%, rgba(124,71,224,0.18) 55%, transparent 100%)',
+          }}
+        />
+        {/* لمعة زجاجية علوية */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-1/3"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0.10), transparent)',
+          }}
+        />
+        {/* ظل أرضي تحت الروبوت */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute bottom-[7%] left-1/2 h-[5%] w-[46%] -translate-x-1/2 rounded-full bg-black/40 blur-md"
+        />
         <Image
-          src={robot.image}
+          src={src}
           alt={robot.name}
           fill
           priority={priority}
           sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
-          className="object-contain p-4"
+          className="relative object-contain p-3 drop-shadow-[0_10px_18px_rgba(9,3,20,0.55)]"
         />
       </div>
     );

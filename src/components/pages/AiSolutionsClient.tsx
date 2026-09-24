@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import {
-  Package, Building2, MessagesSquare, Compass,
+  Building2,
   TrendingUp, Brain, DollarSign, UserCheck,
   Eye, PenTool, Cpu, CheckCircle2, Rocket, RefreshCw,
   Briefcase, HeartPulse, Landmark, ShoppingCart, Truck, Factory,
@@ -11,14 +11,7 @@ import {
 } from 'lucide-react';
 import AiSolutionsBannerBackground from '@/components/pages/AiSolutionsBannerBackground';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
-import FloatingLineRobot from '@/components/pages/FloatingLineRobot';
-
-const SOLUTION_ICONS: Record<string, LucideIcon> = {
-  product: Package,
-  enterprise: Building2,
-  agents: MessagesSquare,
-  consulting: Compass,
-};
+import CustomAiProduct, { type CustomAiProductData } from '@/components/pages/CustomAiProduct';
 
 const BENEFIT_ICONS: Record<string, LucideIcon> = {
   efficiency: TrendingUp,
@@ -48,6 +41,12 @@ const INDUSTRY_ICONS: Record<string, LucideIcon> = {
   education: GraduationCap,
 };
 
+function handleSpotlight(e: React.MouseEvent<HTMLElement>) {
+  const rect = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+  e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
+}
+
 type NamedItem = { key: string; title: string; desc: string };
 type LabeledItem = { key: string; label: string };
 
@@ -56,6 +55,7 @@ export default function AiSolutionsClient({
   interfaceHeading, interfaceBenefits,
   customerHeading, process,
   industriesHeading, industries,
+  customProduct,
 }: {
   title: string;
   solutionsHeading: string;
@@ -66,6 +66,7 @@ export default function AiSolutionsClient({
   process: LabeledItem[];
   industriesHeading: string;
   industries: NamedItem[];
+  customProduct: CustomAiProductData;
 }) {
   return (
     <>
@@ -90,7 +91,9 @@ export default function AiSolutionsClient({
         </div>
       </div>
 
-      {/* ── حلولنا — أربع بطاقات (منتج مخصص / أنظمة مؤسسية / وكلاء ذكاء اصطناعي / استشارات) ── */}
+      {/* ── حلولنا — أربع بطاقات نصية فقط (منتج مخصص / أنظمة مؤسسية / وكلاء ذكاء اصطناعي / استشارات).
+            ملاحظة المراجعة 10/09/2026: «Remove the witches for each four kind of service» —
+            حذفنا الأيقونة العائمة ومربع الأيقونة من كل بطاقة، وبقت البطاقة عنوان + وصف بتصميم زجاجي. ── */}
       <div className="section-dark seam-glow relative overflow-hidden">
         <DotGridBackdrop />
         <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
@@ -104,31 +107,39 @@ export default function AiSolutionsClient({
           </motion.h2>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
-            {solutions.map((item, i) => {
-              const Icon = SOLUTION_ICONS[item.key] ?? Package;
-              return (
-                <motion.div
-                  key={item.key}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ delay: i * 0.08 }}
-                  className="glass-card relative overflow-hidden rounded-2xl p-8"
-                >
-                  <FloatingLineRobot
-                    delay={i * 0.4}
-                    icon={Icon}
-                    className="absolute -top-2 end-3 h-24 w-24 sm:h-28 sm:w-28"
-                  />
-                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-purple-400/30 bg-purple-900/30">
-                    <Icon size={22} className="text-purple-300" />
-                  </div>
-                  <h3 className="relative z-10 mt-5 text-xl font-medium text-white">{item.title}</h3>
-                  <p className="relative z-10 mt-3 leading-relaxed text-purple-200/75">{item.desc}</p>
-                </motion.div>
-              );
-            })}
+            {solutions.map((item, i) => (
+              <motion.div
+                key={item.key}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: i * 0.08 }}
+                whileHover={{ y: -4 }}
+                className="glass-card relative overflow-hidden rounded-2xl p-8"
+              >
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-300/70 to-transparent"
+                />
+                <h3 className="relative z-10 text-xl font-medium text-white">{item.title}</h3>
+                <p className="relative z-10 mt-3 leading-relaxed text-purple-200/75">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </div>
+
+      {/* ── تطوير منتجات ذكاء اصطناعي مخصّصة — نسخة حيّة من تصميم الدكتور (الكرة + المراحل الخمس) ── */}
+      <div className="section-darker seam-glow relative overflow-hidden">
+        <DotGridBackdrop opacity={0.35} />
+        <div className="relative z-10 px-5 py-20 sm:px-8 lg:px-10">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+          >
+            <CustomAiProduct data={customProduct} />
+          </motion.div>
         </div>
       </div>
 
@@ -233,14 +244,50 @@ export default function AiSolutionsClient({
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
-                  transition={{ delay: i * 0.05 }}
-                  className="glass-card rounded-2xl p-6"
+                  transition={{ delay: (i % 3) * 0.08 }}
+                  onMouseMove={handleSpotlight}
+                  style={{ '--mx': '50%', '--my': '50%' } as React.CSSProperties}
+                  className="group glass-card relative flex flex-col rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-purple-300/50 hover:shadow-[0_18px_50px_rgba(124,71,224,0.35)]"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-purple-400/30 bg-purple-900/30">
-                    <Icon size={20} className="text-purple-300" />
+                  {/* بقعة ضوء تتبع الماوس */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{
+                      background:
+                        'radial-gradient(280px circle at var(--mx) var(--my), rgba(167,139,250,0.25), transparent 70%)',
+                    }}
+                  />
+
+                  {/* رقم القطاع كبير شفاف بالزاوية */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute end-5 top-3 font-mono text-6xl font-bold text-white/[0.05] transition-colors group-hover:text-purple-300/15"
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+
+                  <div className="relative z-10">
+                    {/* أيقونة كبيرة بحلقة متوهجة تدور عند المرور */}
+                    <span className="relative flex h-16 w-16 items-center justify-center">
+                      <span
+                        aria-hidden
+                        className="absolute inset-0 rounded-2xl border border-dashed border-purple-300/40 transition-transform duration-700 group-hover:rotate-90"
+                      />
+                      <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-purple-300/30 bg-gradient-to-br from-purple-500/40 to-purple-900/50 shadow-[0_0_24px_rgba(124,71,224,0.4)] transition-transform duration-300 group-hover:scale-110">
+                        <Icon size={24} className="text-purple-100" />
+                      </span>
+                    </span>
+
+                    <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-purple-200/75">{item.desc}</p>
                   </div>
-                  <h3 className="mt-4 text-lg font-medium text-white">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-purple-200/75">{item.desc}</p>
+
+                  {/* خط سفلي يتمدد عند المرور */}
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-7 bottom-0 h-0.5 origin-center scale-x-0 rounded-full bg-gradient-to-r from-transparent via-purple-300 to-transparent transition-transform duration-500 group-hover:scale-x-100"
+                  />
                 </motion.div>
               );
             })}

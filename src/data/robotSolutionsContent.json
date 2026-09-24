@@ -287,6 +287,50 @@
         ]
       },
       {
+        "slug": "timo",
+        "docName": "Timo",
+        "blurb": {
+          "ar": "روبوت خدمة ذكي يقود الزوار في جولات إرشادية، ويرحّب بهم ويجيب عن استفساراتهم، ويمكنه تنفيذ دوريات أمنية على مدار 24 ساعة.",
+          "en": "A smart service robot that leads guided tours, welcomes guests and answers their questions, and can run security patrols around the clock."
+        },
+        "whoIs": [
+          {
+            "ar": "روبوت تفاعلي يعمل بالذكاء الاصطناعي",
+            "en": "AI interactive robot"
+          },
+          {
+            "ar": "قابل للتكامل مع أنظمة الأطراف الثالثة",
+            "en": "Integratable with third party systems"
+          },
+          {
+            "ar": "تنقل مستقل",
+            "en": "Autonomous Navigation"
+          },
+          {
+            "ar": "التعرف على الوجوه واكتشافها",
+            "en": "Face recognition and detection"
+          },
+          {
+            "ar": "شاشة لمس تفاعلية",
+            "en": "Interactive touch screen"
+          },
+          {
+            "ar": "قابل للتوسعة بأجهزة خارجية",
+            "en": "Completable with external devices"
+          }
+        ],
+        "whatCanDo": [
+          {
+            "ar": "استقبال وإرشاد ذكي",
+            "en": "Smart Reception and guidance"
+          },
+          {
+            "ar": "نشاط أسئلة وأجوبة بالذكاء الاصطناعي",
+            "en": "AI Q&A activity"
+          }
+        ]
+      },
+      {
         "slug": "nao",
         "docName": "NAO in Autism Care",
         "blurb": {
@@ -466,7 +510,125 @@
         "ar": "فترة تدريب مجانية للموظفين في الموقع على كيفية الاستخدام",
         "en": "On site Free staff training period on how to use"
       }
-    ]
+    ],
+    "stats": {
+      "title": {
+        "ar": "PUDU تدعم الارتقاء بالرعاية الصحية الذكية",
+        "en": "PUDU Empowers the Smart Health Care Upgrade"
+      },
+      "source": {
+        "ar": "*مصدر المعلومات: PUDU Cloud",
+        "en": "*Information Source: PUDU Cloud"
+      },
+      "items": [
+        {
+          "icon": "sparkles",
+          "prefix": "2–",
+          "to": 5,
+          "decimals": 0,
+          "suffix": "×",
+          "label": {
+            "ar": "زيادة الكفاءة في تنظيف أرضيات المناطق العامة",
+            "en": "Efficiency Boost in Public-Area Floor Cleaning"
+          }
+        },
+        {
+          "icon": "monitor",
+          "prefix": "",
+          "to": 100,
+          "decimals": 0,
+          "suffix": "%",
+          "label": {
+            "ar": "إدارة رقمية لعمليات التنظيف",
+            "en": "Digitized Management of Cleaning Operations"
+          }
+        },
+        {
+          "icon": "target",
+          "prefix": "",
+          "to": 99.99,
+          "decimals": 2,
+          "suffix": "%",
+          "label": {
+            "ar": "دقة التوصيل",
+            "en": "Delivery Accuracy"
+          }
+        },
+        {
+          "icon": "route",
+          "prefix": "",
+          "to": 90,
+          "decimals": 0,
+          "suffix": "%",
+          "label": {
+            "ar": "تقليل مسافة مشي الموظفين",
+            "en": "Reduction in Staff Walking Distance"
+          }
+        }
+      ]
+    },
+    "layout": {
+      "image": "/robot-solutions/healthcare-layout.jpg",
+      "title": {
+        "ar": "كيف تساعد الروبوتات في قطاع الرعاية الصحية؟",
+        "en": "How can robots help in the healthcare sector?"
+      },
+      "hint": {
+        "ar": "اضغط على النقاط المضيئة لاستكشاف دور الروبوتات داخل المنشأة الصحية",
+        "en": "Tap the glowing points to explore how robots work inside the health facility"
+      },
+      "os": {
+        "title": {
+          "ar": "Aljazari OS",
+          "en": "Aljazari OS"
+        },
+        "description": {
+          "ar": "المنصة المركزية التي تربط جميع الروبوتات داخل المنشأة الصحية وتديرها.",
+          "en": "The central platform that connects and manages every robot inside the health facility."
+        }
+      },
+      "hotspots": [
+        {
+          "benefit": 0,
+          "x": 72.5,
+          "y": 19
+        },
+        {
+          "benefit": 2,
+          "x": 58,
+          "y": 19
+        },
+        {
+          "benefit": 1,
+          "x": 47,
+          "y": 71
+        },
+        {
+          "benefit": 5,
+          "x": 39.5,
+          "y": 62
+        },
+        {
+          "benefit": 6,
+          "x": 31.5,
+          "y": 85
+        },
+        {
+          "benefit": 3,
+          "x": 66,
+          "y": 82
+        },
+        {
+          "benefit": 4,
+          "x": 78.6,
+          "y": 65
+        }
+      ],
+      "osPoint": {
+        "x": 43.7,
+        "y": 24
+      }
+    }
   },
   "banking": {
     "sectorKey": "banking",
@@ -2398,7 +2560,7 @@
         ]
       },
       {
-        "slug": null,
+        "slug": "unitree-g1",
         "docName": "Unitree G1 EDU",
         "blurb": {
           "ar": "Unitree G1 روبوت شبيه بالإنسان من الجيل التالي، مصمم خصيصًا للتعلم المدفوع بالذكاء الاصطناعي، وتعليم الروبوتات، والبحث التطبيقي. يمنح الطلاب منصة إنسانية حقيقية لتجاوز الجانب النظري وبناء مهارات عملية جاهزة للبحث.",
@@ -2769,7 +2931,7 @@
         ]
       },
       {
-        "slug": "sanbot",
+        "slug": "sanbot-nano",
         "docName": "Sanbot Nano",
         "blurb": {
           "ar": "صُمم Sanbot Nano كروبوت تعليمي خصيصًا للمدارس وبيئات التعلم، يجمع بين التعليم والتفاعل والسلامة والأتمتة الذكية في منصة واحدة.",
@@ -3794,7 +3956,7 @@
         ]
       },
       {
-        "slug": null,
+        "slug": "booster-t1",
         "docName": "Booster T1",
         "blurb": {
           "ar": "T1 روبوت خدمي متقدم شبيه بالإنسان، مصمم للاستقبال والإرشاد والتفاعل الذكي مع العملاء. وبفضل قدراته الذكية المدعومة بالذكاء الاصطناعي وتصميمه الحديث، يعزز حضور العلامة التجارية مع تقديم تجربة ذكية ولا تُنسى.",
@@ -3854,7 +4016,7 @@
         ]
       },
       {
-        "slug": null,
+        "slug": "unitree-g1",
         "docName": "Unitree G1",
         "blurb": {
           "ar": "G1 روبوت متقدم شبيه بالإنسان، مصمم لدعم بيئات المؤسسات بقدرات تنقل وتفاعل ذكية. يعزز العمليات، وصورة العلامة التجارية، وتفاعل العملاء من خلال ذكاء اصطناعي متطور وأداء متعدد المهام.",
@@ -4233,7 +4395,7 @@
         ]
       },
       {
-        "slug": null,
+        "slug": "booster-t1",
         "docName": "Booster T1",
         "blurb": {
           "ar": "T1 روبوت خدمي متقدم شبيه بالإنسان، مصمم للاستقبال والإرشاد والتفاعل الذكي مع العملاء. وبفضل قدراته الذكية المدعومة بالذكاء الاصطناعي وتصميمه الحديث، يعزز حضور العلامة التجارية مع تقديم تجربة ذكية ولا تُنسى.",
@@ -4293,7 +4455,7 @@
         ]
       },
       {
-        "slug": null,
+        "slug": "unitree-g1",
         "docName": "Unitree G1",
         "blurb": {
           "ar": "G1 روبوت متقدم شبيه بالإنسان، مصمم لدعم صالات العرض بقدرات تنقل وتفاعل ذكية. يعزز العمليات، وصورة العلامة التجارية، وتفاعل العملاء من خلال ذكاء اصطناعي متطور وأداء متعدد المهام.",
@@ -4708,14 +4870,6 @@
       {
         "slug": "bellabot-pro",
         "docName": "BellaBot",
-        "tag": {
-          "ar": "قابل للتخصيص",
-          "en": "Customizable"
-        }
-      },
-      {
-        "slug": "unitree-go2",
-        "docName": "Unitree Go2",
         "tag": {
           "ar": "قابل للتخصيص",
           "en": "Customizable"

@@ -22,6 +22,7 @@ export default function RobotCard({ robot }: { robot: Robot }) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -12, scale: 0.95 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
+      className="h-full"
     >
       <Link
         href={`/robots/${robot.slug}`}
@@ -62,10 +63,10 @@ export default function RobotCard({ robot }: { robot: Robot }) {
           <h3 className="mt-5 text-xl font-medium text-white transition-transform duration-300 group-hover:scale-[1.03] group-hover:origin-start">
             {robot.name}
           </h3>
-          <p className="mt-1 text-sm text-purple-200/65">{robot.tagline[locale]}</p>
+          <p className="mt-1 min-h-5 text-sm text-purple-200/65">{robot.tagline[locale]}</p>
           {/* نص تعريفي قصير يختفي بتدرّج عند نهايته — يشجّع الزائر يضغط "اقرأ المزيد" */}
           <p
-            className="relative mt-3 line-clamp-3 text-sm leading-relaxed text-purple-200/55"
+            className="relative mt-3 line-clamp-3 min-h-[4.125rem] text-sm leading-relaxed text-purple-200/55"
             style={{
               WebkitMaskImage: 'linear-gradient(to bottom, #000 55%, transparent 100%)',
               maskImage: 'linear-gradient(to bottom, #000 55%, transparent 100%)',
@@ -74,7 +75,7 @@ export default function RobotCard({ robot }: { robot: Robot }) {
             {robot.summary[locale]}
           </p>
 
-          <span className="text-brand-300 group-hover:text-brand-200 mt-5 inline-flex items-center gap-1 text-sm font-medium transition-colors">
+          <span className="text-brand-300 group-hover:text-brand-200 mt-auto inline-flex items-center gap-1 pt-5 text-sm font-medium transition-colors">
             {locale === 'ar' ? 'اقرأ المزيد' : 'Learn more'}
             <span aria-hidden className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
               {locale === 'ar' ? '←' : '→'}

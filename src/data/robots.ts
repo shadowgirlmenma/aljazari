@@ -20,6 +20,7 @@ export const ROBOTS: Robot[] = [
     order: 3,
     featured: true,
     image: '/robots/pepper-nobg.webp',
+    cardImage: '/robots/card/pepper.webp',
     gallery: [
       '/robots/pepper-real-1.webp',
       '/robots/pepper-real-2.webp',
@@ -121,6 +122,7 @@ export const ROBOTS: Robot[] = [
     order: 8,
     featured: true,
     image: '/robots/timo-nobg.webp',
+    cardImage: '/robots/card/timo.webp',
     gallery: [
       '/robots/timo-real-1.webp',
       '/robots/timo-real-2.webp',
@@ -201,7 +203,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'ذراع مرن', en: 'Flexible arm' }, side: 'end' },
       { label: { ar: 'ملاحة ليدار', en: 'LiDAR navigation' }, side: 'end' },
     ],
-    sectors: ['hospitality', 'malls', 'museums', 'security', 'banking', 'events', 'enterprises', 'gaming', 'restaurants', 'showroom'],
+    sectors: ['healthcare', 'hospitality', 'malls', 'museums', 'security', 'banking', 'events', 'enterprises', 'gaming', 'restaurants', 'showroom'],
   },
   {
     slug: 'cruzr',
@@ -211,6 +213,7 @@ export const ROBOTS: Robot[] = [
     order: 2,
     featured: true,
     image: '/robots/cruzr-nobg.webp',
+    cardImage: '/robots/card/cruzr.webp',
     gallery: [
       '/robots/cruzr-real-1.webp',
       '/robots/cruzr-real-2.webp',
@@ -302,6 +305,7 @@ export const ROBOTS: Robot[] = [
     categories: ['humanoid'],
     order: 1,
     image: '/robots/wnno-nobg.webp',
+    cardImage: '/robots/card/wnno.webp',
     gallery: [
       '/robots/wnno-real-1.webp',
       { type: 'video', url: '/robots/wnno-video.mp4', poster: '/robots/wnno-video-poster.webp' },
@@ -389,6 +393,7 @@ export const ROBOTS: Robot[] = [
     order: 1,
     featured: true,
     image: '/robots/bellabot-pro-official.webp',
+    cardImage: '/robots/card/bellabot-pro.webp',
     gallery: [
       '/robots/bellabot-real-1.webp',
       '/robots/bellabot-real-2.webp',
@@ -466,6 +471,7 @@ export const ROBOTS: Robot[] = [
     categories: ['service'],
     order: 2,
     image: '/robots/kittybot-pro-nobg.webp',
+    cardImage: '/robots/card/kittybot-pro.webp',
     gallery: ['/robots/kittybot-pro-real-1.webp', '/robots/kittybot-pro-real-2.webp'],
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
@@ -540,6 +546,7 @@ export const ROBOTS: Robot[] = [
     categories: ['service'],
     order: 3,
     image: '/robots/pudubot-nobg.webp',
+    cardImage: '/robots/card/pudubot.webp',
     gallery: [
       '/robots/pudubot-real-1.webp',
       '/robots/pudubot-real-2.webp',
@@ -630,6 +637,9 @@ export const ROBOTS: Robot[] = [
     categories: ['service'],
     order: 0,
     image: '/robots/cc1-pro-nobg.webp',
+    cardImage: '/robots/card/cc1-pro.webp',
+    // بيع فقط — الإيجار للروبوتات البشرية وروبوتات التوصيل فقط (ملاحظة المراجعة 10/09/2026)
+    productType: ['sale'],
     gallery: [
       '/robots/cc1-pro-2.webp',
       '/robots/cc1-pro-3.webp',
@@ -714,6 +724,9 @@ export const ROBOTS: Robot[] = [
     order: 4,
     featured: true,
     image: '/robots/nao-nobg.webp',
+    cardImage: '/robots/card/nao.webp',
+    // بيع فقط — الإيجار للروبوتات البشرية وروبوتات التوصيل فقط (ملاحظة المراجعة 10/09/2026)
+    productType: ['sale'],
     gallery: [
       '/robots/nao-real-1.webp',
       '/robots/nao-real-2.webp',
@@ -810,6 +823,9 @@ export const ROBOTS: Robot[] = [
     categories: ['humanoid'],
     order: 7,
     image: '/robots/kebbi-nobg.webp',
+    cardImage: '/robots/card/kebbi.webp',
+    // بيع فقط — الإيجار للروبوتات البشرية وروبوتات التوصيل فقط (ملاحظة المراجعة 10/09/2026)
+    productType: ['sale'],
     gallery: [
       '/robots/kebbi-1.avif',
       '/robots/kebbi-2.avif',
@@ -896,6 +912,9 @@ export const ROBOTS: Robot[] = [
     categories: ['educational'],
     order: 2,
     image: '/robots/jetauto-nobg.webp',
+    cardImage: '/robots/card/jetauto.webp',
+    // بيع فقط — الإيجار للروبوتات البشرية وروبوتات التوصيل فقط (ملاحظة المراجعة 10/09/2026)
+    productType: ['sale'],
     gallery: [
       '/robots/jetauto-real-1.webp',
       '/robots/jetauto-real-2.webp',
@@ -982,6 +1001,9 @@ export const ROBOTS: Robot[] = [
     categories: ['educational'],
     order: 1,
     image: '/robots/jetarm-nobg.webp',
+    cardImage: '/robots/card/jetarm.webp',
+    // بيع فقط — الإيجار للروبوتات البشرية وروبوتات التوصيل فقط (ملاحظة المراجعة 10/09/2026)
+    productType: ['sale'],
     gallery: [
       '/robots/jetarm-real-1.webp',
       '/robots/jetarm-real-2.webp',
@@ -1066,6 +1088,9 @@ export const ROBOTS: Robot[] = [
     categories: ['educational'],
     order: 4,
     image: '/robots/ugot-nobg.webp',
+    cardImage: '/robots/card/ugot.webp',
+    // بيع فقط — الإيجار للروبوتات البشرية وروبوتات التوصيل فقط (ملاحظة المراجعة 10/09/2026)
+    productType: ['sale'],
     gallery: [
       '/robots/ugot-render-1.webp',
       '/robots/ugot-render-2.webp',
@@ -1130,6 +1155,9 @@ export const ROBOTS: Robot[] = [
     categories: ['educational'],
     order: 5,
     image: '/robots/ukit-nobg.webp',
+    cardImage: '/robots/card/ukit.webp',
+    // بيع فقط — الإيجار للروبوتات البشرية وروبوتات التوصيل فقط (ملاحظة المراجعة 10/09/2026)
+    productType: ['sale'],
     gallery: [
       '/robots/ukit-real-1.webp',
       '/robots/ukit-real-2.webp',
@@ -1173,6 +1201,9 @@ export const ROBOTS: Robot[] = [
     categories: ['educational'],
     order: 1,
     image: '/robots/unitree-go2-nobg.webp',
+    cardImage: '/robots/card/unitree-go2.webp',
+    // بيع فقط — الإيجار للروبوتات البشرية وروبوتات التوصيل فقط (ملاحظة المراجعة 10/09/2026)
+    productType: ['sale'],
     gallery: [
       '/robots/unitree-go2-real-1.webp',
       '/robots/unitree-go2-real-2.webp',
@@ -1251,6 +1282,7 @@ export const ROBOTS: Robot[] = [
     order: 5,
     productType: ['preorder'],
     image: '/robots/unitree-g1-nobg.webp',
+    cardImage: '/robots/card/unitree-g1.webp',
     gallery: [
       '/robots/unitree-g1.webp',
       '/robots/unitree-g1-2.webp',
@@ -1324,6 +1356,7 @@ export const ROBOTS: Robot[] = [
     order: 6,
     productType: ['preorder'],
     image: '/robots/booster-t1-nobg.webp',
+    cardImage: '/robots/card/booster-t1.webp',
     gallery: ['/robots/booster-t1.webp', '/robots/booster-t1-2.webp'],
     tagline: { ar: 'روبوت بشري مفتوح المصدر — حجز مسبق', en: 'Open-source humanoid robot — pre-order' },
     summary: {
@@ -1392,6 +1425,7 @@ export const ROBOTS: Robot[] = [
     categories: ['humanoid'],
     order: 9,
     image: '/robots/sanbot-nano-nobg.webp',
+    cardImage: '/robots/card/sanbot-nano.webp',
     gallery: [
       '/robots/sanbot-nano-real-1.webp',
       '/robots/sanbot-nano-real-2.webp',

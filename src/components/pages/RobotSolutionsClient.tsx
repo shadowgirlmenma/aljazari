@@ -12,6 +12,8 @@ import {
   ROBOT_SOLUTIONS,
   ROBOT_SOLUTION_ICONS,
   ROBOT_SOLUTION_CARD_IMAGES,
+  ROBOT_SOLUTION_LABEL_IN_IMAGE,
+  ROBOT_SOLUTION_IMAGE_POSITION,
   shortSolutionTitle,
 } from '@/data/robotSolutions';
 import type { Locale } from '@/lib/types';
@@ -76,6 +78,7 @@ export default function RobotSolutionsClient({
               const shortTitle = shortSolutionTitle(cat.title);
               const Icon = ROBOT_SOLUTION_ICONS[slug];
               const image = ROBOT_SOLUTION_CARD_IMAGES[slug];
+              const labelInImage = ROBOT_SOLUTION_LABEL_IN_IMAGE.has(slug);
               return (
                 <motion.div
                   key={slug}
@@ -88,7 +91,7 @@ export default function RobotSolutionsClient({
                     href={`/robot-solutions/${slug}`}
                     onMouseMove={handleMouseMove}
                     style={{ '--mx': '50%', '--my': '50%' } as React.CSSProperties}
-                    className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:shadow-2xl hover:shadow-brand-700/25 sm:aspect-square"
+                    className="group relative flex aspect-square flex-col justify-end overflow-hidden rounded-2xl border border-purple-300/15 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:border-purple-300/40 hover:shadow-2xl hover:shadow-brand-700/25"
                   >
                     <Image
                       src={image}
@@ -96,8 +99,10 @@ export default function RobotSolutionsClient({
                       fill
                       sizes="(max-width: 640px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      style={{ objectPosition: ROBOT_SOLUTION_IMAGE_POSITION[slug] }}
                     />
                     {/* تعتيم متدرج حتى يبين النص فوق الصورة */}
+                    {!labelInImage && (
                     <div
                       aria-hidden
                       className="pointer-events-none absolute inset-0"
@@ -106,6 +111,7 @@ export default function RobotSolutionsClient({
                           'linear-gradient(to top, rgba(10,4,20,0.92) 0%, rgba(10,4,20,0.35) 55%, rgba(10,4,20,0.05) 100%)',
                       }}
                     />
+                    )}
                     {/* توهّج ناعم يتبع الماوس */}
                     <span
                       aria-hidden
@@ -129,14 +135,18 @@ export default function RobotSolutionsClient({
                       }}
                     />
 
-                    <div className="relative z-10 flex items-center gap-2.5 p-4 sm:gap-3 sm:p-6">
-                      <span className="glass flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-purple-200 sm:h-12 sm:w-12">
-                        <Icon size={20} strokeWidth={1.5} />
-                      </span>
-                      <p className="text-sm font-semibold text-white sm:text-lg">
-                        {shortTitle[locale]}
-                      </p>
-                    </div>
+                    {labelInImage ? (
+                      <span className="sr-only">{shortTitle[locale]}</span>
+                    ) : (
+                      <div className="relative z-10 flex items-center gap-2.5 p-4 sm:gap-3 sm:p-6">
+                        <span className="glass flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-purple-200 sm:h-12 sm:w-12">
+                          <Icon size={20} strokeWidth={1.5} />
+                        </span>
+                        <p className="text-sm font-semibold text-white sm:text-lg">
+                          {shortTitle[locale]}
+                        </p>
+                      </div>
+                    )}
                   </Link>
                 </motion.div>
               );

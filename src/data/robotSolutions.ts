@@ -36,6 +36,33 @@ export interface RobotSolutionRobot {
   tag?: LocalizedText;
 }
 
+/** أرقام/إحصائيات القطاع (مثلاً أرقام PUDU للرعاية الصحية) */
+export interface RobotSolutionStat {
+  icon: 'sparkles' | 'monitor' | 'target' | 'route';
+  prefix: string;
+  to: number;
+  decimals: number;
+  suffix: string;
+  label: LocalizedText;
+}
+
+export interface RobotSolutionStats {
+  title: LocalizedText;
+  source: LocalizedText;
+  items: RobotSolutionStat[];
+}
+
+/** مخطط ثلاثي الأبعاد تفاعلي للقطاع (صورة + نقاط تفاعلية) — للرعاية الصحية حالياً */
+export interface RobotSolutionLayout {
+  image: string;
+  title: LocalizedText;
+  hint: LocalizedText;
+  os: { title: LocalizedText; description: LocalizedText };
+  /** benefit = رقم الفائدة بمصفوفة benefits، x/y = موضع النقطة % على الصورة */
+  hotspots: { benefit: number; x: number; y: number }[];
+  osPoint: { x: number; y: number };
+}
+
 export interface RobotSolutionCategory {
   sectorKey: SectorKey | null;
   title: LocalizedText;
@@ -45,6 +72,8 @@ export interface RobotSolutionCategory {
   robots: RobotSolutionRobot[];
   industries: LocalizedText[];
   whyChoose: LocalizedText[];
+  stats?: RobotSolutionStats;
+  layout?: RobotSolutionLayout;
 }
 
 export const ROBOT_SOLUTIONS_ORDER = [
@@ -113,10 +142,23 @@ export const ROBOT_SOLUTION_CARD_IMAGES: Record<RobotSolutionSlug, string> = {
   rental: '/robot-solutions/rental-card.webp',
 };
 
+/** تصنيفات صورتها الجديدة (24/09) فيها اسم القطاع + الأيقونة مدموجين بالصورة نفسها —
+ *  فبطاقة الشبكة ما تعرض عنوان/أيقونة فوقها حتى ما يتكرر النص. */
+export const ROBOT_SOLUTION_LABEL_IN_IMAGE = new Set<RobotSolutionSlug>([
+  'healthcare', 'banking', 'restaurants', 'hospitality', 'malls',
+  'universities', 'schools', 'enterprises', 'warehousing',
+]);
+
+/** موضع قص الصورة داخل المربع (object-position) للصور غير المربعة */
+export const ROBOT_SOLUTION_IMAGE_POSITION: Partial<Record<RobotSolutionSlug, string>> = {
+  healthcare: '15% 50%',
+};
+
 /** صورة بانر — بس للتصنيفات اللي إلها صورة بانر مخصصة (بدل تأثير Lightfall وحده) */
 export const ROBOT_SOLUTION_BANNER_IMAGES: Partial<Record<RobotSolutionSlug, string>> = {
   gaming: '/robot-solutions/gaming-banner.webp',
-  restaurants: '/robot-solutions/restaurants-banner.webp',
+  // restaurants: تم حذف صورة البانر القديمة (كان يظهر فيها روبوت Pepper) حسب ملاحظة المراجعة
+  // «Removing pepper robot from café and restaurant sector» — تُضاف صورة القطاع الجديدة هنا لما توصل.
 };
 
 /** كل التصنيفات (Sector) اللي إلها صفحة حلول مخصصة — تُستخدم لتحديد هل بادج القطاع
