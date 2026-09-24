@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
 import { X, CheckCircle } from 'lucide-react';
 import PhoneInput from '@/components/ui/PhoneInput';
-import { buildMailto } from '@/lib/mailto';
+import { openMail } from '@/lib/mailto';
 
 export default function TrainerApplicationModal({
   open, onClose,
@@ -52,16 +52,15 @@ export default function TrainerApplicationModal({
       return;
     }
 
-    /* بدون أي ربط بباكند — يفتح رابط mailto: بتطبيق البريد الافتراضي، معبّى
+    /* بدون أي ربط بباكند — يفتح صفحة Gmail (أو تطبيق البريد بالموبايل)، معبّى
        تلقائياً بكل الحقول اللي كتبها المتقدّم نصاً واضحاً. */
-    window.location.href = buildMailto('طلب انضمام كمدرّب', [
+    openMail('طلب انضمام كمدرّب', [
       ['الاسم', form.name],
       ['البريد الإلكتروني', form.email],
       ['الهاتف', form.phone],
       ['التخصص', form.specialty],
       ['الخبرة', form.experience],
     ]);
-    setSent(true);
   };
 
   const fieldClass = (hasError: boolean) =>

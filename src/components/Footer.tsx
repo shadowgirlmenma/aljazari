@@ -4,7 +4,6 @@ import Container from '@/components/ui/Container';
 import BrandLockup from '@/components/BrandLockup';
 import { COMPANY, CONTACT } from '@/data/company';
 import type { Locale } from '@/lib/types';
-import NewsletterForm from '@/components/NewsletterForm';
 const SOCIAL = [
   { label: 'LinkedIn',  href: 'https://www.linkedin.com/company/aljazari-iq/' },
   { label: 'Facebook',  href: 'https://www.facebook.com/aljazari.iq' },
@@ -21,18 +20,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#0a0414] text-purple-200/70">
-
-      {/* نيوزليتر */}
-      <div className="border-b border-purple-900/50">
-        <Container className="py-14 text-center">
-          <h2 className="text-2xl font-semibold text-white sm:text-3xl">
-            {locale === 'ar'
-              ? 'كن أول من يعرف آخر أخبار الجزري'
-              : 'Be the first to get the latest news from Aljazari'}
-          </h2>
-          <NewsletterForm />
-        </Container>
-      </div>
 
       {/* روابط */}
       <Container className="py-14">

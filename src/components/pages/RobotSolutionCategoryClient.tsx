@@ -12,10 +12,14 @@ import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import RobotSolutionsBannerBackground from './RobotSolutionsBannerBackground';
 import HealthcareLayout from './HealthcareLayout';
 import SolutionStats from './SolutionStats';
+import SectorImageCard from './SectorImageCard';
 import { getRobot } from '@/data/robots';
 import {
   ROBOT_SOLUTION_ICONS,
   ROBOT_SOLUTION_BANNER_IMAGES,
+  ROBOT_SOLUTION_CARD_IMAGES,
+  ROBOT_SOLUTION_IMAGE_POSITION,
+  ROBOT_SOLUTION_SCENE_SLUGS,
   type RobotSolutionCategory,
   type RobotSolutionSlug,
 } from '@/data/robotSolutions';
@@ -44,6 +48,7 @@ export default function RobotSolutionCategoryClient({
   const locale = useLocale() as Locale;
   const Icon = ROBOT_SOLUTION_ICONS[slug];
   const bannerImage = ROBOT_SOLUTION_BANNER_IMAGES[slug];
+  const sceneImage = ROBOT_SOLUTION_SCENE_SLUGS.has(slug) ? ROBOT_SOLUTION_CARD_IMAGES[slug] : undefined;
 
   return (
     <>
@@ -124,9 +129,22 @@ export default function RobotSolutionCategoryClient({
       <div className="relative overflow-hidden bg-[#0a0414]">
         <DotGridBackdrop opacity={0.35} />
         <Container className="relative z-10 py-14 sm:py-16">
-          <p className="mx-auto max-w-3xl text-center leading-relaxed text-purple-100/85 sm:text-lg">
-            {category.intro[locale]}
-          </p>
+          {sceneImage ? (
+            <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
+              <p className="leading-relaxed text-purple-100/85 sm:text-lg">{category.intro[locale]}</p>
+              <SectorImageCard
+                src={sceneImage}
+                alt={category.title[locale]}
+                title={category.title[locale]}
+                Icon={Icon}
+                position={ROBOT_SOLUTION_IMAGE_POSITION[slug]}
+              />
+            </div>
+          ) : (
+            <p className="mx-auto max-w-3xl text-center leading-relaxed text-purple-100/85 sm:text-lg">
+              {category.intro[locale]}
+            </p>
+          )}
         </Container>
       </div>
 

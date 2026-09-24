@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
 import { X, CheckCircle } from 'lucide-react';
 import PhoneInput from '@/components/ui/PhoneInput';
-import { buildMailto } from '@/lib/mailto';
+import { openMail } from '@/lib/mailto';
 
 export default function EnrollModal({
   open, onClose, courseSlug, courseName,
@@ -46,15 +46,14 @@ export default function EnrollModal({
     if (!phoneValid) { toast.error('رقم الهاتف غير مكتمل'); return; }
     if (errors.name || errors.email) { toast.error('راجعي الحقول المظلّلة بالأحمر'); return; }
 
-    /* بدون أي ربط بباكند — يفتح رابط mailto: بتطبيق البريد الافتراضي، معبّى
+    /* بدون أي ربط بباكند — يفتح صفحة Gmail (أو تطبيق البريد بالموبايل)، معبّى
        تلقائياً بكل الحقول اللي كتبها المتدرّب نصاً واضحاً. */
-    window.location.href = buildMailto(`التسجيل بدورة: ${courseName}`, [
+    openMail(`التسجيل بدورة: ${courseName}`, [
       ['الاسم', form.name],
       ['البريد الإلكتروني', form.email],
       ['الهاتف', form.phone],
       ['طريقة الحضور', form.delivery === 'online' ? 'أونلاين' : 'حضوري'],
     ]);
-    setSent(true);
   };
 
   const fieldClass = (hasError: boolean) =>

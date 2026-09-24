@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
 import { X, CheckCircle } from 'lucide-react';
 import PhoneInput from '@/components/ui/PhoneInput';
-import { buildMailto } from '@/lib/mailto';
+import { openMail } from '@/lib/mailto';
 
 export default function BookRobotModal({
   open, onClose, robotSlug, robotName, initialType = 'rent', preorder = false,
@@ -63,14 +63,13 @@ export default function BookRobotModal({
 
     /* بدون أي ربط بباكند — يفتح رابط mailto: بتطبيق البريد الافتراضي، معبّى
        تلقائياً بكل الحقول اللي كتبها الزائر نصاً واضحاً. */
-    window.location.href = buildMailto(`${robotName} — ${form.type === 'rent' ? t('rent') : t('buy')}`, [
+    openMail(`${robotName} — ${form.type === 'rent' ? t('rent') : t('buy')}`, [
       [t('namePlaceholder'), form.name],
       [t('emailPlaceholder'), form.email],
       [locale === 'ar' ? 'الهاتف' : 'Phone', form.phone],
       [t('orgPlaceholder'), form.organization],
       [t('notesPlaceholder'), form.notes],
     ]);
-    setSent(true);
   };
 
   const fieldClass = (hasError: boolean) =>

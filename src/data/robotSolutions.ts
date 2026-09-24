@@ -142,16 +142,18 @@ export const ROBOT_SOLUTION_CARD_IMAGES: Record<RobotSolutionSlug, string> = {
   rental: '/robot-solutions/rental-card.webp',
 };
 
-/** تصنيفات صورتها الجديدة (24/09) فيها اسم القطاع + الأيقونة مدموجين بالصورة نفسها —
- *  فبطاقة الشبكة ما تعرض عنوان/أيقونة فوقها حتى ما يتكرر النص. */
-export const ROBOT_SOLUTION_LABEL_IN_IMAGE = new Set<RobotSolutionSlug>([
+/** التصنيفات اللي إلها صورة مشهد جديدة (24/09، مقصوصة بدون النص المدموج) — تُعرض كبطاقة
+ *  بالشبكة، وكمان كبطاقة تفاعلية (tilt) بصفحة القطاع نفسه. */
+export const ROBOT_SOLUTION_SCENE_SLUGS = new Set<RobotSolutionSlug>([
   'healthcare', 'banking', 'restaurants', 'hospitality', 'malls',
   'universities', 'schools', 'enterprises', 'warehousing',
 ]);
 
 /** موضع قص الصورة داخل المربع (object-position) للصور غير المربعة */
 export const ROBOT_SOLUTION_IMAGE_POSITION: Partial<Record<RobotSolutionSlug, string>> = {
-  healthcare: '15% 50%',
+  healthcare: '50% 50%',
+  hospitality: '50% 12%',
+  restaurants: '50% 12%',
 };
 
 /** صورة بانر — بس للتصنيفات اللي إلها صورة بانر مخصصة (بدل تأثير Lightfall وحده) */

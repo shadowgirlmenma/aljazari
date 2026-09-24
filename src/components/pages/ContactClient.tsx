@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 import { MapPin, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
 import PhoneInput from '@/components/ui/PhoneInput';
 import AnimatedSelect from '@/components/ui/AnimatedSelect';
-import { buildMailto } from '@/lib/mailto';
+import { openMail } from '@/lib/mailto';
 
 export default function ContactClient({
   title, subtitle,
@@ -24,7 +24,7 @@ export default function ContactClient({
   phone: string; email: string;
   hoursLabel: string; hours: string;
 }) {
-  const [sent, setSent] = useState(false);
+  const [sent] = useState(false);
   const [phoneValid, setPhoneValid] = useState(true);
   const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>({});
   const [form, setForm] = useState({
@@ -52,16 +52,15 @@ export default function ContactClient({
       return;
     }
 
-    /* بدون أي ربط بباكند — يفتح رابط mailto: بتطبيق البريد الافتراضي، معبّى
+    /* بدون أي ربط بباكند — يفتح صفحة Gmail (أو تطبيق البريد بالموبايل)، معبّى
        تلقائياً بكل الحقول اللي كتبتها الزائرة نصاً واضحاً. */
-    window.location.href = buildMailto(`${subjectLabel}: ${form.subject}`, [
+    openMail(`${subjectLabel}: ${form.subject}`, [
       [nameLabel, form.name],
       [emailLabel, form.email],
       [phoneLabel, form.phone],
       [subjectLabel, form.subject],
       [messageLabel, form.message],
     ]);
-    setSent(true);
   };
 
   const INFO = [

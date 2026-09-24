@@ -28,3 +28,35 @@ export function buildMailto(
 
   return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
+
+/**
+ * يفتح شاشة كتابة رسالة جاهزة ومعبّأة بكل الحقول إلى بريد الشركة:
+ * - على الكمبيوتر: صفحة Gmail (compose) بتبويب جديد.
+ * - على الموبايل: تطبيق البريد الافتراضي (mailto:) لأن Gmail web ما يشتغل ممتاز هناك.
+ * - إذا المتصفح منع النافذة الجديدة: نرجع لـ mailto: كخطة بديلة.
+ * الصيغة (سطر لكل حقل "التسمية: القيمة") موحّدة لكل نماذج الموقع.
+ */
+export function openMail(
+  subject: string,
+  fields: Array<[label: string, value: string | undefined | null]>,
+  email: string = CONTACT_EMAIL,
+): void {
+  const mailto = buildMailto(subject, fields, email);
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (isMobile) {
+    window.location.href = mailto;
+    return;
+  }
+  const body = fields
+    .filter(([, value]) => value !== undefined && value !== null && String(value).trim() !== '')
+    .map(([label, value]) => `${label}: ${value}`)
+    .join('\n');
+  const gmail =
+    'https://mail.google.com/mail/?view=cm&fs=1' +
+    `&to=${encodeURIComponent(email)}` +
+    `&su=${encodeURIComponent(subject)}` +
+    `&body=${encodeURIComponent(body)}`;
+  const w = window.open(gmail, '_blank');
+  if (w) w.opener = null;
+  else window.location.href = mailto;
+}

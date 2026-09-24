@@ -10,7 +10,7 @@ import type { Locale } from '@/lib/types';
  * "ماذا نقدم" — ثلاث خدمات رئيسية فقط (ملاحظة المراجعة 10/09/2026):
  * حلول الروبوتات، حلول الذكاء الاصطناعي، البرنامج التدريبي.
  * (الصيانة والدعم و"تجارة الروبوتات" ما تنعرض هنا كخدمات رئيسية.)
- * كل بطاقة رابط للصفحة الخاصة بالخدمة، بصورة موجودة بالموقع وعنوان بشريط زجاجي.
+ * كل بطاقة رابط للصفحة الخاصة بالخدمة، بصورة موجودة بالموقع بصبغة بنفسجية موحّدة (ملاحظة 24/09) وعنوان بشريط زجاجي.
  * الصور: robots-banner-poster.jpg / ai-solutions/vision.jpg / services/training.jpg
  */
 const SERVICES: { key: string; image: string; href: '/robot-solutions' | '/ai-solutions' | '/training' }[] = [
@@ -47,8 +47,19 @@ export default function ServicesSection({ locale: _locale }: { locale: Locale })
                 <img
                   src={image}
                   alt={t(`services.${key}.title`)}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 h-full w-full object-cover grayscale brightness-110 contrast-105 transition duration-700 group-hover:scale-110"
                   loading="lazy"
+                />
+                {/* صبغة بنفسجية موحّدة لكل الصور (duotone) حتى تتناغم مع ثيم الموقع */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-70"
+                  style={{ background: 'linear-gradient(135deg,#c4b5fd 0%,#7c3aed 55%,#3b1580 100%)' }}
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 mix-blend-screen"
+                  style={{ background: 'radial-gradient(70% 60% at 30% 25%,rgba(196,168,255,0.35),transparent 70%)' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#120621]/90 via-[#120621]/15 to-transparent" />
 
