@@ -1,6 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import LogoLoop from '@/components/reactbits/LogoLoop';
+import StrokeText from '@/components/reactbits/StrokeText';
 import type { Locale } from '@/lib/types';
 
 type PartnerItem = { name: string | Record<string, string>; logo?: string };
@@ -37,9 +38,9 @@ export default function PartnersSection({
     <section className="section-dark relative overflow-hidden">
       <div className="relative z-10 py-20">
         <div className="mx-auto max-w-6xl px-5 text-center sm:px-8 lg:px-10">
-          <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-purple-300">
-            {t('partners.title')}
-          </p>
+          <div className="mx-auto" style={{ width: 'fit-content' }}>
+            <StrokeText text={t('partners.title')} fontSize={30} fontWeight={800} />
+          </div>
         </div>
 
         <div className="mt-10 w-full overflow-hidden py-6 sm:px-8 lg:px-10">
@@ -57,9 +58,9 @@ export default function PartnersSection({
         </div>
 
         <div className="mx-auto mt-16 max-w-6xl px-5 text-center sm:px-8 lg:px-10">
-          <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-purple-300">
-            {t('clients.title')}
-          </p>
+          <div className="mx-auto" style={{ width: 'fit-content' }}>
+            <StrokeText text={t('clients.title')} fontSize={30} fontWeight={800} />
+          </div>
         </div>
         <div className="mt-10 w-full overflow-hidden py-6 sm:px-8 lg:px-10">
           <LogoLoop

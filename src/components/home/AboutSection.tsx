@@ -16,37 +16,42 @@ export default function AboutSection({ locale }: { locale: Locale }) {
           {t('about.eyebrow')}
         </p>
 
-        <div className="mt-8 grid items-center gap-12 lg:grid-cols-[1fr_300px]" dir="ltr">
-          <div className="text-left" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-            <ScrollReveal
-              baseOpacity={0.06}
-              baseRotation={2}
-              blurStrength={5}
-              textClassName="text-white text-2xl sm:text-4xl leading-snug text-left"
+        <div className="mt-8" dir="ltr">
+          {/* الفقرة الرئيسية + اللوغو — صف واحد، اللوغو يتمركز عمودياً مقابل هذي الفقرة
+              بالذات فقط (مو مع الفقرة الثانية الأخف تحتها)، حسب تحديد المراجعة 25/09. */}
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_240px]">
+            <div className="text-left" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+              <ScrollReveal
+                baseOpacity={0.06}
+                baseRotation={2}
+                blurStrength={5}
+                textClassName="text-white text-2xl sm:text-4xl leading-snug text-left"
+              >
+                {t('about.body')}
+              </ScrollReveal>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.7 }}
+              className="hidden lg:flex lg:items-center lg:justify-center"
             >
-              {t('about.body')}
-            </ScrollReveal>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ delay: 0.3 }}
-              className="mt-8 text-left text-base leading-relaxed text-white/70 sm:text-lg"
-            >
-              {t('about.body2')}
-            </motion.p>
+              <Logo className="w-40 text-purple-400 opacity-70" />
+            </motion.div>
           </div>
 
-          {/* لوغو كبير — بمنتصف ارتفاع بلوك النص عمودياً وعلى اليمين بمحاذته (ملاحظة المراجعة 24/09) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.7 }}
-            className="hidden lg:flex lg:items-center lg:justify-center"
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ delay: 0.3 }}
+            dir={locale === 'ar' ? 'rtl' : 'ltr'}
+            className="mt-8 text-left text-base leading-relaxed text-white/70 sm:text-lg"
           >
-            <Logo className="w-56 text-purple-400 opacity-70" />
-          </motion.div>
+            {t('about.body2')}
+          </motion.p>
         </div>
       </div>
     </section>
