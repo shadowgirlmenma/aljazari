@@ -104,6 +104,9 @@
         "title": "Robot Trade",
         "desc": "Humanoid, service, and educational robots from the world's leading manufacturers"
       },
+      "robotSolutions": {
+        "title": "Robot Solutions"
+      },
       "maintenance": {
         "title": "Maintenance & Support",
         "desc": "12-month warranty and specialized technical support for all our robots"
@@ -223,6 +226,22 @@
     "enterprise": { "title": "Enterprise AI Development", "desc": "We deliver secure enterprise AI systems for automation, predictive analytics, and adaptive intelligence. We integrate with ERP, CRM, HR, finance, and document systems (Knowledge Management Systems) to ensure reliability and performance without disrupting operations." },
     "agents": { "title": "AI Agent Development", "desc": "We support sales, customer service, and retention with conversational AI agents on the channels your customers already use. These agents manage bookings, resolve requests end-to-end, and escalate complex cases when needed. Includes WhatsApp AI Agents and Social Media AI Agents for customer service." },
     "consulting": { "title": "AI Consulting & Strategy", "desc": "We assess your goals, challenges, and data. Our experts define the AI agent scope, roadmap, and architecture to move smoothly from idea to execution." }
+  },
+  "customProduct": {
+    "tag": "From Idea to Real Impact",
+    "footerTag": "Ideas Turned Into Impact",
+    "chips": {
+      "tailored": "Tailored AI Solutions",
+      "innovation": "Driving Innovation",
+      "performance": "Better Performance"
+    },
+    "steps": {
+      "discover": { "title": "Discovery & Scoping", "desc": "Understanding your goals, challenges, and the opportunities available." },
+      "design": { "title": "Design & Planning", "desc": "Defining the solution, data strategy, and product roadmap." },
+      "develop": { "title": "Development & Integration", "desc": "Building, training, and integrating custom AI models." },
+      "test": { "title": "Testing & Validation", "desc": "Ensuring performance, security, and readiness for real-world use." },
+      "deploy": { "title": "Launch & Scale", "desc": "Launching, supporting, and scaling for long-term impact." }
+    }
   },
   "interfaceHeading": "A Single AI Interface That Securely Orchestrates Work Across Your Business Systems",
   "interfaceBenefits": {
