@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import { Toaster } from 'sonner';
 import ConditionalChrome from '@/components/ConditionalChrome';
 import CursorGlow from '@/components/reactbits/CursorGlow';
+import OrganizationJsonLd from '@/components/OrganizationJsonLd';
 import '../globals.css';
 const readex = Readex_Pro({
   subsets: ['arabic', 'latin'],
@@ -95,6 +96,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} className={`${readex.variable} ${plexMono.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased">
+        <OrganizationJsonLd locale={locale as 'ar' | 'en'} />
         <NextIntlClientProvider>
           <CursorGlow />
           <Toaster

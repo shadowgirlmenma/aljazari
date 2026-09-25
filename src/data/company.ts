@@ -183,8 +183,8 @@ export const CONTACT = {
   email: 'info@aljazari.iq',
   address: { ar: 'الطابق الخامس، مجمع فيولا التجاري، شارع الربيعي، الزيونة، بغداد، العراق', en: 'Fifth Floor, Viola Commercial Center, AlRubaie Street, Ziyouna, Baghdad, Iraq' },
   social: {
-    instagram: '',
-    facebook: '',
+    instagram: 'https://www.instagram.com/aljazari.iq/',
+    facebook: 'https://www.facebook.com/aljazari.iq',
     linkedin: '',
     youtube: '',
   },
