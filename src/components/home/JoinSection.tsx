@@ -3,28 +3,32 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import StarBorder from '@/components/reactbits/StarBorder';
 import type { Locale } from '@/lib/types';
-
-/* بريد الجزري الرسمي — الأزرار تفتح تطبيق البريد مباشرة (mailto)، بدون أي ربط بباكند */
-const CONTACT_EMAIL = 'info@aljazari.iq';
+import { buildMailto } from '@/lib/mailto';
 
 export default function JoinSection({ locale }: { locale: Locale }) {
   const t = useTranslations('home');
 
-  const mailtoHref = (subject: string, body: string) =>
-    `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-  const trainerMailto = mailtoHref(
+  /* ملاحظة المراجعة 25/09/2026: وحّدنا هذا الزر مع باقي نماذج الموقع — نفس
+     دالة buildMailto ونفس بريد الشركة (CONTACT_EMAIL بملف lib/mailto.ts)،
+     بدل رابط mailto: منفصل كان مكتوب يدوياً هنا. */
+  const trainerMailto = buildMailto(
     locale === 'ar' ? 'طلب انضمام كمدرّب' : 'Trainer application',
-    locale === 'ar'
-      ? 'مرحباً، أرغب بالانضمام كمدرّب في الجزري.\n\nالاسم: \nمجال الخبرة: \nرقم التواصل: '
-      : 'Hello, I would like to apply as a trainer at Aljazari.\n\nName: \nArea of expertise: \nPhone: '
+    [[
+      locale === 'ar' ? 'الرسالة' : 'Message',
+      locale === 'ar'
+        ? 'مرحباً، أرغب بالانضمام كمدرّب في الجزري.\n\nالاسم: \nمجال الخبرة: \nرقم التواصل: '
+        : 'Hello, I would like to apply as a trainer at Aljazari.\n\nName: \nArea of expertise: \nPhone: ',
+    ]]
   );
 
-  const traineeMailto = mailtoHref(
+  const traineeMailto = buildMailto(
     locale === 'ar' ? 'طلب تسجيل كمتدرب' : 'Trainee registration',
-    locale === 'ar'
-      ? 'مرحباً، أرغب بالتسجيل كمتدرب في الجزري.\n\nالاسم: \nالبرنامج المطلوب: \nرقم التواصل: '
-      : 'Hello, I would like to register as a trainee at Aljazari.\n\nName: \nProgram: \nPhone: '
+    [[
+      locale === 'ar' ? 'الرسالة' : 'Message',
+      locale === 'ar'
+        ? 'مرحباً، أرغب بالتسجيل كمتدرب في الجزري.\n\nالاسم: \nالبرنامج المطلوب: \nرقم التواصل: '
+        : 'Hello, I would like to register as a trainee at Aljazari.\n\nName: \nProgram: \nPhone: ',
+    ]]
   );
 
   return (

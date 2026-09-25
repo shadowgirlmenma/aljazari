@@ -7,13 +7,12 @@ import Logo from '@/components/Logo';
 import type { Locale } from '@/lib/types';
 
 export default function TrainingClient({
-  title, subtitle, liveLabel,
+  title, subtitle,
   comingSoonTitle, comingSoonBody,
   locale,
 }: {
   title: string;
   subtitle: string;
-  liveLabel: string;
   comingSoonTitle: string;
   comingSoonBody: string;
   locale: Locale;
@@ -44,15 +43,6 @@ export default function TrainingClient({
         />
 
         <div className="relative z-10 flex h-full w-full flex-col justify-end px-5 pb-12 pt-20 sm:px-8 lg:px-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-purple-400/40 bg-purple-900/30 px-3 py-1.5"
-          >
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-purple-400" />
-            <span className="font-mono text-[10px] text-purple-300">{liveLabel}</span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}

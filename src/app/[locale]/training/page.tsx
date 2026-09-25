@@ -33,7 +33,6 @@ export default async function TrainingPage({
     <TrainingClient
       title={t('title')}
       subtitle={t('subtitle')}
-      liveLabel={t('liveLabel')}
       comingSoonTitle={t('comingSoonTitle')}
       comingSoonBody={t('comingSoonBody')}
       locale={locale as Locale}
