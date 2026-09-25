@@ -16,6 +16,8 @@ import StrokeText from '@/components/reactbits/StrokeText';
  * ملاحظة المراجعة 25/09/2026 (٢): شالت المستخدمة شارات الأيقونات الزخرفية كذلك
  * (كانت بدل الدائرة) — البطاقات هسة نص فقط (اسم + دور + وصف) بدون أي عنصر
  * أيقونة/شارة إطلاقاً.
+ * ملاحظة المراجعة 25/09/2026 (٣): شالت المستخدمة الرقم الزخرفي بزاوية كل بطاقة
+ * (01، 02، ...) — البطاقات هسة بدون أي ترقيم إطلاقاً.
  */
 
 export type TalentPerson = {
@@ -50,14 +52,6 @@ function MemberCard({ person, index }: { person: TalentPerson; index: number }) 
           background: 'radial-gradient(280px circle at var(--mx) var(--my), rgba(167,139,250,0.22), transparent 70%)',
         }}
       />
-
-      {/* رقم زخرفي شفاف بالزاوية */}
-      <span
-        aria-hidden
-        className="pointer-events-none absolute end-5 top-3 font-mono text-6xl font-bold text-white/[0.05] transition-colors group-hover:text-purple-300/15"
-      >
-        {String(index + 1).padStart(2, '0')}
-      </span>
 
       <div className="relative z-10">
         <h3 className="text-lg font-semibold text-white">{person.name}</h3>
