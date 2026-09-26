@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import DecorBoundary from '@/components/DecorBoundary';
+import { useTheme } from '@/components/ThemeProvider';
 
 const Lightfall = dynamic(
   () => import('@/components/reactbits/Lightfall'),
@@ -9,6 +10,12 @@ const Lightfall = dynamic(
 );
 
 export default function LightfallBackground() {
+  /* ملاحظة مراجعة 26/09/2026: التوهّج مصمّم بألوان غامقة تناسب الوضع الداكن
+     بس — بالوضع الفاتح نطفيه بالكامل حتى يبقى القسم "صفيحة بيضاء طبيعية"
+     بدون بقعة غامقة زايدة فوق خلفية فاتحة (طلب صريح من المستخدمة). */
+  const { theme } = useTheme();
+  if (theme === 'light') return null;
+
   return (
     <div className="absolute inset-0">
       <DecorBoundary>

@@ -38,7 +38,7 @@ export default function RobotSolutionsClient({
   return (
     <>
       {/* ── بانر بصورة حقيقية — فل سكرين، بنفس أسلوب بانرات باقي صفحات الموقع ── */}
-      <div className="relative w-full overflow-hidden bg-[#120621]" style={{ height: '100svh' }}>
+      <div className="relative w-full overflow-hidden bg-[var(--bg-page)]" style={{ height: '100svh' }}>
         <Image
           src="/robot-solutions/main-banner.webp"
           alt={title}
@@ -68,7 +68,7 @@ export default function RobotSolutionsClient({
       </div>
 
       {/* ── شبكة القطاعات: 12 بطاقة، 3 أعمدة ── */}
-      <div className="relative overflow-hidden bg-[#0a0414]">
+      <div className="relative overflow-hidden bg-[var(--bg-page-alt)]">
         <DotGridBackdrop opacity={0.35} />
         <Container className="relative z-10 py-16 sm:py-20">
           <div className="grid grid-cols-2 gap-4 sm:gap-6">

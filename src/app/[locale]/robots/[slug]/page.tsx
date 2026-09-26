@@ -95,9 +95,12 @@ export default async function RobotPage({
         )}
         <Container className="relative z-10 pb-12 pt-32 sm:pb-16 sm:pt-40">
           <div className={robot.image ? 'md:max-w-[54%]' : ''}>
+            {/* ملاحظة المراجعة 26/09/2026: رابط الرجوع كان نحيف وصغير (text-xs بدون
+                خلفية) — صار زر زجاجي (glass-pill) أوضح وأكبر وأثخن، بنفس أسلوب
+                باقي أزرار الموقع الزجاجية. */}
             <Link
               href="/robots"
-              className="font-mono text-xs uppercase tracking-widest text-purple-300 transition hover:text-white"
+              className="glass-pill inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-sm font-bold uppercase tracking-widest text-purple-100 transition hover:border-purple-300 hover:text-white"
             >
               ← {t('title')}
             </Link>

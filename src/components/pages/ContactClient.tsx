@@ -79,7 +79,7 @@ export default function ContactClient({
 
   return (
     <>
-      <div className="relative overflow-hidden bg-[#120621]">
+      <div className="relative overflow-hidden bg-[var(--bg-page)]">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
@@ -115,7 +115,7 @@ export default function ContactClient({
         </div>
       </div>
 
-      <div className="bg-[#0a0414]">
+      <div className="bg-[var(--bg-page-alt)]">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
           <div className="grid gap-16 lg:grid-cols-[1.2fr_1fr]">
 

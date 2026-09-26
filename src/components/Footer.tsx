@@ -19,7 +19,7 @@ export default function Footer() {
   const year   = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0a0414] text-purple-200/70">
+    <footer className="bg-[var(--bg-page-alt)] text-purple-200/70">
 
       {/* روابط */}
       <Container className="py-14">

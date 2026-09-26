@@ -71,7 +71,7 @@ export default function AiSolutionsClient({
   return (
     <>
       {/* ── البانر: خيوط WebThreads بنفسجية متوهجة كخلفية، بحجم الشاشة كاملة متل باقي الصفحات ── */}
-      <div className="relative w-full overflow-hidden bg-[#120621]" style={{ height: '100svh' }}>
+      <div className="relative w-full overflow-hidden bg-[var(--bg-page)]" style={{ height: '100svh' }}>
         <AiSolutionsBannerBackground />
         <div
           className="pointer-events-none absolute inset-0"

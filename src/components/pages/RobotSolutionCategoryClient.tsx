@@ -54,7 +54,7 @@ export default function RobotSolutionCategoryClient({
     <>
       {bannerImage ? (
         /* ── بانر بصورة حقيقية — فل سكرين، بنفس أسلوب بانرات باقي صفحات الموقع ── */
-        <div className="relative w-full overflow-hidden bg-[#120621]" style={{ height: '100svh' }}>
+        <div className="relative w-full overflow-hidden bg-[var(--bg-page)]" style={{ height: '100svh' }}>
           <Image
             src={bannerImage}
             alt={category.title[locale]}
@@ -93,7 +93,7 @@ export default function RobotSolutionCategoryClient({
         </div>
       ) : (
         /* ── البانر: توهّج Lightfall بنفسجي متحرك بالخلفية ── */
-        <div className="relative overflow-hidden bg-[#120621] py-20 text-center">
+        <div className="relative overflow-hidden bg-[var(--bg-page)] py-20 text-center">
           <RobotSolutionsBannerBackground />
           <div
             aria-hidden
@@ -126,7 +126,7 @@ export default function RobotSolutionCategoryClient({
       )}
 
       {/* ── المقدمة ── */}
-      <div className="relative overflow-hidden bg-[#0a0414]">
+      <div className="relative overflow-hidden bg-[var(--bg-page-alt)]">
         <DotGridBackdrop opacity={0.35} />
         <Container className="relative z-10 py-14 sm:py-16">
           {sceneImage ? (
@@ -150,7 +150,7 @@ export default function RobotSolutionCategoryClient({
 
       {/* ── المخطط ثلاثي الأبعاد التفاعلي (الرعاية الصحية) ── */}
       {category.layout && category.benefits && category.benefits.length > 0 && (
-        <div className="relative overflow-hidden bg-[#120621]">
+        <div className="relative overflow-hidden bg-[var(--bg-page)]">
           <Container className="relative z-10 py-16 sm:py-20">
             <HealthcareLayout layout={category.layout} benefits={category.benefits} />
           </Container>
@@ -159,7 +159,7 @@ export default function RobotSolutionCategoryClient({
 
       {/* ── الفوائد ── */}
       {category.benefits && category.benefits.length > 0 && (
-        <div className="bg-[#120621]">
+        <div className="bg-[var(--bg-page)]">
           <Container className="py-16 sm:py-20">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {category.benefits.map((b, i) => (
@@ -184,7 +184,7 @@ export default function RobotSolutionCategoryClient({
 
       {/* ── أرقام القطاع (مثل أرقام PUDU للرعاية الصحية) ── */}
       {category.stats && (
-        <div className="relative overflow-hidden bg-[#0a0414]">
+        <div className="relative overflow-hidden bg-[var(--bg-page-alt)]">
           <DotGridBackdrop opacity={0.35} />
           <Container className="relative z-10 py-16 sm:py-20">
             <SolutionStats stats={category.stats} />
@@ -193,7 +193,7 @@ export default function RobotSolutionCategoryClient({
       )}
 
       {/* ── تعرّف على روبوتاتنا ── */}
-      <div className="relative overflow-hidden bg-[#0a0414]">
+      <div className="relative overflow-hidden bg-[var(--bg-page-alt)]">
         <DotGridBackdrop opacity={0.35} />
         <Container className="relative z-10 py-16 sm:py-20">
           <h2 className="text-center text-2xl font-semibold text-white sm:text-3xl">
@@ -296,7 +296,7 @@ export default function RobotSolutionCategoryClient({
 
       {/* ── القطاعات المستفيدة ── */}
       {category.industries.length > 0 && (
-        <div className="bg-[#120621]">
+        <div className="bg-[var(--bg-page)]">
           <Container className="py-14 sm:py-16">
             <p className="text-center text-sm font-medium tracking-wide text-purple-300/80 uppercase">
               {t.providedTo}
@@ -317,7 +317,7 @@ export default function RobotSolutionCategoryClient({
 
       {/* ── ليش الجزري ── */}
       {category.whyChoose.length > 0 && (
-        <div className="relative overflow-hidden bg-[#0a0414]">
+        <div className="relative overflow-hidden bg-[var(--bg-page-alt)]">
           <DotGridBackdrop opacity={0.35} />
           <Container className="relative z-10 py-16 sm:py-20">
             <h2 className="text-center text-2xl font-semibold text-white sm:text-3xl">

@@ -20,7 +20,7 @@ export default function TrainingClient({
   return (
     <>
       {/* ── بانر فيديو بدون صوت، مضغوط للأنترنت الضعيف — يغطي كامل عرض وطول الشاشة بدون فراغات ── */}
-      <div className="relative w-full overflow-hidden bg-[#120621]" style={{ height: '100svh' }}>
+      <div className="relative w-full overflow-hidden bg-[var(--bg-page)]" style={{ height: '100svh' }}>
         <video
           autoPlay
           loop
@@ -63,7 +63,7 @@ export default function TrainingClient({
       </div>
 
       {/* ── الكورسات قريباً ── */}
-      <div className="relative overflow-hidden bg-[#0a0414]">
+      <div className="relative overflow-hidden bg-[var(--bg-page-alt)]">
         <DotGridBackdrop opacity={0.35} />
         <div className="relative z-10 mx-auto max-w-2xl px-5 py-24 text-center sm:px-8 lg:px-10">
           <motion.div

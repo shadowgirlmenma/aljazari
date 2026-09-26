@@ -28,7 +28,7 @@ export default function NewsArticleClient({
   return (
     <article>
       {/* ── صورة/بانر بنسبة landscape كاملة العرض — أو شعار الجزري إذا الصورة لسه ما انحطت ── */}
-      <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-purple-900/60 to-[#120621]">
+      <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-purple-900/60 to-[var(--bg-page)]">
         {image ? (
           <Image
             src={image}
@@ -43,7 +43,7 @@ export default function NewsArticleClient({
             <Logo className="w-24 text-purple-400/25" />
           </div>
         )}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a0414] via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--bg-page-alt)] via-transparent to-transparent" />
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -57,7 +57,7 @@ export default function NewsArticleClient({
       </div>
 
       {/* ── المحتوى ── */}
-      <div className="bg-[#0a0414]">
+      <div className="bg-[var(--bg-page-alt)]">
         <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
 
           <Link

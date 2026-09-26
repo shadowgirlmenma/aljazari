@@ -78,7 +78,7 @@ function CeoCard({ person }: { person: TalentPerson }) {
       viewport={{ once: true, margin: '-40px' }}
       onMouseMove={handleSpotlight}
       style={{ '--mx': '50%', '--my': '50%' } as React.CSSProperties}
-      className="group relative mx-auto flex w-full max-w-3xl flex-col items-center gap-2 overflow-hidden rounded-3xl border border-purple-300/30 bg-gradient-to-br from-[#1a0b33] via-[#170a2c] to-[#0f0521] px-8 py-10 text-center shadow-[0_18px_60px_rgba(124,71,224,0.3)] transition-all duration-300 hover:border-purple-300/60"
+      className="glass-card group relative mx-auto flex w-full max-w-3xl flex-col items-center gap-2 rounded-3xl px-8 py-10 text-center shadow-[0_18px_60px_rgba(124,71,224,0.3)] transition-all duration-300 hover:border-purple-300/60"
     >
       {/* توهّج خلفي */}
       <span
@@ -139,7 +139,7 @@ export default function TalentsSection({
             <StrokeText
               text={title}
               strokeColor="#a78bfa"
-              fillColor="#ffffff"
+              fillColor="var(--rt-white)"
               strokeWidth={1.4}
               drawDuration={1.4}
               fillDelay={0.15}
@@ -184,7 +184,7 @@ export default function TalentsSection({
               <StrokeText
                 text={ambassadorsTitle}
                 strokeColor="#a78bfa"
-                fillColor="#ffffff"
+                fillColor="var(--rt-white)"
                 strokeWidth={1.3}
                 drawDuration={1.3}
                 fillDelay={0.15}

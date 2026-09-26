@@ -51,7 +51,7 @@ export default function ServicesSection({ locale: _locale }: { locale: Locale })
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#120621]/90 via-[#120621]/15 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-page)]/90 via-[var(--bg-page)]/15 to-transparent" />
 
                 <div className="absolute inset-x-3 bottom-3 sm:inset-x-4 sm:bottom-4">
                   <div className="glass flex items-center justify-between gap-3 rounded-2xl px-4 py-3.5">

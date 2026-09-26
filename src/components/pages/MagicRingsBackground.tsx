@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import DecorBoundary from '@/components/DecorBoundary';
+import { useTheme } from '@/components/ThemeProvider';
 
 const MagicRings = dynamic(
   // use relative path to avoid alias resolution errors
@@ -10,6 +11,10 @@ const MagicRings = dynamic(
 );
 
 export default function MagicRingsBackground() {
+  /* بالوضع الفاتح نطفي التوهّج الغامق بالكامل — نفس سبب LightfallBackground */
+  const { theme } = useTheme();
+  if (theme === 'light') return null;
+
   return (
     <div className="absolute inset-0 opacity-60">
       <DecorBoundary>

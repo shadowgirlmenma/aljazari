@@ -25,7 +25,7 @@ export default function RobotDetailClient({
     <>
       {/* المميزات */}
       {robot.features.length > 0 && (
-        <div className="bg-[#120621]">
+        <div className="bg-[var(--bg-page)]">
           <Container className="py-16 sm:py-20">
             <h2 className="text-2xl font-semibold text-white sm:text-3xl">
               {t_features}
@@ -57,7 +57,7 @@ export default function RobotDetailClient({
 
       {/* المواصفات */}
       {robot.specs.length > 0 && (
-        <div className="bg-[#0a0414]">
+        <div className="bg-[var(--bg-page-alt)]">
           <Container className="py-16 sm:py-20">
             <h2 className="text-2xl font-semibold text-white sm:text-3xl">
               {t_specs}
@@ -87,7 +87,7 @@ export default function RobotDetailClient({
 
       {/* القطاعات */}
       {robot.sectors.length > 0 && (
-        <div className="bg-[#120621]">
+        <div className="bg-[var(--bg-page)]">
           <Container className="py-16 sm:py-20">
             <h2 className="mb-6 text-2xl font-semibold text-white sm:text-3xl">
               {t_sectors}

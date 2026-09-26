@@ -10,7 +10,7 @@ export default function RobotsPageBanner({
   subtitle: string;
 }) {
   return (
-    <div className="relative w-full overflow-hidden bg-[#120621]" style={{ height: '100svh' }}>
+    <div className="relative w-full overflow-hidden bg-[var(--bg-page)]" style={{ height: '100svh' }}>
       {/* بانر فيديو بدون صوت، مضغوط للأنترنت الضعيف — يغطي كامل عرض وطول الشاشة بدون فراغات،
           بنفس أسلوب بانرات الرئيسية/الأخبار/التدريب */}
       <video

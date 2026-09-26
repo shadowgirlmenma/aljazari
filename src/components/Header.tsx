@@ -51,7 +51,7 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
           scrolled
-            ? 'border-white/10 bg-[#120621]/75 shadow-[0_8px_30px_rgba(9,3,20,0.45)] backdrop-blur-2xl backdrop-saturate-150'
+            ? 'border-white/10 bg-[var(--bg-page)]/75 shadow-[0_8px_30px_rgba(9,3,20,0.45)] backdrop-blur-2xl backdrop-saturate-150'
             : 'border-transparent bg-transparent'
         }`}
       >
@@ -122,7 +122,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 260 }}
-              className="fixed inset-y-0 end-0 z-[70] flex w-[85%] max-w-sm flex-col overflow-hidden border-s border-white/15 bg-[#120621]/70 shadow-2xl backdrop-blur-2xl lg:hidden"
+              className="fixed inset-y-0 end-0 z-[70] flex w-[85%] max-w-sm flex-col overflow-hidden border-s border-white/15 bg-[var(--bg-page)]/70 shadow-2xl backdrop-blur-2xl lg:hidden"
             >
               <div className="relative z-10 flex items-center justify-between border-b border-white/10 px-6 py-5">
                 <div className="text-white">

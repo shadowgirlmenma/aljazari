@@ -1,16 +1,25 @@
+'use client';
+
 import DotGrid from './DotGrid';
+import { useTheme } from '@/components/ThemeProvider';
 
 /**
  * غلاف جاهز لاستخدام DotGrid كخلفية خفيفة داخل أي قسم.
  * حطيه كأول عنصر داخل section عندها position:relative + overflow-hidden،
  * وحطي على المحتوى اللي بعدها class="relative z-10".
  * فيها تعتيم تدريجي بالحواف (mask) حتى ما تبين حواف الشبكة بشكل مقطوع.
+ *
+ * ملاحظة مراجعة 26/09/2026: طلبت المستخدمة إزالة تأثير النقاط هذا نهائياً
+ * من كل صفحة بالوضع الفاتح — نتحقق من الثيم هنا ونرجع null إذا فاتح.
  */
 export default function DotGridBackdrop({
   opacity = 0.5,
 }: {
   opacity?: number;
 }) {
+  const { theme } = useTheme();
+  if (theme === 'light') return null;
+
   return (
     <div
       className="pointer-events-none absolute inset-0 z-0"

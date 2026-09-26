@@ -33,7 +33,7 @@ export default function CustomAiProduct({ data }: { data: CustomAiProductData })
   const [active, setActive] = useState(0);
 
   return (
-    <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-purple-300/20 bg-gradient-to-br from-[#1a0b33] via-[#120621] to-[#0a0414] px-5 py-12 shadow-[0_20px_80px_rgba(9,3,20,0.6)] sm:px-10 sm:py-16">
+    <div className="glass-card relative mx-auto max-w-6xl rounded-[2rem] px-5 py-12 sm:px-10 sm:py-16">
       {/* توهّج خلفي */}
       <div
         aria-hidden
@@ -142,7 +142,7 @@ export default function CustomAiProduct({ data }: { data: CustomAiProductData })
                       className={`relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors ${
                         isActive
                           ? 'border-purple-200 bg-purple-500 text-white'
-                          : 'border-purple-300/40 bg-[#1a0b33] text-purple-200'
+                          : 'border-purple-300/40 bg-[var(--surface-solid)] text-purple-200'
                       }`}
                     >
                       <Icon size={18} />

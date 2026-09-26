@@ -52,7 +52,7 @@ export default function PartnersSection({
             gap={56}
             pauseOnHover={false}
             fadeOut
-            fadeOutColor="#120621"
+            fadeOutColor="var(--bg-page)"
             className="logoloop--plain"
           />
         </div>
@@ -71,7 +71,7 @@ export default function PartnersSection({
             gap={56}
             pauseOnHover={false}
             fadeOut
-            fadeOutColor="#120621"
+            fadeOutColor="var(--bg-page)"
             className="logoloop--plain"
           />
         </div>

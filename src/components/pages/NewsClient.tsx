@@ -79,7 +79,7 @@ export default function NewsClient({
     <>
       {/* ── بانر فيديو بدون صوت، مضغوط للأنترنت الضعيف — العنوان على حافة البداية
            (يمين بالعربي، يسار بالإنجليزي) مع شرح بسيط وقصير تحته ── */}
-      <div className="relative w-full overflow-hidden bg-[#120621]" style={{ height: '100svh' }}>
+      <div className="relative w-full overflow-hidden bg-[var(--bg-page)]" style={{ height: '100svh' }}>
         <video
           autoPlay
           loop
@@ -121,7 +121,7 @@ export default function NewsClient({
       </div>
 
       {/* ── المحتوى ── */}
-      <div className="bg-[#0a0414]">
+      <div className="bg-[var(--bg-page-alt)]">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:px-10">
 
           {/* فلتر التصنيفات */}
@@ -156,7 +156,7 @@ export default function NewsClient({
                   className="group flex flex-col overflow-hidden rounded-2xl border border-purple-500/20 bg-purple-900/10 backdrop-blur-md transition-all hover:border-purple-400/40 hover:bg-purple-900/20"
                 >
                   {/* صورة الخبر بعرض المقالة كامل بنسبة landscape — أو شعار الجزري إذا الصورة لسه ما انحطت */}
-                  <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-purple-800/40 to-[#120621]">
+                  <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-purple-800/40 to-[var(--bg-page)]">
                     {article.image ? (
                       <Image
                         src={article.image}
@@ -172,7 +172,7 @@ export default function NewsClient({
                     )}
 
                     {/* تدرج فوق الصورة */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#120621]/85 to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--bg-page)]/85 to-transparent" />
 
                     {/* تصنيف */}
                     <span className="absolute end-3 top-3 rounded-full bg-purple-600/80 px-3 py-1 font-mono text-[10px] text-white backdrop-blur-sm">

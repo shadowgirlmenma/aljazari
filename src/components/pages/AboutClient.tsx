@@ -47,7 +47,7 @@ export default function AboutClient({
   return (
     <>
    {/* ── البانر بفيديو الجزري — فيديو بدون صوت، مضغوط، بنفس أسلوب بانرات باقي الصفحات (فل سكرين) ── */}
-      <div className="relative w-full overflow-hidden bg-[#120621]" style={{ height: '100svh' }}>
+      <div className="relative w-full overflow-hidden bg-[var(--bg-page)]" style={{ height: '100svh' }}>
         <video
           autoPlay
           loop
@@ -73,7 +73,7 @@ export default function AboutClient({
             <StrokeText
               text={title}
               strokeColor="#a78bfa"
-              fillColor="#ffffff"
+              fillColor="var(--rt-white)"
               strokeWidth={1.6}
               drawDuration={1.6}
               fillDelay={0.15}
@@ -98,7 +98,7 @@ export default function AboutClient({
               <StrokeText
                 text={storyTitle}
                 strokeColor="#a78bfa"
-                fillColor="#ffffff"
+                fillColor="var(--rt-white)"
                 strokeWidth={1.4}
                 drawDuration={1.4}
                 fillDelay={0.15}
@@ -133,7 +133,7 @@ export default function AboutClient({
               <StrokeText
                 text={symbolTitle}
                 strokeColor="#a78bfa"
-                fillColor="#ffffff"
+                fillColor="var(--rt-white)"
                 strokeWidth={1.4}
                 drawDuration={1.4}
                 fillDelay={0.15}
@@ -168,7 +168,7 @@ export default function AboutClient({
               <StrokeText
                 text={videoTitle}
                 strokeColor="#a78bfa"
-                fillColor="#ffffff"
+                fillColor="var(--rt-white)"
                 strokeWidth={1.4}
                 drawDuration={1.4}
                 fillDelay={0.15}
@@ -238,7 +238,7 @@ export default function AboutClient({
               <StrokeText
                 text={foundersTitle}
                 strokeColor="#a78bfa"
-                fillColor="#ffffff"
+                fillColor="var(--rt-white)"
                 strokeWidth={1.4}
                 drawDuration={1.4}
                 fillDelay={0.15}
@@ -264,7 +264,7 @@ export default function AboutClient({
       </div>
 
        {/* ── تواصل + وظائف ── */}
-      <div className="relative overflow-hidden bg-[#0a0414]">
+      <div className="relative overflow-hidden bg-[var(--bg-page-alt)]">
         <DotGridBackdrop />
         <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
           <div className="grid gap-12 lg:grid-cols-2">
@@ -279,7 +279,7 @@ export default function AboutClient({
                 <StrokeText
                   text={contactTitle}
                   strokeColor="#a78bfa"
-                  fillColor="#ffffff"
+                  fillColor="var(--rt-white)"
                   strokeWidth={1.3}
                   drawDuration={1.3}
                   fillDelay={0.15}
@@ -352,7 +352,7 @@ export default function AboutClient({
                 <StrokeText
                   text={jobsTitle}
                   strokeColor="#a78bfa"
-                  fillColor="#ffffff"
+                  fillColor="var(--rt-white)"
                   strokeWidth={1.3}
                   drawDuration={1.3}
                   fillDelay={0.15}

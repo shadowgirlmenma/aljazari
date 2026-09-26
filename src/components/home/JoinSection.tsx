@@ -32,7 +32,7 @@ export default function JoinSection({ locale }: { locale: Locale }) {
   );
 
   return (
-    <section className="bg-[#0a0414]">
+    <section className="bg-[var(--bg-page-alt)]">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
         <div className="text-center">
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">{t('join.title')}</h2>

@@ -74,7 +74,7 @@ export default function PhoneInput({
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -8, scale: 0.97 }}
                 transition={{ duration: 0.15 }}
-                className="absolute z-20 mt-2 max-h-64 w-56 overflow-y-auto rounded-xl border border-purple-500/30 bg-[#1a0a2e] p-1.5 shadow-2xl"
+                className="absolute z-20 mt-2 max-h-64 w-56 overflow-y-auto rounded-xl border border-purple-500/30 bg-[var(--surface-solid)] p-1.5 shadow-2xl"
               >
                 {COUNTRIES.map((c) => (
                   <li key={c.code}>

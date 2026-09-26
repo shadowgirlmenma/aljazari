@@ -34,7 +34,7 @@ export default async function RobotsPage({
   return (
     <>
       <RobotsPageBanner title={t('title')} subtitle={t('subtitle')} />
-      <div id="catalog" className="relative min-h-screen scroll-mt-24 overflow-hidden bg-[#0a0414]">
+      <div id="catalog" className="relative min-h-screen scroll-mt-24 overflow-hidden bg-[var(--bg-page-alt)]">
         <DotGridBackdrop opacity={0.4} />
         <Container className="relative z-10 py-12 sm:py-16">
           <RobotsGrid robots={PUBLISHED_ROBOTS} />

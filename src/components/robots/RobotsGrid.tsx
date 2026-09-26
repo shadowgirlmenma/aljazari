@@ -105,13 +105,13 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
                 onChange={(e) => setSort(e.target.value as SortOption)}
                 className="appearance-none rounded-full bg-transparent py-2 ps-4 pe-9 text-sm text-white outline-none"
               >
-                <option className="bg-[#1a0b2e]" value="newest">
+                <option className="bg-[var(--surface-solid)]" value="newest">
                   {t('newest')}
                 </option>
-                <option className="bg-[#1a0b2e]" value="nameAsc">
+                <option className="bg-[var(--surface-solid)]" value="nameAsc">
                   {t('nameAZ')}
                 </option>
-                <option className="bg-[#1a0b2e]" value="nameDesc">
+                <option className="bg-[var(--surface-solid)]" value="nameDesc">
                   {t('nameZA')}
                 </option>
               </select>

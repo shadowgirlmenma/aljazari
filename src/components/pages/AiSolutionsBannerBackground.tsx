@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import DecorBoundary from '@/components/DecorBoundary';
+import { useTheme } from '@/components/ThemeProvider';
 
 const WebThreads = dynamic(
   // مسار نسبي لتفادي مشاكل alias مع dynamic import
@@ -9,8 +10,12 @@ const WebThreads = dynamic(
   { ssr: false }
 );
 
-/** خلفية بانر صفحة AI Solutions — خيوط متوهجة بنفسجية (WebThreads من React Bits) */
+/** خلفية بانر صفحة AI Solutions — خيوط متوهجة بنفسجية (WebThreads من React Bits).
+ *  بالوضع الفاتح نطفيها بالكامل (نفس سبب LightfallBackground). */
 export default function AiSolutionsBannerBackground() {
+  const { theme } = useTheme();
+  if (theme === 'light') return null;
+
   return (
     <div className="absolute inset-0">
       <DecorBoundary>

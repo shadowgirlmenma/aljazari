@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import DecorBoundary from '@/components/DecorBoundary';
+import { useTheme } from '@/components/ThemeProvider';
 
 const Lightfall = dynamic(
   () => import('../reactbits/Lightfall'),
@@ -9,8 +10,12 @@ const Lightfall = dynamic(
 );
 
 /** خلفية بانرات صفحات "حلول الروبوتات" — توهّج بنفسجي متحرك (Lightfall من React Bits)،
- *  نفس فكرة خلفية صفحة AI Solutions بس بتأثير مختلف حتى تكون كل صفحة مميزة بهويتها */
+ *  نفس فكرة خلفية صفحة AI Solutions بس بتأثير مختلف حتى تكون كل صفحة مميزة بهويتها.
+ *  بالوضع الفاتح نطفيه بالكامل (نفس سبب LightfallBackground). */
 export default function RobotSolutionsBannerBackground() {
+  const { theme } = useTheme();
+  if (theme === 'light') return null;
+
   return (
     <div className="absolute inset-0">
       <DecorBoundary>
