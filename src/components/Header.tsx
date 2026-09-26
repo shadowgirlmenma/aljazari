@@ -47,11 +47,15 @@ export default function Header() {
   return (
     <>
       {/* هيدر ثابت (fixed) فوق محتوى الصفحة — دايماً ظاهر. شفاف بأعلى الصفحة، وزجاجي
-          بنفسجي (backdrop-blur) بعد السكرول حتى يبقى النص واضح. */}
+          بنفسجي (backdrop-blur) بعد السكرول حتى يبقى النص واضح.
+          ملاحظة مراجعة 26/09/2026 (جولة ثالثة): صنف brand-chrome يثبّت ألوان
+          النص فاتحة بكل الأوضاع (شعار "ALJAZARI" صورة PNG بيضاء ثابتة اللون،
+          ما تتبدل مع الثيم) — وخلفية السكرول صارت --bg-chrome-header (بنفسجي
+          أوضح بالوضع الفاتح) بدل --bg-page اللي كانت شبه بيضاء وتخفي الشعار. */}
       <header
-        className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+        className={`brand-chrome fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
           scrolled
-            ? 'border-white/10 bg-[var(--bg-page)]/75 shadow-[0_8px_30px_rgba(9,3,20,0.45)] backdrop-blur-2xl backdrop-saturate-150'
+            ? 'border-white/10 bg-[var(--bg-chrome-header)]/75 shadow-[0_8px_30px_rgba(9,3,20,0.45)] backdrop-blur-2xl backdrop-saturate-150'
             : 'border-transparent bg-transparent'
         }`}
       >
@@ -122,7 +126,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 260 }}
-              className="fixed inset-y-0 end-0 z-[70] flex w-[85%] max-w-sm flex-col overflow-hidden border-s border-white/15 bg-[var(--bg-page)]/70 shadow-2xl backdrop-blur-2xl lg:hidden"
+              className="brand-chrome fixed inset-y-0 end-0 z-[70] flex w-[85%] max-w-sm flex-col overflow-hidden border-s border-white/15 bg-[var(--bg-chrome-header)]/70 shadow-2xl backdrop-blur-2xl lg:hidden"
             >
               <div className="relative z-10 flex items-center justify-between border-b border-white/10 px-6 py-5">
                 <div className="text-white">

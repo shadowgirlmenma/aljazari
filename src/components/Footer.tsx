@@ -19,7 +19,11 @@ export default function Footer() {
   const year   = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--bg-page-alt)] text-purple-200/70">
+    /* ملاحظة مراجعة 26/09/2026 (جولة ثالثة): brand-chrome يثبّت ألوان النص
+       فاتحة بكل الأوضاع (شعار "ALJAZARI" صورة PNG بيضاء ثابتة اللون)، وخلفية
+       الفوتر صارت --bg-chrome-footer (بنفسجي أوضح بالوضع الفاتح) بدل
+       --bg-page-alt اللي كانت شبه بيضاء وتخفي الشعار. */
+    <footer className="brand-chrome bg-[var(--bg-chrome-footer)] text-purple-200/70">
 
       {/* روابط */}
       <Container className="py-14">
