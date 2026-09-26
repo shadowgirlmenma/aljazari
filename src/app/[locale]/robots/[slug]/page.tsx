@@ -70,7 +70,12 @@ export default async function RobotPage({
         }}
       />
 
-      {/* ── Header البنفسجي الداكن ── */}
+      {/* ── Header البنفسجي الداكن ──
+          ملاحظة المراجعة 26/09/2026: زدنا المسافة الفوقية (pt-32/pt-40) حتى ما
+          يتصادم رابط "← رجوع" مع الهيدر الثابت (fixed) — كان شفاف وقاعد يتراكب
+          فوق النص مباشرة لأن هذا القسم مو بانر كامل الشاشة مثل باقي صفحات
+          الموقع (اللي نصها بالأسفل بعيد عن الهيدر). ما أثرنا على الهيدر نفسه
+          ولا أي صفحة ثانية — التعديل هنا بس. */}
       <div className="relative overflow-hidden bg-brand-gradient text-white">
         {/* صورة الروبوت — تطفو بالجهة المقابلة للنص، بدون خلفية */}
         {robot.image && (
@@ -88,7 +93,7 @@ export default async function RobotPage({
             />
           </div>
         )}
-        <Container className="relative z-10 py-12 sm:py-16">
+        <Container className="relative z-10 pb-12 pt-32 sm:pb-16 sm:pt-40">
           <div className={robot.image ? 'md:max-w-[54%]' : ''}>
             <Link
               href="/robots"

@@ -16,6 +16,17 @@
 
   --color-ink: #0d0818;
 
+  /* ملاحظة المراجعة 26/09/2026 — نظام Light/Dark Mode:
+     أعدنا تعريف white/purple-200/purple-300 هنا حتى تصير كل استخدامات
+     text-white و text-purple-200/300 و border-white/xx و border-purple-200/300/xx
+     بكل الموقع (مئات الأماكن) تتبدّل تلقائياً بين الوضعين بدون لمس أي ملف
+     مكوّن — لأنها بس تُترجم لمتغيرات CSS (--rt-*) المعرّفة تحت :root و.light.
+     باقي درجات البنفسجي (400-950) ما تغيرت — نفس قيم Tailwind الافتراضية —
+     لأنها تُستخدم غالباً كخلفيات أزرار/تمييز يفضل يضل موحّد بكلا الوضعين. */
+  --color-white: var(--rt-white);
+  --color-purple-200: var(--rt-purple-200);
+  --color-purple-300: var(--rt-purple-300);
+
   /* هذولا لازم يشيرون لمتغيرات next/font (--font-readex / --font-plex-mono)
      المولّدة بملف layout.tsx، مو اسم الخط كنص حرفي — لأنه "Readex Pro"
      كنص مو مثبّت كخط بالنظام، ونيكست يحمّله بنفسه باسم مستعار مختلف.
@@ -25,13 +36,94 @@
   --font-mono: var(--font-plex-mono), monospace;
 }
 
+/* ═══════════════════════════════════════════════════════════
+   نظام الوضعين (Dark/Light) — :root هو الوضع الداكن الافتراضي
+   (نفس تصميم الموقع الحالي بالضبط، ما تغير شي فيه)، و.light يُضاف
+   على <html> (عبر ThemeProvider) لتفعيل الوضع الفاتح. كل قيمة إضافية
+   بالأسفل (خلفيات الأقسام، الزجاج، التدرجات...) تسحب من هذي المتغيرات.
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  /* الوضع الداكن — القيم الأصلية بالضبط */
+  --rt-white: #ffffff;
+  --rt-purple-200: #e9d5ff;
+  --rt-purple-300: #d8b4fe;
+
+  --bg-page: #120621;
+  --bg-page-alt: #0a0414;
+
+  --glass-bg: rgba(255, 255, 255, 0.045);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-card-bg-1: rgba(255, 255, 255, 0.09);
+  --glass-card-bg-2: rgba(124, 71, 224, 0.07);
+  --glass-card-border: rgba(196, 165, 255, 0.25);
+  --glass-card-shadow: rgba(9, 3, 20, 0.4);
+  --glass-card-highlight: rgba(255, 255, 255, 0.2);
+  --glass-card-shine: rgba(255, 255, 255, 0.045);
+  --glass-strong-bg: rgba(18, 6, 33, 0.58);
+  --glass-strong-border: rgba(196, 165, 255, 0.24);
+  --glass-strong-shadow: rgba(4, 1, 10, 0.5);
+  --glass-pill-bg: rgba(255, 255, 255, 0.06);
+  --glass-pill-border: rgba(255, 255, 255, 0.14);
+
+  --brand-gradient-1: var(--color-brand-950);
+  --brand-gradient-2: var(--color-brand-800);
+  --brand-gradient-3: var(--color-brand-700);
+  --hero-gradient-glow: rgba(124, 71, 224, 0.4);
+  --hero-gradient-1: #120621;
+  --hero-gradient-2: #260b42;
+  --hero-gradient-3: #3a1260;
+
+  --seam-glow-line: rgba(196, 165, 255, 0.75);
+  --seam-glow-core: #f5f0ff;
+  --glass-blob-1: rgba(124, 71, 224, 0.5);
+  --glass-blob-2: rgba(196, 100, 236, 0.38);
+}
+
+.light {
+  /* الوضع الفاتح — نفس الهوية البنفسجية بس بخلفية فاتحة ونصوص داكنة */
+  --rt-white: #1a0b33;
+  --rt-purple-200: #4c1d80;
+  --rt-purple-300: #6827c4;
+
+  --bg-page: #f6f3ff;
+  --bg-page-alt: #ece3ff;
+
+  --glass-bg: rgba(76, 29, 128, 0.045);
+  --glass-border: rgba(76, 29, 128, 0.14);
+  --glass-card-bg-1: rgba(255, 255, 255, 0.65);
+  --glass-card-bg-2: rgba(124, 71, 224, 0.08);
+  --glass-card-border: rgba(124, 71, 224, 0.22);
+  --glass-card-shadow: rgba(76, 29, 128, 0.14);
+  --glass-card-highlight: rgba(255, 255, 255, 0.6);
+  --glass-card-shine: rgba(255, 255, 255, 0.35);
+  --glass-strong-bg: rgba(255, 255, 255, 0.78);
+  --glass-strong-border: rgba(124, 71, 224, 0.22);
+  --glass-strong-shadow: rgba(76, 29, 128, 0.18);
+  --glass-pill-bg: rgba(76, 29, 128, 0.06);
+  --glass-pill-border: rgba(76, 29, 128, 0.14);
+
+  --brand-gradient-1: var(--color-brand-50);
+  --brand-gradient-2: var(--color-brand-200);
+  --brand-gradient-3: var(--color-brand-300);
+  --hero-gradient-glow: rgba(124, 71, 224, 0.18);
+  --hero-gradient-1: #f5f2ff;
+  --hero-gradient-2: #ede7fe;
+  --hero-gradient-3: #d8ceff;
+
+  --seam-glow-line: rgba(124, 71, 224, 0.55);
+  --seam-glow-core: #4c1d80;
+  --glass-blob-1: rgba(124, 71, 224, 0.22);
+  --glass-blob-2: rgba(196, 100, 236, 0.16);
+}
+
 /* ═══ قاعدة ═══ */
 html {
   font-family: var(--font-sans);
-  background: #120621;
-  color: #ffffff;
+  background: var(--bg-page);
+  color: var(--rt-white);
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 /* النسخة الإنجليزية تستخدم Space Grotesk بدل Readex Pro (العربي يبقى Readex Pro) */
 html:lang(en) {
@@ -41,16 +133,16 @@ html:lang(en) {
 .bg-brand-gradient {
   background: linear-gradient(
     135deg,
-    var(--color-brand-950) 0%,
-    var(--color-brand-800) 50%,
-    var(--color-brand-700) 100%
+    var(--brand-gradient-1) 0%,
+    var(--brand-gradient-2) 50%,
+    var(--brand-gradient-3) 100%
   );
 }
 
 .hero-gradient {
   background:
-    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(124,71,224,0.4) 0%, transparent 60%),
-    linear-gradient(135deg, #120621 0%, #260b42 45%, #3a1260 100%);
+    radial-gradient(ellipse 80% 60% at 60% 40%, var(--hero-gradient-glow) 0%, transparent 60%),
+    linear-gradient(135deg, var(--hero-gradient-1) 0%, var(--hero-gradient-2) 45%, var(--hero-gradient-3) 100%);
 }
 
 /* ═══ Leader line (كتالوغ) ═══ */
@@ -80,25 +172,25 @@ html:lang(en) {
    خفيفة (glass) للشرائح والأزرار، وقوية (glass-strong) للمودالات
    ═══════════════════════════════════════════════════════════ */
 .glass {
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--glass-bg);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--glass-border);
 }
 
 .glass-card {
   position: relative;
   background: linear-gradient(
     160deg,
-    rgba(255, 255, 255, 0.09) 0%,
-    rgba(124, 71, 224, 0.07) 100%
+    var(--glass-card-bg-1) 0%,
+    var(--glass-card-bg-2) 100%
   );
   backdrop-filter: blur(26px) saturate(190%);
   -webkit-backdrop-filter: blur(26px) saturate(190%);
-  border: 1px solid rgba(196, 165, 255, 0.25);
+  border: 1px solid var(--glass-card-border);
   box-shadow:
-    0 8px 32px rgba(9, 3, 20, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 8px 32px var(--glass-card-shadow),
+    inset 0 1px 0 var(--glass-card-highlight);
   overflow: hidden;
 }
 
@@ -111,8 +203,8 @@ html:lang(en) {
   background: linear-gradient(
     115deg,
     transparent 35%,
-    rgba(255, 255, 255, 0.045) 48%,
-    rgba(255, 255, 255, 0.045) 52%,
+    var(--glass-card-shine) 48%,
+    var(--glass-card-shine) 52%,
     transparent 65%
   );
   background-size: 250% 250%;
@@ -212,14 +304,14 @@ html:lang(en) {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(196, 165, 255, 0.75) 12%,
-    #f5f0ff 50%,
-    rgba(196, 165, 255, 0.75) 88%,
+    var(--seam-glow-line) 12%,
+    var(--seam-glow-core) 50%,
+    var(--seam-glow-line) 88%,
     transparent
   );
   box-shadow:
-    0 0 14px 2px rgba(196, 165, 255, 0.5),
-    0 0 5px 1px rgba(245, 240, 255, 0.65);
+    0 0 14px 2px var(--seam-glow-line),
+    0 0 5px 1px var(--seam-glow-line);
   animation: seam-glow-breathe 3.6s ease-in-out infinite;
 }
 @keyframes seam-glow-breathe {
@@ -278,37 +370,37 @@ html:lang(en) {
   height: 460px;
   top: -120px;
   left: 8%;
-  background: rgba(124, 71, 224, 0.5);
+  background: var(--glass-blob-1);
 }
 .glass-backdrop::after {
   width: 400px;
   height: 400px;
   bottom: -100px;
   right: 6%;
-  background: rgba(196, 100, 236, 0.38);
+  background: var(--glass-blob-2);
 }
 
 .glass-strong {
-  background: rgba(18, 6, 33, 0.58);
+  background: var(--glass-strong-bg);
   backdrop-filter: blur(34px) saturate(180%);
   -webkit-backdrop-filter: blur(34px) saturate(180%);
-  border: 1px solid rgba(196, 165, 255, 0.24);
-  box-shadow: 0 20px 60px rgba(4, 1, 10, 0.5);
+  border: 1px solid var(--glass-strong-border);
+  box-shadow: 0 20px 60px var(--glass-strong-shadow);
 }
 
 .glass-pill {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--glass-pill-bg);
   backdrop-filter: blur(18px) saturate(170%);
   -webkit-backdrop-filter: blur(18px) saturate(170%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--glass-pill-border);
 }
 
 /* ═══ خلفية موحّدة بنفسجية بالكامل — بديل أي bg-black ═══ */
 .section-dark {
-  background: var(--color-brand-950);
+  background: var(--bg-page);
 }
 .section-darker {
-  background: #0a0414;
+  background: var(--bg-page-alt);
 }
 
 /* ═══ شبكة الأفق المتحركة (PerspectiveGrid) ═══ */

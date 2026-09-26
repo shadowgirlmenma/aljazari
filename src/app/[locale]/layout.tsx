@@ -7,10 +7,11 @@ import { Readex_Pro, IBM_Plex_Mono, Space_Grotesk } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Toaster } from 'sonner';
 import ConditionalChrome from '@/components/ConditionalChrome';
 import CursorGlow from '@/components/reactbits/CursorGlow';
 import OrganizationJsonLd from '@/components/OrganizationJsonLd';
+import { ThemeProvider, THEME_INIT_SCRIPT } from '@/components/ThemeProvider';
+import ThemedToaster from '@/components/ThemedToaster';
 import '../globals.css';
 const readex = Readex_Pro({
   subsets: ['arabic', 'latin'],
@@ -96,23 +97,17 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} className={`${readex.variable} ${plexMono.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased">
+        {/* سكربت صغير يطبّق الوضع الفاتح (لو محفوظ) قبل أول رسم للصفحة —
+            حتى ما تصير "ومضة" لون داكن غلط لجزء من الثانية لحظة التحميل */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <OrganizationJsonLd locale={locale as 'ar' | 'en'} />
-        <NextIntlClientProvider>
-          <CursorGlow />
-          <Toaster
-            position="top-center"
-            richColors
-            theme="dark"
-            toastOptions={{
-              style: {
-                background: '#1a0a2e',
-                border: '1px solid rgba(168,139,250,0.3)',
-                color: '#fff',
-              },
-            }}
-          />
-          <ConditionalChrome>{children}</ConditionalChrome>
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider>
+            <CursorGlow />
+            <ThemedToaster />
+            <ConditionalChrome>{children}</ConditionalChrome>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

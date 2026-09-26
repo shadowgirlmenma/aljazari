@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import BrandLockup from '@/components/BrandLockup';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const NAV = [
   { href: '/robots',          key: 'robots' },
@@ -80,6 +81,8 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <ThemeToggle />
+
             <LocaleSwitcher className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-sm text-purple-200 backdrop-blur-xl transition hover:border-purple-300 hover:text-white" />
 
             <Link
@@ -125,14 +128,17 @@ export default function Header() {
                 <div className="text-white">
                   <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  aria-label="إغلاق"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-purple-200 transition hover:border-purple-300 hover:text-white"
-                >
-                  <X size={16} />
-                </button>
+                <div className="flex items-center gap-2">
+                  <ThemeToggle />
+                  <button
+                    type="button"
+                    onClick={() => setOpen(false)}
+                    aria-label="إغلاق"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-purple-200 transition hover:border-purple-300 hover:text-white"
+                  >
+                    <X size={16} />
+                  </button>
+                </div>
               </div>
 
               <nav className="relative z-10 flex-1 overflow-y-auto px-6 py-8">
