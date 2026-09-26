@@ -101,11 +101,12 @@ export default function NewsClient({
           }}
         />
 
+        {/* ملاحظة مراجعة 26/09/2026 (جولة ثانية): نص ثابت فوق تعتيم داكن ثابت. */}
         <div className="relative z-10 flex h-full w-full flex-col justify-end px-5 pb-14 pt-20 sm:px-8 lg:px-10">
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-2xl text-3xl font-semibold text-white sm:text-5xl"
+            className="max-w-2xl text-3xl font-semibold text-[#ffffff] sm:text-5xl"
           >
             {title}
           </motion.h1>
@@ -113,7 +114,7 @@ export default function NewsClient({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12 }}
-            className="mt-3 max-w-xl text-sm text-purple-200/80 sm:text-base"
+            className="mt-3 max-w-xl text-sm text-[#e9d5ff]/80 sm:text-base"
           >
             {subtitle}
           </motion.p>

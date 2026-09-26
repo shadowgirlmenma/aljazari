@@ -68,12 +68,16 @@ export default function AboutClient({
           }}
         />
         <div className="relative flex h-full w-full flex-col justify-end px-6 pb-16 pt-20 sm:px-10 lg:px-16">
-          {/* h1 حقيقي حتى يفهم كوكل ان هذي صفحة "من نحن" — كان النص يترندر SVG بس بدون وسم عنونة */}
+          {/* h1 حقيقي حتى يفهم كوكل ان هذي صفحة "من نحن" — كان النص يترندر SVG بس بدون وسم عنونة.
+              ملاحظة مراجعة 26/09/2026 (جولة ثانية): هذا العنوان فوق فيديو + تعتيم داكن ثابت
+              (مو خلفية الثيم) — خليناه fillColor أبيض ثابت (#ffffff) بدل var(--rt-white)
+              اللي ينقلب بنفسجي غامق بالوضع الفاتح ويصير غير مقروء فوق التعتيم الداكن.
+              باقي استخدامات StrokeText بالصفحة صحيحة زي ما هي لأنها فوق خلفيات الثيم العادية. */}
           <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} style={{ width: 'fit-content' }}>
             <StrokeText
               text={title}
               strokeColor="#a78bfa"
-              fillColor="var(--rt-white)"
+              fillColor="#ffffff"
               strokeWidth={1.6}
               drawDuration={1.6}
               fillDelay={0.15}

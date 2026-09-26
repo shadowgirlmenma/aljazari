@@ -55,15 +55,17 @@ export default function RobotSolutionsClient({
               'linear-gradient(to bottom, rgba(18,6,33,0.25) 0%, rgba(18,6,33,0.55) 65%, rgba(10,4,20,0.9) 100%)',
           }}
         />
+        {/* ملاحظة مراجعة 26/09/2026 (جولة ثانية): نص ثابت فوق تعتيم داكن ثابت — بدون
+            انقلاب لون بالوضع الفاتح، نفس سبب بانرات الفيديو/الصور الثانية بالموقع. */}
         <div className="relative z-10 flex h-full flex-col items-center justify-end px-5 pb-24 text-center sm:pb-28">
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mx-auto max-w-3xl text-4xl font-semibold text-white sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-semibold text-[#ffffff] sm:text-5xl"
           >
             {title}
           </motion.h1>
-          <p className="mt-4 max-w-2xl text-purple-200/80 sm:text-lg">{subtitle}</p>
+          <p className="mt-4 max-w-2xl text-[#e9d5ff]/80 sm:text-lg">{subtitle}</p>
         </div>
       </div>
 
@@ -135,7 +137,7 @@ export default function RobotSolutionsClient({
                       <span className="glass flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-purple-200 sm:h-12 sm:w-12">
                         <Icon size={20} strokeWidth={1.5} />
                       </span>
-                      <p className="text-sm font-semibold text-white sm:text-lg">
+                      <p className="text-sm font-semibold text-[#ffffff] sm:text-lg">
                         {shortTitle[locale]}
                       </p>
                     </div>

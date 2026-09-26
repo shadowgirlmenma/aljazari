@@ -71,10 +71,15 @@ export default function RobotSolutionCategoryClient({
                 'linear-gradient(to bottom, rgba(18,6,33,0.25) 0%, rgba(18,6,33,0.55) 65%, rgba(10,4,20,0.9) 100%)',
             }}
           />
+          {/* ملاحظة مراجعة 26/09/2026 (جولة ثانية): النص هنا فوق تعتيم ثابت داكن
+              (rgba) فوق صورة — نخليه أبيض/بنفسجي فاتح ثابت بكل الأوضاع (مو
+              text-white/text-purple-* اللي ينقلب غامق بالوضع الفاتح ويصير غير
+              مقروء فوق هذا التعتيم). أيقونة الـ .glass ما تحتاج تعديل لأن خلفيتها
+              زجاجية متكيفة مع الثيم أصلاً. */}
           <div className="relative z-10 flex h-full flex-col items-center justify-end px-5 pb-24 text-center sm:pb-28">
             <Link
               href="/robot-solutions"
-              className="font-mono text-xs uppercase tracking-widest text-purple-300 transition hover:text-white"
+              className="font-mono text-xs uppercase tracking-widest text-[#d8b4fe] transition hover:text-[#ffffff]"
             >
               ← {t.backToSolutions}
             </Link>
@@ -84,11 +89,11 @@ export default function RobotSolutionCategoryClient({
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mx-auto mt-6 max-w-3xl text-3xl font-semibold text-white sm:text-5xl"
+              className="mx-auto mt-6 max-w-3xl text-3xl font-semibold text-[#ffffff] sm:text-5xl"
             >
               {category.title[locale]}
             </motion.h1>
-            <p className="mt-3 max-w-2xl text-lg text-purple-200/85">{category.hook[locale]}</p>
+            <p className="mt-3 max-w-2xl text-lg text-[#e9d5ff]/85">{category.hook[locale]}</p>
           </div>
         </div>
       ) : (
@@ -106,7 +111,7 @@ export default function RobotSolutionCategoryClient({
           <div className="relative z-10 mx-auto max-w-4xl px-5 sm:px-8 lg:px-10">
             <Link
               href="/robot-solutions"
-              className="font-mono text-xs uppercase tracking-widest text-purple-300 transition hover:text-white"
+              className="font-mono text-xs uppercase tracking-widest text-[#d8b4fe] transition hover:text-[#ffffff]"
             >
               ← {t.backToSolutions}
             </Link>
@@ -116,11 +121,11 @@ export default function RobotSolutionCategoryClient({
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-6 text-3xl font-semibold text-white sm:text-5xl"
+              className="mt-6 text-3xl font-semibold text-[#ffffff] sm:text-5xl"
             >
               {category.title[locale]}
             </motion.h1>
-            <p className="mt-3 text-lg text-purple-200/85">{category.hook[locale]}</p>
+            <p className="mt-3 text-lg text-[#e9d5ff]/85">{category.hook[locale]}</p>
           </div>
         </div>
       )}

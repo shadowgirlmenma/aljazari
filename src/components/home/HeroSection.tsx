@@ -85,7 +85,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
                 delay={80}
                 animateBy="words"
                 direction="top"
-                className="text-xl font-medium uppercase leading-[1.15] text-white sm:text-2xl lg:text-3xl"
+                className="text-xl font-medium uppercase leading-[1.15] text-[#ffffff] sm:text-2xl lg:text-3xl"
               />
               <BlurText
                 as="span"
@@ -93,7 +93,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
                 delay={80}
                 animateBy="words"
                 direction="top"
-                className="text-xl font-medium uppercase leading-[1.15] text-purple-300 sm:text-2xl lg:text-3xl"
+                className="text-xl font-medium uppercase leading-[1.15] text-[#d8b4fe] sm:text-2xl lg:text-3xl"
               />
             </h1>
           </div>

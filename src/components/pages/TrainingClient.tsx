@@ -42,12 +42,13 @@ export default function TrainingClient({
           }}
         />
 
+        {/* ملاحظة مراجعة 26/09/2026 (جولة ثانية): نص ثابت فوق تعتيم داكن ثابت. */}
         <div className="relative z-10 flex h-full w-full flex-col justify-end px-5 pb-12 pt-20 sm:px-8 lg:px-10">
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.08 }}
-            className="max-w-xl text-xl font-semibold text-white sm:text-2xl"
+            className="max-w-xl text-xl font-semibold text-[#ffffff] sm:text-2xl"
           >
             {title}
           </motion.h1>
@@ -55,7 +56,7 @@ export default function TrainingClient({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.14 }}
-            className="mt-2 max-w-md text-xs text-purple-200/75 sm:text-sm"
+            className="mt-2 max-w-md text-xs text-[#e9d5ff]/75 sm:text-sm"
           >
             {subtitle}
           </motion.p>

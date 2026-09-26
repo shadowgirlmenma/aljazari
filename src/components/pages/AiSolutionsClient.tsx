@@ -80,11 +80,12 @@ export default function AiSolutionsClient({
               'linear-gradient(to bottom, rgba(18,6,33,0.25) 0%, rgba(18,6,33,0.55) 65%, rgba(10,4,20,0.9) 100%)',
           }}
         />
+        {/* ملاحظة مراجعة 26/09/2026 (جولة ثانية): نص ثابت فوق تعتيم داكن ثابت. */}
         <div className="relative z-10 flex h-full flex-col items-center justify-end px-5 pb-24 text-center sm:pb-28">
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mx-auto max-w-3xl text-3xl font-semibold text-white sm:text-5xl"
+            className="mx-auto max-w-3xl text-3xl font-semibold text-[#ffffff] sm:text-5xl"
           >
             {title}
           </motion.h1>
