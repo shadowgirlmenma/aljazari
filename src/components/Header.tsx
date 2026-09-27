@@ -25,9 +25,16 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   /* ملاحظة المراجعة (10/09/2026): «the titles ribbon needs a background in order to keep it
-     visible even when we scroll down» — الهيدر هسة ثابت دايماً (ما يختفي بالسكرول)،
-     شفاف بأعلى الصفحة فوق الهيرو، وبمجرد ما تنزلين شوي يتحول لشريط زجاجي بنفسجي
-     (blur + خلفية داكنة شبه معتمة) حتى تبقى عناوين القائمة مقروءة فوق أي محتوى. */
+     visible even when we scroll down» — الهيدر هسة ثابت دايماً (ما يختفي بالسكرول).
+     ملاحظة مراجعة 27/09/2026 (جولة خامسة): قبل هذي الجولة كان الهيدر شفاف
+     بالكامل بأعلى الصفحة (قبل السكرول) ويعتمد بالكامل على لون خلفية القسم
+     الي وراه — هذا صحيح لصفحات فيها بانر صورة/فيديو غامق دايماً (الرئيسية،
+     Our Robots، حلول الروبوتات...)، بس غلط لصفحات هيرو بسيط بلون الثيم
+     العادي (تواصل معنا، الشروط، تسجيل الدخول) اللي تصير فاتحة بالوضع
+     الفاتح — نص الهيدر الفاتح الثابت يختفي فوقها. الحل: خلفية الهيدر هسة
+     تينت غامق ثابت (خفيف بأعلى الصفحة، أقوى بعد السكرول) بكل الحالات — يعطي
+     تباين مضمون للنص بكل صفحة ووضع، وبنفس الوقت يحقق طلب المستخدمة "الهيدر
+     يضل نفس اللون البنفسجي الغامق دايماً" بالضبط. */
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => setOpen(false), [pathname]);
@@ -46,24 +53,31 @@ export default function Header() {
 
   return (
     <>
-      {/* هيدر ثابت (fixed) فوق محتوى الصفحة — دايماً ظاهر. شفاف بأعلى الصفحة، وزجاجي
-          بنفسجي (backdrop-blur) بعد السكرول حتى يبقى النص واضح.
-          ملاحظة مراجعة 27/09/2026 (جولة رابعة، بناءً على طلب المستخدمة): الهيدر
-          يرجع بلون بنفسجي غامق ثابت بكل الأوضاع (--bg-chrome-header ما إلها
-          نسخة .light — تضل نفس القيمة الأصلية بكل الأوضاع، شوفي globals.css)،
-          مو الدرجة الفاتحة المؤقتة اللي جربناها بالجولة الثالثة. صنف brand-chrome
-          يثبّت ألوان النص فاتحة بكل الأوضاع (شعار "ALJAZARI" صورة PNG بيضاء
-          ثابتة اللون، ما تتبدل مع الثيم). */}
+      {/* هيدر ثابت (fixed) فوق محتوى الصفحة — دايماً ظاهر، بتينت بنفسجي غامق دايماً
+          (أخف بأعلى الصفحة، أقوى بعد السكرول) حتى يبقى النص واضح بكل الحالات.
+          ملاحظة مراجعة 27/09/2026 (جولة خامسة): لقينا سبب حقيقي وراء مشكلة
+          "نص الهيدر غير واضح بالوضع الفاتح" اللي أبلغت عنها المستخدمة: صنف
+          .brand-chrome (جولة رابعة) كان يحاول يعيد تثبيت متغيرات --rt-white/
+          purple-xxx على مستوى الهيدر نفسه، بس اكتشفنا (بفحص القيم الفعلية
+          بالمتصفح) إن Tailwind يحسب --color-white/--color-purple-xxx مرّة
+          وحدة بمستوى الصفحة كلها (:root) ويورّثها كقيمة جاهزة — إعادة تعريف
+          --rt-* بمستوى أعمق (الهيدر) ما يوصل للكلاسات الجاهزة متل text-white
+          أو text-purple-200/70 إطلاقاً، فيضل النص يتبع الوضع العادي (غامق
+          بالوضع الفاتح) فوق خلفية الهيدر الغامقة الثابتة = تباين ضعيف/غير
+          مقروء. الحل الصحيح هسة: كل نصوص/حدود الهيدر تستخدم قيم HEX ثابتة
+          (Tailwind arbitrary value) بدل الأصناف المتبدلة مع الثيم — تتجاوز
+          هذا التعقيد بالكامل وتضمن نص فاتح واضح بكل الأوضاع دايماً، بنفس
+          النمط المستخدم أصلاً ببانرات الهيرو فوق الصور. */}
       <header
-        className={`brand-chrome fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+        className={`fixed inset-x-0 top-0 z-50 border-b border-[#ffffff]/10 backdrop-blur-2xl backdrop-saturate-150 transition-all duration-300 ${
           scrolled
-            ? 'border-white/10 bg-[var(--bg-chrome-header)]/75 shadow-[0_8px_30px_rgba(9,3,20,0.45)] backdrop-blur-2xl backdrop-saturate-150'
-            : 'border-transparent bg-transparent'
+            ? 'bg-[var(--bg-chrome-header)]/85 shadow-[0_8px_30px_rgba(9,3,20,0.45)]'
+            : 'bg-[var(--bg-chrome-header)]/55'
         }`}
       >
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
 
-          <Link href="/" className="flex shrink-0 items-center gap-2.5 text-white">
+          <Link href="/" className="flex shrink-0 items-center gap-2.5 text-[#ffffff]">
             <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
           </Link>
 
@@ -76,8 +90,8 @@ export default function Header() {
                   href={item.href}
                   className={`relative text-sm transition-colors ${
                     active
-                      ? 'text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-purple-400'
-                      : 'text-purple-200/70 hover:text-white'
+                      ? 'text-[#ffffff] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-purple-400'
+                      : 'text-[#e9d5ff]/70 hover:text-[#ffffff]'
                   }`}
                 >
                   {t(item.key)}
@@ -93,11 +107,11 @@ export default function Header() {
                 ومزدحم حسب ملاحظة المستخدمة. */}
             <ThemeToggle className="ms-1" />
 
-            <LocaleSwitcher className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-sm text-purple-200 backdrop-blur-xl transition hover:border-purple-300 hover:text-white" />
+            <LocaleSwitcher className="rounded-full border border-[#ffffff]/15 bg-[#ffffff]/5 px-3 py-1.5 text-sm text-[#e9d5ff] backdrop-blur-xl transition hover:border-[#d8b4fe] hover:text-[#ffffff]" />
 
             <Link
               href="/contact"
-              className="hidden rounded-full bg-purple-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-purple-500 sm:inline-flex"
+              className="hidden rounded-full bg-purple-600 px-5 py-2 text-sm font-medium text-[#ffffff] transition hover:bg-purple-500 sm:inline-flex"
             >
               {tc('bookRobot')}
             </Link>
@@ -106,7 +120,7 @@ export default function Header() {
               type="button"
               onClick={() => setOpen(true)}
               aria-label="فتح القائمة"
-              className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/5 text-purple-200 backdrop-blur-xl transition hover:border-purple-300 hover:text-white lg:hidden"
+              className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-[#ffffff]/15 bg-[#ffffff]/5 text-[#e9d5ff] backdrop-blur-xl transition hover:border-[#d8b4fe] hover:text-[#ffffff] lg:hidden"
             >
               <span className="h-px w-4 bg-current" />
               <span className="h-px w-4 bg-current" />
@@ -132,10 +146,10 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 260 }}
-              className="brand-chrome fixed inset-y-0 end-0 z-[70] flex w-[85%] max-w-sm flex-col overflow-hidden border-s border-white/15 bg-[var(--bg-chrome-header)]/70 shadow-2xl backdrop-blur-2xl lg:hidden"
+              className="fixed inset-y-0 end-0 z-[70] flex w-[85%] max-w-sm flex-col overflow-hidden border-s border-[#ffffff]/15 bg-[var(--bg-chrome-header)]/70 shadow-2xl backdrop-blur-2xl lg:hidden"
             >
-              <div className="relative z-10 flex items-center justify-between border-b border-white/10 px-6 py-5">
-                <div className="text-white">
+              <div className="relative z-10 flex items-center justify-between border-b border-[#ffffff]/10 px-6 py-5">
+                <div className="text-[#ffffff]">
                   <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
                 </div>
                 <div className="flex items-center gap-3">
@@ -144,7 +158,7 @@ export default function Header() {
                     type="button"
                     onClick={() => setOpen(false)}
                     aria-label="إغلاق"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-purple-200 transition hover:border-purple-300 hover:text-white"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ffffff]/15 bg-[#ffffff]/5 text-[#e9d5ff] transition hover:border-[#d8b4fe] hover:text-[#ffffff]"
                   >
                     <X size={16} />
                   </button>
@@ -164,8 +178,8 @@ export default function Header() {
                       >
                         <Link
                           href={item.href}
-                          className={`block border-b border-white/10 py-4 text-lg transition ${
-                            active ? 'font-medium text-white' : 'text-purple-200/70 hover:text-white'
+                          className={`block border-b border-[#ffffff]/10 py-4 text-lg transition ${
+                            active ? 'font-medium text-[#ffffff]' : 'text-[#e9d5ff]/70 hover:text-[#ffffff]'
                           }`}
                         >
                           {t(item.key)}
@@ -180,11 +194,11 @@ export default function Header() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.35 }}
-                className="relative z-10 border-t border-white/10 p-6"
+                className="relative z-10 border-t border-[#ffffff]/10 p-6"
               >
                 <Link
                   href="/contact"
-                  className="block rounded-full bg-purple-600 py-3.5 text-center text-sm font-medium text-white transition hover:bg-purple-500"
+                  className="block rounded-full bg-purple-600 py-3.5 text-center text-sm font-medium text-[#ffffff] transition hover:bg-purple-500"
                 >
                   {tc('bookRobot')}
                 </Link>

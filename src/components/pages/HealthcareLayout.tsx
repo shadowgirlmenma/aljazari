@@ -137,7 +137,7 @@ export default function HealthcareLayout({
                 >
                   <span
                     className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[10px] font-bold ${
-                      isActive ? 'bg-purple-500 text-white' : 'bg-purple-900/60 text-purple-200'
+                      isActive ? 'bg-purple-500 text-[#ffffff]' : 'bg-purple-900/60 text-[#e9d5ff]'
                     }`}
                   >
                     {i === 0 ? 'OS' : i}

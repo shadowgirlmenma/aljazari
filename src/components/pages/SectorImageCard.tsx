@@ -79,10 +79,10 @@ export default function SectorImageCard({
         <motion.div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: glow }} />
         <div className="absolute inset-x-4 bottom-4 flex" style={{ transform: 'translateZ(40px)' }}>
           <div className="glass flex items-center gap-3 rounded-2xl px-4 py-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-600/70 text-white">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-600/70 text-[#ffffff]">
               <Icon size={18} strokeWidth={1.6} />
             </span>
-            <span className="text-sm font-semibold text-white sm:text-base">{title}</span>
+            <span className="text-sm font-semibold text-[#ffffff] sm:text-base">{title}</span>
           </div>
         </div>
       </motion.div>

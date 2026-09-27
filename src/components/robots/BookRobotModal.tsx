@@ -117,7 +117,7 @@ export default function BookRobotModal({
                 <button
                   type="button"
                   onClick={handleClose}
-                  className="mt-6 rounded-full bg-purple-600 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-purple-500"
+                  className="mt-6 rounded-full bg-purple-600 px-6 py-2.5 text-sm font-medium text-[#ffffff] transition hover:bg-purple-500"
                 >
                   {t('close')}
                 </button>
@@ -139,7 +139,7 @@ export default function BookRobotModal({
                         onClick={() => setForm((f) => ({ ...f, type }))}
                         className={`flex-1 rounded-xl border py-3.5 text-base font-semibold transition ${
                           form.type === type
-                            ? 'border-purple-500 bg-purple-600 text-white'
+                            ? 'border-purple-500 bg-purple-600 text-[#ffffff]'
                             : 'glass border-purple-500/30 text-purple-200/60 hover:border-purple-400'
                         }`}
                       >
@@ -193,7 +193,7 @@ export default function BookRobotModal({
 
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-purple-600 py-3.5 text-sm font-semibold text-white transition hover:bg-purple-500 disabled:opacity-60"
+                    className="w-full rounded-xl bg-purple-600 py-3.5 text-sm font-semibold text-[#ffffff] transition hover:bg-purple-500 disabled:opacity-60"
                   >
                     {t('submit')}
                   </button>

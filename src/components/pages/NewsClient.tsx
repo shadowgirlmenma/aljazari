@@ -134,7 +134,7 @@ export default function NewsClient({
                 onClick={() => setActiveCategory(cat)}
                 className={`rounded-full px-4 py-2 text-sm transition-all ${
                   activeCategory === cat
-                    ? 'bg-purple-600 text-white'
+                    ? 'bg-purple-600 text-[#ffffff]'
                     : 'border border-purple-500/30 text-purple-200/60 hover:border-purple-400 hover:text-white'
                 }`}
               >
@@ -176,7 +176,7 @@ export default function NewsClient({
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--bg-page)]/85 to-transparent" />
 
                     {/* تصنيف */}
-                    <span className="absolute end-3 top-3 rounded-full bg-purple-600/80 px-3 py-1 font-mono text-[10px] text-white backdrop-blur-sm">
+                    <span className="absolute end-3 top-3 rounded-full bg-purple-600/80 px-3 py-1 font-mono text-[10px] text-[#ffffff] backdrop-blur-sm">
                       {article.category}
                     </span>
                   </div>
@@ -234,7 +234,7 @@ export default function NewsClient({
                   aria-current={page === num ? 'page' : undefined}
                   className={`flex h-9 w-9 items-center justify-center rounded-full font-mono text-sm transition ${
                     page === num
-                      ? 'bg-purple-600 text-white'
+                      ? 'bg-purple-600 text-[#ffffff]'
                       : 'text-purple-200/60 hover:text-white'
                   }`}
                 >

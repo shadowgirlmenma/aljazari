@@ -242,7 +242,7 @@ export default function ContactClient({
 
                     <button
                       type="submit"
-                      className="w-full rounded-xl bg-purple-600 py-4 text-sm font-semibold text-white transition hover:bg-purple-500 disabled:opacity-60"
+                      className="w-full rounded-xl bg-purple-600 py-4 text-sm font-semibold text-[#ffffff] transition hover:bg-purple-500 disabled:opacity-60"
                     >
                       {submitLabel}
                     </button>

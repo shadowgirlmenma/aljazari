@@ -108,7 +108,7 @@ export default function TrainerApplicationModal({
                 <button
                   type="button"
                   onClick={handleClose}
-                  className="mt-6 rounded-full bg-purple-600 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-purple-500"
+                  className="mt-6 rounded-full bg-purple-600 px-6 py-2.5 text-sm font-medium text-[#ffffff] transition hover:bg-purple-500"
                 >
                   إغلاق
                 </button>
@@ -176,7 +176,7 @@ export default function TrainerApplicationModal({
 
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-purple-600 py-3.5 text-sm font-semibold text-white transition hover:bg-purple-500 disabled:opacity-60"
+                    className="w-full rounded-xl bg-purple-600 py-3.5 text-sm font-semibold text-[#ffffff] transition hover:bg-purple-500 disabled:opacity-60"
                   >
                     إرسال الطلب
                   </button>

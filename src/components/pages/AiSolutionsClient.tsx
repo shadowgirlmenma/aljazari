@@ -209,7 +209,7 @@ export default function AiSolutionsClient({
                 >
                   <div className="relative flex h-16 w-16 items-center justify-center rounded-full border border-purple-400/30 bg-purple-900/30">
                     <Icon size={24} className="text-purple-300" />
-                    <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-purple-500 font-mono text-[11px] font-semibold text-white">
+                    <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-purple-500 font-mono text-[11px] font-semibold text-[#ffffff]">
                       {i + 1}
                     </span>
                   </div>

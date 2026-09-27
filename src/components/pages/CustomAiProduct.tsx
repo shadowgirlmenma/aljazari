@@ -141,7 +141,7 @@ export default function CustomAiProduct({ data }: { data: CustomAiProductData })
                     <span
                       className={`relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors ${
                         isActive
-                          ? 'border-purple-200 bg-purple-500 text-white'
+                          ? 'border-purple-200 bg-purple-500 text-[#ffffff]'
                           : 'border-purple-300/40 bg-[var(--surface-solid)] text-purple-200'
                       }`}
                     >

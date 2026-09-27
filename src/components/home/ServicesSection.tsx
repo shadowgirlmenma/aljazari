@@ -58,7 +58,7 @@ export default function ServicesSection({ locale: _locale }: { locale: Locale })
                     <span className="text-base font-semibold leading-tight text-white sm:text-lg">
                       {t(`services.${key}.title`)}
                     </span>
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-600/80 text-white transition group-hover:bg-purple-500 rtl:-scale-x-100">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-600/80 text-[#ffffff] transition group-hover:bg-purple-500 rtl:-scale-x-100">
                       <ArrowUpRight size={16} />
                     </span>
                   </div>

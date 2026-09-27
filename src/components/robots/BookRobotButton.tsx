@@ -35,7 +35,7 @@ export default function BookRobotButton({
           <button
             type="button"
             onClick={() => openWith('buy')}
-            className="flex items-center justify-center gap-2.5 rounded-xl bg-purple-600 px-10 py-5 text-lg font-bold text-white shadow-lg shadow-purple-900/40 transition hover:scale-[1.03] hover:bg-purple-500 sm:text-xl"
+            className="flex items-center justify-center gap-2.5 rounded-xl bg-purple-600 px-10 py-5 text-lg font-bold text-[#ffffff] shadow-lg shadow-purple-900/40 transition hover:scale-[1.03] hover:bg-purple-500 sm:text-xl"
           >
             <Clock size={22} />
             {t('preOrder')}
@@ -46,7 +46,7 @@ export default function BookRobotButton({
               <button
                 type="button"
                 onClick={() => openWith('buy')}
-                className="flex items-center justify-center gap-2.5 rounded-xl bg-purple-600 px-10 py-5 text-lg font-bold text-white shadow-lg shadow-purple-900/40 transition hover:scale-[1.03] hover:bg-purple-500 sm:text-xl"
+                className="flex items-center justify-center gap-2.5 rounded-xl bg-purple-600 px-10 py-5 text-lg font-bold text-[#ffffff] shadow-lg shadow-purple-900/40 transition hover:scale-[1.03] hover:bg-purple-500 sm:text-xl"
               >
                 <ShoppingBag size={22} />
                 {t('forSale')}

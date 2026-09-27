@@ -101,7 +101,7 @@ export default function EnrollModal({
                 <button
                   type="button"
                   onClick={handleClose}
-                  className="mt-6 rounded-full bg-purple-600 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-purple-500"
+                  className="mt-6 rounded-full bg-purple-600 px-6 py-2.5 text-sm font-medium text-[#ffffff] transition hover:bg-purple-500"
                 >
                   إغلاق
                 </button>
@@ -119,7 +119,7 @@ export default function EnrollModal({
                       onClick={() => setForm((f) => ({ ...f, delivery: d }))}
                       className={`flex-1 rounded-xl border py-2.5 text-sm font-medium transition ${
                         form.delivery === d
-                          ? 'border-purple-500 bg-purple-600 text-white'
+                          ? 'border-purple-500 bg-purple-600 text-[#ffffff]'
                           : 'border-purple-500/30 text-purple-200/60 hover:border-purple-400'
                       }`}
                     >
@@ -159,7 +159,7 @@ export default function EnrollModal({
 
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-purple-600 py-3.5 text-sm font-semibold text-white transition hover:bg-purple-500 disabled:opacity-60"
+                    className="w-full rounded-xl bg-purple-600 py-3.5 text-sm font-semibold text-[#ffffff] transition hover:bg-purple-500 disabled:opacity-60"
                   >
                     تأكيد التسجيل
                   </button>

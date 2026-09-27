@@ -50,7 +50,7 @@ export default function NewsArticleClient({
           animate={{ opacity: 1, y: 0 }}
           className="absolute bottom-8 start-6 end-6 sm:start-10"
         >
-          <span className="rounded-full bg-purple-600 px-3 py-1 font-mono text-[10px] text-white">
+          <span className="rounded-full bg-purple-600 px-3 py-1 font-mono text-[10px] text-[#ffffff]">
             {category}
           </span>
         </motion.div>

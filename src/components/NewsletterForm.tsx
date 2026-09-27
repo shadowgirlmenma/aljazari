@@ -37,7 +37,7 @@ export default function NewsletterForm() {
       />
       <button
         type="submit"
-        className="rounded-full bg-purple-600 px-7 py-3 text-sm font-medium text-white transition hover:bg-purple-500 disabled:opacity-60"
+        className="rounded-full bg-purple-600 px-7 py-3 text-sm font-medium text-[#ffffff] transition hover:bg-purple-500 disabled:opacity-60"
       >
         {sent
           ? locale === 'ar'
