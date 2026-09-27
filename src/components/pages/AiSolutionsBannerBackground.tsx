@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 import DecorBoundary from '@/components/DecorBoundary';
-import { useTheme } from '@/components/ThemeProvider';
 
 const WebThreads = dynamic(
   // مسار نسبي لتفادي مشاكل alias مع dynamic import
@@ -11,11 +10,11 @@ const WebThreads = dynamic(
 );
 
 /** خلفية بانر صفحة AI Solutions — خيوط متوهجة بنفسجية (WebThreads من React Bits).
- *  بالوضع الفاتح نطفيها بالكامل (نفس سبب LightfallBackground). */
+ *  ملاحظة مراجعة 27/09/2026 (جولة خامسة): كانت مطفية بالكامل بالوضع الفاتح، بس
+ *  رجّعناها بالطلب — هذا البانر أصلاً فوق تعتيم غامق ثابت ونص بلون ثابت (نفس
+ *  أسلوب بانرات الصور بباقي الموقع اللي تضل غامقة بكل الأوضاع)، فتشغيل التأثير
+ *  بالوضعين ما يكسر شي ويخلي البانر غني بصرياً بدل صفيحة فارغة بالوضع الفاتح. */
 export default function AiSolutionsBannerBackground() {
-  const { theme } = useTheme();
-  if (theme === 'light') return null;
-
   return (
     <div className="absolute inset-0">
       <DecorBoundary>

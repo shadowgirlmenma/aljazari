@@ -2,20 +2,19 @@
 
 import dynamic from 'next/dynamic';
 import DecorBoundary from '@/components/DecorBoundary';
-import { useTheme } from '@/components/ThemeProvider';
 
 const Lightfall = dynamic(
   () => import('../reactbits/Lightfall'),
   { ssr: false }
 );
 
-/** خلفية بانرات صفحات "حلول الروبوتات" — توهّج بنفسجي متحرك (Lightfall من React Bits)،
- *  نفس فكرة خلفية صفحة AI Solutions بس بتأثير مختلف حتى تكون كل صفحة مميزة بهويتها.
- *  بالوضع الفاتح نطفيه بالكامل (نفس سبب LightfallBackground). */
+/** خلفية بانرات صفحات "حلول الروبوتات" (لما ما فيه صورة حقيقية للقطاع) — توهّج
+ *  بنفسجي متحرك (Lightfall من React Bits)، نفس فكرة خلفية صفحة AI Solutions
+ *  بس بتأثير مختلف حتى تكون كل صفحة مميزة بهويتها.
+ *  ملاحظة مراجعة 27/09/2026 (جولة خامسة): كانت مطفية بالكامل بالوضع الفاتح، بس
+ *  رجّعناها بالطلب — نفس سبب AiSolutionsBannerBackground (بانر فوق تعتيم غامق
+ *  ثابت ونص بلون ثابت أصلاً، فتشغيلها بالوضعين يخلي البانر غني ومتناسق). */
 export default function RobotSolutionsBannerBackground() {
-  const { theme } = useTheme();
-  if (theme === 'light') return null;
-
   return (
     <div className="absolute inset-0">
       <DecorBoundary>
