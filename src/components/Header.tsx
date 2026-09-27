@@ -8,6 +8,7 @@ import { X } from 'lucide-react';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import BrandLockup from '@/components/BrandLockup';
 import ThemeToggle from '@/components/ThemeToggle';
+import { useTheme } from '@/components/ThemeProvider';
 
 const NAV = [
   { href: '/robots',          key: 'robots' },
@@ -24,6 +25,8 @@ export default function Header() {
   const locale = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
   /* ملاحظة المراجعة (10/09/2026): «the titles ribbon needs a background in order to keep it
      visible even when we scroll down» — الهيدر هسة ثابت دايماً (ما يختفي بالسكرول).
      ملاحظة مراجعة 27/09/2026 (جولة خامسة): قبل هذي الجولة كان الهيدر شفاف
@@ -146,10 +149,21 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 260 }}
-              className="fixed inset-y-0 end-0 z-[70] flex w-[85%] max-w-sm flex-col overflow-hidden border-s border-[#ffffff]/15 bg-[var(--bg-chrome-header)]/70 shadow-2xl backdrop-blur-2xl lg:hidden"
+              className={`fixed inset-y-0 end-0 z-[70] flex w-[85%] max-w-sm flex-col overflow-hidden border-s shadow-2xl backdrop-blur-2xl lg:hidden ${
+                isLight
+                  ? 'border-[#4c1d80]/15 bg-[var(--bg-page)]'
+                  : 'border-[#ffffff]/15 bg-[var(--bg-chrome-header)]/70'
+              }`}
             >
-              <div className="relative z-10 flex items-center justify-between border-b border-[#ffffff]/10 px-6 py-5">
-                <div className="text-[#ffffff]">
+              {/* ملاحظة مراجعة 27/09/2026 (تتمة 5): طلبت المستخدمة إن هذي القائمة
+                  تحديداً (قائمة الموبايل الجانبية) تتبع الوضع الفاتح فعلياً —
+                  خلفية بيضاء (`--bg-page`) وكتابة بنفسجي غامق جداً (`#1a0b33`،
+                  نفس قيمة `--rt-white` بالوضع الفاتح)، عكس قرار الجولة الخامسة
+                  اللي ثبّت الهيدر (الشريط العلوي وهذي القائمة) غامق دايماً بكل
+                  الأوضاع. الشريط العلوي (`<header>` فوق) ما تغيّر — التعديل
+                  محصور بهذي القائمة المنزلقة بس، بالضبط متل ما طلبت. */}
+              <div className={`relative z-10 flex items-center justify-between border-b px-6 py-5 ${isLight ? 'border-[#4c1d80]/10' : 'border-[#ffffff]/10'}`}>
+                <div className={isLight ? 'text-[#1a0b33]' : 'text-[#ffffff]'}>
                   <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
                 </div>
                 <div className="flex items-center gap-3">
@@ -158,7 +172,11 @@ export default function Header() {
                     type="button"
                     onClick={() => setOpen(false)}
                     aria-label="إغلاق"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ffffff]/15 bg-[#ffffff]/5 text-[#e9d5ff] transition hover:border-[#d8b4fe] hover:text-[#ffffff]"
+                    className={`flex h-9 w-9 items-center justify-center rounded-full border transition ${
+                      isLight
+                        ? 'border-[#4c1d80]/15 bg-[#4c1d80]/5 text-[#4c1d80] hover:border-[#7c47e0] hover:text-[#1a0b33]'
+                        : 'border-[#ffffff]/15 bg-[#ffffff]/5 text-[#e9d5ff] hover:border-[#d8b4fe] hover:text-[#ffffff]'
+                    }`}
                   >
                     <X size={16} />
                   </button>
@@ -178,8 +196,10 @@ export default function Header() {
                       >
                         <Link
                           href={item.href}
-                          className={`block border-b border-[#ffffff]/10 py-4 text-lg transition ${
-                            active ? 'font-medium text-[#ffffff]' : 'text-[#e9d5ff]/70 hover:text-[#ffffff]'
+                          className={`block border-b py-4 text-lg transition ${
+                            isLight
+                              ? `border-[#4c1d80]/10 ${active ? 'font-medium text-[#1a0b33]' : 'text-[#4c1d80]/70 hover:text-[#1a0b33]'}`
+                              : `border-[#ffffff]/10 ${active ? 'font-medium text-[#ffffff]' : 'text-[#e9d5ff]/70 hover:text-[#ffffff]'}`
                           }`}
                         >
                           {t(item.key)}
@@ -194,7 +214,7 @@ export default function Header() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.35 }}
-                className="relative z-10 border-t border-[#ffffff]/10 p-6"
+                className={`relative z-10 border-t p-6 ${isLight ? 'border-[#4c1d80]/10' : 'border-[#ffffff]/10'}`}
               >
                 <Link
                   href="/contact"
