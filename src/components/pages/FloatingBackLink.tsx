@@ -14,6 +14,12 @@ import { Link } from '@/i18n/navigation';
  * الممررة من صفحة التصنيف. يستخدم .glass-pill (متبدل مع الثيم) لأنه هنا
  * فوق خلفيات أقسام عادية تتبع الثيم (مو فوق سكرim بانر ثابت متل الزر
  * الأصلي اللي يستخدم .glass-pill-fixed).
+ *
+ * ملاحظة تصحيح 27/09/2026: أول قيمة (top-20/top-24) كانت أقل من ارتفاع
+ * الهيدر الفعلي (شعار h-16/h-20 + padding عمودي ≈ 96px بالموبايل،
+ * 112px من sm فصاعداً) فصار الزر يطلع متراكب جزئياً تحت الهيدر. رُفعت
+ * القيمة لـ top-28/sm:top-32 حتى يضل تحت الهيدر بمسافة واضحة بكل
+ * الأحجام.
  */
 export default function FloatingBackLink({ href, label }: { href: string; label: string }) {
   const [visible, setVisible] = useState(false);
@@ -29,7 +35,7 @@ export default function FloatingBackLink({ href, label }: { href: string; label:
     <Link
       href={href}
       aria-label={label}
-      className={`glass-pill fixed start-4 top-20 z-40 inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-sm font-bold uppercase tracking-widest text-[var(--rt-white)] shadow-lg transition-all duration-300 hover:border-purple-300 sm:start-6 sm:top-24 ${
+      className={`glass-pill fixed start-4 top-28 z-40 inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-sm font-bold uppercase tracking-widest text-[var(--rt-white)] shadow-lg transition-all duration-300 hover:border-purple-300 sm:start-6 sm:top-32 ${
         visible ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0'
       }`}
     >
