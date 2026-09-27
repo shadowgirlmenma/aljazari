@@ -12,6 +12,7 @@ import {
 import AiSolutionsBannerBackground from '@/components/pages/AiSolutionsBannerBackground';
 import DotGridBackdrop from '@/components/reactbits/DotGridBackdrop';
 import CustomAiProduct, { type CustomAiProductData } from '@/components/pages/CustomAiProduct';
+import { useTheme } from '@/components/ThemeProvider';
 
 const BENEFIT_ICONS: Record<string, LucideIcon> = {
   efficiency: TrendingUp,
@@ -68,24 +69,32 @@ export default function AiSolutionsClient({
   industries: NamedItem[];
   customProduct: CustomAiProductData;
 }) {
+  const { theme } = useTheme();
+
   return (
     <>
-      {/* ── البانر: خيوط WebThreads بنفسجية متوهجة كخلفية، بحجم الشاشة كاملة متل باقي الصفحات ── */}
+      {/* ── البانر: خيوط WebThreads بنفسجية متوهجة كخلفية، بحجم الشاشة كاملة متل باقي الصفحات ──
+          ملاحظة مراجعة 27/09/2026 (تتمة 2): التعتيم الغامق الثابت (scrim) ولون العنوان الأبيض
+          الثابت كانا مصمّمين للوضع الداكن بس (وقت ما كان التأثير مطفي بالفاتح). هسه إن التأثير
+          صار يشتغل بالوضعين، صار التعتيم يطلع "ظل" غريب فوق خلفية فاتحة أصلاً. الحل: التعتيم
+          يشتغل بالوضع الداكن بس (يختفي بالكامل بالفاتح)، ولون العنوان صار var(--rt-white) اللي
+          يتبدّل تلقائياً مع الثيم (أبيض بالداكن، بنفسجي غامق بالفاتح) عشان يضل مقروء بالحالتين. */}
       <div className="relative w-full overflow-hidden bg-[var(--bg-page)]" style={{ height: '100svh' }}>
         <AiSolutionsBannerBackground />
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(to bottom, rgba(18,6,33,0.25) 0%, rgba(18,6,33,0.55) 65%, rgba(10,4,20,0.9) 100%)',
-          }}
-        />
-        {/* ملاحظة مراجعة 26/09/2026 (جولة ثانية): نص ثابت فوق تعتيم داكن ثابت. */}
+        {theme !== 'light' && (
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to bottom, rgba(18,6,33,0.25) 0%, rgba(18,6,33,0.55) 65%, rgba(10,4,20,0.9) 100%)',
+            }}
+          />
+        )}
         <div className="relative z-10 flex h-full flex-col items-center justify-end px-5 pb-24 text-center sm:pb-28">
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mx-auto max-w-3xl text-3xl font-semibold text-[#ffffff] sm:text-5xl"
+            className="mx-auto max-w-3xl text-3xl font-semibold text-[var(--rt-white)] sm:text-5xl"
           >
             {title}
           </motion.h1>
