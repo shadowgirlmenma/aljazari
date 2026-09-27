@@ -13,6 +13,7 @@ import RobotSolutionsBannerBackground from './RobotSolutionsBannerBackground';
 import HealthcareLayout from './HealthcareLayout';
 import SolutionStats from './SolutionStats';
 import SectorImageCard from './SectorImageCard';
+import FloatingBackLink from './FloatingBackLink';
 import { getRobot } from '@/data/robots';
 import {
   ROBOT_SOLUTION_ICONS,
@@ -52,6 +53,11 @@ export default function RobotSolutionCategoryClient({
 
   return (
     <>
+      {/* ملاحظة مراجعة 27/09/2026 (تتمة 6): زر رجوع عائم يظهر بعد ما ينزل
+          الزائر عن البانر ويضل ظاهر بكل باقي أقسام الصفحة — راجع التعليق
+          داخل FloatingBackLink.tsx للتفاصيل. */}
+      <FloatingBackLink href="/robot-solutions" label={t.backToSolutions} />
+
       {bannerImage ? (
         /* ── بانر بصورة حقيقية — فل سكرين، بنفس أسلوب بانرات باقي صفحات الموقع ── */
         <div className="relative w-full overflow-hidden bg-[var(--bg-page)]" style={{ height: '100svh' }}>
