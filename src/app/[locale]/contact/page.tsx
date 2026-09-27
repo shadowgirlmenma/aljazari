@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import ContactClient from '@/components/pages/ContactClient';
+import { PUBLISHED_ROBOTS } from '@/data/robots';
 
 export async function generateMetadata({
   params,
@@ -53,6 +54,10 @@ export default async function ContactPage({
       email="info@aljazari.iq"
       hoursLabel={t('info.hours')}
       hours={t('info.hoursValue')}
+      robotSubjectValue={t('subjects.robot')}
+      robotNameLabel={t('form.robotName')}
+      robotNamePlaceholder={t('form.robotNamePlaceholder')}
+      robotNames={PUBLISHED_ROBOTS.map((r) => r.name)}
     />
   );
 }

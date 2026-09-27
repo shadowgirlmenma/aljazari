@@ -60,9 +60,13 @@ export default function NewsArticleClient({
       <div className="bg-[var(--bg-page-alt)]">
         <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
 
+          {/* ملاحظة مراجعة 27/09/2026 (جولة رابعة): رابط الرجوع كان نحيف وصغير —
+              صار زر زجاجي واضح وأكبر (glass-pill)، بنفس أسلوب زر الرجوع بصفحة
+              الروبوت الفردي. هذا مو فوق تعتيم ثابت (خلفية القسم عادية تتبع
+              الثيم)، فيصح نستخدم النسخة المتكيفة مع الثيم. */}
           <Link
             href="/news"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-purple-400 transition hover:text-purple-200"
+            className="glass-pill inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-sm font-bold uppercase tracking-widest text-purple-100 transition hover:border-purple-300 hover:text-white"
           >
             <ArrowRight size={14} className="rotate-180" />
             {backLabel}

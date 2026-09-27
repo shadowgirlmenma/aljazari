@@ -145,7 +145,7 @@ export default function AiSolutionsClient({
       </div>
 
       {/* ── واجهة ذكاء اصطناعي واحدة — بنفس خلفية باقي أقسام الصفحة، بدون صورة أو خلفية مختلفة (طلب المراجعة) ── */}
-      <div className="section-dark seam-glow relative overflow-hidden">
+      <div className="section-dark seam-glow icon-row-glow relative overflow-hidden">
         <DotGridBackdrop />
         <div className="relative z-10 mx-auto max-w-4xl px-5 py-20 text-center sm:px-8 lg:px-10">
           <motion.h2
@@ -183,7 +183,7 @@ export default function AiSolutionsClient({
       </div>
 
       {/* ── خدمة العملاء بوكلاء الذكاء الاصطناعي — عنوان + خطوات العمل الست ── */}
-      <div className="section-dark seam-glow relative overflow-hidden">
+      <div className="section-dark seam-glow icon-row-glow relative overflow-hidden">
         <DotGridBackdrop />
         <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10">
           <motion.h2

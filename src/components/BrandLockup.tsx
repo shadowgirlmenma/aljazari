@@ -20,6 +20,13 @@ import type { Locale } from '@/lib/types';
  * ملاحظة المراجعة 25/09/2026: كبّرنا حجم الشعار بالهيدر (كان صغير جداً وما
  * ينشاف) — من h-11/h-12 إلى h-16/h-20 (نفس حجم شعار الفوتر تقريباً) حتى
  * يكون واضح بالهيدر بكلا اللغتين.
+ *
+ * ملاحظة المراجعة 27/09/2026 (جولة رابعة): بما إن الشعار صورة PNG بلون
+ * أبيض/فاتح ثابت (ما يتبدل مع الثيم)، وأي مكان يُستخدم فيه ممكن تصير خلفيته
+ * فاتحة (متل الفوتر بالوضع الفاتح هسة)، أضفنا خلفية زجاجية غامقة شبه شفافة
+ * ثابتة وراه دايماً (.brand-lockup-glass بـ globals.css) — بالضبط الحل اللي
+ * طلبته المستخدمة (glassmorphism / ظل وراه) — حتى يبقى الشعار واضح بأي مكان
+ * ووضع، بدون الحاجة نلعب بخلفية العنصر الأكبر (هيدر/فوتر) كامل.
  */
 
 const SIZES = {
@@ -38,12 +45,14 @@ export default function BrandLockup({
 }) {
   const isAr = locale === 'ar';
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={isAr ? '/brand/logo-ar.png' : '/brand/logo-en.png'}
-      alt="ALJAZARI — Robotics & AI Solutions"
-      className={`${SIZES[size]} select-none ${className}`}
-      draggable={false}
-    />
+    <span className={`brand-lockup-glass inline-flex items-center rounded-2xl px-3 py-1.5 sm:px-4 sm:py-2 ${className}`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={isAr ? '/brand/logo-ar.png' : '/brand/logo-en.png'}
+        alt="ALJAZARI — Robotics & AI Solutions"
+        className={`${SIZES[size]} select-none`}
+        draggable={false}
+      />
+    </span>
   );
 }

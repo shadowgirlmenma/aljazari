@@ -14,6 +14,7 @@ export default function ContactClient({
   subjectLabel, messageLabel, submitLabel, successMsg,
   subjects, infoTitle, address, phone, email,
   hoursLabel, hours,
+  robotSubjectValue, robotNameLabel, robotNamePlaceholder, robotNames,
 }: {
   title: string; subtitle: string;
   nameLabel: string; emailLabel: string; phoneLabel: string;
@@ -23,13 +24,22 @@ export default function ContactClient({
   infoTitle: string; address: string;
   phone: string; email: string;
   hoursLabel: string; hours: string;
+  /* ملاحظة مراجعة 27/09/2026 (جولة رابعة، طلب المستخدمة): لما تختار الزائرة
+     موضوع "حجز أو شراء روبوت" بالقائمة، يظهر حقل إضافي بقائمة أسماء كل
+     الروبوتات الموجودة بالموقع حتى تحدد أي روبوت بالضبط تريده — يسهّل
+     عليها ويوضح الطلب من البداية بدل ما تكتبه بحقل الرسالة الحر. */
+  robotSubjectValue: string;
+  robotNameLabel: string;
+  robotNamePlaceholder: string;
+  robotNames: string[];
 }) {
   const [sent] = useState(false);
   const [phoneValid, setPhoneValid] = useState(true);
   const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>({});
   const [form, setForm] = useState({
-    name: '', email: '', phone: '', subject: '', message: '',
+    name: '', email: '', phone: '', subject: '', robotName: '', message: '',
   });
+  const showRobotField = form.subject === robotSubjectValue;
 
   const errors = {
     name: form.name.length > 0 && form.name.trim().length < 2,
@@ -59,6 +69,7 @@ export default function ContactClient({
       [emailLabel, form.email],
       [phoneLabel, form.phone],
       [subjectLabel, form.subject],
+      ...(showRobotField && form.robotName ? [[robotNameLabel, form.robotName] as [string, string]] : []),
       [messageLabel, form.message],
     ]);
   };
@@ -194,6 +205,23 @@ export default function ContactClient({
                         onChange={(v) => setForm((f) => ({ ...f, subject: v }))}
                       />
                     </div>
+
+                    {/* ملاحظة مراجعة 27/09/2026 (جولة رابعة): يظهر هذا الحقل بس
+                        لما تختار الزائرة موضوع "حجز أو شراء روبوت"، حتى تحدد
+                        بالضبط أي روبوت من قائمة كل الروبوتات المنشورة بالموقع. */}
+                    {showRobotField && (
+                      <div>
+                        <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-purple-400">
+                          {robotNameLabel}
+                        </label>
+                        <AnimatedSelect
+                          options={robotNames}
+                          value={form.robotName}
+                          onChange={(v) => setForm((f) => ({ ...f, robotName: v }))}
+                          placeholder={robotNamePlaceholder}
+                        />
+                      </div>
+                    )}
 
                     <div>
                       <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-purple-400">

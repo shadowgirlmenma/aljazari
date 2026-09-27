@@ -10,7 +10,11 @@ export default function LegalPageClient({
   title: string; lastUpdated: string; sections: Section[];
 }) {
   return (
-    <div className="bg-[#0a0414]">
+    /* ملاحظة مراجعة 27/09/2026 (جولة رابعة): هذا الملف فاته إصلاح الجولة
+       الأولى للوضع الفاتح (26/09) — خلفية ثابتة hex بدل متغير الثيم، فضلت
+       صفحتي "الشروط والأحكام" و"سياسة الخصوصية" داكنتين دايماً بغض النظر
+       عن زر تبديل الوضع. صلحناها هسة بنفس النمط المستخدم بباقي الموقع. */
+    <div className="bg-[var(--bg-page-alt)]">
       <div className="mx-auto max-w-3xl px-5 py-20 sm:px-8 lg:px-10">
 
         <motion.p

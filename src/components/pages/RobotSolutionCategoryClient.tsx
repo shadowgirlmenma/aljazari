@@ -77,9 +77,13 @@ export default function RobotSolutionCategoryClient({
               مقروء فوق هذا التعتيم). أيقونة الـ .glass ما تحتاج تعديل لأن خلفيتها
               زجاجية متكيفة مع الثيم أصلاً. */}
           <div className="relative z-10 flex h-full flex-col items-center justify-end px-5 pb-24 text-center sm:pb-28">
+            {/* ملاحظة مراجعة 27/09/2026 (جولة رابعة): رابط الرجوع كان نحيف وصغير —
+                صار زر زجاجي واضح وأكبر (glass-pill-fixed)، بنفس أسلوب زر الرجوع
+                بصفحة الروبوت الفردي، مع الحفاظ على لون ثابت فاتح (فوق سكرim غامق
+                ثابت، مو خلفية تتبع الثيم). */}
             <Link
               href="/robot-solutions"
-              className="font-mono text-xs uppercase tracking-widest text-[#d8b4fe] transition hover:text-[#ffffff]"
+              className="glass-pill-fixed inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-sm font-bold uppercase tracking-widest text-[#e9d5ff] transition hover:text-[#ffffff]"
             >
               ← {t.backToSolutions}
             </Link>
@@ -111,7 +115,7 @@ export default function RobotSolutionCategoryClient({
           <div className="relative z-10 mx-auto max-w-4xl px-5 sm:px-8 lg:px-10">
             <Link
               href="/robot-solutions"
-              className="font-mono text-xs uppercase tracking-widest text-[#d8b4fe] transition hover:text-[#ffffff]"
+              className="glass-pill-fixed inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-sm font-bold uppercase tracking-widest text-[#e9d5ff] transition hover:text-[#ffffff]"
             >
               ← {t.backToSolutions}
             </Link>
@@ -322,7 +326,7 @@ export default function RobotSolutionCategoryClient({
 
       {/* ── ليش الجزري ── */}
       {category.whyChoose.length > 0 && (
-        <div className="relative overflow-hidden bg-[var(--bg-page-alt)]">
+        <div className="icon-row-glow relative overflow-hidden bg-[var(--bg-page-alt)]">
           <DotGridBackdrop opacity={0.35} />
           <Container className="relative z-10 py-16 sm:py-20">
             <h2 className="text-center text-2xl font-semibold text-white sm:text-3xl">

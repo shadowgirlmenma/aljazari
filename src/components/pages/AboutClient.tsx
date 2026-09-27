@@ -98,21 +98,12 @@ export default function AboutClient({
         <div className="strip-glow section-dark relative overflow-hidden">
           <DotGridBackdrop />
           <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center sm:px-10 lg:px-16">
-            <div className="mx-auto" style={{ width: 'fit-content' }}>
-              <StrokeText
-                text={storyTitle}
-                strokeColor="#a78bfa"
-                fillColor="var(--rt-white)"
-                strokeWidth={1.4}
-                drawDuration={1.4}
-                fillDelay={0.15}
-                stagger={0.04}
-                trigger="scroll"
-                fillMode="wipe"
-                fontSize={34}
-                fontWeight={700}
-              />
-            </div>
+            {/* ملاحظة مراجعة 27/09/2026 (جولة رابعة): شلنا أنيميشن StrokeText
+                (رسم الحدود + تعبئة scroll-triggered) من عناوين صفحة "من نحن" —
+                كانت أحياناً تضل بحالة "حدود بس بدون تعبئة" (خصوصاً بالوضع
+                الفاتح) وتصير شبه غير مقروءة. عنوان عريض عادي بدلها، بالضبط
+                متل ما طلبت المستخدمة. */}
+            <h2 className="text-[34px] font-bold text-white">{storyTitle}</h2>
             <ScrollReveal
               baseOpacity={0.06}
               baseRotation={1.5}
@@ -133,21 +124,7 @@ export default function AboutClient({
         <DotGridBackdrop />
         <div className="relative z-10 mx-auto max-w-6xl px-5 py-20 text-center sm:px-8 lg:px-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex justify-center">
-            <div style={{ width: 'fit-content' }}>
-              <StrokeText
-                text={symbolTitle}
-                strokeColor="#a78bfa"
-                fillColor="var(--rt-white)"
-                strokeWidth={1.4}
-                drawDuration={1.4}
-                fillDelay={0.15}
-                stagger={0.04}
-                trigger="scroll"
-                fillMode="wipe"
-                fontSize={34}
-                fontWeight={700}
-              />
-            </div>
+            <h2 className="text-[34px] font-bold text-white">{symbolTitle}</h2>
           </motion.div>
           <p className="mt-3 text-purple-200/70">{symbolSubtitle}</p>
 
@@ -168,21 +145,7 @@ export default function AboutClient({
         <DotGridBackdrop />
         <div className="relative z-10 mx-auto max-w-4xl px-5 py-20 text-center sm:px-8 lg:px-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex justify-center">
-            <div style={{ width: 'fit-content' }}>
-              <StrokeText
-                text={videoTitle}
-                strokeColor="#a78bfa"
-                fillColor="var(--rt-white)"
-                strokeWidth={1.4}
-                drawDuration={1.4}
-                fillDelay={0.15}
-                stagger={0.04}
-                trigger="scroll"
-                fillMode="wipe"
-                fontSize={34}
-                fontWeight={700}
-              />
-            </div>
+            <h2 className="text-[34px] font-bold text-white">{videoTitle}</h2>
           </motion.div>
 
           <motion.div
@@ -238,21 +201,7 @@ export default function AboutClient({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="mx-auto" style={{ width: 'fit-content' }}>
-              <StrokeText
-                text={foundersTitle}
-                strokeColor="#a78bfa"
-                fillColor="var(--rt-white)"
-                strokeWidth={1.4}
-                drawDuration={1.4}
-                fillDelay={0.15}
-                stagger={0.04}
-                trigger="scroll"
-                fillMode="wipe"
-                fontSize={34}
-                fontWeight={700}
-              />
-            </div>
+            <h2 className="text-[34px] font-bold text-white">{foundersTitle}</h2>
             <div className="mt-8 space-y-5 leading-relaxed text-purple-200/75">
               <p>{foundersBody1}</p>
               <p>{foundersBody2}</p>
@@ -279,21 +228,7 @@ export default function AboutClient({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div style={{ width: 'fit-content' }}>
-                <StrokeText
-                  text={contactTitle}
-                  strokeColor="#a78bfa"
-                  fillColor="var(--rt-white)"
-                  strokeWidth={1.3}
-                  drawDuration={1.3}
-                  fillDelay={0.15}
-                  stagger={0.04}
-                  trigger="scroll"
-                  fillMode="wipe"
-                  fontSize={30}
-                  fontWeight={700}
-                />
-              </div>
+              <h2 className="text-[30px] font-bold text-white">{contactTitle}</h2>
 
               <ul className="mt-6 space-y-5 text-purple-200/75">
                 <li className="flex items-start gap-4">
@@ -352,21 +287,7 @@ export default function AboutClient({
               transition={{ delay: 0.15 }}
               className="flex flex-col justify-center rounded-2xl border border-purple-500/20 bg-purple-900/10 p-10 backdrop-blur-md"
             >
-              <div style={{ width: 'fit-content' }}>
-                <StrokeText
-                  text={jobsTitle}
-                  strokeColor="#a78bfa"
-                  fillColor="var(--rt-white)"
-                  strokeWidth={1.3}
-                  drawDuration={1.3}
-                  fillDelay={0.15}
-                  stagger={0.04}
-                  trigger="scroll"
-                  fillMode="wipe"
-                  fontSize={30}
-                  fontWeight={700}
-                />
-              </div>
+              <h2 className="text-[30px] font-bold text-white">{jobsTitle}</h2>
 
               <p className="mt-4 leading-relaxed text-purple-200/70">
                 {jobsBody}

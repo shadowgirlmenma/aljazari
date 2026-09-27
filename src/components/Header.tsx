@@ -48,10 +48,12 @@ export default function Header() {
     <>
       {/* هيدر ثابت (fixed) فوق محتوى الصفحة — دايماً ظاهر. شفاف بأعلى الصفحة، وزجاجي
           بنفسجي (backdrop-blur) بعد السكرول حتى يبقى النص واضح.
-          ملاحظة مراجعة 26/09/2026 (جولة ثالثة): صنف brand-chrome يثبّت ألوان
-          النص فاتحة بكل الأوضاع (شعار "ALJAZARI" صورة PNG بيضاء ثابتة اللون،
-          ما تتبدل مع الثيم) — وخلفية السكرول صارت --bg-chrome-header (بنفسجي
-          أوضح بالوضع الفاتح) بدل --bg-page اللي كانت شبه بيضاء وتخفي الشعار. */}
+          ملاحظة مراجعة 27/09/2026 (جولة رابعة، بناءً على طلب المستخدمة): الهيدر
+          يرجع بلون بنفسجي غامق ثابت بكل الأوضاع (--bg-chrome-header ما إلها
+          نسخة .light — تضل نفس القيمة الأصلية بكل الأوضاع، شوفي globals.css)،
+          مو الدرجة الفاتحة المؤقتة اللي جربناها بالجولة الثالثة. صنف brand-chrome
+          يثبّت ألوان النص فاتحة بكل الأوضاع (شعار "ALJAZARI" صورة PNG بيضاء
+          ثابتة اللون، ما تتبدل مع الثيم). */}
       <header
         className={`brand-chrome fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
           scrolled
@@ -85,7 +87,11 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <ThemeToggle />
+            {/* ملاحظة مراجعة 27/09/2026 (جولة رابعة): مسافة إضافية (ms-1 لليمين
+                بالعربي، تلقائياً الاتجاه الصح بالإنكليزي) حول زر الدارك/لايت
+                مود حتى ينفصل بصرياً عن آخر رابط بقائمة التنقل — كان ملتصق
+                ومزدحم حسب ملاحظة المستخدمة. */}
+            <ThemeToggle className="ms-1" />
 
             <LocaleSwitcher className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-sm text-purple-200 backdrop-blur-xl transition hover:border-purple-300 hover:text-white" />
 
@@ -132,7 +138,7 @@ export default function Header() {
                 <div className="text-white">
                   <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3">
                   <ThemeToggle />
                   <button
                     type="button"
