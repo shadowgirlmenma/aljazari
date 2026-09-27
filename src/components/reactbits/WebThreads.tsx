@@ -109,7 +109,7 @@ void main() {
     gsum += g;
   }
   float coreAmt = smoothstep(0.5, 2.2, gsum);
-  col = mix(col, uColor3 * gsum, coreAmt * 0.5);
+  col = mix(col, uColor3 * gsum, coreAmt * 0.85);
   float bright = uBrightness;
   if (uEnableMouse > 0.5) {
     vec2 md = uv - uMouse;
