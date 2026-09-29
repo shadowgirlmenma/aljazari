@@ -3,9 +3,22 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { toast } from 'sonner';
-import { X, CheckCircle } from 'lucide-react';
+import { X, CheckCircle, Paperclip } from 'lucide-react';
 import PhoneInput from '@/components/ui/PhoneInput';
 import { openMail } from '@/lib/mailto';
+
+/**
+ * ملاحظة 29/09/2026: المستخدمة طلبت تقييد "طلب مدرّب" برفع ملفات — نوع
+ * الملفات PDF أو PNG أو JPG فقط، حتى 3 ملفات، وملف واحد إجباري على الأقل.
+ * لكن هذا الفورم (متل كل فورمات الموقع) يشتغل بدون باكند عبر mailto: —
+ * وmailto: قيد تقني بكل المتصفحات ما يدعم إرفاق ملفات فعلياً بالرسالة.
+ * لذلك: نتحقق من نوع/عدد الملفات هنا بالواجهة، ونذكر أسماءها بنص الرسالة
+ * الجاهزة، وبعد ما يفتح تطبيق البريد نعرض تذكير واضح للمتقدّمة حتى ترفق
+ * الملفات يدوياً قبل الضغط على إرسال (شوفي شاشة "sent" أدناه).
+ */
+const ALLOWED_TYPES = ['application/pdf', 'image/png', 'image/jpeg'];
+const ALLOWED_LABEL = 'PDF أو PNG أو JPG';
+const MAX_FILES = 3;
 
 export default function TrainerApplicationModal({
   open, onClose,
@@ -19,6 +32,7 @@ export default function TrainerApplicationModal({
   const [form, setForm] = useState({
     name: '', email: '', phone: '', specialty: '', experience: '',
   });
+  const [cvFiles, setCvFiles] = useState<File[]>([]);
 
   const errors = {
     name: form.name.length > 0 && form.name.trim().length < 2,
@@ -29,10 +43,34 @@ export default function TrainerApplicationModal({
 
   const markTouched = (f: string) => setTouched((t) => ({ ...t, [f]: true }));
 
+  const handleFilesSelected = (selected: FileList | null) => {
+    if (!selected || selected.length === 0) return;
+    const incoming = Array.from(selected);
+    const valid: File[] = [];
+    const rejected: string[] = [];
+    for (const file of incoming) {
+      if (ALLOWED_TYPES.includes(file.type)) valid.push(file);
+      else rejected.push(file.name);
+    }
+    if (rejected.length > 0) {
+      toast.error(`صيغة غير مدعومة (${ALLOWED_LABEL} فقط): ${rejected.join('، ')}`);
+    }
+    setCvFiles((prev) => {
+      const merged = [...prev, ...valid];
+      if (merged.length > MAX_FILES) {
+        toast.error(`الحد الأقصى ${MAX_FILES} ملفات — تم تجاهل الباقي`);
+      }
+      return merged.slice(0, MAX_FILES);
+    });
+  };
+
+  const removeFile = (index: number) => setCvFiles((prev) => prev.filter((_, i) => i !== index));
+
   const reset = () => {
     setSent(false);
     setForm({ name: '', email: '', phone: '', specialty: '', experience: '' });
     setTouched({});
+    setCvFiles([]);
   };
 
   const handleClose = () => {
@@ -51,16 +89,23 @@ export default function TrainerApplicationModal({
       toast.error('عبّي كل الحقول المطلوبة');
       return;
     }
+    if (cvFiles.length === 0) {
+      toast.error(`ارفقي ملف واحد على الأقل (${ALLOWED_LABEL})`);
+      return;
+    }
 
     /* بدون أي ربط بباكند — يفتح صفحة Gmail (أو تطبيق البريد بالموبايل)، معبّى
-       تلقائياً بكل الحقول اللي كتبها المتقدّم نصاً واضحاً. */
+       تلقائياً بكل الحقول اللي كتبها المتقدّم نصاً واضحاً، بما فيها أسماء
+       الملفات المختارة (يرجى إرفاقها يدوياً — راجعي الملاحظة أعلاه). */
     openMail('طلب انضمام كمدرّب', [
       ['الاسم', form.name],
       ['البريد الإلكتروني', form.email],
       ['الهاتف', form.phone],
       ['التخصص', form.specialty],
       ['الخبرة', form.experience],
+      ['الملفات المرفقة (سترفق يدوياً)', cvFiles.map((f) => f.name).join('، ')],
     ]);
+    setSent(true);
   };
 
   const fieldClass = (hasError: boolean) =>
@@ -105,6 +150,18 @@ export default function TrainerApplicationModal({
                 <p className="mt-2 text-sm text-purple-200/70">
                   راجعي الرسالة واضغطي إرسال داخل تطبيق البريد لإكمال طلبك
                 </p>
+                {cvFiles.length > 0 && (
+                  <div className="mt-4 w-full rounded-xl border border-amber-500/30 bg-amber-950/20 p-3 text-start">
+                    <p className="text-xs font-semibold text-amber-300">
+                      ⚠ لا تنسي إرفاق هذي الملفات يدوياً بالرسالة قبل الإرسال (البريد ما يرفقها تلقائياً):
+                    </p>
+                    <ul className="mt-1.5 space-y-0.5 text-xs text-amber-200/80">
+                      {cvFiles.map((file, i) => (
+                        <li key={`${file.name}-${i}`} className="truncate">• {file.name}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <button
                   type="button"
                   onClick={handleClose}
@@ -171,6 +228,55 @@ export default function TrainerApplicationModal({
                     />
                     {touched.experience && errors.experience && (
                       <p className="mt-1.5 text-xs text-red-400">اكتبي وصفاً أكثر تفصيلاً (١٠ أحرف على الأقل)</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-purple-200/80">
+                      السيرة الذاتية / نماذج أعمال{' '}
+                      <span className="font-normal text-purple-400/60">
+                        ({ALLOWED_LABEL} — حتى {MAX_FILES} ملفات، ملف واحد إجباري)
+                      </span>
+                    </label>
+
+                    <label
+                      htmlFor="trainer-cv-upload"
+                      className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-purple-500/40 bg-purple-900/10 px-4 py-6 text-center transition hover:border-purple-400 hover:bg-purple-900/20"
+                    >
+                      <Paperclip size={20} className="text-purple-400/70" />
+                      <span className="text-sm text-purple-200/70">اضغطي لاختيار الملفات أو اسحبيها هنا</span>
+                      <input
+                        id="trainer-cv-upload"
+                        type="file"
+                        accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg"
+                        multiple
+                        className="hidden"
+                        onChange={(e) => {
+                          handleFilesSelected(e.target.files);
+                          e.target.value = '';
+                        }}
+                      />
+                    </label>
+
+                    {cvFiles.length > 0 && (
+                      <ul className="mt-3 space-y-2">
+                        {cvFiles.map((file, i) => (
+                          <li
+                            key={`${file.name}-${i}`}
+                            className="flex items-center justify-between gap-2 rounded-lg border border-purple-500/20 bg-purple-900/20 px-3 py-2 text-xs text-purple-100"
+                          >
+                            <span className="truncate">{file.name}</span>
+                            <button
+                              type="button"
+                              onClick={() => removeFile(i)}
+                              className="shrink-0 text-purple-300/60 transition hover:text-red-400"
+                              aria-label={`حذف ${file.name}`}
+                            >
+                              <X size={14} />
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
                     )}
                   </div>
 

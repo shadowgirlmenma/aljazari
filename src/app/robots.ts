@@ -10,6 +10,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      // لوحة تحكم الأدمن معطّلة حالياً بالـ middleware (تحويل تلقائي
+      // للرئيسية) — هذا فقط طبقة حماية إضافية حتى ما تتفهرس بغوغل.
+      disallow: ['/admin', '/admin/', '/ar/admin', '/en/admin'],
     },
     sitemap: `${BASE}/sitemap.xml`,
   };
