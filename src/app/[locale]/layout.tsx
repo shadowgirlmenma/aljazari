@@ -12,6 +12,7 @@ import CursorGlow from '@/components/reactbits/CursorGlow';
 import OrganizationJsonLd from '@/components/OrganizationJsonLd';
 import { ThemeProvider, THEME_INIT_SCRIPT } from '@/components/ThemeProvider';
 import ThemedToaster from '@/components/ThemedToaster';
+import { Analytics } from '@vercel/analytics/next';
 import '../globals.css';
 const readex = Readex_Pro({
   subsets: ['arabic', 'latin'],
@@ -108,6 +109,7 @@ export default async function LocaleLayout({
             <ConditionalChrome>{children}</ConditionalChrome>
           </NextIntlClientProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
