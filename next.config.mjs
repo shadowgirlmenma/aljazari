@@ -61,6 +61,18 @@ const nextConfig = {
       },
     ];
   },
+  // تحويلات لروابط قديمة من موقع Wix السابق (قبل ربط الدومين بموقعنا الجديد)
+  // كانت مفهرسة بغوغل ولسا محتمل حد يوصلها من نتائج بحث قديمة أو رابط محفوظ.
+  // بدل ما تطلع 404، نحوّلها تلقائياً للصفحة الرئيسية الصح — يحمي أي زائر
+  // يجي من رابط قديم لحد ما يتحدث فهرس Google بالكامل (طلبنا إزالة مؤقتة
+  // بـ Search Console بالإضافة لهذا، 30/09/2026).
+  async redirects() {
+    return [
+      { source: '/en/home-ar', destination: '/en', permanent: true },
+      { source: '/ar/home-ar', destination: '/ar', permanent: true },
+      { source: '/home-ar', destination: '/', permanent: true },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
