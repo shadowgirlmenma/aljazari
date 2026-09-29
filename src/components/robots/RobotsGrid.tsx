@@ -3,7 +3,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown, Check, ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
 import RobotCard from './RobotCard';
 import { CATEGORIES, CATEGORY_ORDER, PRODUCT_TYPE_ORDER, type ProductType } from '@/data/taxonomy';
 import type { Locale, Robot, RobotCategory } from '@/lib/types';
@@ -25,8 +25,10 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
   const [filter, setFilter] = useState<Filter>('all');
   const [productTypes, setProductTypes] = useState<Set<ProductType>>(new Set());
   const [sort, setSort] = useState<SortOption>('newest');
+  const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const topRef = useRef<HTMLDivElement>(null);
+  const normalizedQuery = query.trim().toLocaleLowerCase();
 
   const available = useMemo(
     () => CATEGORY_ORDER.filter((c) => robots.some((r) => r.categories.includes(c))),
@@ -55,11 +57,26 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
     setPage(1);
   }
 
+  function changeQuery(next: string) {
+    setQuery(next);
+    setPage(1);
+  }
+
   const visible = useMemo(() => {
     let list = filter === 'all' ? robots : robots.filter((r) => r.categories.includes(filter));
 
     if (productTypes.size > 0) {
       list = list.filter((r) => typesOf(r).some((pt) => productTypes.has(pt)));
+    }
+
+    /* البحث يشتغل على الاسم التجاري (إنجليزي دايماً) + السطر التعريفي
+       بالعربي والإنجليزي مع بعض — هيچ تدوّرين بأي لغة تكتبين فيها بدون
+       ما يهمّ لغة الموقع الحالية */
+    if (normalizedQuery) {
+      list = list.filter((r) => {
+        const haystack = `${r.name} ${r.tagline.ar} ${r.tagline.en}`.toLocaleLowerCase();
+        return haystack.includes(normalizedQuery);
+      });
     }
 
     list = [...list].sort((a, b) => {
@@ -69,7 +86,7 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
     });
 
     return list;
-  }, [robots, filter, productTypes, sort]);
+  }, [robots, filter, productTypes, sort, normalizedQuery]);
 
   const totalPages = Math.max(1, Math.ceil(visible.length / PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
@@ -88,9 +105,35 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
       {/* لوحة فلترة موحّدة بأسلوب حديث — بطاقة زجاجية وحدة تضم التصنيفات + نوع
           المنتج + الترتيب، بدل الأشكال المتفرقة القديمة (checkboxes ومربعات صور). */}
       <div className="glass-card rounded-2xl p-4 sm:p-6">
-        <p className="text-xs font-medium tracking-wide text-purple-300/80 uppercase">
-          {t('filterBy')}
-        </p>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="text-xs font-medium tracking-wide text-purple-300/80 uppercase">
+            {t('filterBy')}
+          </p>
+
+          {/* بحث فوري بالاسم — يشتغل بأول حرف تكتبينه، عربي أو إنجليزي مع بعض */}
+          <label className="glass-pill flex w-full items-center gap-2 rounded-full px-4 py-2 sm:w-64">
+            <Search size={14} className="shrink-0 text-purple-300" aria-hidden />
+            <input
+              type="text"
+              inputMode="search"
+              value={query}
+              onChange={(e) => changeQuery(e.target.value)}
+              placeholder={t('searchPlaceholder')}
+              aria-label={t('searchPlaceholder')}
+              className="w-full bg-transparent text-sm text-white placeholder:text-purple-300/50 outline-none"
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => changeQuery('')}
+                aria-label={t('clearSearch')}
+                className="shrink-0 text-purple-300/70 transition hover:text-white"
+              >
+                <X size={14} />
+              </button>
+            )}
+          </label>
+        </div>
 
         <div className="-mx-4 mt-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:overflow-visible sm:px-0">
           <div className="flex w-max gap-2 sm:w-auto sm:flex-wrap">

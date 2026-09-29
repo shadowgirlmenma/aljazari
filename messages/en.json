@@ -50,6 +50,8 @@
     "pagination": "Pagination",
     "prevPage": "Previous page",
     "nextPage": "Next page",
+    "searchPlaceholder": "Search robot name...",
+    "clearSearch": "Clear search",
     "watchOnInstagram": "Watch on Instagram",
     "watchOnYoutube": "Watch on YouTube",
     "modal": {

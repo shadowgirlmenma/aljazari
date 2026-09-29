@@ -50,6 +50,8 @@
     "pagination": "التنقل بين الصفحات",
     "prevPage": "الصفحة السابقة",
     "nextPage": "الصفحة التالية",
+    "searchPlaceholder": "دوّر عن اسم الروبوت...",
+    "clearSearch": "مسح البحث",
     "watchOnInstagram": "شاهد على إنستغرام",
     "watchOnYoutube": "شاهد على يوتيوب",
     "modal": {
