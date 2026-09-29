@@ -1,15 +1,18 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, Check } from 'lucide-react';
+import { ChevronDown, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import RobotCard from './RobotCard';
 import { CATEGORIES, CATEGORY_ORDER, PRODUCT_TYPE_ORDER, type ProductType } from '@/data/taxonomy';
 import type { Locale, Robot, RobotCategory } from '@/lib/types';
 
 type Filter = RobotCategory | 'all';
 type SortOption = 'newest' | 'nameAsc' | 'nameDesc';
+
+/** عدد الروبوتات بكل صفحة — إذا احتجتي تغيّرينه بالمستقبل، غيّريه هنا بس */
+const PAGE_SIZE = 6;
 
 /** إذا الروبوت ما إله productType محدد بالبيانات، نعتبره متوفر للإيجار والبيع (الوضع الحالي الافتراضي) */
 function typesOf(robot: Robot): ProductType[] {
@@ -22,11 +25,20 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
   const [filter, setFilter] = useState<Filter>('all');
   const [productTypes, setProductTypes] = useState<Set<ProductType>>(new Set());
   const [sort, setSort] = useState<SortOption>('newest');
+  const [page, setPage] = useState(1);
+  const topRef = useRef<HTMLDivElement>(null);
 
   const available = useMemo(
     () => CATEGORY_ORDER.filter((c) => robots.some((r) => r.categories.includes(c))),
     [robots],
   );
+
+  /* أي تغيير بالفلترة أو الترتيب يرجّعنا لأول صفحة — غير هيچ الصفحة
+     الحالية ممكن تصير فاضية إذا صار عدد النتائج أقل */
+  function changeFilter(next: Filter) {
+    setFilter(next);
+    setPage(1);
+  }
 
   function toggleProductType(pt: ProductType) {
     setProductTypes((prev) => {
@@ -35,6 +47,12 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
       else next.add(pt);
       return next;
     });
+    setPage(1);
+  }
+
+  function changeSort(next: SortOption) {
+    setSort(next);
+    setPage(1);
   }
 
   const visible = useMemo(() => {
@@ -53,8 +71,20 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
     return list;
   }, [robots, filter, productTypes, sort]);
 
+  const totalPages = Math.max(1, Math.ceil(visible.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const paginated = useMemo(
+    () => visible.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE),
+    [visible, safePage],
+  );
+
+  function goToPage(next: number) {
+    setPage(next);
+    topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   return (
-    <div>
+    <div ref={topRef}>
       {/* لوحة فلترة موحّدة بأسلوب حديث — بطاقة زجاجية وحدة تضم التصنيفات + نوع
           المنتج + الترتيب، بدل الأشكال المتفرقة القديمة (checkboxes ومربعات صور). */}
       <div className="glass-card rounded-2xl p-4 sm:p-6">
@@ -64,14 +94,14 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
 
         <div className="-mx-4 mt-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:overflow-visible sm:px-0">
           <div className="flex w-max gap-2 sm:w-auto sm:flex-wrap">
-            <CategoryPill active={filter === 'all'} onClick={() => setFilter('all')}>
+            <CategoryPill active={filter === 'all'} onClick={() => changeFilter('all')}>
               {t('allCategories')}
             </CategoryPill>
             {available.map((category) => (
               <CategoryPill
                 key={category}
                 active={filter === category}
-                onClick={() => setFilter(category)}
+                onClick={() => changeFilter(category)}
               >
                 {CATEGORIES[category].label[locale]}
               </CategoryPill>
@@ -102,7 +132,7 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
             <span className="glass-pill relative rounded-full">
               <select
                 value={sort}
-                onChange={(e) => setSort(e.target.value as SortOption)}
+                onChange={(e) => changeSort(e.target.value as SortOption)}
                 className="appearance-none rounded-full bg-transparent py-2 ps-4 pe-9 text-sm text-white outline-none"
               >
                 <option className="bg-[var(--surface-solid)]" value="newest">
@@ -127,15 +157,125 @@ export default function RobotsGrid({ robots }: { robots: Robot[] }) {
       {visible.length === 0 ? (
         <p className="mt-12 text-sm text-purple-200/60">{t('empty')}</p>
       ) : (
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {visible.map((robot) => (
-              <RobotCard key={robot.slug} robot={robot} />
-            ))}
-          </AnimatePresence>
-        </div>
+        <>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <AnimatePresence mode="popLayout">
+              {paginated.map((robot) => (
+                <RobotCard key={robot.slug} robot={robot} />
+              ))}
+            </AnimatePresence>
+          </div>
+
+          {totalPages > 1 && (
+            <Pagination page={safePage} totalPages={totalPages} onChange={goToPage} />
+          )}
+        </>
       )}
     </div>
+  );
+}
+
+/**
+ * ترقيم الصفحات — بأسلوب زجاجي مطابق لبقية الموقع (glass-pill + مؤشر
+ * متدرّج متحرك بنفس فكرة CategoryPill). يعرض دائرة لكل صفحة قريبة من
+ * الحالية، مع أول/آخر صفحة دائماً ظاهرات و"..." بينها لو المسافة بعيدة.
+ */
+function Pagination({
+  page,
+  totalPages,
+  onChange,
+}: {
+  page: number;
+  totalPages: number;
+  onChange: (page: number) => void;
+}) {
+  const t = useTranslations('robots');
+
+  const middlePages = useMemo(() => {
+    if (totalPages <= 5) return Array.from({ length: totalPages }, (_, i) => i + 1);
+    const start = Math.min(Math.max(page - 1, 2), totalPages - 3);
+    return [start, start + 1, start + 2];
+  }, [page, totalPages]);
+
+  return (
+    <nav aria-label={t('pagination')} className="mt-10 flex items-center justify-center gap-2">
+      <button
+        type="button"
+        onClick={() => onChange(page - 1)}
+        disabled={page === 1}
+        aria-label={t('prevPage')}
+        className="glass-pill flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-purple-200/80 transition hover:text-white disabled:pointer-events-none disabled:opacity-30"
+      >
+        <ChevronLeft size={16} className="rtl:hidden" />
+        <ChevronRight size={16} className="hidden rtl:block" />
+      </button>
+
+      <PageDot active={page === 1} onClick={() => onChange(1)}>
+        1
+      </PageDot>
+
+      {middlePages[0] > 2 && <span className="px-1 text-purple-400/50">···</span>}
+
+      {middlePages
+        .filter((p) => p > 1 && p < totalPages)
+        .map((p) => (
+          <PageDot key={p} active={p === page} onClick={() => onChange(p)}>
+            {p}
+          </PageDot>
+        ))}
+
+      {middlePages[middlePages.length - 1] < totalPages - 1 && (
+        <span className="px-1 text-purple-400/50">···</span>
+      )}
+
+      {totalPages > 1 && (
+        <PageDot active={page === totalPages} onClick={() => onChange(totalPages)}>
+          {totalPages}
+        </PageDot>
+      )}
+
+      <button
+        type="button"
+        onClick={() => onChange(page + 1)}
+        disabled={page === totalPages}
+        aria-label={t('nextPage')}
+        className="glass-pill flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-purple-200/80 transition hover:text-white disabled:pointer-events-none disabled:opacity-30"
+      >
+        <ChevronRight size={16} className="rtl:hidden" />
+        <ChevronLeft size={16} className="hidden rtl:block" />
+      </button>
+    </nav>
+  );
+}
+
+/** دائرة رقم صفحة وحدة — نفس منطق CategoryPill (مؤشر متدرّج متحرك بالخلفية) */
+function PageDot({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-current={active ? 'page' : undefined}
+      className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-medium transition-colors ${
+        active ? 'text-white' : 'glass-pill text-purple-200/75 hover:text-white'
+      }`}
+    >
+      {active && (
+        <motion.span
+          layoutId="activePageDot"
+          transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+          className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-purple-600 to-purple-500 shadow-[0_0_18px_rgba(124,71,224,0.55)]"
+        />
+      )}
+      <span className="relative">{children}</span>
+    </button>
   );
 }
 
