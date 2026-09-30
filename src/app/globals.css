@@ -177,6 +177,16 @@ html {
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
   transition: background-color 0.25s ease, color 0.25s ease;
+  /* إصلاح 30/09/2026: ما كان اكو حماية من السكرول الأفقي على مستوى الصفحة —
+     أي عنصر يفيض شوي (خصوصاً بأجهزة أندرويد الضيقة بالنسخة العربية RTL) كان
+     يخلي الصفحة كلها تنزحف يمين/يسار ويطلع جزء من عناصر ثابتة (متل زر
+     القائمة بالهيدر) خارج حدود الشاشة. overflow-x: hidden هنا يمنع هذا
+     نهائياً بدون ما يأثر على أي تخطيط طبيعي. */
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 /* النسخة الإنجليزية تستخدم Space Grotesk بدل Readex Pro (العربي يبقى Readex Pro) */
 html:lang(en) {

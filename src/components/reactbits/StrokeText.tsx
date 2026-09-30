@@ -75,13 +75,20 @@ const StrokeText = ({
     ? Math.max(fontSize * 3 * Math.max(Array.from(String(text ?? '')).length, 1), 200)
     : Math.max(fontSize * 7, 200);
 
+  // إصلاح 30/09/2026: letterSpacing سالب (القيمة الافتراضية -4px) يكسر تشكيل
+  // الحروف العربية المتصلة — يدخل مسافة بين الحروف فتنفصل أشكالها (بداية/
+  // وسط/نهاية) وتبين منعكسة ومتداخلة فوق بعضها، وهذا يبين أوضح وأسوأ بمتصفح
+  // سفاري/iOS لأن محرك رسم SVG <text> فيه يتعامل مع letter-spacing + rtl
+  // بشكل مختلف عن كروم. النص العربي ما يحتاج تباعد يدوي بين الحروف أصلاً
+  // (يكسر شكله الطبيعي)، فنلغيه تماماً لما يكون النص عربي بغض النظر عن
+  // القيمة الممررة من الخارج.
   const fontStyle = useMemo<CSSProperties>(
     () => ({
       fontSize: `${fontSize}px`,
       fontWeight,
-      letterSpacing: `${letterSpacing}px`,
+      letterSpacing: isRtl ? 'normal' : `${letterSpacing}px`,
     }),
-    [fontSize, fontWeight, letterSpacing]
+    [fontSize, fontWeight, letterSpacing, isRtl]
   );
 
   useLayoutEffect(() => {

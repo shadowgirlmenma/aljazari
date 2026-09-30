@@ -78,7 +78,7 @@ export default function Header() {
             : 'bg-[var(--bg-chrome-header)]/55'
         }`}
       >
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-2 px-4 py-4 sm:gap-0 sm:px-8 lg:px-10">
 
           <Link href="/" className="flex shrink-0 items-center gap-2.5 text-[#ffffff]">
             <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
@@ -103,18 +103,22 @@ export default function Header() {
             })}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
             {/* ملاحظة مراجعة 27/09/2026 (جولة رابعة): مسافة إضافية (ms-1 لليمين
                 بالعربي، تلقائياً الاتجاه الصح بالإنكليزي) حول زر الدارك/لايت
                 مود حتى ينفصل بصرياً عن آخر رابط بقائمة التنقل — كان ملتصق
-                ومزدحم حسب ملاحظة المستخدمة. */}
-            <ThemeToggle className="ms-1" />
+                ومزدحم حسب ملاحظة المستخدمة.
+                إصلاح 30/09/2026: shrink-0 على كل الأزرار الثابتة الحجم
+                (ثيم/قائمة) حتى ما ينعصر شكلها لما تضيق الشاشة — بدل هيك
+                نخلي اللي يتقلّص هو نص زر اللغة (padding/font أصغر بالموبايل)
+                والشعار (BrandLockup)، مو الأزرار الدائرية. */}
+            <ThemeToggle className="ms-1 shrink-0" />
 
-            <LocaleSwitcher className="rounded-full border border-[#ffffff]/15 bg-[#ffffff]/5 px-3 py-1.5 text-sm text-[#e9d5ff] backdrop-blur-xl transition hover:border-[#d8b4fe] hover:text-[#ffffff]" />
+            <LocaleSwitcher className="shrink-0 rounded-full border border-[#ffffff]/15 bg-[#ffffff]/5 px-2.5 py-1 text-xs text-[#e9d5ff] backdrop-blur-xl transition hover:border-[#d8b4fe] hover:text-[#ffffff] sm:px-3 sm:py-1.5 sm:text-sm" />
 
             <Link
               href="/contact"
-              className="hidden rounded-full bg-purple-600 px-5 py-2 text-sm font-medium text-[#ffffff] transition hover:bg-purple-500 sm:inline-flex"
+              className="hidden shrink-0 rounded-full bg-purple-600 px-5 py-2 text-sm font-medium text-[#ffffff] transition hover:bg-purple-500 sm:inline-flex"
             >
               {tc('bookRobot')}
             </Link>
@@ -123,7 +127,7 @@ export default function Header() {
               type="button"
               onClick={() => setOpen(true)}
               aria-label="فتح القائمة"
-              className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-[#ffffff]/15 bg-[#ffffff]/5 text-[#e9d5ff] backdrop-blur-xl transition hover:border-[#d8b4fe] hover:text-[#ffffff] lg:hidden"
+              className="flex h-8 w-8 shrink-0 flex-col items-center justify-center gap-1.5 rounded-full border border-[#ffffff]/15 bg-[#ffffff]/5 text-[#e9d5ff] backdrop-blur-xl transition hover:border-[#d8b4fe] hover:text-[#ffffff] sm:h-9 sm:w-9 lg:hidden"
             >
               <span className="h-px w-4 bg-current" />
               <span className="h-px w-4 bg-current" />
