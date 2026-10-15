@@ -78,20 +78,30 @@ export default function Header() {
             : 'bg-[var(--bg-chrome-header)]/55'
         }`}
       >
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-2 px-4 py-4 sm:gap-0 sm:px-8 lg:px-10">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-2 px-4 py-4 sm:gap-0 sm:px-8 lg:px-10 xl:max-w-7xl">
 
           <Link href="/" className="flex shrink-0 items-center gap-2.5 text-[#ffffff]">
             <BrandLockup locale={locale as 'ar' | 'en'} size="header" />
           </Link>
 
-          <nav className="hidden items-center gap-6 lg:flex">
+          {/* إصلاح 15/10/2026: بالشاشات المتوسطة (lg = 1024–1279px) عناوين
+              القائمة كانت تنكسر لسطرين ("Our / robots"، "Training / programs")
+              (وحتى بالشاشات الكبيرة) لأن المساحة ما تكفي الشعار + 6 روابط +
+              3 أزرار داخل max-w-6xl. الحل:
+                • whitespace-nowrap — العنوان ما ينكسر أبداً
+                • حاوية الهيدر أعرض من xl وفوق (max-w-7xl) حتى تاخذ كلشي بسطر واحد
+                • مسافة أصغر بين الروابط بـ lg (gap-4) والطبيعية من xl
+                • زر "احجز روبوت" يختفي بـ lg بس (1024–1279px) لأن ما اكو مكان،
+                  ويرجع من xl وفوق — وبالموبايل/التابلت يبقى ظاهر مثل قبل.
+                  صفحة التواصل تبقى متاحة من الفوتر وأزرار الحجز بصفحات الروبوتات. */}
+          <nav className="hidden items-center gap-4 lg:flex xl:gap-6">
             {NAV.map((item) => {
               const active = pathname.startsWith(item.href);
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative text-sm transition-colors ${
+                  className={`relative whitespace-nowrap text-sm transition-colors ${
                     active
                       ? 'text-[#ffffff] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-purple-400'
                       : 'text-[#e9d5ff]/70 hover:text-[#ffffff]'
@@ -118,7 +128,7 @@ export default function Header() {
 
             <Link
               href="/contact"
-              className="hidden shrink-0 rounded-full bg-purple-600 px-5 py-2 text-sm font-medium text-[#ffffff] transition hover:bg-purple-500 sm:inline-flex"
+              className="hidden shrink-0 whitespace-nowrap rounded-full bg-purple-600 px-5 py-2 text-sm font-medium text-[#ffffff] transition hover:bg-purple-500 sm:inline-flex lg:hidden xl:inline-flex"
             >
               {tc('bookRobot')}
             </Link>

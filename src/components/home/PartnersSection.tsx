@@ -43,7 +43,11 @@ export default function PartnersSection({
           </div>
         </div>
 
-        <div className="mt-10 w-full overflow-hidden py-6 sm:px-8 lg:px-10">
+        {/* dir="ltr" — إصلاح 15/10/2026: بالنسخة العربية الصفحة كلها RTL، فشريط
+            الشعارات (flex) كان يترتب من اليمين لليسار بينما الحركة (translateX)
+            محسوبة لليسار → الشريط "يخلص" ويبين فراغ بدل ما يدور لا نهائياً.
+            نثبت اتجاه الشريط نفسه LTR بكل اللغات فيصير الدوران مستمر. */}
+        <div dir="ltr" className="mt-10 w-full overflow-hidden py-6 sm:px-8 lg:px-10">
           <LogoLoop
             logos={toLogos(partners)}
             speed={60}
@@ -62,7 +66,11 @@ export default function PartnersSection({
             <StrokeText text={t('clients.title')} fontSize={30} fontWeight={800} />
           </div>
         </div>
-        <div className="mt-10 w-full overflow-hidden py-6 sm:px-8 lg:px-10">
+        {/* dir="ltr" — إصلاح 15/10/2026: بالنسخة العربية الصفحة كلها RTL، فشريط
+            الشعارات (flex) كان يترتب من اليمين لليسار بينما الحركة (translateX)
+            محسوبة لليسار → الشريط "يخلص" ويبين فراغ بدل ما يدور لا نهائياً.
+            نثبت اتجاه الشريط نفسه LTR بكل اللغات فيصير الدوران مستمر. */}
+        <div dir="ltr" className="mt-10 w-full overflow-hidden py-6 sm:px-8 lg:px-10">
           <LogoLoop
             logos={toLogos(clients)}
             speed={75}
