@@ -76,7 +76,8 @@ export default function ContactClient({
 
   const INFO = [
     { icon: MapPin, label: address },
-    { icon: Phone, label: phone, href: `tel:${phone}`, dir: 'ltr' as const },
+    // tel: بدون فراغات — حتى يفتح شاشة الاتصال مباشرة بكل الموبايلات
+    { icon: Phone, label: phone, href: `tel:${phone.replace(/\s+/g, '')}`, dir: 'ltr' as const },
     { icon: Mail,  label: email, href: `mailto:${email}` },
     { icon: Clock, label: hours, prefix: hoursLabel },
   ];

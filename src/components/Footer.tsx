@@ -103,7 +103,7 @@ export default function Footer() {
               )}
               {CONTACT.phone && (
                 <li>
-                  <a href={`tel:${CONTACT.phone}`} dir="ltr" className="transition hover:text-white">
+                  <a href={`tel:${CONTACT.phone.replace(/\s+/g, '')}`} dir="ltr" className="transition hover:text-white">
                     {CONTACT.phone}
                   </a>
                 </li>

@@ -43,7 +43,7 @@ export default function LocationSection({
             <p className="mt-8 text-sm text-white/50">
               {contact.address[locale]}
               {contact.phone && (
-                <> · <a href={`tel:${contact.phone}`} dir="ltr" className="hover:text-white">{contact.phone}</a></>
+                <> · <a href={`tel:${contact.phone.replace(/\s+/g, '')}`} dir="ltr" className="hover:text-white">{contact.phone}</a></>
               )}
             </p>
           </motion.div>

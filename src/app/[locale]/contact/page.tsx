@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import ContactClient from '@/components/pages/ContactClient';
 import { PUBLISHED_ROBOTS } from '@/data/robots';
+import { CONTACT } from '@/data/company';
 
 export async function generateMetadata({
   params,
@@ -50,8 +51,8 @@ export default async function ContactPage({
       ]}
       infoTitle={t('info.title')}
       address={t('info.address')}
-      phone="+964 7802 555 444"
-      email="info@aljazari.iq"
+      phone={CONTACT.phone}
+      email={CONTACT.email}
       hoursLabel={t('info.hours')}
       hours={t('info.hoursValue')}
       robotSubjectValue={t('subjects.robot')}
