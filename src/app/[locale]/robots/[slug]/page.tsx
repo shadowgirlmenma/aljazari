@@ -7,7 +7,7 @@ import Container from '@/components/ui/Container';
 import { getRobot, PUBLISHED_ROBOTS } from '@/data/robots';
 import { CATEGORIES, SECTORS } from '@/data/taxonomy';
 import { routing } from '@/i18n/routing';
-import type { Locale } from '@/lib/types';
+import type { Locale, LocalizedText, Robot } from '@/lib/types';
 import RobotDetailClient from '@/components/robots/RobotDetailClient';
 import BookRobotButton from '@/components/robots/BookRobotButton';
 import RobotGallery from '@/components/robots/RobotGallery';
@@ -19,6 +19,43 @@ export function generateStaticParams() {
   );
 }
 
+// ─────────────────────────────────────────────────────────────
+// تحديث 15/10/2026 (خطة SEO / GEO — القسم 5.3 بخطة الكلمات المفتاحية):
+// الناس تبحث عن "اسم الموديل + العراق" لما تكون جاهزة تشتري (مثلاً
+// "Unitree G1 Iraq" / "روبوت Pepper العراق"). فصار عنوان ووصف كل صفحة روبوت
+// يحتوي "في العراق / in Iraq" + نوع التوفّر (بيع / إيجار / حجز مسبق)،
+// وبيانات Product المنظّمة صارت أكمل (صور، رابط، الشركة المصنّعة، البائع)،
+// وضفنا BreadcrumbList (الرئيسية ← روبوتاتنا ← اسم الروبوت).
+// ─────────────────────────────────────────────────────────────
+
+const BASE = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aljazari.iq').replace(/\/$/, '');
+
+const IN_IRAQ: LocalizedText = { ar: 'في العراق', en: 'in Iraq' };
+const AVAILABLE_VIA: LocalizedText = {
+  ar: 'متوفر في العراق عبر الجزري',
+  en: 'Available in Iraq through ALJAZARI',
+};
+const HOME_LABEL: LocalizedText = { ar: 'الرئيسية', en: 'Home' };
+
+/** نص التوفّر حسب productType — إذا الحقل فاضي = بيع + إيجار (نفس الافتراض بصفحة روبوتاتنا) */
+function availabilityText(robot: Robot, lang: Locale): string {
+  type Availability = NonNullable<Robot['productType']>[number];
+  const types: Availability[] =
+    robot.productType && robot.productType.length > 0 ? robot.productType : ['sale', 'rent'];
+  const labels: Record<Availability, LocalizedText> = {
+    sale: { ar: 'بيع', en: 'sale' },
+    rent: { ar: 'تأجير', en: 'rental' },
+    preorder: { ar: 'حجز مسبق', en: 'pre-order' },
+  };
+  const parts = types.map((type) => labels[type][lang]);
+  return lang === 'ar' ? parts.join(' و') : parts.join(' and ');
+}
+
+/** يحوّل أي مسار داخلي (/robots/x.webp) لرابط كامل — بيانات schema.org تحتاج روابط كاملة */
+function absolute(path: string): string {
+  return path.startsWith('http') ? path : `${BASE}${path.startsWith('/') ? '' : '/'}${path}`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -28,12 +65,29 @@ export async function generateMetadata({
   const robot = getRobot(slug);
   if (!robot) return {};
   const lang = locale as Locale;
+
+  // مثال: "Unitree G1 EDU في العراق — روبوت بشري" (والـ layout يضيف "— الجزري" بالأخير)
+  const title = `${robot.name} ${IN_IRAQ[lang]} — ${robot.tagline[lang]}`;
+  const lead =
+    lang === 'ar'
+      ? `${robot.name} متوفر في العراق لدى الجزري (${availabilityText(robot, lang)}) مع ضمان 12 شهراً ودعم فني.`
+      : `${robot.name} is available in Iraq from ALJAZARI for ${availabilityText(robot, lang)}, with a 12-month warranty and technical support.`;
+  const description = `${lead} ${robot.summary[lang]}`;
+
   return {
-    title: `${robot.name} — ${robot.tagline[lang]}`,
-    description: robot.summary[lang],
+    title,
+    description,
     alternates: {
       canonical: `/${locale}/robots/${slug}`,
       languages: { ar: `/ar/robots/${slug}`, en: `/en/robots/${slug}` },
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      locale: lang === 'ar' ? 'ar_IQ' : 'en_US',
+      url: `/${locale}/robots/${slug}`,
+      ...(robot.image ? { images: [{ url: robot.image, alt: robot.name }] } : {}),
     },
   };
 }
@@ -52,22 +106,58 @@ export default async function RobotPage({
   const t = await getTranslations('robots');
   const lang = locale as Locale;
 
+  const pageUrl = `${BASE}/${locale}/robots/${robot.slug}`;
+  const images = [
+    robot.image,
+    ...(robot.gallery ?? []).filter((item): item is string => typeof item === 'string'),
+  ]
+    .filter(Boolean)
+    .map(absolute);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Product',
+        '@id': `${pageUrl}#product`,
+        name: robot.name,
+        description: robot.summary[lang],
+        url: pageUrl,
+        ...(images.length > 0 ? { image: Array.from(new Set(images)) } : {}),
+        ...(robot.brand
+          ? {
+              brand: { '@type': 'Brand', name: robot.brand },
+              manufacturer: { '@type': 'Organization', name: robot.brand },
+            }
+          : {}),
+        category: CATEGORIES[robot.categories[0]].label[lang],
+        // الجزري هي الجهة الي توفّر الروبوت بالعراق — مربوطة بعقدة المنظمة
+        // المعرّفة بـ OrganizationJsonLd (نفس الـ @id)
+        seller: { '@id': `${BASE}/#organization` },
+        audience: {
+          '@type': 'BusinessAudience',
+          geographicArea: { '@type': 'Country', name: lang === 'ar' ? 'العراق' : 'Iraq' },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: HOME_LABEL[lang], item: `${BASE}/${locale}` },
+          { '@type': 'ListItem', position: 2, name: t('title'), item: `${BASE}/${locale}/robots` },
+          { '@type': 'ListItem', position: 3, name: robot.name, item: pageUrl },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
-      {/* JSON-LD — نهرب "<" احتياطاً حتى لو صار البيانات مستقبلاً من حقل قابل
-          للتعديل من لوحة الأدمن، ما ينكسر الـ <script> ولا ينحقن HTML جواه */}
+      {/* JSON-LD — Product + BreadcrumbList. نهرب "<" احتياطاً حتى لو صار
+          البيانات مستقبلاً من حقل قابل للتعديل من لوحة الأدمن، ما ينكسر الـ
+          <script> ولا ينحقن HTML جواه */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Product',
-            name: robot.name,
-            description: robot.summary[lang],
-            brand: robot.brand || undefined,
-            category: CATEGORIES[robot.categories[0]].label.en,
-          }).replace(/</g, '\\u003c'),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
 
       {/* ── Header البنفسجي الداكن ──
@@ -113,11 +203,18 @@ export default async function RobotPage({
               {robot.summary[lang]}
             </p>
 
-            {robot.brand && (
-              <p className="mt-6 font-mono text-xs text-purple-400">
-                {t('madeBy')}: {robot.brand}
-              </p>
-            )}
+            {/* سطر "متوفر في العراق" — نص ظاهر للزائر يطابق العنوان والوصف وبيانات
+                Product المنظّمة (محركات البحث والذكاء الاصطناعي تثق بالمعلومة لما
+                تكون ظاهرة بالصفحة نفسها، مو بس مخفية بالـ metadata) */}
+            <p className="mt-6 font-mono text-xs text-purple-400">
+              {robot.brand && (
+                <>
+                  {t('madeBy')}: {robot.brand}
+                  <span aria-hidden className="mx-2 text-purple-500/60">·</span>
+                </>
+              )}
+              {AVAILABLE_VIA[lang]}
+            </p>
 
             <BookRobotButton robotSlug={robot.slug} robotName={robot.name} productType={robot.productType} />
 
