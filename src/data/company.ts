@@ -175,17 +175,28 @@ export const CLIENTS: Client[] = [
 ];
 
 // ═════════════════ معلومات التواصل ═════════════════
-// TODO: تُملأ من الشركة قبل النشر
+// تحديث 15/10/2026: عبّينا الرقم وروابط السوشال والخريطة من نفس القيم
+// المستخدمة أصلاً بالموقع (صفحة تواصل معنا + الفوتر + قسم الموقع بالرئيسية)
+// حتى توصل لبيانات Schema (OrganizationJsonLd) وملف /llms.txt تلقائياً —
+// محركات البحث وأدوات الذكاء الاصطناعي تقرا من هنا. أي تغيير بالرقم أو
+// الروابط يصير هنا بس.
 
 export const CONTACT = {
-  phone: '',
+  phone: '+964 7802 555 444',
   whatsapp: '',
   email: 'info@aljazari.iq',
   address: { ar: 'الطابق الخامس، مجمع فيولا التجاري، شارع الربيعي، الزيونة، بغداد، العراق', en: 'Fifth Floor, Viola Commercial Center, AlRubaie Street, Ziyouna, Baghdad, Iraq' },
+  /** رابط مكان الشركة على Google Maps (نفس الرابط المستخدم بقسم "موقعنا" بالرئيسية) */
+  mapsUrl:
+    'https://www.google.com/maps?q=Aljazari+Robotics+%D8%B4%D8%B1%D9%83%D8%A9+%D8%A7%D9%84%D8%AC%D8%B2%D8%B1%D9%8A+%D9%84%D9%84%D8%B1%D9%88%D8%A8%D9%88%D8%AA%D8%A7%D8%AA%D8%8C+Rubaie+St,+Baghdad,+Baghdad+Governorate+Ziyouna,+Baghdad,+10091&ftid=0x155783b189945bcd:0xbfe977aae700955d',
+  /** إحداثيات المكتب — مأخوذة من خريطة صفحة "تواصل معنا" (33°19'10.7"N 44°21'58.6"E) */
+  geo: { latitude: 33.319639, longitude: 44.366278 },
   social: {
     instagram: 'https://www.instagram.com/aljazari.iq/',
     facebook: 'https://www.facebook.com/aljazari.iq',
-    linkedin: '',
-    youtube: '',
+    linkedin: 'https://www.linkedin.com/company/aljazari-iq/',
+    youtube: 'https://www.youtube.com/@aljazari_iq',
+    x: 'https://x.com/aljazari_iq',
+    tiktok: 'https://www.tiktok.com/@aljazari.iq',
   },
 };

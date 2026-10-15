@@ -18,11 +18,12 @@ import type { Locale } from '@/lib/types';
  *   3) WebSite       ← الموقع نفسه ولغاته (ar / en)
  *
  * كل القيم مأخوذة من src/data/company.ts و src/data/taxonomy.ts (المصدر
- * الوحيد للحقيقة) — ما فيها أي رقم أو معلومة مخترعة. الحقول الفارغة هناك
- * (الهاتف، لينكدإن، يوتيوب) تنحذف تلقائياً من هنا لحد ما تنملى.
+ * الوحيد للحقيقة) — ما فيها أي رقم أو معلومة مخترعة. أي حقل فارغ هناك
+ * ينحذف تلقائياً من هنا.
  *
- * ملاحظة: ما ضفنا إحداثيات (geo) لأن رابط Google Maps الصحيح للشركة لسا
- * ما تأكد — نضيفها لما يتأكد.
+ * تحديث 15/10/2026 (مساءً): ضفنا الهاتف، ContactPoint، إحداثيات المكتب (geo)،
+ * رابط الخريطة (hasMap)، وكل حسابات السوشال (لينكدإن، يوتيوب، X، تيك توك)
+ * — كلها من company.ts.
  */
 
 const BASE = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aljazari.iq').replace(/\/$/, '');
@@ -80,6 +81,8 @@ export default function OrganizationJsonLd({ locale }: { locale: Locale }) {
     CONTACT.social.facebook,
     CONTACT.social.linkedin,
     CONTACT.social.youtube,
+    CONTACT.social.x,
+    CONTACT.social.tiktok,
   ].filter((url) => url && url.trim() !== '');
 
   const address = {
@@ -140,6 +143,20 @@ export default function OrganizationJsonLd({ locale }: { locale: Locale }) {
     ...(CONTACT.phone ? { telephone: CONTACT.phone } : {}),
   };
 
+  // نقطة تواصل رسمية — تساعد Google يعرض الرقم مباشرة بنتائج البحث وبطاقة الشركة
+  const contactPoint =
+    CONTACT.phone || CONTACT.email
+      ? {
+          contactPoint: {
+            '@type': 'ContactPoint',
+            contactType: 'customer service',
+            ...contact,
+            areaServed: 'IQ',
+            availableLanguage: ['Arabic', 'English'],
+          },
+        }
+      : {};
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -164,6 +181,7 @@ export default function OrganizationJsonLd({ locale }: { locale: Locale }) {
         knowsAbout: KNOWS_ABOUT[locale],
         hasOfferCatalog: offerCatalog,
         ...contact,
+        ...contactPoint,
         ...(sameAs.length > 0 ? { sameAs } : {}),
       },
       {
@@ -176,6 +194,13 @@ export default function OrganizationJsonLd({ locale }: { locale: Locale }) {
         logo,
         description: COMPANY.positioning[locale],
         address,
+        // إحداثيات المكتب + رابط الخريطة (من src/data/company.ts)
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: CONTACT.geo.latitude,
+          longitude: CONTACT.geo.longitude,
+        },
+        hasMap: CONTACT.mapsUrl,
         areaServed,
         parentOrganization: { '@id': ORG_ID },
         ...contact,

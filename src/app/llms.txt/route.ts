@@ -138,10 +138,13 @@ function buildLlmsTxt(): string {
     ['Facebook', CONTACT.social.facebook],
     ['LinkedIn', CONTACT.social.linkedin],
     ['YouTube', CONTACT.social.youtube],
+    ['X (Twitter)', CONTACT.social.x],
+    ['TikTok', CONTACT.social.tiktok],
   ].filter(([, url]) => url && url.trim() !== '');
   for (const [label, url] of socials) {
     lines.push(`- [${label}](${url})`);
   }
+  if (CONTACT.mapsUrl) lines.push(`- [Office location on Google Maps](${CONTACT.mapsUrl})`);
   lines.push(`- [Sitemap](${BASE}/sitemap.xml)`);
   lines.push('');
 
