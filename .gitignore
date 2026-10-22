@@ -7,3 +7,6 @@ __pycache__/
 .env*.local
 tsconfig.tsbuildinfo
 aljazari-sync.bundle
+
+# original high-res source photos (too big for git)
+raw_images/

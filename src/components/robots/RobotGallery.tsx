@@ -80,6 +80,7 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
                 src={media[active].src}
                 alt={`${robot.name} — ${active + 1}/${media.length}`}
                 fill
+                quality={90}
                 sizes="(max-width: 640px) 90vw, 900px"
                 className="object-contain p-6"
               />
