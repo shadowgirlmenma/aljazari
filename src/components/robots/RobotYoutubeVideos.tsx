@@ -26,8 +26,16 @@ export default function RobotYoutubeVideos({ robot }: { robot: Robot }) {
 
   if (videos.length === 0) return null;
 
+  const isSingle = videos.length === 1;
+
   return (
-    <div className="mt-10 grid gap-6 sm:grid-cols-2">
+    <div
+      className={
+        isSingle
+          ? 'mx-auto mt-10 grid max-w-3xl gap-6'
+          : 'mt-10 grid gap-6 sm:grid-cols-2'
+      }
+    >
       {videos.map((video, i) => (
         <motion.div
           key={video.url}
