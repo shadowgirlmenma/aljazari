@@ -196,7 +196,8 @@ export default async function RobotPage({
               alt=""
               fill
               priority
-              sizes="56vw"
+              quality={95}
+              sizes="75vw"
               className="object-cover object-right-bottom"
             />
           </div>
@@ -261,8 +262,9 @@ export default async function RobotPage({
 
         {/* بانر heroBleed على الموبايل — تحت النص، بعرض الشاشة كامل وملتصق باليمين والأسفل */}
         {robot.image && robot.heroBleed && (
-          <div className="relative -mt-4 aspect-[1800/1399] w-full md:hidden">
+          <div className="relative -mt-4 aspect-[2880/2239] w-full md:hidden">
             <Image
+              quality={95}
               src={robot.image}
               alt={robot.name}
               fill
