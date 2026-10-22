@@ -10,11 +10,21 @@ type GalleryMedia =
   | { kind: 'image'; src: string }
   | { kind: 'video'; src: string; poster?: string };
 
+/** عدد المصغّرات الظاهرة بكل صفحة بالعمود الجانبي (ديسكتوب) */
+const PAGE_SIZE = 4;
+
 /**
  * معرض صور/فيديو الروبوت — الصورة أو الفيديو الرئيسي على اليسار كاملة،
  * وبقية العناصر مصفوفة عمودياً على اليمين كمصغّرات، تتصفحينها بالضغط عليها.
  * الاتجاه ثابت (يسار = رئيسي، يمين = مصغّرات) بغض النظر عن لغة الموقع،
  * لأنه ترتيب بصري صرف مو نص.
+ *
+ * ملاحظة 22/10/2026 — Pagination للمصغّرات: لما صار المعرض بيه ٢٠+ صورة، عمود
+ * المصغّرات صار أطول بهواية من الصورة الرئيسية وترك فراغ كبير يسارها. هسه
+ * العمود يعرض ٤ مصغّرات بس بكل صفحة، وتتمدد حتى تملي نفس ارتفاع الصورة
+ * الرئيسية بالضبط. سهم الأسفل/الأعلى يقلب للأربعة الجاية/السابقة، ولما تتغير
+ * الصورة الفعالة (بالكيبورد مثلاً) الصفحة تلحقها تلقائياً.
+ * بالموبايل المصغّرات تبقى شريط أفقي كامل يتمرر بالإصبع (بدون صفحات).
  *
  * الاستخدام: بملف data/robots.ts، أضيفي مسارات الصور/الفيديو بحقل gallery:
  *   gallery: ['/robots/pepper.avif', { type: 'video', url: '/robots/pepper-clip.mp4', poster: '/robots/pepper-clip-poster.webp' }]
@@ -29,6 +39,8 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
     return [];
   });
   const [active, setActive] = useState(0);
+  const [page, setPage] = useState(0);
+  const pageCount = Math.max(1, Math.ceil(media.length / PAGE_SIZE));
 
   const next = useCallback(() => {
     setActive((i) => (i + 1) % media.length);
@@ -37,6 +49,14 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
   const prev = useCallback(() => {
     setActive((i) => (i - 1 + media.length) % media.length);
   }, [media.length]);
+
+  const nextPage = () => setPage((p) => (p + 1) % pageCount);
+  const prevPage = () => setPage((p) => (p - 1 + pageCount) % pageCount);
+
+  // الصفحة تلحق الصورة الفعالة (لما تتغير بالكيبورد أو بأي طريقة ثانية)
+  useEffect(() => {
+    setPage(Math.floor(active / PAGE_SIZE));
+  }, [active]);
 
   useEffect(() => {
     if (media.length < 2) return;
@@ -49,6 +69,9 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
   }, [media.length, next, prev]);
 
   if (media.length < 2) return null;
+
+  const pageStart = page * PAGE_SIZE;
+  const pageEnd = pageStart + PAGE_SIZE;
 
   return (
     <div dir="ltr" className="mx-auto flex w-full max-w-6xl flex-col gap-4 sm:flex-row">
@@ -93,56 +116,78 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
         </span>
       </div>
 
-      {/* ── المصغّرات — مستطيلات كبيرة مقتصّة، عمودي يمين، قابل للتمرير ── */}
-      <div className="flex gap-3 overflow-x-auto pb-1 sm:w-40 sm:flex-col sm:overflow-x-visible sm:overflow-y-auto sm:pb-0 lg:w-48">
+      {/* ── المصغّرات — ٤ بكل صفحة، عمودي يمين، بنفس ارتفاع الصورة الرئيسية ── */}
+      <div className="flex gap-3 overflow-x-auto pb-1 sm:w-40 sm:flex-col sm:overflow-visible sm:pb-0 lg:w-48">
         <button
           type="button"
-          onClick={prev}
-          aria-label="السابقة"
-          className="glass hidden h-8 w-full shrink-0 items-center justify-center rounded-lg text-white transition hover:border-purple-300 hover:text-purple-200 sm:flex"
+          onClick={prevPage}
+          disabled={pageCount < 2}
+          aria-label="الصور السابقة"
+          className="glass hidden h-9 w-full shrink-0 items-center justify-center rounded-lg text-white transition hover:border-purple-300 hover:text-purple-200 disabled:opacity-30 sm:flex"
         >
           <ChevronUp size={16} />
         </button>
 
-        {media.map((item, i) => (
-          <button
-            key={item.src + i}
-            type="button"
-            onClick={() => setActive(i)}
-            aria-label={item.kind === 'video' ? `عرض الفيديو ${i + 1}` : `عرض الصورة ${i + 1}`}
-            aria-current={active === i}
-            className={`glass relative h-24 w-32 shrink-0 overflow-hidden rounded-xl transition sm:h-28 sm:w-full lg:h-32 ${
-              active === i
-                ? 'border-purple-300 ring-2 ring-purple-400'
-                : 'opacity-60 hover:opacity-100'
-            }`}
-          >
-            {item.kind === 'video' ? (
-              <>
-                {item.poster ? (
-                  <Image src={item.poster} alt="" fill sizes="192px" className="object-cover" />
+        <div className="flex gap-3 sm:min-h-0 sm:flex-1 sm:flex-col">
+          {media.map((item, i) => {
+            const onPage = i >= pageStart && i < pageEnd;
+            return (
+              <button
+                key={item.src + i}
+                type="button"
+                onClick={() => setActive(i)}
+                aria-label={item.kind === 'video' ? `عرض الفيديو ${i + 1}` : `عرض الصورة ${i + 1}`}
+                aria-current={active === i}
+                className={`glass relative h-24 w-32 shrink-0 overflow-hidden rounded-xl transition sm:h-auto sm:w-full sm:shrink sm:basis-0 ${
+                  onPage ? 'sm:flex-1 sm:animate-[galleryThumbIn_0.35s_ease-out]' : 'sm:hidden'
+                } ${
+                  active === i
+                    ? 'border-purple-300 ring-2 ring-purple-400'
+                    : 'opacity-60 hover:opacity-100'
+                }`}
+              >
+                {item.kind === 'video' ? (
+                  <>
+                    {item.poster ? (
+                      <Image src={item.poster} alt="" fill sizes="192px" className="object-cover" />
+                    ) : (
+                      <video src={item.src} className="h-full w-full object-cover" muted />
+                    )}
+                    <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/25">
+                      <Play size={22} className="fill-white text-white" />
+                    </span>
+                  </>
                 ) : (
-                  <video src={item.src} className="h-full w-full object-cover" muted />
+                  <Image src={item.src} alt="" fill sizes="192px" className="object-cover" />
                 )}
-                <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/25">
-                  <Play size={22} className="fill-white text-white" />
-                </span>
-              </>
-            ) : (
-              <Image src={item.src} alt="" fill sizes="192px" className="object-cover" />
-            )}
-          </button>
-        ))}
+              </button>
+            );
+          })}
+
+          {/* خانات فارغة بآخر صفحة (إذا ناقصة) حتى المصغّرات تبقى بنفس الحجم */}
+          {page === pageCount - 1 &&
+            Array.from({ length: pageEnd - media.length }).map((_, k) => (
+              <div key={`pad-${k}`} aria-hidden className="hidden sm:block sm:flex-1 sm:basis-0" />
+            ))}
+        </div>
 
         <button
           type="button"
-          onClick={next}
-          aria-label="التالية"
-          className="glass hidden h-8 w-full shrink-0 items-center justify-center rounded-lg text-white transition hover:border-purple-300 hover:text-purple-200 sm:flex"
+          onClick={nextPage}
+          disabled={pageCount < 2}
+          aria-label="الصور التالية"
+          className="glass hidden h-9 w-full shrink-0 items-center justify-center gap-2 rounded-lg text-white transition hover:border-purple-300 hover:text-purple-200 disabled:opacity-30 sm:flex"
         >
           <ChevronDown size={16} />
+          {pageCount > 1 && (
+            <span className="font-mono text-[10px] text-purple-200/80">
+              {page + 1}/{pageCount}
+            </span>
+          )}
         </button>
       </div>
+
+      <style>{`@keyframes galleryThumbIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }`}</style>
     </div>
   );
 }
