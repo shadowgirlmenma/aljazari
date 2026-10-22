@@ -75,8 +75,11 @@ export default function RobotDetailClient({
                   <dt className="text-sm text-purple-200/60">
                     {spec.label[locale]}
                   </dt>
-                  <dd dir="ltr" className="font-mono text-sm text-white">
-                    {spec.value}
+                  <dd
+                    dir={locale === 'ar' ? 'rtl' : 'ltr'}
+                    className={`text-sm text-white ${locale === 'ar' ? '' : 'font-mono'}`}
+                  >
+                    {spec.value[locale]}
                   </dd>
                 </motion.div>
               ))}
