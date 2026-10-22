@@ -1487,6 +1487,13 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'نظام الكاميرا', en: 'Camera system' }, value: { ar: 'كاميرا 8 ميجابكسل HD + كاميرا ملونة 1 ميجابكسل HD', en: '8 MP HD camera + 1 MP HD color camera' } },
       { label: { ar: 'نظام الميكروفون', en: 'Microphone system' }, value: { ar: 'مصفوفة من 7 ميكروفونات', en: '7-microphone array' } },
       { label: { ar: 'نظام مكبر الصوت', en: 'Speaker system' }, value: { ar: 'تحديد مصدر الصوت بزاوية 360 درجة', en: '360° sound source localization' } },
+      {
+        label: { ar: 'نظام الاستشعار', en: 'Sensor system' },
+        value: {
+          ar: 'الرأس: مايكروفون ×7، كاميرا RGB ×2، حساس ثلاثي الأبعاد ×1، حساس لمس ×7 · الجسم: حساس جيروسكوب ×1، حساس استشعار جسم بشري ×2، حساس تجنّب عوائق بالأشعة تحت الحمراء ×1، حساس استقبال رسائل بالأشعة تحت الحمراء ×6، حساس لمس ×4، بوصلة إلكترونية ×1 · اليد: حساس تجنّب عوائق بالأشعة تحت الحمراء ×4، حساس لمس ×2 · الأرجل: حساس تجنّب عوائق بالأشعة تحت الحمراء ×10، عجلات أومني ×3',
+          en: 'Head: 7× mic, 2× RGB camera, 1× 3D sensor, 7× touch sensor · Body: 1× gyroscope sensor, 2× human body induction sensor, 1× IR evading obstacle sensor, 6× IR message-receiving sensor, 4× touch sensor, 1× electronic compass sensor · Hand: 4× IR evading obstacle sensor, 2× touch sensor · Leg: 10× IR evading obstacle sensor, 3× omni wheel',
+        },
+      },
       { label: { ar: 'الاتصال', en: 'Connectivity' }, value: { ar: 'Wi-Fi، Bluetooth، ZigBee', en: 'Wi-Fi, Bluetooth, ZigBee' } },
       { label: { ar: 'زمن الشحن', en: 'Charging time' }, value: { ar: '5 ساعات', en: '5 hours' } },
       { label: { ar: 'زمن التشغيل', en: 'Operating time' }, value: { ar: 'من 4 إلى 6 ساعات', en: '4–6 hours' } },
