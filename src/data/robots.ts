@@ -584,53 +584,47 @@ export const ROBOTS: Robot[] = [
       '/robots/pudubot-real-4.webp',
       '/robots/pudubot-real-5.webp',
       '/robots/pudubot-real-6.webp',
+      { type: 'youtube', url: 'https://www.youtube.com/watch?v=45vUOogXXQc' },
     ],
     tagline: { ar: 'روبوت خدمي', en: 'Service robot' },
     summary: {
-      ar: 'روبوت توصيل مصنوع بالكامل من سبيكة ألمنيوم بدرجة الطيران، بصوانٍ قابلة للتعديل وليدار مقاوم لأشعة الشمس — مبني للاشتغال المتواصل.',
-      en: 'A delivery robot built entirely from aviation-grade aluminium, with adjustable trays and a sunlight-resistant LiDAR — made for continuous shifts.',
+      ar: 'روبوت التوصيل الجديد والمطوّر من شركة بودو روبوتكس، بودوبوت ٢، يحمل المزايا المطوّرة من روبوت بودوبوت السابق. ويلتزم بودوبوت ٢ بتحقيق عمليات توصيل ذكية في جميع الظروف، وتعزيز استخدام روبوتات الخدمة، وتسريع تطوير الروبوتات بشكل عام من خلال أداء أعلى، وقابلية توسّع أفضل، ومرونة أكبر، وموثوقية أعلى.',
+      en: 'PuduBot 2, the newly upgraded delivery robot from Pudu Robotics, inherits the excellent features of PuduBot. PuduBot 2 is committed to realizing intelligent deliveries in all scenarios, promoting the application of service robots, and accelerating the overall robot development with higher performance, better extendability, adaptability, and reliability.',
     },
     features: [
       {
-        title: { ar: 'ليدار من الجيل الجديد', en: 'Next-generation LiDAR' },
+        title: { ar: 'توصيل موثوق', en: 'Reliable delivery' },
         description: {
-          ar: 'ليدار مقاوم لأشعة الشمس لتشغيل أكثر أماناً.',
-          en: 'Sunlight-resistant LiDAR for safer operation in bright spaces.',
+          ar: 'روبوت خدمي موثوق لتوصيل الطعام والمواد.',
+          en: 'Reliable service robot for food and item delivery.',
         },
       },
       {
-        title: { ar: 'تحديد الموقع البصري', en: 'Visual positioning' },
+        title: { ar: 'دعم العمليات اليومية', en: 'Everyday operations' },
         description: {
-          ar: 'نظام رؤية جديد يوفر دقة أعلى بتحديد الموقع والحركة.',
-          en: 'A new vision system delivers tighter positioning and movement accuracy.',
+          ar: 'يدعم العمليات اليومية بالمطاعم والفنادق ومحلات البيع بالتجزئة.',
+          en: 'Supports daily operations in restaurants, hotels, and retail spaces.',
         },
       },
       {
-        title: { ar: 'تجنب العوائق ثلاثي الأبعاد', en: '3D obstacle avoidance' },
+        title: { ar: 'تنقّل آمن وسلس', en: 'Smooth, safe navigation' },
         description: {
-          ar: 'مستشعرات رؤية ثلاثية الأبعاد لتوصيل أكثر أماناً.',
-          en: '3D vision sensors keep deliveries clear of obstacles.',
+          ar: 'تنقّل سلس وآمن داخل مختلف البيئات الداخلية.',
+          en: 'Smooth and safe navigation across indoor environments.',
         },
       },
       {
-        title: { ar: 'نظام تعليق جديد', en: 'New suspension' },
+        title: { ar: 'تبسيط سير العمل', en: 'Streamlined workflows' },
         description: {
-          ar: 'يتعامل بسهولة مع المطبّات والعوائق أثناء الحركة.',
-          en: 'Handles bumps and thresholds smoothly while moving.',
+          ar: 'يساعد على تبسيط سير العمل وتقليل المهام المتكررة.',
+          en: 'Helps streamline workflows and reduce repetitive tasks.',
         },
       },
       {
-        title: { ar: 'صوانٍ قابلة للتعديل', en: 'Adjustable trays' },
+        title: { ar: 'شحن سريع وبطارية طويلة الأمد', en: 'Fast charging, long battery life' },
         description: {
-          ar: 'صوانٍ معدنية قابلة للتعديل لتناسب مختلف الاستخدامات.',
-          en: 'Metal trays adjust to fit whatever you need to carry.',
-        },
-      },
-      {
-        title: { ar: 'شريط إضاءة تفاعلي', en: 'Interactive light strip' },
-        description: {
-          ar: 'تعليمات تشغيل أوضح وأسهل للمستخدم.',
-          en: 'Makes its status readable at a glance.',
+          ar: 'شحن سريع وعمر بطارية أطول لساعات تشغيل أكثر.',
+          en: 'Fast charging, extended battery life for longer operating time.',
         },
       },
     ],
@@ -658,7 +652,7 @@ export const ROBOTS: Robot[] = [
       { label: { ar: 'عجلات مساعدة', en: 'Auxiliary wheels' }, side: 'end' },
       { label: { ar: 'عجلات الحركة', en: 'Drive wheels' }, side: 'end' },
     ],
-    sectors: ['restaurants', 'hospitality', 'healthcare', 'offices', 'warehousing', 'malls', 'showroom'],
+    sectors: ['restaurants', 'malls', 'warehousing', 'hospitality', 'showroom'],
   },
   {
     slug: 'cc1-pro',
