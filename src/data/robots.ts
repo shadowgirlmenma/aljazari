@@ -411,6 +411,7 @@ export const ROBOTS: Robot[] = [
     order: 1,
     featured: true,
     image: '/robots/bellabot-pro-banner.webp',
+    heroBleed: true,
     cardImage: '/robots/card/bellabot-pro.webp',
     gallery: [
       '/robots/bellabot-real-1.webp',

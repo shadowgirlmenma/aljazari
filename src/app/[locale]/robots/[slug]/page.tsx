@@ -168,7 +168,7 @@ export default async function RobotPage({
           ولا أي صفحة ثانية — التعديل هنا بس. */}
       <div className="relative overflow-hidden bg-brand-gradient text-white">
         {/* صورة الروبوت — تطفو بالجهة المقابلة للنص، بدون خلفية */}
-        {robot.image && (
+        {robot.image && !robot.heroBleed && (
           <div
             aria-hidden
             className="pointer-events-none absolute inset-y-0 end-0 hidden w-[48%] md:block"
@@ -183,8 +183,34 @@ export default async function RobotPage({
             />
           </div>
         )}
+        {/* بانر مشهد كامل (heroBleed) — ملتصق بالحافة اليمنى والسفلى للهيدر بكامل
+            ارتفاعه، حتى تبين المكعّبات وكأنها طالعة من جانب الشاشة اليمين. أعلى
+            الصورة شفاف أصلاً، فيمر تحت الهيدر الزجاجي بدون ما يغطي شي. */}
+        {robot.image && robot.heroBleed && (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute bottom-0 right-0 top-20 hidden w-[56%] md:block lg:w-[54%]"
+          >
+            <Image
+              src={robot.image}
+              alt=""
+              fill
+              priority
+              sizes="56vw"
+              className="object-cover object-right-bottom"
+            />
+          </div>
+        )}
         <Container className="relative z-10 pb-12 pt-32 sm:pb-16 sm:pt-40">
-          <div className={robot.image ? 'md:max-w-[54%]' : ''}>
+          <div
+            className={
+              robot.heroBleed
+                ? 'md:mr-auto md:max-w-[44%] md:pb-10 lg:max-w-[46%]'
+                : robot.image
+                  ? 'md:max-w-[54%]'
+                  : ''
+            }
+          >
             {/* ملاحظة المراجعة 26/09/2026: رابط الرجوع كان نحيف وصغير (text-xs بدون
                 خلفية) — صار زر زجاجي (glass-pill) أوضح وأكبر وأثخن، بنفس أسلوب
                 باقي أزرار الموقع الزجاجية. */}
@@ -219,7 +245,7 @@ export default async function RobotPage({
             <BookRobotButton robotSlug={robot.slug} robotName={robot.name} productType={robot.productType} />
 
             {/* صورة الروبوت على الموبايل — تحت النص */}
-            {robot.image && (
+            {robot.image && !robot.heroBleed && (
               <div className="relative mx-auto mt-10 aspect-square w-full max-w-sm md:hidden">
                 <Image
                   src={robot.image}
@@ -232,6 +258,19 @@ export default async function RobotPage({
             )}
           </div>
         </Container>
+
+        {/* بانر heroBleed على الموبايل — تحت النص، بعرض الشاشة كامل وملتصق باليمين والأسفل */}
+        {robot.image && robot.heroBleed && (
+          <div className="relative -mt-4 aspect-[1800/1399] w-full md:hidden">
+            <Image
+              src={robot.image}
+              alt={robot.name}
+              fill
+              sizes="100vw"
+              className="object-cover object-right-bottom"
+            />
+          </div>
+        )}
       </div>
 
       {/* ── معرض الصور — يظهر بس إذا الروبوت عنده أكثر من صورة بـ gallery ── */}
