@@ -410,7 +410,7 @@ export const ROBOTS: Robot[] = [
     categories: ['service'],
     order: 1,
     featured: true,
-    image: '/robots/bellabot-pro-official.webp',
+    image: '/robots/bellabot-pro-banner.webp',
     cardImage: '/robots/card/bellabot-pro.webp',
     gallery: [
       '/robots/bellabot-real-1.webp',
