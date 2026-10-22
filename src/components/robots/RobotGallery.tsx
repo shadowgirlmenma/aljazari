@@ -3,8 +3,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, ChevronUp, Play } from 'lucide-react';
+import { ChevronDown, ChevronUp, Maximize2, Play } from 'lucide-react';
 import type { Robot } from '@/lib/types';
+import GalleryLightbox from './GalleryLightbox';
 
 type GalleryMedia =
   | { kind: 'image'; src: string }
@@ -26,6 +27,10 @@ const PAGE_SIZE = 4;
  * الصورة الفعالة (بالكيبورد مثلاً) الصفحة تلحقها تلقائياً.
  * بالموبايل المصغّرات تبقى شريط أفقي كامل يتمرر بالإصبع (بدون صفحات).
  *
+ * ملاحظة 22/10/2026 — عارض بملء الشاشة: الضغط على الصورة الرئيسية (أو دبل كلك
+ * على أي مصغّرة) يفتح GalleryLightbox بحجم شاشة الجهاز، وبيه تكبير وتصغير
+ * (عجلة الماوس، قرصة بإصبعين، دبل كلك، أزرار +/−) وسحب لتحريك الصورة المكبّرة.
+ *
  * الاستخدام: بملف data/robots.ts، أضيفي مسارات الصور/الفيديو بحقل gallery:
  *   gallery: ['/robots/pepper.avif', { type: 'video', url: '/robots/pepper-clip.mp4', poster: '/robots/pepper-clip-poster.webp' }]
  * وحطي الملفات نفسها بمجلد public/robots/. هذا كل شي.
@@ -40,6 +45,7 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
   });
   const [active, setActive] = useState(0);
   const [page, setPage] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const pageCount = Math.max(1, Math.ceil(media.length / PAGE_SIZE));
 
   const next = useCallback(() => {
@@ -59,14 +65,14 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
   }, [active]);
 
   useEffect(() => {
-    if (media.length < 2) return;
+    if (media.length < 2 || lightboxOpen) return;
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'ArrowDown') next();
       if (e.key === 'ArrowUp') prev();
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [media.length, next, prev]);
+  }, [media.length, next, prev, lightboxOpen]);
 
   if (media.length < 2) return null;
 
@@ -76,7 +82,14 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
   return (
     <div dir="ltr" className="mx-auto flex w-full max-w-6xl flex-col gap-4 sm:flex-row">
       {/* ── الصورة الرئيسية — يسار، أكبر ── */}
-      <div className="glass-card relative aspect-square w-full flex-1 overflow-hidden rounded-3xl">
+      <div
+        className={`glass-card group relative aspect-square w-full flex-1 overflow-hidden rounded-3xl ${
+          media[active].kind === 'image' ? 'cursor-zoom-in' : ''
+        }`}
+        onClick={() => {
+          if (media[active].kind === 'image') setLightboxOpen(true);
+        }}
+      >
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={active}
@@ -114,6 +127,19 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
         <span className="glass-pill absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 font-mono text-[11px] text-white">
           {active + 1} / {media.length}
         </span>
+
+        {/* زر ملء الشاشة — يظهر دائماً بالموبايل، وبالهوفر على الديسكتوب */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setLightboxOpen(true);
+          }}
+          aria-label="عرض بملء الشاشة"
+          className="glass absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:border-purple-300 hover:text-purple-200 sm:opacity-0 sm:group-hover:opacity-100"
+        >
+          <Maximize2 size={16} />
+        </button>
       </div>
 
       {/* ── المصغّرات — ٤ بكل صفحة، عمودي يمين، بنفس ارتفاع الصورة الرئيسية ── */}
@@ -136,6 +162,10 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
                 key={item.src + i}
                 type="button"
                 onClick={() => setActive(i)}
+                onDoubleClick={() => {
+                  setActive(i);
+                  setLightboxOpen(true);
+                }}
                 aria-label={item.kind === 'video' ? `عرض الفيديو ${i + 1}` : `عرض الصورة ${i + 1}`}
                 aria-current={active === i}
                 className={`glass relative h-24 w-32 shrink-0 overflow-hidden rounded-xl transition sm:h-auto sm:w-full sm:shrink sm:basis-0 ${
@@ -186,6 +216,16 @@ export default function RobotGallery({ robot }: { robot: Robot }) {
           )}
         </button>
       </div>
+
+      {lightboxOpen && (
+        <GalleryLightbox
+          media={media}
+          index={active}
+          name={robot.name}
+          onClose={() => setLightboxOpen(false)}
+          onIndexChange={setActive}
+        />
+      )}
 
       <style>{`@keyframes galleryThumbIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }`}</style>
     </div>

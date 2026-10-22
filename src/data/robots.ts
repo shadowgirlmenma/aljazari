@@ -728,7 +728,7 @@ export const ROBOTS: Robot[] = [
     categories: ['service'],
     order: 0,
     image: '/robots/cc1-pro-nobg.webp',
-    cardImage: '/robots/card/cc1-pro-hq.webp',
+    cardImage: '/robots/card/cc1-pro-hq2.webp',
     // بيع فقط — الإيجار للروبوتات البشرية وروبوتات التوصيل فقط (ملاحظة المراجعة 10/09/2026)
     productType: ['sale'],
     gallery: [
